@@ -7,7 +7,9 @@ ffmpeg 로 인코딩한다. 녹화 방식보다 프레임 타이밍이 정확하
 
 from __future__ import annotations
 
+import base64
 import math
+import mimetypes
 import shutil
 import subprocess
 import tempfile
@@ -39,15 +41,30 @@ def load_cfg() -> dict[str, Any]:
 
 
 def _file_url(p: str | Path) -> str:
-    return Path(p).resolve().as_uri()
+    """로컬 이미지를 base64 data URI로 인라인한다.
+
+    원래는 file:// URI를 그대로 썼는데, Playwright가 page.set_content()로 넣은
+    HTML은 origin이 없는 취급(about:blank)이라 크로미움이 file:// 리소스 로드를
+    막아버려 로고/선수 사진이 전부 깨진 이미지로 나오는 문제가 있었다.
+    data URI는 origin/파일접근 정책과 무관하게 항상 로드되므로 이 문제를 원천 차단한다.
+    """
+    path = Path(p).resolve()
+    mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
+    data = base64.b64encode(path.read_bytes()).decode("ascii")
+    return f"data:{mime};base64,{data}"
 
 
 def _logo_url(team: str, cfg: dict) -> str | None:
     lg = cfg["brand"]["logos"]
     if not lg.get("enabled"):
         return None
-    path = ROOT / lg["dir"] / f"{team}.png"
-    return _file_url(path) if path.exists() else None
+    base = ROOT / lg["dir"] / team
+    # 대부분 png 지만, 팀에 따라 위키미디어 원본이 jpg 인 경우가 있어(예: KIA) 확장자를 순회 확인.
+    for ext in (".png", ".jpg", ".jpeg", ".svg"):
+        path = base.with_suffix(ext)
+        if path.exists():
+            return _file_url(path)
+    return None
 
 
 # ── 적응형 사이징 ────────────────────────────────
@@ -352,7 +369,12 @@ def shoot_png(html: str, out: Path, width: int, height: int) -> Path:
 
     out.parent.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
-        browser = p.chromium.launch(args=["--force-color-profile=srgb"])
+        # set_content() 로 넣은 HTML은 origin이 없어(about:blank 취급) 기본적으로
+        # file:// 이미지(로고, 선수 사진) 로드가 크로미움 보안정책에 막힌다.
+        # --allow-file-access-from-files 로 풀어준다.
+        browser = p.chromium.launch(
+            args=["--force-color-profile=srgb", "--allow-file-access-from-files"]
+        )
         page = browser.new_page(
             viewport={"width": width, "height": height}, device_scale_factor=1
         )
@@ -379,7 +401,9 @@ def shoot_reel(
 
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(args=["--force-color-profile=srgb"])
+            browser = p.chromium.launch(
+                args=["--force-color-profile=srgb", "--allow-file-access-from-files"]
+            )
             page = browser.new_page(
                 viewport={"width": width, "height": height}, device_scale_factor=1
             )

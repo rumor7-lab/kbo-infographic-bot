@@ -1,10 +1,15 @@
 requests==2.32.3
 beautifulsoup4==4.12.3
-PyYAML==6.0.2
+# PyYAML/numpy 버전은 Python 3.14용 사전 빌드 wheel이 존재하는 최소 버전으로 맞춤.
+# 구버전(PyYAML 6.0.2, numpy 2.1.1)은 cp314 wheel이 없어 소스 빌드를 시도하다
+# C 컴파일러(icl/cl/gcc 등) 부재로 설치가 실패한다.
+PyYAML==6.0.3
 Jinja2==3.1.4
-playwright==1.47.0
+# playwright 1.47.0의 의존성 greenlet==3.0.3 도 cp314 wheel이 없어 같은 이유로 실패한다.
+# playwright를 올리면 greenlet 요구범위(>=3.1.1)가 cp314 wheel이 있는 버전으로 자동 해결된다.
+playwright==1.61.0
 opencv-python-headless==4.10.0.84
-numpy==2.1.1
+numpy==2.5.1
 # Windows 는 IANA 시간대 데이터가 OS에 기본 내장돼 있지 않아 zoneinfo("Asia/Seoul")가
 # 실패한다. tzdata 패키지를 깔면 zoneinfo가 이걸 자동으로 찾아 쓴다. (macOS/Linux는 불필요하지만
 # 넣어도 무해하므로 플랫폼 분기 없이 그냥 설치)

@@ -9,8 +9,13 @@
   text-align:center;
 }
 .bar-row.top .bar-rank{color:var(--accent)}
-.bar-logo{flex:0 0 {{ logo_size }}px; height:{{ logo_size }}px}
-.bar-logo img{width:100%; height:100%; object-fit:contain}
+.bar-logo{
+  flex:0 0 {{ logo_size }}px; height:{{ logo_size }}px;
+  background:#fff; border-radius:{{ (logo_size * 0.22) | round | int }}px;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+  display:flex; align-items:center; justify-content:center;
+}
+.bar-logo img{width:78%; height:78%; object-fit:contain}
 .bar-track{flex:1 1 auto; min-width:0; position:relative; height:{{ bar_h }}px}
 .bar-fill{
   height:100%; border-radius:{{ (bar_h / 2) | round | int }}px;
