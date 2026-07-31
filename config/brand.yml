@@ -1,0 +1,83 @@
+# 브랜드 · 디자인 시스템
+# 아웃라인(고정 프레임)은 전 카드 공통. 유형 A/B/C가 바뀌어도 이 값들은 절대 변하지 않는다.
+# 브랜드명만 바꾸면 전체 카드에 반영됨.
+
+brand:
+  # 후보: 야구숫자 / 볼파크리포트 / 야구읽기 / 숫자로보는야구
+  name_ko: "야구숫자"
+  name_en: "BASEBALL NUMBERS"
+  handle: "@baseball.numbers"       # 실제 인스타 핸들로 교체
+  badge_style: "circle"             # circle | pill
+  tagline: "숫자로 읽는 KBO"
+
+canvas:
+  feed:
+    width: 1080
+    height: 1350                    # 4:5 — 인스타 피드 최대 점유 비율
+  reels:
+    width: 1080
+    height: 1920
+    fps: 30
+    duration_sec: 8
+
+# 컬러 토큰 — 템플릿에서 var(--ink) 형태로 사용
+colors:
+  ink: "#0F1115"                    # 기본 텍스트 / 헤더 배경
+  ink_soft: "#454B54"
+  paper: "#F4F5F7"                  # 카드 배경
+  paper_pure: "#FFFFFF"
+  line: "#DCDFE4"
+  accent: "#E8402A"                 # 강조(1위, 상승, 신기록)
+  accent_cool: "#1B4F9C"            # 하락, 보조 강조
+  gold: "#C8A24A"                   # 기록 달성/수상
+  shade: "#0A0C10"                  # 히어로 오버레이
+
+typography:
+  # 상업적 이용 무료 폰트. 로컬/CI 모두 설치 필요 (scripts/install_fonts.sh)
+  family_display: "Pretendard, 'Pretendard Variable', sans-serif"
+  family_numeric: "Pretendard, sans-serif"
+  # 타이틀 전용 — 키커·메인 타이틀·히어로 헤드라인에만 적용 (표/차트 숫자는 계속 Pretendard)
+  # 방송·스포츠 그래픽에서 흔히 쓰는 임팩트 서체. 상업적 이용 무료.
+  family_headline: "'Black Han Sans', sans-serif"
+  numeric_feature: "tabular-nums"   # 표 숫자 정렬 흔들림 방지 — 필수
+  scale:
+    kicker: 34                      # "최신 업데이트 Ver." 같은 상단 소제목
+    title: 92                       # 메인 타이틀
+    title_sub: 46
+    table_head: 34
+    table_cell: 36
+    hero_rank: 40
+    hero_value: 52
+    footnote: 26
+
+# 고정 아웃라인 — 모든 유형 공통 골격
+frame:
+  padding: 56
+  header_height: 300                # 키커 + 타이틀 영역
+  footer_height: 84                 # 출처 · 기준일 바
+  radius: 20
+  badge:
+    size: 104
+    position: "top-right"
+  # 하단 고정 문구. {as_of}는 데이터 기준 시각으로 치환
+  footer_template: "출처 KBO 공식기록 · {as_of} 기준 · {handle}"
+
+# 10구단 컬러 (2026 기준 primary / secondary)
+teams:
+  삼성:  { short: "삼성", full: "삼성 라이온즈", primary: "#0C2F6F", secondary: "#B0B7BC" }
+  LG:    { short: "LG",   full: "LG 트윈스",     primary: "#C30452", secondary: "#000000" }
+  KT:    { short: "KT",   full: "KT 위즈",       primary: "#000000", secondary: "#EB1C24" }
+  KIA:   { short: "KIA",  full: "KIA 타이거즈",  primary: "#EA0029", secondary: "#06141F" }
+  두산:  { short: "두산", full: "두산 베어스",   primary: "#131230", secondary: "#D01F2D" }
+  한화:  { short: "한화", full: "한화 이글스",   primary: "#FF6600", secondary: "#07111F" }
+  NC:    { short: "NC",   full: "NC 다이노스",   primary: "#315288", secondary: "#AF917B" }
+  롯데:  { short: "롯데", full: "롯데 자이언츠", primary: "#041E42", secondary: "#D00F31" }
+  SSG:   { short: "SSG",  full: "SSG 랜더스",    primary: "#CE0E2D", secondary: "#F1B500" }
+  키움:  { short: "키움", full: "키움 히어로즈", primary: "#570514", secondary: "#B07F4A" }
+
+# 구단 로고 파일 (assets/logos/{key}.png)
+logos:
+  enabled: true
+  dir: "assets/logos"
+  size: 52
+  # 참고: 수익화(광고·협찬·굿즈) 확대 시 로고/사진 사용 범위 재검토 권장

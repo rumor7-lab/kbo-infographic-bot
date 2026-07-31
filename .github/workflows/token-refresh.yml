@@ -1,0 +1,75 @@
+name: token-refresh
+
+# 파이프라인이 조용히 죽는 1순위 원인이 토큰 만료다.
+# 주 1회 갱신 + 만료 임박 시 이슈 자동 생성으로 이중 방어한다.
+on:
+  schedule:
+    - cron: "0 1 * * 1"     # 매주 월요일 10:00 KST
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+
+      - name: 토큰 상태 확인 및 갱신
+        id: check
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          FB_APP_ID: ${{ secrets.FB_APP_ID }}
+          FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
+        run: |
+          python - <<'PY' >> $GITHUB_OUTPUT
+          import os, sys
+          sys.path.insert(0, ".")
+          from src.publish.instagram import Credentials, token_days_left, refresh_long_lived_token
+
+          cred = Credentials.from_env()
+          days = token_days_left(cred)
+          print(f"days={days if days is not None else -1}")
+
+          app_id, secret = os.getenv("FB_APP_ID"), os.getenv("FB_APP_SECRET")
+          if app_id and secret and (days is None or days < 20):
+              try:
+                  res = refresh_long_lived_token(app_id, secret, cred.access_token)
+                  # 새 토큰은 로그에 절대 찍지 않는다. 마지막 6자만 확인용으로 남긴다.
+                  tok = res.get("access_token", "")
+                  print(f"refreshed=true")
+                  print(f"tail={tok[-6:] if tok else 'none'}")
+              except Exception as e:
+                  print(f"refreshed=false")
+                  print(f"error={e}")
+          PY
+
+      - name: 만료 임박 시 이슈 생성
+        if: steps.check.outputs.days != '-1' && steps.check.outputs.days < 15
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const days = '${{ steps.check.outputs.days }}';
+            const title = `⚠️ Instagram 토큰 만료 ${days}일 전`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              ...context.repo, state: 'open', labels: 'token'
+            });
+            if (!issues.some(i => i.title.startsWith('⚠️ Instagram 토큰'))) {
+              await github.rest.issues.create({
+                ...context.repo, title, labels: ['token'],
+                body: [
+                  `IG_ACCESS_TOKEN 이 약 ${days}일 후 만료됩니다.`,
+                  '',
+                  '갱신 절차:',
+                  '1. Meta 개발자 콘솔 → 그래프 API 탐색기에서 새 장기 토큰 발급',
+                  '2. 리포지토리 Settings → Secrets → `IG_ACCESS_TOKEN` 업데이트',
+                  '3. `token-refresh` 워크플로 수동 실행해 확인',
+                ].join('\n')
+              });
+            }

@@ -1,0 +1,16 @@
+.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 렌더 산출물 — 용량이 커서 커밋하지 않는다 (Actions artifact 로 확인)
+out/
+
+# 사진 캐시는 커밋한다 (매번 재수집하면 오인 위험이 커지므로)
+# assets/photos/ 는 추적 대상
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

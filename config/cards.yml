@@ -1,0 +1,168 @@
+# 카드 카탈로그 + 3슬롯 스케줄
+#
+# layout: auto  → 레이아웃 엔진이 데이터 형태로 A/B/C 자동 선택 (기본)
+#         table | chart | hero → 강제 지정
+# risk:   low   → 무인 자동 발행
+#         high  → 초안 생성 후 승인 큐로 (사람 확인 필요)
+
+slots:
+  morning:
+    at: "08:00"          # KST
+    theme: "어제 확정 데이터"
+    note: "전날 경기 확정 + 기록 정정 반영 후 시각. 데이터 신뢰도 최상"
+    cards: [daily_recap, team_standings, yesterday_heroes]
+    carousel: true       # 3장을 캐러셀 1건으로 발행
+    reels: false
+
+  noon:
+    at: "12:30"
+    theme: "주제형 랭킹 / 기록"
+    note: "점심 스크롤 타임. 저장·공유 유도형"
+    cards: [rotating_topic]
+    carousel: false
+    reels: true          # 점심 슬롯을 릴스로 → 신규 도달 확보
+
+  night:
+    at: "22:30"
+    theme: "오늘 경기 결과"
+    note: "경기 종료 직후. 미확정 데이터이므로 '잠정' 표기 필수"
+    cards: [today_results, today_top_performer]
+    carousel: true
+    reels: false
+
+# ─────────────────────────────────────────────
+cards:
+
+  daily_recap:
+    title: "어제 경기 결과"
+    kicker: "DAILY"
+    source: kbo.games_yesterday
+    layout: auto         # → 5경기 × 다열 = table
+    risk: low
+
+  team_standings:
+    title: "KBO 팀 순위"
+    kicker: "STANDINGS"
+    source: kbo.standings
+    layout: auto         # → 10행 단일지표(승률) = chart
+    metric: win_rate
+    risk: low
+
+  yesterday_heroes:
+    title: "어제의 주인공"
+    kicker: "PLAYER OF THE DAY"
+    source: kbo.top_performer_yesterday
+    layout: hero         # → 단일 선수 = hero (사진 필요)
+    risk: low
+    fallback_layout: table   # 사진 확보 실패 시 자동 강등
+
+  today_results:
+    title: "오늘 경기 결과"
+    kicker: "TONIGHT"
+    source: kbo.games_today
+    layout: auto
+    risk: low
+    provisional: true    # 하단에 '잠정 기록' 표기
+
+  today_top_performer:
+    title: "오늘의 기록"
+    kicker: "HIGHLIGHT"
+    source: kbo.top_performer_today
+    layout: hero
+    fallback_layout: chart
+    risk: low
+    provisional: true
+
+  # 점심 슬롯은 요일별 로테이션
+  rotating_topic:
+    rotation:
+      mon: playoff_race        # 순위 시나리오 — 8~9월 최대 트래픽
+      tue: hitter_leaders
+      wed: pitcher_leaders
+      thu: frustration_index   # 잔루·득점권 등 '답답함 지표'
+      fri: weekend_preview
+      sat: milestone_watch     # 기록 달성 임박
+      sun: weekly_digest
+
+  playoff_race:
+    title: "가을야구 시나리오"
+    kicker: "PO RACE"
+    source: compute.playoff_odds
+    layout: chart
+    # metric 은 pipeline.py 가 항상 "가을야구확률"로 고정 설정한다 (이 필드는 문서용)
+    risk: low
+    footnote_extra: "잔여경기 승률 동일 가정 · 몬테카를로 10만회 시뮬레이션 · 자체 산출"
+
+  hitter_leaders:
+    title: "타격 순위 TOP 10"
+    kicker: "BATTING"
+    source: kbo.hitter_leaders
+    layout: auto
+    risk: low
+
+  pitcher_leaders:
+    title: "투수 순위 TOP 10"
+    kicker: "PITCHING"
+    source: kbo.pitcher_leaders
+    layout: auto
+    risk: low
+
+  frustration_index:
+    # 원래는 '팀별 잔루 WORST'로 기획했으나, KBO 공식 사이트에는 팀 시즌 누적
+    # 잔루(LOB) 통계가 없다(타자/투수/주루 페이지 전부 실측 확인함).
+    # 잔루 랭킹은 STATIZ 전용 데이터라 크롤링 금지 정책상 쓸 수 없어,
+    # 같은 '팬 답답함' 성격의 KBO 공식 지표인 득점권 타율(RISP)로 대체.
+    title: "팀별 득점권 타율 WORST"
+    kicker: "RISP"
+    source: kbo.team_risp_worst
+    layout: auto
+    risk: low
+    footnote_extra: "득점권(주자 2루 또는 3루) 타율 기준"
+
+  weekend_preview:
+    title: "주말 3연전 매치업"
+    kicker: "PREVIEW"
+    source: kbo.schedule_weekend
+    layout: table
+    risk: low
+
+  milestone_watch:
+    title: "기록 달성 임박"
+    kicker: "MILESTONE"
+    # KBO '예상 달성 기록' 페이지는 게시판 목록이라 표가 본문/첨부에 있다.
+    # 그래서 선수 기록에서 라운드 넘버까지 남은 개수를 직접 계산한다.
+    source: kbo.milestone_watch
+    layout: auto
+    risk: low
+    footnote_extra: "KBO 공식 기록 기반 자체 계산"
+
+  weekly_digest:
+    title: "주간 결산"
+    kicker: "WEEKLY"
+    source: compute.weekly
+    layout: auto
+    risk: low
+
+  # ── 오프시즌 / 고위험 카드 (수동 승인) ──
+  fa_list:
+    title: "FA 예상 명단"
+    kicker: "FREE AGENT"
+    source: manual.fa_list       # data/manual/fa_list.yml 수동 관리
+    layout: table
+    risk: high
+    footnote_extra: "옵트아웃·연장옵션 보유 선수 포함 · 보도 종합 기준 예상"
+
+  salary_rank:
+    title: "연봉 순위"
+    kicker: "SALARY"
+    source: manual.salary        # KBO 연 1회 공식 발표(2월경) 기준
+    layout: auto
+    risk: high
+
+# 발행 전 자동 검증 룰
+validation:
+  max_duplicate_names: 2     # 동일 선수명 3회 이상 반복 시 발행 보류
+  require_team_count: 10
+  win_rate_range: [0.0, 1.0]
+  abort_on_source_mismatch: true
+  skip_on_failure: true      # 실패 시 '대충 발행' 금지, 무조건 스킵 + 알림

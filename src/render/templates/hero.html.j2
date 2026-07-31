@@ -1,0 +1,116 @@
+{# 유형 C — 선수 사진 히어로. 업로드 참고: STATIZ '연패 탈출', 'TOP 10 최고 구속' #}
+{% extends "base.html.j2" %}
+
+{% block card_class %}bleed{% endblock %}
+
+{% block extra_css %}
+.photo{
+  position:absolute; inset:0; z-index:0;
+  background-image:url("{{ subject.photo }}");
+  background-size:cover;
+  /* 인물이 위쪽에 몰린 보도사진 특성상 상단 정렬이 안전 */
+  background-position:{{ photo_pos | default('center 18%') }};
+  filter:saturate(1.06) contrast(1.04);
+}
+.veil{
+  position:absolute; inset:0; z-index:1;
+  background:
+    linear-gradient(180deg, rgba(10,12,16,.86) 0%, rgba(10,12,16,.20) 32%, rgba(10,12,16,.42) 58%, rgba(10,12,16,.95) 100%),
+    linear-gradient(90deg, rgba(10,12,16,.55) 0%, rgba(10,12,16,0) 55%);
+}
+.team-stripe{
+  position:absolute; left:0; top:0; bottom:0; width:12px; z-index:2;
+  background:var(--tc);
+}
+
+.hero-wrap{width:100%; display:flex; flex-direction:column; justify-content:flex-end; height:100%;
+           padding-bottom:16px}
+.hero-eyebrow{
+  font-size:30px; font-weight:700; color:rgba(255,255,255,.80);
+  letter-spacing:-.01em; margin-bottom:18px; word-break:keep-all; line-height:1.4;
+}
+.hero-headline{
+  font-family:var(--font-headline);
+  font-size:{{ headline_size }}px; font-weight:900; color:#fff;
+  letter-spacing:-.015em; line-height:1.02; margin-bottom:20px;
+  text-shadow:0 6px 40px rgba(0,0,0,.5);
+}
+.hero-headline em{font-style:normal; color:var(--accent)}
+.hero-sub{
+  font-size:32px; font-weight:700; color:rgba(255,255,255,.88);
+  line-height:1.45; word-break:keep-all;
+}
+
+/* 스탯 스트립 — 히어로 하단 고정 3~4칸 */
+.stats{display:flex; gap:12px; margin-top:30px}
+.stat{
+  flex:1 1 0; background:rgba(255,255,255,.10); backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.16); border-radius:14px;
+  padding:18px 14px; text-align:center;
+}
+.stat .l{font-size:22px; font-weight:700; color:rgba(255,255,255,.66); letter-spacing:.02em}
+.stat .v{font-size:{{ t.scale.hero_value }}px; font-weight:900; color:#fff; letter-spacing:-.03em; margin-top:6px}
+
+/* 랭킹 오버레이형 (rows 가 있을 때 — STATIZ TOP10 스타일) */
+.rank-list{margin-top:26px; width:100%}
+.rank-item{
+  display:flex; align-items:center; gap:20px;
+  padding:15px 4px; border-bottom:1px solid rgba(255,255,255,.16);
+}
+.rank-item:last-child{border-bottom:none}
+.rank-item .n{flex:0 0 62px; font-size:{{ t.scale.hero_rank }}px; font-weight:900;
+              color:rgba(255,255,255,.55); text-align:center}
+.rank-item .who{flex:1 1 auto; font-size:36px; font-weight:800; color:#fff; letter-spacing:-.02em}
+.rank-item .num{flex:0 0 auto; font-size:40px; font-weight:900; color:#fff; letter-spacing:-.03em}
+.rank-item.first .n,.rank-item.first .who,.rank-item.first .num{color:var(--accent)}
+
+{% if motion %}
+.photo{animation:kenburns 8s ease-out both}
+@keyframes kenburns{from{transform:scale(1.0)}to{transform:scale(1.09)}}
+.hero-headline{animation:slideUp .6s cubic-bezier(.16,1,.3,1) .25s both}
+.stat{animation:slideUp .5s cubic-bezier(.16,1,.3,1) both}
+{% for i in range(subject.stats | length) %}
+.stat:nth-child({{ i + 1 }}){animation-delay:{{ 0.55 + i * 0.1 }}s}
+{% endfor %}
+.rank-item{animation:rowIn .4s ease both}
+{% for i in range(rows | length) %}
+.rank-item:nth-child({{ i + 1 }}){animation-delay:{{ 0.4 + i * 0.07 }}s}
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block backdrop %}
+  <div class="photo"></div>
+  <div class="veil"></div>
+  <div class="team-stripe" style="--tc:{{ teams.get(subject.team or '', {}).get('primary', c.accent) }}"></div>
+{% endblock %}
+
+{% block body %}
+    <div class="hero-wrap" style="--tc:{{ teams.get(subject.team or '', {}).get('primary', c.accent) }}">
+
+      {% if rows %}
+        {# 랭킹 오버레이 모드 #}
+        <div class="rank-list">
+          {% for row in rows %}
+          <div class="rank-item {{ 'first' if loop.first else '' }}">
+            <div class="n">{{ row.get('순위', loop.index) }}</div>
+            <div class="who">{{ row[label_col] }}</div>
+            <div class="num">{{ row[metric] if metric else '' }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        {# 단일 주인공 모드 #}
+        {% if subject.sub %}<div class="hero-eyebrow">{{ subject.sub }}</div>{% endif %}
+        <div class="hero-headline">{{ subject.headline | safe }}</div>
+        {% if subject.stats %}
+        <div class="stats">
+          {% for s in subject.stats %}
+          <div class="stat"><div class="l">{{ s.label }}</div><div class="v">{{ s.value }}</div></div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      {% endif %}
+
+    </div>
+{% endblock %}

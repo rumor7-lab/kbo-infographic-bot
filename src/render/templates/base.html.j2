@@ -1,0 +1,147 @@
+{# ============================================================
+   고정 아웃라인 — 유형 A/B/C 가 바뀌어도 이 프레임은 절대 변하지 않는다.
+   브랜드 일관성의 단일 소유자(single source of truth).
+   자식 템플릿은 {% block body %} 안쪽만 채운다.
+
+   톤 기준: 다크 배경 + 대형 컬러 포인트 타이틀 + 배지형 키커.
+   (벤치마크: KBO 공식/크보톡 스타일 — 넘기다가 멈추게 만드는 강한 대비)
+   ============================================================ #}
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap">
+<style>
+:root{
+  --ink:{{ c.ink }}; --ink-soft:{{ c.ink_soft }}; --paper:{{ c.paper }};
+  --paper-pure:{{ c.paper_pure }}; --line:{{ c.line }};
+  --accent:{{ c.accent }}; --accent-cool:{{ c.accent_cool }};
+  --gold:{{ c.gold }}; --shade:{{ c.shade }};
+  --pad:{{ f.padding }}px; --radius:{{ f.radius }}px;
+  --team:{{ team_color | default(c.accent, true) }};
+  --font-headline:{{ t.family_headline }};
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:{{ W }}px;height:{{ H }}px;overflow:hidden}
+body{
+  font-family:{{ t.family_display }};
+  background:var(--shade); color:#fff;
+  font-variant-numeric:{{ t.numeric_feature }};
+  font-feature-settings:"tnum" 1;
+}
+
+/* ── 프레임 골격 — 다크 배경이 기본값 ─────────── */
+.card{
+  width:{{ W }}px; height:{{ H }}px;
+  display:flex; flex-direction:column;
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(120% 70% at 16% -12%, color-mix(in srgb, var(--team) 38%, transparent) 0%, transparent 62%),
+    linear-gradient(165deg, #1a2030 0%, var(--ink) 45%, var(--shade) 100%);
+}
+/* 사진형(유형 C)은 배경 위에 사진이 덮이므로 카드 배경은 안 보이지만
+   그대로 둬도 무해하다 (photo/veil 가 z-index 로 위에 얹힘) */
+
+.frame-head{
+  flex:0 0 auto; padding:var(--pad) var(--pad) 20px;
+  position:relative; z-index:3;
+}
+.kicker{
+  display:inline-flex; align-items:center;
+  font-size:{{ t.scale.kicker * 0.62 }}px; font-weight:800; letter-spacing:.1em;
+  color:#fff; text-transform:uppercase;
+  background:var(--accent); padding:9px 22px; border-radius:999px;
+  margin-bottom:22px; box-shadow:0 6px 18px rgba(232,64,42,.28);
+}
+.title{
+  /* 검은고딕(Black Han Sans)은 단일 굵기 서체 — font-weight 지정과 무관하게
+     항상 두껍게 나온다. 폰트 로드에 실패해도 sans-serif 폴백에서 900이 굵게 잡히도록
+     명시적으로 900을 둔다 */
+  font-family:var(--font-headline);
+  font-size:{{ title_size }}px; font-weight:900; line-height:1.08;
+  letter-spacing:-1px; word-break:keep-all; color:#fff;
+  text-shadow:0 10px 34px rgba(0,0,0,.38);
+}
+.title .accent{color:var(--accent)}
+.title-rule{
+  width:88px; height:9px; border-radius:5px; background:var(--accent);
+  margin-top:24px;
+}
+.title-sub{
+  font-size:{{ t.scale.title_sub }}px; font-weight:700; color:rgba(255,255,255,.7);
+  margin-top:16px; letter-spacing:-.02em;
+}
+
+/* 브랜드 배지 — 위치 고정, 전 카드 동일. 다크 배경이라 흰 배지가 잘 뜬다 */
+.badge{
+  position:absolute; top:var(--pad); right:var(--pad);
+  width:{{ f.badge.size }}px; height:{{ f.badge.size }}px;
+  border-radius:{% if brand.badge_style == 'circle' %}50%{% else %}14px{% endif %};
+  background:#fff; color:var(--ink);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  z-index:5; box-shadow:0 6px 20px rgba(0,0,0,.35);
+}
+.badge b{font-size:26px; font-weight:900; line-height:1; letter-spacing:-.04em}
+.badge span{font-size:11px; font-weight:700; opacity:.55; margin-top:4px; letter-spacing:.06em}
+
+.frame-body{
+  flex:1 1 auto; min-height:0;
+  padding:0 var(--pad);
+  position:relative; z-index:2;
+  display:flex; flex-direction:column; justify-content:center;
+}
+
+.frame-foot{
+  flex:0 0 {{ f.footer_height }}px;
+  padding:0 var(--pad); display:flex; align-items:center; gap:12px;
+  font-size:{{ t.scale.footnote }}px; font-weight:600; color:rgba(255,255,255,.6);
+  border-top:1px solid rgba(255,255,255,.14); margin:0 var(--pad);
+  position:relative; z-index:3;
+}
+.tag-provisional{
+  background:var(--accent); color:#fff; font-size:20px; font-weight:800;
+  padding:5px 12px; border-radius:6px; letter-spacing:.02em; flex:0 0 auto;
+}
+
+/* ── 모션 (릴스 전용) ──────────────────────── */
+{% if motion %}
+.frame-head{animation:slideUp .55s cubic-bezier(.16,1,.3,1) both}
+.frame-body{animation:slideUp .55s cubic-bezier(.16,1,.3,1) .18s both}
+.frame-foot{animation:fade .5s ease .9s both}
+@keyframes slideUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes growBar{from{width:0}to{width:var(--bar-w)}}
+@keyframes rowIn{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+{% endif %}
+{% block extra_css %}{% endblock %}
+</style>
+</head>
+<body>
+<div class="card {% block card_class %}{% endblock %}">
+
+  <div class="badge">
+    <b>{{ brand.name_ko[:2] }}</b><span>{{ brand.name_ko[2:] or 'KBO' }}</span>
+  </div>
+
+  {% block backdrop %}{% endblock %}
+
+  <header class="frame-head">
+    {% if kicker %}<div class="kicker">{{ kicker }}</div>{% endif %}
+    <h1 class="title">{{ title_main }}<span class="accent">{{ title_emphasis }}</span></h1>
+    <div class="title-rule"></div>
+    {% if title_sub %}<div class="title-sub">{{ title_sub }}</div>{% endif %}
+  </header>
+
+  <main class="frame-body">
+{% block body %}{% endblock %}
+  </main>
+
+  <footer class="frame-foot">
+    {% if provisional %}<span class="tag-provisional">잠정</span>{% endif %}
+    <span>{{ footer_text }}</span>
+  </footer>
+
+</div>
+</body>
+</html>

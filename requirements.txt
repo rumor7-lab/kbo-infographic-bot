@@ -1,0 +1,14 @@
+requests==2.32.3
+beautifulsoup4==4.12.3
+PyYAML==6.0.2
+Jinja2==3.1.4
+playwright==1.47.0
+opencv-python-headless==4.10.0.84
+numpy==2.1.1
+# Windows 는 IANA 시간대 데이터가 OS에 기본 내장돼 있지 않아 zoneinfo("Asia/Seoul")가
+# 실패한다. tzdata 패키지를 깔면 zoneinfo가 이걸 자동으로 찾아 쓴다. (macOS/Linux는 불필요하지만
+# 넣어도 무해하므로 플랫폼 분기 없이 그냥 설치)
+tzdata==2025.2
+
+# 선택: Cloudflare R2 / S3 호스팅으로 전환할 때만
+# boto3==1.35.0
