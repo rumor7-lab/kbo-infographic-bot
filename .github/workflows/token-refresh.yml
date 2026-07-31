@@ -25,8 +25,7 @@ jobs:
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          FB_APP_ID: ${{ secrets.FB_APP_ID }}
-          FB_APP_SECRET: ${{ secrets.FB_APP_SECRET }}
+          IG_APP_SECRET: ${{ secrets.IG_APP_SECRET }}
         run: |
           python - <<'PY' >> $GITHUB_OUTPUT
           import os, sys
@@ -37,10 +36,10 @@ jobs:
           days = token_days_left(cred)
           print(f"days={days if days is not None else -1}")
 
-          app_id, secret = os.getenv("FB_APP_ID"), os.getenv("FB_APP_SECRET")
-          if app_id and secret and (days is None or days < 20):
+          secret = os.getenv("IG_APP_SECRET")
+          if secret and (days is None or days < 20):
               try:
-                  res = refresh_long_lived_token(app_id, secret, cred.access_token)
+                  res = refresh_long_lived_token(secret, cred.access_token)
                   # 새 토큰은 로그에 절대 찍지 않는다. 마지막 6자만 확인용으로 남긴다.
                   tok = res.get("access_token", "")
                   print(f"refreshed=true")

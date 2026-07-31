@@ -1,11 +1,18 @@
-"""Instagram Graph API 발행 어댑터.
+"""Instagram Platform API 발행 어댑터.
+
+인증 방식: Instagram API with Instagram Login (Business Login for Instagram)
+  - FB 페이지 연결 없이 인스타그램 프로페셔널 계정에 직접 로그인하는 최신 방식.
+  - 이전 "Facebook 로그인이 포함된 API"(graph.facebook.com + Page Access Token) 방식과는
+    호스트/토큰이 서로 호환되지 않는다 — Instagram Login 토큰을 graph.facebook.com 에
+    쓰면 에러난다. 그래서 컨테이너 생성/발행 엔드포인트·파라미터는 두 방식이 동일해도
+    베이스 호스트는 반드시 graph.instagram.com 이어야 한다.
 
 확인된 제약 (2026 기준)
-  - 비즈니스/크리에이터 계정 + FB 페이지 연결 필수  → 이미 완료된 상태
+  - 비즈니스/크리에이터 계정 필수 (Instagram Login 방식은 FB 페이지 연결 불필요)
   - 미디어는 '공개 접근 가능한 URL' 이어야 한다 (로컬 파일 직접 업로드 불가)
   - 캐러셀 2~10장, 캐러셀 전체가 1건으로 계산
   - 24시간 이동 기준 공식 100건. 하루 3건 발행에는 여유가 크다
-  - 장기 토큰도 만료됨 → 주기적 갱신 필수. 파이프라인이 조용히 죽는 1순위 원인
+  - 장기 토큰도 만료됨(60일) → 주기적 갱신 필수. 파이프라인이 조용히 죽는 1순위 원인
 
 발행 흐름
   1. 로컬 PNG/MP4 → 공개 URL 확보 (GitHub Release 또는 R2 업로드)
@@ -25,7 +32,7 @@ from typing import Any, Literal
 import requests
 
 API_VERSION = os.getenv("IG_API_VERSION", "v21.0")
-GRAPH = f"https://graph.facebook.com/{API_VERSION}"
+GRAPH = f"https://graph.instagram.com/{API_VERSION}"
 
 MediaKind = Literal["image", "reels"]
 
@@ -152,15 +159,18 @@ def post_reel(cred: Credentials, video_url: str, caption: str) -> str:
 
 
 # ── 토큰 갱신 ────────────────────────────────────
-def refresh_long_lived_token(app_id: str, app_secret: str, token: str) -> dict:
-    """장기 토큰 재발급. GitHub Actions 로 주 1회 돌리고 결과를 시크릿에 반영한다."""
+def refresh_long_lived_token(app_secret: str, token: str) -> dict:
+    """장기 토큰 재발급. GitHub Actions 로 주 1회 돌리고 결과를 시크릿에 반영한다.
+
+    Instagram Platform 의 /access_token 엔드포인트는 client_id 가 필요 없다
+    (client_secret + grant_type=ig_exchange_token + access_token 세 개만 요구).
+    """
     r = requests.get(
-        f"{GRAPH}/oauth/access_token",
+        f"{GRAPH}/access_token",
         params={
-            "grant_type": "fb_exchange_token",
-            "client_id": app_id,
+            "grant_type": "ig_exchange_token",
             "client_secret": app_secret,
-            "fb_exchange_token": token,
+            "access_token": token,
         },
         timeout=30,
     )

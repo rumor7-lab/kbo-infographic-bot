@@ -161,21 +161,23 @@ python scripts/selftest.py --live
 
 ### 4. 인스타그램 연결
 
-계정은 이미 비즈니스 전환 + FB 페이지 연결이 되어 있으니, 필요한 건 ID 와 토큰입니다.
+계정은 이미 비즈니스 계정이니, 필요한 건 ID 와 토큰뿐입니다.
 
-1. Meta 개발자 콘솔 → 앱 생성 → Instagram Graph API 제품 추가
-2. 그래프 API 탐색기에서 IG User ID 확인
-   - `GET /me/accounts` → 페이지 선택
-   - `GET /{page-id}?fields=instagram_business_account`
-3. 장기 액세스 토큰 발급
-4. `.env.example` 을 `.env` 로 복사해 값 채우기 (로컬용)
-5. GitHub Actions 용: 리포 Settings → Secrets → Actions 에 등록
+인증 방식은 **Instagram API with Instagram Login** (FB 페이지 연결 불필요, 인스타
+프로페셔널 계정에 직접 로그인). 예전 "Facebook 로그인이 포함된 API"(graph.facebook.com)
+방식과 토큰이 호환되지 않으니 혼동하지 말 것.
+
+1. Meta 개발자 콘솔 → 앱 생성 → 제품에 Instagram 추가
+2. 앱 설정 → Instagram → "Instagram 로그인이 포함된 API 설정" → 계정 추가
+   → 여기서 연결된 계정 옆에 IG User ID 가 바로 보임, "토큰 생성" 버튼으로 토큰 발급
+3. `.env.example` 을 `.env` 로 복사해 값 채우기 (로컬용)
+4. GitHub Actions 용: 리포 Settings → Secrets → Actions 에 등록
 
 | 시크릿 | 용도 |
 |---|---|
-| `IG_USER_ID` | 인스타 비즈니스 계정 ID (FB 페이지 ID 와 다름) |
-| `IG_ACCESS_TOKEN` | 장기 액세스 토큰 |
-| `FB_APP_ID` / `FB_APP_SECRET` | 토큰 자동 갱신용 (권장) |
+| `IG_USER_ID` | 인스타 프로페셔널 계정의 Instagram-scoped ID |
+| `IG_ACCESS_TOKEN` | 장기 액세스 토큰(60일, 자동 갱신 필요) |
+| `IG_APP_SECRET` | 토큰 자동 갱신용 — 앱 설정 → Instagram → API 설정 페이지의 "Instagram 앱 시크릿 코드" |
 
 `GITHUB_TOKEN` 은 Actions 가 자동 제공하므로 등록 불필요합니다.
 
