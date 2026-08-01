@@ -143,6 +143,27 @@ cards:
     layout: auto
     risk: low
 
+  # ── 유형 D(그리드) 시범 카드 — 아직 슬롯 로테이션에 안 넣음.
+  #    2주 수동 운영 기간 동안 render_one.py 로 먼저 눈으로 확인하고,
+  #    괜찮으면 rotating_topic 로테이션에 추가할 예정.
+  hitter_grid:
+    title: "타격 리더 TOP 4"
+    kicker: "PLAYER GRID"
+    source: kbo.hitter_grid
+    layout: grid
+    fallback_layout: table   # 사진을 다수 확보 못해도(극단적 경우) 표로 강등
+    grid_size: 4
+    risk: low
+
+  pitcher_grid:
+    title: "투수 리더 TOP 4"
+    kicker: "PLAYER GRID"
+    source: kbo.pitcher_grid
+    layout: grid
+    fallback_layout: table
+    grid_size: 4
+    risk: low
+
   # ── 오프시즌 / 고위험 카드 (수동 승인) ──
   fa_list:
     title: "FA 예상 명단"

@@ -29,6 +29,7 @@ TEMPLATE_OF: dict[Layout, str] = {
     "table": "table.html.j2",
     "chart": "chart.html.j2",
     "hero": "hero.html.j2",
+    "grid": "grid.html.j2",
 }
 
 # 배경 3종 중 렌더마다 하나를 랜덤으로 고른다(base.html.j2 의 .card.bg-N).
@@ -299,6 +300,11 @@ def build_context(
     if subject and subject.photo:
         subject.photo = _file_url(subject.photo)
 
+    # 그리드(유형 D) — 나열되는 선수 각각의 사진도 동일하게 data URI로 인라인
+    for gs in payload.subjects:
+        if gs.photo:
+            gs.photo = _file_url(gs.photo)
+
     title_main, title_emphasis = _split_emphasis(payload.title)
     kicker_text = payload.kicker or card_cfg.get("kicker", "")
     title_sub_text = card_cfg.get("title_sub", "")
@@ -339,6 +345,9 @@ def build_context(
         "label_col": label_col,
         "metric": payload.metric,
         "subject": subject,
+        "subjects": payload.subjects,
+        # 4명 이하면 큼직하게 2열, 그 이상이면 4열로 촘촘하게 (그리드 유형 전용)
+        "grid_cols": "cols-4" if len(payload.subjects) > 4 else "cols-2",
         "provisional": payload.provisional or card_cfg.get("provisional", False),
         "footer_text": footer,
         "rank_highlight": True,

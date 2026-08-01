@@ -1,0 +1,85 @@
+{# 유형 D — 선수 비교 그리드. 여러 명을 사진+스탯 카드로 나열해 비교시킨다.
+   벤치마크: '@no._license'의 '뜨거운 선두싸움' 포맷(선수 N명 사진 그리드 + 스탯 블록).
+   히어로(유형 C)와 다른 점: 히어로는 '주인공 1명'을, 그리드는 '나열 비교'를 보여준다. #}
+{% extends "base.html.j2" %}
+
+{% block extra_css %}
+.grid-wrap{
+  display:grid; gap:22px; width:100%;
+}
+.grid-wrap.cols-2{ grid-template-columns: repeat(2, 1fr); }
+.grid-wrap.cols-4{ grid-template-columns: repeat(4, 1fr); gap:16px; }
+
+.grid-item{ display:flex; flex-direction:column; }
+
+.gi-photo{
+  position:relative; width:100%; aspect-ratio:3/4;
+  border-radius:16px; overflow:hidden;
+  background-size:cover; background-repeat:no-repeat;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+/* 사진 확보 실패 시 팀 컬러 블록 + 이니셜로 대체 — 발행이 막히면 안 되므로 무해한 폴백 */
+.gi-photo.noimg{
+  display:flex; align-items:center; justify-content:center;
+  background-image:none !important;
+}
+.gi-photo.noimg .initial{
+  font-family:var(--font-headline); font-weight:900; color:rgba(255,255,255,.88);
+  font-size:84px;
+}
+.gi-name-bar{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:10px 8px 8px; text-align:center;
+  background:linear-gradient(0deg, rgba(0,0,0,.55) 0%, transparent 100%);
+  font-size:32px; font-weight:800; color:#fff; letter-spacing:-.02em;
+}
+
+.gi-stats{ margin-top:14px; }
+.gi-stat{
+  display:flex; align-items:baseline; justify-content:space-between;
+  padding:5px 2px; font-size:26px;
+}
+.gi-stat .l{ color:rgba(255,255,255,.55); font-weight:600 }
+.gi-stat .v{ color:#fff; font-weight:800; letter-spacing:-.02em }
+.gi-stat.highlight .v{ color:var(--accent); font-size:32px }
+
+/* 4열(선수 5명 이상)일 땐 칸이 좁아지므로 글자를 한 단계씩 줄인다 */
+.grid-wrap.cols-4 .gi-photo.noimg .initial{ font-size:54px }
+.grid-wrap.cols-4 .gi-name-bar{ font-size:24px }
+.grid-wrap.cols-4 .gi-stat{ font-size:20px }
+.grid-wrap.cols-4 .gi-stat.highlight .v{ font-size:24px }
+
+{% if motion %}
+.grid-item{animation:slideUp .5s cubic-bezier(.16,1,.3,1) both}
+{% for i in range(subjects | length) %}
+.grid-item:nth-child({{ i + 1 }}){animation-delay:{{ 0.3 + i * 0.08 }}s}
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="grid-wrap {{ grid_cols }}">
+      {% for s in subjects %}
+      {% set tc = teams.get(s.team or '', {}).get('primary', c.accent) %}
+      <div class="grid-item">
+        {% if s.photo %}
+        <div class="gi-photo" style="background-image:url('{{ s.photo }}'); background-position:{{ s.photo_pos | default('center 15%') }}">
+          <div class="gi-name-bar" style="background-color:{{ tc }}66">{{ s.name }}</div>
+        </div>
+        {% else %}
+        <div class="gi-photo noimg" style="background:{{ tc }}">
+          <span class="initial">{{ s.name[:1] }}</span>
+          <div class="gi-name-bar">{{ s.name }}</div>
+        </div>
+        {% endif %}
+        <div class="gi-stats">
+          {% for st in s.stats %}
+          <div class="gi-stat {{ 'highlight' if loop.first else '' }}">
+            <span class="l">{{ st.label }}</span><span class="v">{{ st.value }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+{% endblock %}

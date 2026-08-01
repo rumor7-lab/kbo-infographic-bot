@@ -138,6 +138,40 @@ def validate_subject(subject: Any, *, card_id: str) -> Report:
     return rep
 
 
+def validate_subjects(subjects: list[Any], *, card_id: str) -> Report:
+    """그리드 카드(유형 D)는 행이 아니라 나열된 선수 목록을 검증한다.
+    히어로용 validate_subject() 는 headline(한 방 문구)이 필수라 그리드 항목엔
+    안 맞아서 재사용하지 않고, 그리드에 실제로 필요한 조건만 따로 검사한다."""
+    rep = Report()
+    if not subjects:
+        rep.fail("그리드 카드인데 나열할 선수가 없음")
+        return rep
+
+    names = [getattr(s, "name", "") for s in subjects]
+    if any(not n.strip() for n in names):
+        rep.fail("이름이 비어 있는 선수 항목이 있음")
+
+    counts = Counter(n for n in names if n)
+    worst, n = counts.most_common(1)[0] if counts else ("", 0)
+    if n > 1:
+        rep.fail(f"'{worst}' 가 그리드에 {n}회 중복")
+
+    for n in names:
+        if n and not re.fullmatch(r"[가-힣]{2,5}|[A-Za-z .\-]{2,20}", n):
+            rep.warn(f"선수명 형식이 이상함: {n!r}")
+
+    photos_missing = 0
+    for s in subjects:
+        if not getattr(s, "photo", None):
+            photos_missing += 1
+        for st in getattr(s, "stats", []) or []:
+            if str(st.get("value", "")).strip() in ("", "-"):
+                rep.warn(f"{getattr(s, 'name', '?')} 스탯 '{st.get('label')}' 값이 비어 있음")
+    if photos_missing:
+        rep.warn(f"사진 미확보 {photos_missing}/{len(subjects)}명 — 해당 칸만 팀컬러 폴백으로 대체됨")
+    return rep
+
+
 def gate(rep: Report, cfg: dict[str, Any]) -> bool:
     """True 면 발행 진행. skip_on_failure 정책 적용 지점."""
     if rep.ok:

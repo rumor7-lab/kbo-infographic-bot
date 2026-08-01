@@ -29,7 +29,7 @@ from src.publish import captions, hosting            # noqa: E402
 from src.publish import instagram as ig              # noqa: E402
 from src.render.layout_engine import Payload, Subject  # noqa: E402
 from src.render.renderer import load_cfg, render_card  # noqa: E402
-from src.validate.rules import gate, validate, validate_subject  # noqa: E402
+from src.validate.rules import gate, validate, validate_subject, validate_subjects  # noqa: E402
 
 KST = ZoneInfo("Asia/Seoul")
 ROOT = Path(__file__).resolve().parents[1]
@@ -130,6 +130,45 @@ def build_payload(card_id: str, card_cfg: dict, cfg: dict) -> Payload:
             provisional=card_cfg.get("provisional", False),
         )
 
+    if src in ("kbo.hitter_grid", "kbo.pitcher_grid"):
+        # 유형 D(그리드) — '@no._license'의 선수 비교 그리드 포맷 벤치마크.
+        # 리그 상위 30명(leaders 원본 range) 중 앞쪽 N명을 사진+스탯 카드로 나열한다.
+        # 트레이드 정리처럼 뉴스를 사람이 정리해야 하는 소스가 아니라 KBO 공식
+        # 기록만으로 완전 자동 구성 가능한 조합이라 이 둘부터 그리드로 우선 배정.
+        kind = "hitter" if "hitter" in src else "pitcher"
+        n = card_cfg.get("grid_size", 4)
+        s = kbo.leaders(kind, top=30)
+        subjects = []
+        for row in s.rows[:n]:
+            name, team = row.get("선수명", ""), row.get("_team")
+            photo = get_photo(name, team)
+            if kind == "hitter":
+                stats = [
+                    {"label": "타율", "value": row.get("타율", "-")},
+                    {"label": "홈런", "value": row.get("홈런", "-")},
+                    {"label": "타점", "value": row.get("타점", "-")},
+                ]
+            else:
+                stats = [
+                    {"label": "평균자책", "value": row.get("평균자책", "-")},
+                    {"label": "승", "value": row.get("승", "-")},
+                    {"label": "탈삼진", "value": row.get("탈삼진", "-")},
+                ]
+            subjects.append(
+                Subject(
+                    name=name, team=team,
+                    photo=photo.path if photo else None,
+                    photo_pos=photo.css_position if photo else None,
+                    stats=stats,
+                )
+            )
+        if not subjects:
+            raise SkipCard(f"{kind} 그리드용 선수 데이터 없음")
+        return Payload(
+            card_id=card_id, title=card_cfg["title"], kicker=card_cfg.get("kicker", ""),
+            subjects=subjects, as_of=s.as_of,
+        )
+
     if src.startswith("manual."):
         name = src.split(".", 1)[1]
         p = ROOT / "data" / "manual" / f"{name}.yml"
@@ -198,8 +237,11 @@ def run_slot(slot: str, *, dry_run: bool = False) -> dict[str, Any]:
         try:
             payload = build_payload(card_id, card_cfg, cfg)
 
-            # 히어로 카드는 행이 없으므로 주인공을 검증한다
-            if payload.subject and not payload.rows:
+            # 히어로 카드는 행이 없으므로 주인공을 검증하고,
+            # 그리드 카드는 나열된 선수 목록(subjects)을 검증한다
+            if payload.subjects:
+                rep = validate_subjects(payload.subjects, card_id=card_id)
+            elif payload.subject and not payload.rows:
                 rep = validate_subject(payload.subject, card_id=card_id)
             else:
                 rep = validate(

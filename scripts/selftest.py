@@ -103,6 +103,19 @@ def stage_engine() -> None:
     lay, why = select_layout(nophoto, {"layout": "hero", "fallback_layout": "table"})
     check("사진 없으면 hero → table 강등", lay == "table", f"→ {lay} ({why})")
 
+    # 유형 D — 그리드(선수 여러 명 나열)
+    grid = Payload(
+        card_id="g", title="타격 리더 TOP 4",
+        subjects=[Subject(name=f"선수{i}", team="키움", photo="/tmp/x.jpg") for i in range(4)],
+    )
+    lay, why = select_layout(grid, {"layout": "grid"})
+    check("subjects 있음 + grid 지정 → grid", lay == "grid", f"→ {lay} ({why})")
+
+    # 유형 D 강등 — 나열할 선수가 없음
+    empty_grid = Payload(card_id="g2", title="타격 리더 TOP 4")
+    lay, why = select_layout(empty_grid, {"layout": "grid", "fallback_layout": "table"})
+    check("subjects 없으면 grid → table 강등", lay == "table", f"→ {lay} ({why})")
+
     # 행 수 초과 절단
     from src.render.layout_engine import truncate_rows
     big = Payload(card_id="b", title="x", columns=["선수명", "값"],
@@ -135,7 +148,9 @@ def stage_title_sizing(cfg: dict) -> None:
         "milestone_watch": 10, "daily_recap": 5, "today_results": 5,
         "weekend_preview": 5, "weekly_digest": 5, "playoff_race": 5,
     }
-    HERO_CARDS = {"yesterday_heroes", "today_top_performer"}
+    # 히어로/그리드는 사진 위 고정 배치(그리드는 격자 자체가 고정 폭/높이)라
+    # 행 수 기반 헤더 예산 제약과 무관 — 이 테스트 대상에서 제외한다.
+    HERO_CARDS = {"yesterday_heroes", "today_top_performer", "hitter_grid", "pitcher_grid"}
 
     cards = cfg["cards"]["cards"]
     worst_margin = None
@@ -269,6 +284,28 @@ def stage_template(cfg: dict) -> None:
                                    {"label": "간격", "value": "731일"}]),
             as_of="2026.07.29",
         ),
+        "grid": Payload(
+            card_id="hitter_grid", title="타격 리더 TOP 4", kicker="PLAYER GRID",
+            subjects=[
+                Subject(name="선수1", team="삼성", photo=str(ROOT / "assets" / "sample.jpg"),
+                        stats=[{"label": "타율", "value": "0.381"},
+                               {"label": "홈런", "value": "13"},
+                               {"label": "타점", "value": "51"}]),
+                Subject(name="선수2", team="LG", photo=None,   # 사진 실패 폴백 케이스도 같이 확인
+                        stats=[{"label": "타율", "value": "0.365"},
+                               {"label": "홈런", "value": "10"},
+                               {"label": "타점", "value": "44"}]),
+                Subject(name="선수3", team="KT", photo=str(ROOT / "assets" / "sample.jpg"),
+                        stats=[{"label": "타율", "value": "0.352"},
+                               {"label": "홈런", "value": "9"},
+                               {"label": "타점", "value": "40"}]),
+                Subject(name="선수4", team="KIA", photo=str(ROOT / "assets" / "sample.jpg"),
+                        stats=[{"label": "타율", "value": "0.348"},
+                               {"label": "홈런", "value": "8"},
+                               {"label": "타점", "value": "38"}]),
+            ],
+            as_of="2026.07.29",
+        ),
     }
     for want, payload in samples.items():
         html, lay, why = render_html(payload, {"layout": want}, cfg)
@@ -304,7 +341,20 @@ def stage_render(cfg: dict) -> None:
 
 
 def _render_samples() -> dict:
+    from src.render.layout_engine import Subject
+
     return {
+        "grid": Payload(
+            card_id="hitter_grid", title="타격 리더 TOP 4", kicker="PLAYER GRID",
+            subjects=[
+                Subject(name=f"선수{i}", team=t, photo=str(ROOT / "assets" / "sample.jpg"),
+                        stats=[{"label": "타율", "value": f"0.{380 - i * 8}"},
+                               {"label": "홈런", "value": str(13 - i * 2)},
+                               {"label": "타점", "value": str(51 - i * 4)}])
+                for i, t in enumerate(["삼성", "LG", "KT", "KIA"])
+            ],
+            as_of="2026.07.29",
+        ),
         "table": Payload(
             card_id="hitter_leaders", title="타격 순위 TOP 10", kicker="BATTING",
             columns=["순위", "선수명", "팀명", "타율", "홈런", "타점"],

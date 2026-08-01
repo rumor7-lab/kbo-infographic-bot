@@ -13,7 +13,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Literal
 
-Layout = Literal["table", "chart", "hero"]
+Layout = Literal["table", "chart", "hero", "grid"]
 
 # 차트로 그릴 수 있는 행 수 범위. 너무 적으면 빈약하고 너무 많으면 바가 뭉개진다.
 CHART_MIN_ROWS = 3
@@ -52,6 +52,10 @@ class Payload:
     rows: list[dict[str, Any]] = field(default_factory=list)
     metric: str | None = None         # 차트로 그릴 컬럼명
     subject: Subject | None = None
+    # 유형 D(그리드)용 — 선수 여러 명을 사진+스탯 카드로 나열할 때 씀.
+    # subject(단수)와 별개다: 히어로는 '주인공 1명', 그리드는 '나열 비교'라
+    # 의미가 달라 필드를 분리했다.
+    subjects: list[Subject] = field(default_factory=list)
     as_of: str = ""
     provisional: bool = False
     footnote_extra: str = ""
@@ -97,10 +101,14 @@ def select_layout(payload: Payload, card_cfg: dict[str, Any]) -> tuple[Layout, s
     fallback = (card_cfg.get("fallback_layout") or "table").lower()
 
     # 1) 명시적 지정
-    if declared in ("table", "chart", "hero"):
+    if declared in ("table", "chart", "hero", "grid"):
         if declared == "hero" and not (payload.subject and payload.subject.has_photo):
             return _coerce(fallback, payload), (
                 f"hero 지정이지만 사진 없음 → {fallback} 로 강등"
+            )
+        if declared == "grid" and not payload.subjects:
+            return _coerce(fallback, payload), (
+                f"grid 지정이지만 나열할 선수(subjects)가 없음 → {fallback} 로 강등"
             )
         return declared, "카드 정의에서 명시 지정"  # type: ignore[return-value]
 
