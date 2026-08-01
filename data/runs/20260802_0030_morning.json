@@ -1,0 +1,35 @@
+{
+  "slot": "morning",
+  "at": "2026-08-02T00:30:55.474892+09:00",
+  "cards": [
+    {
+      "card_id": "daily_recap",
+      "validation": "검증 통과",
+      "layout": "table",
+      "reason": "다열 데이터(0개 지표) → 표",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260802_0030/morning/daily_recap.png",
+      "status": "렌더 완료"
+    },
+    {
+      "card_id": "team_standings",
+      "validation": "검증 통과",
+      "layout": "chart",
+      "reason": "단일 지표(승률) × 10행",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260802_0030/morning/team_standings.png",
+      "status": "렌더 완료"
+    },
+    {
+      "card_id": "yesterday_heroes",
+      "validation": "검증 통과",
+      "layout": "table",
+      "reason": "hero 지정이지만 사진 없음 → table 로 강등",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260802_0030/morning/yesterday_heroes.png",
+      "status": "렌더 완료"
+    }
+  ],
+  "published": {
+    "quota_left": 100,
+    "token_days_left": null,
+    "media_id": "18365408026241573"
+  }
+}
