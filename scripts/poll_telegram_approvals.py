@@ -92,7 +92,13 @@ def _finalize_batch(batch_path: Path, batch: dict, cred_tg: tg.Credentials) -> N
 
 
 def main() -> int:
-    cred_tg = tg.Credentials.from_env()
+    try:
+        cred_tg = tg.Credentials.from_env()
+    except tg.TelegramError as e:
+        # TG_BOT_TOKEN/TG_CHAT_ID 시크릿을 아직 등록 전이면 5분마다 워크플로가
+        # 빨갛게 실패하며 알림 메일이 쌓인다 — 설정 전엔 조용히 스킵한다.
+        print(f"텔레그램 자격증명 미설정, 건너뜀: {e}")
+        return 0
     offset = _load_offset()
 
     updates = tg.get_updates(cred_tg, offset)
