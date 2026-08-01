@@ -51,9 +51,14 @@ def build_payload(card_id: str, card_cfg: dict, cfg: dict) -> Payload:
 
     if src == "kbo.standings":
         s = kbo.standings()
+        # kbo.standings() 는 경기/승/무/패/게임차 등 컬럼을 다 갖고 있어서 columns 를
+        # 그대로 넘기면 numeric_columns() 가 6개를 잡아내 select_layout() 이
+        # "지표 3개 이상 → 표" 규칙에 걸려 표로 떨어진다. 이 카드는 항상 차트(막대)로
+        # 보여주려는 의도라, 차트 판별에 쓰이는 columns 만 팀명+승률로 좁힌다.
+        # (rows 자체는 원본 그대로라 _sub 캡션 등은 그대로 살아있음)
         return Payload(
             card_id=card_id, title=card_cfg["title"], kicker=card_cfg.get("kicker", ""),
-            columns=s.columns, rows=s.rows, metric="승률", as_of=s.as_of,
+            columns=["팀명", "승률"], rows=s.rows, metric="승률", as_of=s.as_of,
         )
 
     if src in ("kbo.games_yesterday", "kbo.games_today"):
@@ -110,9 +115,18 @@ def build_payload(card_id: str, card_cfg: dict, cfg: dict) -> Payload:
                 {"label": "타점", "value": top.get("타점", "-")},
             ],
         )
+        # rows 를 항상 채우면 hero.html.j2 가 '단일 주인공' 모드 대신 rows 유무로
+        # 분기하는 '랭킹 오버레이' 모드로 빠져버려(사진이 있어도!) 의도한 히어로
+        # 비주얼이 안 나온다. 그래서 사진을 못 구해 hero → table 로 강등될 때만
+        # 안전망으로 rows 를 채운다 — 그래야 강등돼도 최소한 빈 카드가 안 나간다.
+        rows_fallback = [] if photo else s.rows
         return Payload(
+            # metric 을 지정해둬야 today_top_performer 처럼 fallback_layout: chart 인
+            # 카드가 강등될 때 _coerce() 가 '지표 없음'으로 보고 table 로 재강등하지
+            # 않는다(타격 순위는 숫자 컬럼이 여러 개라 지정 없인 chart 판정이 안 됨).
             card_id=card_id, title=card_cfg["title"], kicker=card_cfg.get("kicker", ""),
-            columns=s.columns, rows=[], subject=subject, as_of=s.as_of,
+            columns=s.columns, rows=rows_fallback, subject=subject, as_of=s.as_of,
+            metric="타율" if not photo else None,
             provisional=card_cfg.get("provisional", False),
         )
 
