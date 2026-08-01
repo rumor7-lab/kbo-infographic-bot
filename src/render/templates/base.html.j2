@@ -143,7 +143,7 @@ body{
 <div class="card {{ bg_variant }} {% block card_class %}{% endblock %}">
 
   <div class="badge">
-    <b>{{ brand.name_ko[:2] }}</b><span>{{ brand.name_ko[2:] or 'KBO' }}</span>
+    <b>{{ brand.badge_main }}</b><span>{{ brand.badge_sub }}</span>
   </div>
 
   {% block backdrop %}{% endblock %}
