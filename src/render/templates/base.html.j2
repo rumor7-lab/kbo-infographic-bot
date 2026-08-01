@@ -47,12 +47,17 @@ body{
   flex:0 0 auto; padding:var(--pad) var(--pad) 20px;
   position:relative; z-index:3;
 }
+.head-row{display:flex; align-items:center; gap:16px; margin-bottom:22px}
 .kicker{
   display:inline-flex; align-items:center;
   font-size:{{ t.scale.kicker * 0.62 }}px; font-weight:800; letter-spacing:.1em;
   color:#fff; text-transform:uppercase;
   background:var(--accent); padding:9px 22px; border-radius:999px;
-  margin-bottom:22px; box-shadow:0 6px 18px rgba(232,64,42,.28);
+  box-shadow:0 6px 18px rgba(232,64,42,.28);
+}
+.as-of{
+  font-size:26px; font-weight:700; letter-spacing:.01em;
+  color:rgba(255,255,255,.5);
 }
 .title{
   /* 검은고딕(Black Han Sans)은 단일 굵기 서체 — font-weight 지정과 무관하게
@@ -127,7 +132,12 @@ body{
   {% block backdrop %}{% endblock %}
 
   <header class="frame-head">
-    {% if kicker %}<div class="kicker">{{ kicker }}</div>{% endif %}
+    {% if kicker or as_of %}
+    <div class="head-row">
+      {% if kicker %}<div class="kicker">{{ kicker }}</div>{% endif %}
+      {% if as_of %}<span class="as-of">{{ as_of }} 기준</span>{% endif %}
+    </div>
+    {% endif %}
     <h1 class="title">{{ title_main }}<span class="accent">{{ title_emphasis }}</span></h1>
     <div class="title-rule"></div>
     {% if title_sub %}<div class="title-sub">{{ title_sub }}</div>{% endif %}

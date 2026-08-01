@@ -284,9 +284,7 @@ def build_context(
             raise ValueError(f"{payload.card_id}: chart 레이아웃인데 숫자 지표가 없습니다")
         _bar_pcts(rows, payload.metric)
 
-    footer = b["frame"]["footer_template"].format(
-        as_of=payload.as_of, handle=b["brand"]["handle"]
-    )
+    footer = b["frame"]["footer_template"]  # 이제 출처 고정 문구뿐 (기준일자는 제목 옆)
     extra = payload.footnote_extra or card_cfg.get("footnote_extra", "")
     if extra:
         footer = f"{footer} · {extra}"
@@ -328,6 +326,7 @@ def build_context(
         "title_size": title_size,
         "title_sub": title_sub_text,
         "kicker": kicker_text,
+        "as_of": payload.as_of,
         "columns": payload.columns,
         "rows": rows,
         "label_col": label_col,

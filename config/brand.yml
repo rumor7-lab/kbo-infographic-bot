@@ -59,8 +59,8 @@ frame:
   badge:
     size: 104
     position: "top-right"
-  # 하단 고정 문구. {as_of}는 데이터 기준 시각으로 치환
-  footer_template: "출처 KBO 공식기록 · {as_of} 기준 · {handle}"
+  # 하단 고정 문구 — 출처만. 기준 일자는 제목 옆으로 옮겼다(base.html.j2 의 .as-of).
+  footer_template: "출처 KBO 공식기록"
 
 # 10구단 컬러 (2026 기준 primary / secondary)
 teams:
