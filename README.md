@@ -184,12 +184,34 @@ python scripts/selftest.py --live
 ### 5. 로컬 실행
 
 ```bash
-python -m src.pipeline morning --dry-run    # 렌더까지만, 발행 안 함
+python -m src.pipeline morning --dry-run    # 렌더까지만, 아무것도 안 보냄
 python -m src.pipeline noon --dry-run
-python -m src.pipeline night                # 실제 발행
+python -m src.pipeline night                # 즉시 실제 발행 (승인 절차 없음)
+python -m src.pipeline morning --notify     # 렌더 후 텔레그램 승인 요청만 (실제 발행은 승인 후)
 ```
 
 `--dry-run` 산출물은 `out/{타임스탬프}/{슬롯}/` 에, 실행 로그는 `data/runs/` 에 남습니다.
+
+---
+
+### 6. 텔레그램 승인 게이트 (선택 — 반자동 운영용)
+
+매번 GitHub Actions 화면에서 수동으로 Run workflow 를 누르는 대신, 렌더된 카드를
+텔레그램으로 받아서 각 카드마다 승인/거부 버튼만 누르면 되는 방식입니다. 버튼을
+누르지 않으면 아무것도 발행되지 않습니다.
+
+1. `@BotFather` 와 대화해서 `/newbot` 으로 봇 생성 → 토큰 발급
+2. 만든 봇에게 아무 메시지나 먼저 보낸 뒤, 브라우저로
+   `https://api.telegram.org/bot<발급받은토큰>/getUpdates` 를 열어서
+   `"chat":{"id": ...}` 값을 확인 (이게 `TG_CHAT_ID`)
+3. 리포지토리 Settings → Secrets and variables → Actions 에 `TG_BOT_TOKEN`, `TG_CHAT_ID` 등록
+4. `notify` 워크플로(하루 3번, 렌더+승인요청만) 와 `approve-poll` 워크플로(5분 간격,
+   버튼 눌렸는지 확인 후 승인된 카드만 실제 발행)가 이미 등록되어 있어 바로 동작합니다.
+
+카드별로 개별 승인하기 때문에, 슬롯 안의 카드 중 일부만 승인되면 캐러셀 대신
+단일 게시로 자동 전환됩니다. 전부 거부하면 그 슬롯은 발행되지 않습니다.
+같은 슬롯의 즉시 발행이 필요하면 기존 `publish.yml` 을 workflow_dispatch 로 수동
+실행하면 됩니다(승인 절차 없이 바로 발행 — 테스트/긴급용).
 
 ---
 

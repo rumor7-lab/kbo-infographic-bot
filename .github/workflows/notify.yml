@@ -1,0 +1,96 @@
+name: notify
+
+# 카드 렌더 → 텔레그램 승인 요청까지만 하는 워크플로. 여기선 인스타그램에 아무것도
+# 발행하지 않는다(IG 자격증명도 필요 없음) — 실제 발행은 approve-poll.yml 이
+# 사람이 텔레그램에서 승인한 뒤에만 수행한다.
+#
+# KST → UTC 변환은 publish.yml 과 동일:
+#   08:00 KST = 23:00 UTC (전일) / 12:30 KST = 03:30 UTC / 22:30 KST = 13:30 UTC
+on:
+  schedule:
+    - cron: "0 23 * * *"
+    - cron: "30 3 * * *"
+    - cron: "30 13 * * *"
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 실행할 슬롯
+        required: true
+        default: morning
+        type: choice
+        options: [morning, noon, night]
+
+concurrency:
+  group: notify
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 슬롯 결정
+        id: slot
+        run: |
+          case "${{ github.event.schedule }}" in
+            "0 23 * * *")  echo "name=morning" >> $GITHUB_OUTPUT ;;
+            "30 3 * * *")  echo "name=noon"    >> $GITHUB_OUTPUT ;;
+            "30 13 * * *") echo "name=night"   >> $GITHUB_OUTPUT ;;
+            *)             echo "name=${{ inputs.slot || 'morning' }}" >> $GITHUB_OUTPUT ;;
+          esac
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 시스템 의존성 (한글 폰트 + ffmpeg)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk
+          mkdir -p ~/.fonts
+          curl -sL -o /tmp/pretendard.zip \
+            https://github.com/orioncactus/pretendard/releases/download/v1.3.9/Pretendard-1.3.9.zip
+          unzip -oq /tmp/pretendard.zip -d /tmp/pretendard
+          find /tmp/pretendard -name "*.otf" -exec cp {} ~/.fonts/ \;
+          fc-cache -f > /dev/null
+
+      - name: 파이썬 의존성
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: 슬롯 렌더 + 텔레그램 승인 요청
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          MEDIA_BACKEND: github
+          TZ: Asia/Seoul
+        run: |
+          python -m src.pipeline ${{ steps.slot.outputs.name }} --notify
+
+      - name: 산출물 업로드 (디버깅용)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: notify-${{ steps.slot.outputs.name }}-${{ github.run_id }}
+          path: |
+            out/**
+            data/runs/**
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: 승인 대기 상태 · 스냅샷 커밋
+        if: always()
+        run: |
+          git config user.name  "kbo-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/pending data/snapshots data/runs assets/photos data/photo_review.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "chore: ${{ steps.slot.outputs.name }} 텔레그램 승인 요청 $(date +%F)"
+          git push || true

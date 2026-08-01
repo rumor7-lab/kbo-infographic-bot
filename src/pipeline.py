@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import secrets
 import sys
 import traceback
 from datetime import datetime, timedelta
@@ -27,6 +28,7 @@ from src.collect import kbo_official as kbo          # noqa: E402
 from src.collect.player_photo import get_photo        # noqa: E402
 from src.publish import captions, hosting            # noqa: E402
 from src.publish import instagram as ig              # noqa: E402
+from src.publish import telegram as tg               # noqa: E402
 from src.render.layout_engine import Payload, Subject  # noqa: E402
 from src.render.renderer import load_cfg, render_card  # noqa: E402
 from src.validate.rules import gate, validate, validate_subject, validate_subjects  # noqa: E402
@@ -35,6 +37,7 @@ KST = ZoneInfo("Asia/Seoul")
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "out"
 APPROVAL = ROOT / "data" / "approval"
+PENDING = ROOT / "data" / "pending"          # 텔레그램 승인 대기 배치(카드별 승인 게이트)
 LOG = ROOT / "data" / "runs"
 
 WEEKDAY = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
@@ -219,7 +222,11 @@ def resolve_cards(slot_cfg: dict, cards: dict, now: datetime) -> list[tuple[str,
     return out
 
 
-def run_slot(slot: str, *, dry_run: bool = False) -> dict[str, Any]:
+def _render_all(slot: str) -> tuple[dict[str, Any], list[dict[str, Any]], dict, str]:
+    """카드 렌더+검증 공통 루프. run_slot(즉시 발행) / notify_slot(텔레그램 승인) 이 공유한다.
+
+    반환: (로그용 result, 발행 후보(rendered) 목록, slot_cfg, stamp)
+    """
     cfg = load_cfg()
     slot_cfg = cfg["cards"]["slots"][slot]
     now = datetime.now(KST)
@@ -274,6 +281,18 @@ def run_slot(slot: str, *, dry_run: bool = False) -> dict[str, Any]:
 
         result["cards"].append(entry)
 
+    return result, rendered, slot_cfg, stamp
+
+
+def run_slot(slot: str, *, dry_run: bool = False) -> dict[str, Any]:
+    """렌더 후 바로 인스타그램에 발행한다 (승인 절차 없음).
+
+    2주 수동 운영 기간 동안은 workflow_dispatch(수동 실행)로만 쓴다. 상시 자동
+    운영은 notify_slot() 쪽(텔레그램 승인 게이트)을 쓴다.
+    """
+    cfg = load_cfg()
+    result, rendered, slot_cfg, stamp = _render_all(slot)
+
     if dry_run:
         result["published"] = "dry-run (발행 안 함)"
         _write_log(result, stamp, slot)
@@ -287,6 +306,34 @@ def run_slot(slot: str, *, dry_run: bool = False) -> dict[str, Any]:
             result["publish_trace"] = traceback.format_exc(limit=4)
     else:
         result["published"] = "발행할 카드 없음"
+
+    _write_log(result, stamp, slot)
+    return result
+
+
+def notify_slot(slot: str, *, dry_run: bool = False) -> dict[str, Any]:
+    """렌더된 카드를 바로 발행하지 않고 텔레그램으로 승인 요청을 보낸다.
+
+    실제 발행은 scripts/poll_telegram_approvals.py 가 사람이 버튼을 누른 뒤에
+    수행한다 — 그래야 카드별로 개별 승인/거부가 가능하고, 그 결과에 따라
+    캐러셀 구성(몇 장을 묶을지)이 최종 확정된다.
+    """
+    cfg = load_cfg()
+    result, rendered, slot_cfg, stamp = _render_all(slot)
+
+    if dry_run:
+        result["notified"] = "dry-run (텔레그램 전송 안 함)"
+        _write_log(result, stamp, slot)
+        return result
+
+    if rendered:
+        try:
+            result["notified"] = _notify_telegram(rendered, slot_cfg, cfg, slot=slot, stamp=stamp)
+        except Exception as e:  # noqa: BLE001
+            result["notified"] = f"알림 전송 실패: {e}"
+            result["notify_trace"] = traceback.format_exc(limit=4)
+    else:
+        result["notified"] = "전송할 카드 없음"
 
     _write_log(result, stamp, slot)
     return result
@@ -324,6 +371,77 @@ def _publish(rendered: list[dict], slot_cfg: dict, cfg: dict) -> dict[str, Any]:
     else:
         info["media_id"] = ig.post_single(cred, urls[0], caption)
     return info
+
+
+def _tg_caption(card_id: str, caption: str) -> str:
+    """텔레그램 캡션 길이 제한(1024자) 대비 — 실제 인스타 캡션은 그대로 두고
+    텔레그램에 보여줄 미리보기만 자른다."""
+    head = f"[{card_id}]\n"
+    body = caption if len(caption) <= 900 else caption[:900] + "…"
+    return head + body
+
+
+def _notify_telegram(
+    rendered: list[dict], slot_cfg: dict, cfg: dict, *, slot: str, stamp: str
+) -> dict[str, Any]:
+    """카드마다 공개 URL을 먼저 확보해두고(실제 발행 시 재업로드 불필요), 텔레그램으로
+    승인 요청을 보낸다. 배치 전체가 승인/거부로 결정되기 전까진 아무것도 발행되지 않는다
+    — 실제 발행은 scripts/poll_telegram_approvals.py 가 담당."""
+    cred = tg.Credentials.from_env()
+
+    first = rendered[0]
+    caption = captions.build(
+        first["payload"].card_id,
+        first["payload"].title,
+        first["payload"].rows,
+        as_of=first["payload"].as_of,
+        provisional=first["payload"].provisional,
+        extra_note=first["cfg"].get("footnote_extra", ""),
+    )
+
+    is_reels = bool(slot_cfg.get("reels") and rendered[0]["render"].get("mp4"))
+    batch_id = f"{stamp}_{slot}"
+    cards: list[dict[str, Any]] = []
+
+    if is_reels:
+        r = rendered[0]
+        url = hosting.upload(Path(r["render"]["mp4"]))
+        token = secrets.token_hex(4)
+        message_id = tg.send_video_for_approval(cred, url, _tg_caption(r["payload"].card_id, caption), token)
+        cards.append({
+            "token": token, "card_id": r["payload"].card_id, "kind": "video",
+            "url": url, "message_id": message_id, "status": "pending",
+        })
+    else:
+        for r in rendered:
+            url = hosting.upload(Path(r["render"]["png"]))
+            token = secrets.token_hex(4)
+            message_id = tg.send_photo_for_approval(cred, url, _tg_caption(r["payload"].card_id, caption), token)
+            cards.append({
+                "token": token, "card_id": r["payload"].card_id, "kind": "image",
+                "url": url, "message_id": message_id, "status": "pending",
+            })
+
+    batch = {
+        "batch_id": batch_id,
+        "slot": slot,
+        "caption": caption,
+        "carousel": bool(slot_cfg.get("carousel")),
+        "reels": is_reels,
+        "created_at": datetime.now(KST).isoformat(),
+        "status": "pending",
+        "cards": cards,
+    }
+    PENDING.mkdir(parents=True, exist_ok=True)
+    (PENDING / f"{batch_id}.json").write_text(
+        json.dumps(batch, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    tg.send_message(
+        cred,
+        f"'{slot}' 슬롯 카드 {len(cards)}장 — 각 카드 아래 버튼으로 승인/거부해주세요.\n"
+        f"전부 결정되면 승인된 카드만 묶여서 자동 발행됩니다.",
+    )
+    return {"batch_id": batch_id, "cards": len(cards)}
 
 
 def _prev_rows(card_id: str) -> list[dict] | None:
@@ -369,10 +487,17 @@ def _write_log(result: dict, stamp: str, slot: str) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description="KBO 인포그래픽 슬롯 실행")
     ap.add_argument("slot", choices=["morning", "noon", "night"])
-    ap.add_argument("--dry-run", action="store_true", help="렌더까지만 (발행 안 함)")
+    ap.add_argument("--dry-run", action="store_true", help="렌더까지만 (발행/전송 안 함)")
+    ap.add_argument(
+        "--notify", action="store_true",
+        help="바로 발행하지 않고 텔레그램 승인 요청만 보낸다 (카드별 승인 게이트)",
+    )
     args = ap.parse_args()
 
-    res = run_slot(args.slot, dry_run=args.dry_run)
+    if args.notify:
+        res = notify_slot(args.slot, dry_run=args.dry_run)
+    else:
+        res = run_slot(args.slot, dry_run=args.dry_run)
     print(json.dumps(res, ensure_ascii=False, indent=2, default=str))
 
     failed = [c for c in res["cards"] if c["status"].startswith(("오류", "스킵"))]

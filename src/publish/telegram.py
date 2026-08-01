@@ -1,0 +1,117 @@
+"""텔레그램 발행 승인 어댑터.
+
+카드를 렌더한 뒤 바로 인스타그램에 올리지 않고, 텔레그램 채팅으로 이미지+승인/거부
+버튼을 보낸다. 사람이 버튼을 누르면(승인) 그때 실제 인스타그램 발행이 일어난다.
+
+폴링 방식을 쓴다 (웹훅 서버 없음) — GitHub Actions 크론으로 몇 분 간격으로
+getUpdates 를 불러서 콜백을 처리한다. 별도 상시 서버가 필요 없다는 게 이 방식의
+핵심 장점이다(이 프로젝트는 이미 서버 없이 GitHub Actions + 정적 호스팅 조합으로
+돌아가고 있어서, 여기에도 같은 원칙을 그대로 적용했다).
+"""
+
+from __future__ import annotations
+
+import os
+from dataclasses import dataclass
+from typing import Any
+
+import requests
+
+API = "https://api.telegram.org"
+
+
+class TelegramError(RuntimeError):
+    pass
+
+
+@dataclass
+class Credentials:
+    bot_token: str
+    chat_id: str
+
+    @classmethod
+    def from_env(cls) -> "Credentials":
+        token = os.getenv("TG_BOT_TOKEN")
+        chat_id = os.getenv("TG_CHAT_ID")
+        if not token or not chat_id:
+            raise TelegramError("TG_BOT_TOKEN / TG_CHAT_ID 환경변수가 없습니다")
+        return cls(token, chat_id)
+
+
+def _call(cred: Credentials, method: str, **params: Any) -> dict:
+    r = requests.post(f"{API}/bot{cred.bot_token}/{method}", data=params, timeout=30)
+    body = r.json()
+    if not body.get("ok"):
+        raise TelegramError(f"{method} 실패: {body}")
+    return body["result"]
+
+
+def _approval_keyboard(token: str) -> dict:
+    return {
+        "inline_keyboard": [
+            [
+                {"text": "✅ 승인", "callback_data": f"approve:{token}"},
+                {"text": "❌ 거부", "callback_data": f"reject:{token}"},
+            ]
+        ]
+    }
+
+
+def send_photo_for_approval(cred: Credentials, image_url: str, caption: str, token: str) -> int:
+    """이미지 카드를 승인 버튼과 함께 보낸다. 반환값은 message_id (나중에 수정용)."""
+    res = _call(
+        cred, "sendPhoto",
+        chat_id=cred.chat_id, photo=image_url, caption=caption,
+        reply_markup=_reply_markup_json(_approval_keyboard(token)),
+    )
+    return res["message_id"]
+
+
+def send_video_for_approval(cred: Credentials, video_url: str, caption: str, token: str) -> int:
+    res = _call(
+        cred, "sendVideo",
+        chat_id=cred.chat_id, video=video_url, caption=caption,
+        reply_markup=_reply_markup_json(_approval_keyboard(token)),
+    )
+    return res["message_id"]
+
+
+def send_message(cred: Credentials, text: str) -> int:
+    res = _call(cred, "sendMessage", chat_id=cred.chat_id, text=text)
+    return res["message_id"]
+
+
+def edit_caption(cred: Credentials, message_id: int, new_caption: str) -> None:
+    """결정 이후 메시지를 갱신하고 버튼을 없앤다(reply_markup 을 빈 값으로 덮어씀)."""
+    try:
+        _call(
+            cred, "editMessageCaption",
+            chat_id=cred.chat_id, message_id=message_id, caption=new_caption,
+            reply_markup=_reply_markup_json({"inline_keyboard": []}),
+        )
+    except TelegramError:
+        pass  # 메시지가 이미 지워졌거나 캡션이 동일해서 나는 에러는 무시해도 안전
+
+
+def answer_callback(cred: Credentials, callback_query_id: str, text: str) -> None:
+    try:
+        _call(cred, "answerCallbackQuery", callback_query_id=callback_query_id, text=text)
+    except TelegramError:
+        pass
+
+
+def get_updates(cred: Credentials, offset: int) -> list[dict]:
+    res = requests.post(
+        f"{API}/bot{cred.bot_token}/getUpdates",
+        data={"offset": offset, "timeout": 0},
+        timeout=30,
+    ).json()
+    if not res.get("ok"):
+        raise TelegramError(f"getUpdates 실패: {res}")
+    return res["result"]
+
+
+def _reply_markup_json(markup: dict) -> str:
+    import json
+
+    return json.dumps(markup, ensure_ascii=False)

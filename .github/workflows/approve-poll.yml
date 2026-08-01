@@ -1,0 +1,52 @@
+name: approve-poll
+
+# 텔레그램에서 승인/거부 버튼을 눌렀는지 몇 분 간격으로 확인한다. 상시 서버 없이
+# 크론 폴링만으로 처리 — 상태(offset, 배치 파일)는 매 실행마다 git commit 으로
+# 저장소에 남겨서 다음 실행이 이어받는다.
+#
+# 배치의 모든 카드가 승인/거부로 결정되면 이 워크플로가 실제 인스타그램 발행까지
+# 수행한다(승인된 카드만 묶어서 캐러셀/단일/릴스로).
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: approve-poll
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install requests
+
+      - name: 텔레그램 콜백 확인 + 승인된 카드 발행
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          TZ: Asia/Seoul
+        run: python scripts/poll_telegram_approvals.py
+
+      - name: 상태 커밋
+        if: always()
+        run: |
+          git config user.name  "kbo-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/pending data/telegram_offset.json 2>/dev/null || true
+          git diff --cached --quiet || {
+            git commit -m "chore: 텔레그램 승인 상태 갱신 $(date -u +%FT%TZ)"
+            git push || (git pull --rebase --autostash && git push) || true
+          }
