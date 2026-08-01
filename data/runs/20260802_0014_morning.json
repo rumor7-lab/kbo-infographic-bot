@@ -1,0 +1,32 @@
+{
+  "slot": "morning",
+  "at": "2026-08-02T00:14:19.429071+09:00",
+  "cards": [
+    {
+      "card_id": "daily_recap",
+      "validation": "검증 통과",
+      "layout": "table",
+      "reason": "다열 데이터(0개 지표) → 표",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260802_0014/morning/daily_recap.png",
+      "status": "렌더 완료"
+    },
+    {
+      "card_id": "team_standings",
+      "validation": "검증 통과",
+      "layout": "chart",
+      "reason": "단일 지표(승률) × 10행",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260802_0014/morning/team_standings.png",
+      "status": "렌더 완료"
+    },
+    {
+      "card_id": "yesterday_heroes",
+      "validation": "검증 통과",
+      "layout": "table",
+      "reason": "hero 지정이지만 사진 없음 → table 로 강등",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260802_0014/morning/yesterday_heroes.png",
+      "status": "렌더 완료"
+    }
+  ],
+  "published": "발행 실패: POST 17841469386635490/media 실패 400: {\"error\":{\"message\":\"Only photo or video can be accepted as media type.\",\"type\":\"OAuthException\",\"code\":9004,\"error_subcode\":2207052,\"is_transient\":false,\"error_user_title\":\"Media download has failed. The media URI doesn't meet our requirements.\",\"error_user_msg\":\"The media could not be fetched from this URI: https:\\/\\/github.com\\/rumor7-lab\\/kbo-infographic-bot\\/releases\\/download\\/media-20260802",
+  "publish_trace": "Traceback (most recent call last):\n  File \"/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/src/pipeline.py\", line 284, in run_slot\n    result[\"published\"] = _publish(rendered, slot_cfg, cfg)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/src/pipeline.py\", line 323, in _publish\n    info[\"media_id\"] = ig.post_carousel(cred, urls[:10], caption)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/src/publish/instagram.py\", line 143, in post_carousel\n    children = [create_image_container(cred, u, carousel_child=True) for u in image_urls]\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/src/publish/instagram.py\", line 83, in create_image_container\n    return _post(f\"{cred.ig_user_id}/media\", cred, **params)[\"id\"]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc.publish.instagram.PublishError: POST 17841469386635490/media 실패 400: {\"error\":{\"message\":\"Only photo or video can be accepted as media type.\",\"type\":\"OAuthException\",\"code\":9004,\"error_subcode\":2207052,\"is_transient\":false,\"error_user_title\":\"Media download has failed. The media URI doesn't meet our requirements.\",\"error_user_msg\":\"The media could not be fetched from this URI: https:\\/\\/github.com\\/rumor7-lab\\/kbo-infographic-bot\\/releases\\/download\\/media-20260802\n"
+}
