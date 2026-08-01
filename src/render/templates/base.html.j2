@@ -36,12 +36,29 @@ body{
   width:{{ W }}px; height:{{ H }}px;
   display:flex; flex-direction:column;
   position:relative; overflow:hidden;
+}
+/* 사진형(유형 C)은 배경 위에 사진이 덮이므로 카드 배경은 안 보이지만
+   그대로 둬도 무해하다 (photo/veil 가 z-index 로 위에 얹힘) */
+
+/* 배경 3종 — 매번 같은 그림이면 피드가 질리므로 렌더할 때마다 랜덤으로 하나
+   골라 쓴다(renderer.py 의 bg_variant). 팀 컬러 글로우 언어는 셋 다 유지해서
+   달라도 같은 브랜드처럼 보이게 한다 — 아웃라인 자체는 안 바뀜, 배경만 변주. */
+.card.bg-1{
   background:
     radial-gradient(120% 70% at 16% -12%, color-mix(in srgb, var(--team) 38%, transparent) 0%, transparent 62%),
     linear-gradient(165deg, #1a2030 0%, var(--ink) 45%, var(--shade) 100%);
 }
-/* 사진형(유형 C)은 배경 위에 사진이 덮이므로 카드 배경은 안 보이지만
-   그대로 둬도 무해하다 (photo/veil 가 z-index 로 위에 얹힘) */
+.card.bg-2{
+  background:
+    radial-gradient(120% 70% at 84% 112%, color-mix(in srgb, var(--team) 34%, transparent) 0%, transparent 60%),
+    linear-gradient(200deg, #1a2030 0%, var(--ink) 50%, var(--shade) 100%);
+}
+.card.bg-3{
+  background:
+    radial-gradient(90% 60% at 12% -8%, color-mix(in srgb, var(--team) 26%, transparent) 0%, transparent 55%),
+    radial-gradient(100% 65% at 92% 108%, color-mix(in srgb, var(--team) 22%, transparent) 0%, transparent 58%),
+    linear-gradient(180deg, #161b28 0%, var(--ink) 55%, var(--shade) 100%);
+}
 
 .frame-head{
   flex:0 0 auto; padding:var(--pad) var(--pad) 20px;
@@ -123,7 +140,7 @@ body{
 </style>
 </head>
 <body>
-<div class="card {% block card_class %}{% endblock %}">
+<div class="card {{ bg_variant }} {% block card_class %}{% endblock %}">
 
   <div class="badge">
     <b>{{ brand.name_ko[:2] }}</b><span>{{ brand.name_ko[2:] or 'KBO' }}</span>

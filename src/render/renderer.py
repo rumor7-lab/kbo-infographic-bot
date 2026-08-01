@@ -10,6 +10,7 @@ from __future__ import annotations
 import base64
 import math
 import mimetypes
+import random
 import shutil
 import subprocess
 import tempfile
@@ -29,6 +30,10 @@ TEMPLATE_OF: dict[Layout, str] = {
     "chart": "chart.html.j2",
     "hero": "hero.html.j2",
 }
+
+# 배경 3종 중 렌더마다 하나를 랜덤으로 고른다(base.html.j2 의 .card.bg-N).
+# 히어로(사진형)는 사진이 배경을 덮어써서 어떤 값이 골리든 시각적으로 무해하다.
+BG_VARIANTS = ["bg-1", "bg-2", "bg-3"]
 
 
 # ── 설정 로드 ────────────────────────────────────
@@ -260,6 +265,7 @@ def build_context(
     *,
     layout: Layout,
     motion: bool,
+    bg_variant: str | None = None,
 ) -> dict[str, Any]:
     b = cfg["brand"]
     canvas = b["canvas"]["reels" if motion else "feed"]
@@ -327,6 +333,7 @@ def build_context(
         "title_sub": title_sub_text,
         "kicker": kicker_text,
         "as_of": payload.as_of,
+        "bg_variant": bg_variant or random.choice(BG_VARIANTS),
         "columns": payload.columns,
         "rows": rows,
         "label_col": label_col,
@@ -347,7 +354,10 @@ def build_context(
     return ctx
 
 
-def render_html(payload: Payload, card_cfg: dict, cfg: dict, *, motion: bool = False):
+def render_html(
+    payload: Payload, card_cfg: dict, cfg: dict, *, motion: bool = False,
+    bg_variant: str | None = None,
+):
     layout, reason = select_layout(payload, card_cfg)
     payload = truncate_rows(payload, layout)
 
@@ -357,7 +367,9 @@ def render_html(payload: Payload, card_cfg: dict, cfg: dict, *, motion: bool = F
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    ctx = build_context(payload, card_cfg, cfg, layout=layout, motion=motion)
+    ctx = build_context(
+        payload, card_cfg, cfg, layout=layout, motion=motion, bg_variant=bg_variant
+    )
     html = env.get_template(TEMPLATE_OF[layout]).render(**ctx)
     return html, layout, reason
 
@@ -446,13 +458,21 @@ def render_card(
     feed = b["canvas"]["feed"]
     reels = b["canvas"]["reels"]
 
-    html, layout, reason = render_html(payload, card_cfg, cfg, motion=False)
+    # 피드 이미지와 릴스가 서로 다른 배경을 랜덤으로 골라버리면 같은 카드인데
+    # 버전마다 배경이 달라 어색하다. 한 번만 뽑아서 두 렌더 모두에 같이 쓴다.
+    bg_variant = random.choice(BG_VARIANTS)
+
+    html, layout, reason = render_html(
+        payload, card_cfg, cfg, motion=False, bg_variant=bg_variant
+    )
     png = shoot_png(html, out_dir / f"{payload.card_id}.png", feed["width"], feed["height"])
 
     result = {"card_id": payload.card_id, "layout": layout, "reason": reason, "png": png}
 
     if card_cfg.get("_reels"):
-        mhtml, _, _ = render_html(payload, card_cfg, cfg, motion=True)
+        mhtml, _, _ = render_html(
+            payload, card_cfg, cfg, motion=True, bg_variant=bg_variant
+        )
         result["mp4"] = shoot_reel(
             mhtml,
             out_dir / f"{payload.card_id}.mp4",
