@@ -120,8 +120,8 @@ def edit_caption(cred: Credentials, message_id: int, new_caption: str) -> None:
 def answer_callback(cred: Credentials, callback_query_id: str, text: str) -> None:
     try:
         _call(cred, "answerCallbackQuery", callback_query_id=callback_query_id, text=text)
-    except TelegramError:
-        pass
+    except TelegramError as e:
+        print(f"DEBUG answer_callback 실패(무시됨): {e}")
 
 
 def get_updates(cred: Credentials, offset: int) -> list[dict]:

@@ -107,10 +107,14 @@ def main() -> int:
     for u in updates:
         offset = max(offset, u["update_id"] + 1)
         cq = u.get("callback_query")
+        # 임시 디버그: 무엇이 들어왔는지 실제로 확인 (토큰/챗ID 등 민감정보는 안 찍음)
+        print(f"DEBUG update_id={u['update_id']} keys={list(u.keys())} "
+              f"has_callback={bool(cq)} callback_data={cq.get('data') if cq else None}")
         if not cq:
             continue
         data = cq.get("data", "")
         action, _, token = data.partition(":")
+        print(f"DEBUG parsed action={action!r} token={token!r}")
         if action not in ("approve", "reject") or not token:
             continue
 
