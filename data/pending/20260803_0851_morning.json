@@ -1,0 +1,35 @@
+{
+  "batch_id": "20260803_0851_morning",
+  "slot": "morning",
+  "caption": "어제 경기 결과\n\n1. SSG vs 키움 3 : 5\n2. LG vs 두산 3 : 8\n3. 삼성 vs 롯데 7 : 10\n\n어제 제일 인상적이었던 경기는?\n\n기준 2026.08.02 · 출처 KBO 공식기록\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #경기결과 #야구하이라이트 #키움히어로즈 #두산베어스 #롯데자이언츠 #KT위즈",
+  "carousel": true,
+  "reels": false,
+  "created_at": "2026-08-03T08:52:04.028077+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "f270d847",
+      "card_id": "daily_recap",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260803/085156_daily_recap.png",
+      "message_id": 14,
+      "status": "pending"
+    },
+    {
+      "token": "0df76dbc",
+      "card_id": "team_standings",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260803/085159_team_standings.png",
+      "message_id": 15,
+      "status": "pending"
+    },
+    {
+      "token": "fd93e0b0",
+      "card_id": "yesterday_heroes",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260803/085202_yesterday_heroes.png",
+      "message_id": 16,
+      "status": "pending"
+    }
+  ]
+}
