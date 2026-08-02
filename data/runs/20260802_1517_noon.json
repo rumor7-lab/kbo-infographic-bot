@@ -1,0 +1,11 @@
+{
+  "slot": "noon",
+  "at": "2026-08-02T15:17:22.382898+09:00",
+  "cards": [
+    {
+      "card_id": "weekly_digest",
+      "status": "스킵: 'compute.weekly' 는 아직 미구현입니다 (src/compute/ 에 구현 후 활성화). 미구현 소스는 가짜 데이터로 채우지 않고 스킵합니다."
+    }
+  ],
+  "notified": "전송할 카드 없음"
+}
