@@ -77,8 +77,8 @@ cards:
   rotating_topic:
     rotation:
       mon: playoff_race        # 순위 시나리오 — 8~9월 최대 트래픽
-      tue: hitter_leaders
-      wed: pitcher_leaders
+      tue: hitter_grid          # 타격 리더 TOP4 (사진 포함 그리드)
+      wed: pitcher_grid         # 투수 리더 TOP4 (사진 포함 그리드)
       thu: frustration_index   # 잔루·득점권 등 '답답함 지표'
       fri: weekend_preview
       sat: milestone_watch     # 기록 달성 임박
@@ -143,9 +143,8 @@ cards:
     layout: auto
     risk: low
 
-  # ── 유형 D(그리드) 시범 카드 — 아직 슬롯 로테이션에 안 넣음.
-  #    2주 수동 운영 기간 동안 render_one.py 로 먼저 눈으로 확인하고,
-  #    괜찮으면 rotating_topic 로테이션에 추가할 예정.
+  # ── 유형 D(그리드) — 점심 슬롯 화/수 로테이션에 편입됨 (hitter_leaders/
+  #    pitcher_leaders 표 카드를 대체). 데이터 소스는 동일, 표현만 그리드로 승격.
   hitter_grid:
     title: "타격 리더 TOP 4"
     kicker: "PLAYER GRID"
