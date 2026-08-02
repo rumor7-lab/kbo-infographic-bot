@@ -405,18 +405,24 @@ def _notify_telegram(
 
     if is_reels:
         r = rendered[0]
-        url = hosting.upload(Path(r["render"]["mp4"]))
+        mp4_path = Path(r["render"]["mp4"])
+        url = hosting.upload(mp4_path)
         token = secrets.token_hex(4)
-        message_id = tg.send_video_for_approval(cred, url, _tg_caption(r["payload"].card_id, caption), token)
+        message_id = tg.send_video_for_approval(
+            cred, url, _tg_caption(r["payload"].card_id, caption), token, local_path=mp4_path
+        )
         cards.append({
             "token": token, "card_id": r["payload"].card_id, "kind": "video",
             "url": url, "message_id": message_id, "status": "pending",
         })
     else:
         for r in rendered:
-            url = hosting.upload(Path(r["render"]["png"]))
+            png_path = Path(r["render"]["png"])
+            url = hosting.upload(png_path)
             token = secrets.token_hex(4)
-            message_id = tg.send_photo_for_approval(cred, url, _tg_caption(r["payload"].card_id, caption), token)
+            message_id = tg.send_photo_for_approval(
+                cred, url, _tg_caption(r["payload"].card_id, caption), token, local_path=png_path
+            )
             cards.append({
                 "token": token, "card_id": r["payload"].card_id, "kind": "image",
                 "url": url, "message_id": message_id, "status": "pending",

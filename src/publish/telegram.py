@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 import requests
@@ -38,8 +39,12 @@ class Credentials:
         return cls(token, chat_id)
 
 
-def _call(cred: Credentials, method: str, **params: Any) -> dict:
-    r = requests.post(f"{API}/bot{cred.bot_token}/{method}", data=params, timeout=30)
+def _call(
+    cred: Credentials, method: str, *, files: dict[str, Any] | None = None, **params: Any
+) -> dict:
+    r = requests.post(
+        f"{API}/bot{cred.bot_token}/{method}", data=params, files=files, timeout=60
+    )
     body = r.json()
     if not body.get("ok"):
         raise TelegramError(f"{method} 실패: {body}")
@@ -57,22 +62,41 @@ def _approval_keyboard(token: str) -> dict:
     }
 
 
-def send_photo_for_approval(cred: Credentials, image_url: str, caption: str, token: str) -> int:
-    """이미지 카드를 승인 버튼과 함께 보낸다. 반환값은 message_id (나중에 수정용)."""
-    res = _call(
-        cred, "sendPhoto",
-        chat_id=cred.chat_id, photo=image_url, caption=caption,
+def send_photo_for_approval(
+    cred: Credentials, image_url: str, caption: str, token: str, *, local_path: Path | None = None
+) -> int:
+    """이미지 카드를 승인 버튼과 함께 보낸다. 반환값은 message_id (나중에 수정용).
+
+    local_path 가 있으면 텔레그램에 파일을 직접 업로드한다(멀티파트). GitHub Release
+    다운로드 URL 은 리다이렉트/Content-Type(application/octet-stream) 특성 때문에
+    텔레그램 서버가 원격 fetch 에 실패하는 경우가 있어("failed to get HTTP URL
+    content"), 승인 미리보기 전송만큼은 URL 대신 로컬 바이트를 직접 올리는 쪽이 훨씬
+    안정적이다. (인스타그램 발행용 공개 URL 은 별도로 이미 확보해둔 값을 그대로 쓴다.)
+    """
+    params = dict(
+        chat_id=cred.chat_id, caption=caption,
         reply_markup=_reply_markup_json(_approval_keyboard(token)),
     )
+    if local_path is not None:
+        with open(local_path, "rb") as f:
+            res = _call(cred, "sendPhoto", files={"photo": (local_path.name, f, "image/png")}, **params)
+    else:
+        res = _call(cred, "sendPhoto", photo=image_url, **params)
     return res["message_id"]
 
 
-def send_video_for_approval(cred: Credentials, video_url: str, caption: str, token: str) -> int:
-    res = _call(
-        cred, "sendVideo",
-        chat_id=cred.chat_id, video=video_url, caption=caption,
+def send_video_for_approval(
+    cred: Credentials, video_url: str, caption: str, token: str, *, local_path: Path | None = None
+) -> int:
+    params = dict(
+        chat_id=cred.chat_id, caption=caption,
         reply_markup=_reply_markup_json(_approval_keyboard(token)),
     )
+    if local_path is not None:
+        with open(local_path, "rb") as f:
+            res = _call(cred, "sendVideo", files={"video": (local_path.name, f, "video/mp4")}, **params)
+    else:
+        res = _call(cred, "sendVideo", video=video_url, **params)
     return res["message_id"]
 
 
