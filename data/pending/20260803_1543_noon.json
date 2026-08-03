@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260803_1543_noon",
+  "slot": "noon",
+  "caption": "가을야구 시나리오\n\n1. 삼성\n2. KT\n3. LG\n\n5위 싸움 어떻게 보세요? 댓글로 예측 남겨주세요\n\n기준 2026.08.03 · 출처 KBO 공식기록 · 잔여경기 승률 동일 가정 · 몬테카를로 10만회 시뮬레이션 · 자체 산출\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #가을야구 #순위싸움 #포스트시즌 #삼성라이온즈 #KT위즈 #LG트윈스 #KIA타이거즈",
+  "carousel": false,
+  "reels": true,
+  "created_at": "2026-08-03T15:44:15.873713+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "937b1701",
+      "card_id": "playoff_race",
+      "kind": "video",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260803/154413_playoff_race.mp4",
+      "message_id": 18,
+      "status": "pending"
+    }
+  ]
+}
