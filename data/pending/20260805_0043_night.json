@@ -5,7 +5,7 @@
   "carousel": true,
   "reels": false,
   "created_at": "2026-08-05T00:44:27.605396+09:00",
-  "status": "pending",
+  "status": "discarded",
   "cards": [
     {
       "token": "72b29528",
@@ -13,7 +13,7 @@
       "kind": "image",
       "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260805/004425_today_top_performer.png",
       "message_id": 25,
-      "status": "pending"
+      "status": "rejected"
     }
   ]
 }
