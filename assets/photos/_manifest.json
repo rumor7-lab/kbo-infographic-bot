@@ -15,7 +15,7 @@
   },
   "최민석": {
     "player": "최민석",
-    "path": "assets\\photos\\최민석.jpg",
+    "path": "assets/photos/최민석.jpg",
     "source_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F001%2F2026%2F05%2F19%2FAKR20260519175451007_02_i_P4_20260519221022374.jpg",
     "width": 1200,
     "height": 936,
@@ -25,7 +25,7 @@
       0.49916666666666665,
       0.327991452991453
     ],
-    "fetched_at": "2026-08-01T22:11:53.658269+09:00"
+    "fetched_at": "2026-08-05T15:05:59.575879+09:00"
   },
   "박성한": {
     "player": "박성한",
