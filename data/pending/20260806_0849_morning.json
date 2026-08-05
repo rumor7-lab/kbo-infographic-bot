@@ -1,0 +1,27 @@
+{
+  "batch_id": "20260806_0849_morning",
+  "slot": "morning",
+  "caption": "KBO 팀 순위 — 1위 KT (0.621)\n\n1. KT 0.621\n2. 삼성 0.602\n3. LG 0.550\n\n우리 팀 순위 어디까지 갈 것 같아요?\n\n기준 2026.08.06 · 출처 KBO 공식기록\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #순위표 #팀순위 #KT위즈 #삼성라이온즈 #LG트윈스 #두산베어스",
+  "carousel": true,
+  "reels": false,
+  "created_at": "2026-08-06T08:50:14.898487+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "efe476c0",
+      "card_id": "team_standings",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260806/085010_team_standings.png",
+      "message_id": 34,
+      "status": "pending"
+    },
+    {
+      "token": "62189b15",
+      "card_id": "yesterday_heroes",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260806/085012_yesterday_heroes.png",
+      "message_id": 35,
+      "status": "pending"
+    }
+  ]
+}
