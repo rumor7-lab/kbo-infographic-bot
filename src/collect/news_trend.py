@@ -192,6 +192,31 @@ def _keywords(title: str) -> set[str]:
     return {w for w in words if w not in STOPWORDS}
 
 
+def _overlap(ka: set[str], kb: set[str]) -> set[str]:
+    """두 키워드 집합의 교집합 — 한국어 조사/접미사 차이를 흡수한다.
+
+    완전 일치만 보면 '은퇴' 와 '은퇴설에' 가 남남이 되어 같은 사건이 갈라진다
+    (실제로 류현진 은퇴 기사 4건 중 1건이 이것 때문에 떨어져 나갔다).
+    형태소 분석기를 붙이면 정확하겠지만 의존성이 무거워서, 한쪽이 다른 쪽의
+    앞부분이면 같은 말로 본다 — 한국어는 어간이 앞에 오고 조사가 뒤에 붙으므로
+    이 규칙만으로도 대부분 잡힌다.
+
+    짧은 단어(2자 미만)는 우연한 앞글자 일치가 많아 완전 일치만 인정한다.
+    반환값은 '더 짧은 쪽'(어간에 가까운 형태)으로 통일한다.
+    """
+    out: set[str] = set()
+    for a in ka:
+        for b in kb:
+            if a == b:
+                out.add(a)
+            elif len(a) >= 2 and len(b) >= 2:
+                if a.startswith(b):
+                    out.add(b)
+                elif b.startswith(a):
+                    out.add(a)
+    return out
+
+
 def cluster(articles: list[Article]) -> list[Topic]:
     """제목 키워드가 겹치는 기사끼리 묶는다.
 
@@ -224,7 +249,7 @@ def cluster(articles: list[Article]) -> list[Topic]:
         return w not in WEAK_KEYWORDS and df[w] <= rare_cut
 
     def same_topic(ka: set[str], kb: set[str]) -> bool:
-        overlap = ka & kb
+        overlap = _overlap(ka, kb)
         if not overlap:
             return False
         if any(is_rare(w) for w in overlap):

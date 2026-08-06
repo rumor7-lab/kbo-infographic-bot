@@ -211,6 +211,19 @@ def stage_news_trend() -> None:
           _clean_title("<b>원태인</b> FA &quot;200억&quot;") == '원태인 FA "200억"'
           and _clean_title("[단독] 원태인 FA 임박") == "원태인 FA 임박")
 
+    # 조사/접미사 차이 — '은퇴' vs '은퇴설에' 가 갈라지면 같은 사건이 쪼개진다.
+    # 기사 수가 적을 땐 희귀도 판정이 무력해져서 이 문제가 특히 잘 드러난다.
+    small = [
+        A("류현진 은퇴 시사 발언", "a.co", 5),
+        A("한화 류현진, 은퇴 관련 입 열었다", "b.co", 12),
+        A("류현진 은퇴설에 구단 공식 입장", "c.co", 18),
+        A("류현진 은퇴 언급 파장 확산", "d.co", 22),
+    ]
+    got = cluster(small)
+    biggest = max(got, key=lambda t: t.article_count)
+    check("조사 달라도 같은 사건으로 묶임(소규모)",
+          biggest.article_count == 4, f"({biggest.article_count}/4건, key={biggest.key!r})")
+
 
 def stage_title_sizing(cfg: dict) -> None:
     """타이틀 크기 자동 조절 안전장치 확인.
