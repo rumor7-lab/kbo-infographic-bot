@@ -1,0 +1,19 @@
+{
+  "slot": "noon",
+  "at": "2026-08-06T15:09:38.596507+09:00",
+  "cards": [
+    {
+      "card_id": "frustration_index",
+      "validation": "검증 통과",
+      "layout": "chart",
+      "reason": "단일 지표(득점권타율) × 10행",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260806_1509/noon/frustration_index.png",
+      "mp4": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260806_1509/noon/frustration_index.mp4",
+      "status": "렌더 완료"
+    }
+  ],
+  "notified": {
+    "batch_id": "20260806_1509_noon",
+    "cards": 1
+  }
+}

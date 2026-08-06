@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260806_1509_noon",
+  "slot": "noon",
+  "caption": "팀별 득점권 타율 WORST\n\n1. 키움\n2. 두산\n3. SSG\n\n이 지표 보고 한숨 나오는 팀 있나요?\n\n기준 2026.08.06 · 출처 KBO 공식기록 · 득점권(주자 2루 또는 3루) 타율 기준\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #잔루 #야구통계 #키움히어로즈 #두산베어스 #SSG랜더스 #한화이글스",
+  "carousel": false,
+  "reels": true,
+  "created_at": "2026-08-06T15:10:35.751304+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "e157d7f1",
+      "card_id": "frustration_index",
+      "kind": "video",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260806/151032_frustration_index.mp4",
+      "message_id": 37,
+      "status": "pending"
+    }
+  ]
+}
