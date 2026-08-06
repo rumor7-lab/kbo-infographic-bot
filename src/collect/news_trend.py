@@ -292,30 +292,50 @@ def cluster(articles: list[Article]) -> list[Topic]:
     return topics
 
 
+def collect(
+    *, hours: int = 6, queries: list[str] | None = None,
+    on_query: "callable | None" = None,
+) -> list[Article]:
+    """검색어들을 돌며 최근 N시간 기사를 모은다(링크 기준 중복 제거).
+
+    on_query(검색어, 수신건수, 시간내건수) 콜백으로 진행 상황을 볼 수 있다 —
+    결과가 0건일 때 어디서 비었는지 알아야 원인을 찾을 수 있다.
+    """
+    since = datetime.now(KST) - timedelta(hours=hours)
+    seen: dict[str, Article] = {}
+
+    for q in (queries or QUERIES):
+        got = fresh = 0
+        try:
+            arts = fetch(q)
+            got = len(arts)
+            for a in arts:
+                if a.published >= since and a.link:
+                    fresh += 1
+                    seen.setdefault(a.link, a)
+        except NewsError:
+            raise
+        except Exception:  # noqa: BLE001
+            pass  # 검색어 하나 실패로 전체를 죽이지 않는다
+        if on_query:
+            on_query(q, got, fresh)
+
+    return list(seen.values())
+
+
+def rank(topics: list[Topic]) -> list[Topic]:
+    """매체 수 우선, 같으면 속도(시간당 기사 수)로 정렬."""
+    return sorted(topics, key=lambda t: (t.outlet_count, t.velocity), reverse=True)
+
+
 def hot_topics(
     *, hours: int = 6, min_outlets: int = 3, top: int = 5,
     queries: list[str] | None = None,
 ) -> list[Topic]:
     """최근 N시간 화제 주제를 매체 수 기준으로 정렬해 반환."""
-    since = datetime.now(KST) - timedelta(hours=hours)
-
-    # 같은 기사가 여러 검색어에 걸리므로 링크로 중복 제거
-    seen: dict[str, Article] = {}
-    for q in (queries or QUERIES):
-        try:
-            for a in fetch(q):
-                if a.published >= since and a.link and a.link not in seen:
-                    seen[a.link] = a
-        except NewsError:
-            raise
-        except Exception:  # noqa: BLE001
-            continue  # 검색어 하나 실패로 전체를 죽이지 않는다
-
-    topics = cluster(list(seen.values()))
-    topics = [t for t in topics if t.outlet_count >= min_outlets]
-    # 매체 수 우선, 같으면 속도(시간당 기사 수)로 가른다
-    topics.sort(key=lambda t: (t.outlet_count, t.velocity), reverse=True)
-    return topics[:top]
+    articles = collect(hours=hours, queries=queries)
+    topics = [t for t in cluster(articles) if t.outlet_count >= min_outlets]
+    return rank(topics)[:top]
 
 
 def team_of(text: str) -> str | None:

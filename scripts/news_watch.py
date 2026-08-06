@@ -121,10 +121,31 @@ def _save_topic(topic: nt.Topic, message_id: int) -> None:
     )
 
 
-def check_once(*, hours: int, min_outlets: int, top: int, quiet: bool) -> int:
-    topics = nt.hot_topics(hours=hours, min_outlets=min_outlets, top=top)
+def check_once(*, hours: int, min_outlets: int, top: int, quiet: bool,
+               debug: bool = False) -> int:
+    def progress(q: str, got: int, fresh: int) -> None:
+        if debug:
+            print(f"    검색 '{q}': 수신 {got}건 → 최근 {hours}시간 내 {fresh}건")
+
+    articles = nt.collect(hours=hours, on_query=progress)
+    all_topics = nt.rank(nt.cluster(articles))
+    topics = [t for t in all_topics if t.outlet_count >= min_outlets][:top]
+
+    if debug or not topics:
+        # 결과가 없을 때 그냥 '없음'만 찍으면 원인을 알 수 없다.
+        # 몇 건을 모았고 상위 주제가 몇 매체였는지 보여줘야 임계값을 조정할 수 있다.
+        print(f"[{datetime.now():%H:%M}] 기사 {len(articles)}건 수집 → "
+              f"주제 {len(all_topics)}개 (기준 {min_outlets}매체 이상: {len(topics)}개)")
+        if not articles:
+            print("    → 기사가 0건입니다. 네이버 앱의 '사용 API' 에 검색이 있는지,"
+                  " 키가 맞는지 확인하세요.")
+        elif all_topics:
+            print("    상위 주제 (기준 미달 포함):")
+            for t in all_topics[:5]:
+                mark = "✓" if t.outlet_count >= min_outlets else " "
+                print(f"      {mark} 매체 {t.outlet_count}곳 · {t.velocity:4.1f}건/h · {t.key}")
+
     if not topics:
-        print(f"[{datetime.now():%H:%M}] 기준({min_outlets}개 매체) 넘는 화제 없음")
         return 0
 
     seen = _load_seen()
@@ -173,6 +194,8 @@ def main() -> int:
     ap.add_argument("--top", type=int, default=5, help="한 번에 최대 몇 개, 기본 5")
     ap.add_argument("--quiet", action="store_true",
                     help="텔레그램 전송 없이 화면에만 출력 (테스트용)")
+    ap.add_argument("--debug", action="store_true",
+                    help="검색어별 수신 건수와 기준 미달 주제까지 전부 출력")
     args = ap.parse_args()
 
     if not args.once and not args.watch:
@@ -187,10 +210,19 @@ def main() -> int:
         return 1
 
     kw = dict(hours=args.hours, min_outlets=args.min_outlets,
-              top=args.top, quiet=args.quiet)
+              top=args.top, quiet=args.quiet, debug=args.debug)
 
     if args.once:
-        check_once(**kw)
+        try:
+            check_once(**kw)
+        except nt.NewsError as e:
+            # 검색 API 미허용/키 오류가 제일 흔하다. 트레이스백보다 원인을 보여준다.
+            print(f"\n뉴스 조회 실패: {e}")
+            print("\n확인할 것")
+            print("  1. https://developers.naver.com/apps → 내 애플리케이션 →")
+            print("     '인싸이트보드' → 연필 아이콘 → 사용 API 에 '검색' 이 있는지")
+            print("  2. .env 의 NAVER_CLIENT_ID / NAVER_CLIENT_SECRET 값이 맞는지")
+            return 1
         return 0
 
     print(f"화제 감시 시작 — {args.interval}분 간격, 최근 {args.hours}시간, "
