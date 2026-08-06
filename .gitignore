@@ -10,6 +10,13 @@ out/
 # 사진 캐시는 커밋한다 (매번 재수집하면 오인 위험이 커지므로)
 # assets/photos/ 는 추적 대상
 
+# 뉴스카드용 사진은 커밋하지 않는다.
+# 이 저장소는 인스타 미디어 호스팅 때문에 public 이라, 여기에 보도사진을 넣으면
+# 인스타에 올리는 것보다 노출이 더 커진다(원본 파일이 그대로 공개되고 커밋 이력에
+# 영구히 남는다). 사진은 로컬에만 두고 렌더도 로컬에서 한다.
+assets/newsphotos/*
+!assets/newsphotos/README.md
+
 .DS_Store
 Thumbs.db
 .idea/

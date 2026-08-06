@@ -11,6 +11,7 @@ import base64
 import math
 import mimetypes
 import random
+import re
 import shutil
 import subprocess
 import tempfile
@@ -30,6 +31,7 @@ TEMPLATE_OF: dict[Layout, str] = {
     "chart": "chart.html.j2",
     "hero": "hero.html.j2",
     "grid": "grid.html.j2",
+    "newscard": "newscard.html.j2",
 }
 
 # 배경 3종 중 렌더마다 하나를 랜덤으로 고른다(base.html.j2 의 .card.bg-N).
@@ -249,6 +251,20 @@ def _headline_size(text: str) -> int:
     return 84
 
 
+def _news_line_size(text: str, *, base: int = 62) -> int:
+    """뉴스카드 헤드라인 자동 축소.
+
+    가용 폭 968px(1080 - 좌우 56px) 기준. 한글 볼드는 대략 글자당 폰트크기의
+    0.95배 폭을 먹으므로 그 선에서 2줄을 넘기지 않게 단계적으로 줄인다.
+    <em> 강조 태그는 폭에 영향이 없으니 길이 계산에서 뺀다.
+    """
+    n = len(re.sub(r"</?em>", "", text or ""))
+    for limit, size in ((14, base), (18, 54), (24, 46), (30, 40), (38, 35)):
+        if n <= limit:
+            return min(base, size)
+    return min(base, 31)
+
+
 def _split_emphasis(title: str) -> tuple[str, str]:
     """타이틀 마지막 단어를 포인트 컬러로 분리 — '팀 순위' → '팀 ' + '순위'.
     벤치마크들이 전부 타이틀 안에서 색 강조를 주는 방식을 그대로 채택."""
@@ -305,6 +321,11 @@ def build_context(
         if gs.photo:
             gs.photo = _file_url(gs.photo)
 
+    # 뉴스카드(유형 E) — 사람이 직접 넣은 사진을 인라인
+    news = payload.news
+    if news and news.photo:
+        news.photo = _file_url(news.photo)
+
     title_main, title_emphasis = _split_emphasis(payload.title)
     kicker_text = payload.kicker or card_cfg.get("kicker", "")
     title_sub_text = card_cfg.get("title_sub", "")
@@ -359,6 +380,27 @@ def build_context(
         "photo_pos": (subject.photo_pos if subject and subject.photo_pos else "center 18%"),
         "headline_size": _headline_size(subject.headline if subject else ""),
     }
+
+    # ── 뉴스카드(유형 E) 전용 컨텍스트 ──────────
+    if news:
+        line1_size = _news_line_size(news.line1)
+        ctx.update({
+            "photo": news.photo,
+            # 보도사진은 인물이 중앙~상단에 오는 경우가 많고, 하단은 헤드라인이
+            # 덮으므로 기본값을 살짝 위로 잡는다.
+            "photo_pos": news.photo_pos or "center 22%",
+            "photo_credit": news.photo_credit,
+            "hook": news.hook,
+            "hook_size": _news_line_size(news.hook, base=38),
+            "category": news.category,
+            "cat_color": news.cat_color,
+            "line1": news.line1,
+            "line2": news.line2,
+            "line1_size": line1_size,
+            # 2행은 부연이라 1행보다 한 톤 작게 — 다만 1행이 이미 많이 줄었으면
+            # 같이 줄지 않도록 자체 길이 기준도 함께 적용한다.
+            "line2_size": min(int(line1_size * 0.92), _news_line_size(news.line2, base=56)),
+        })
     ctx.update(_fit(len(rows), layout, H, header_px))
     return ctx
 

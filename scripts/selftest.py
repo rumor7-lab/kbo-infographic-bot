@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src.render.layout_engine import Payload, Subject, select_layout  # noqa: E402
+from src.render.layout_engine import NewsCard, Payload, Subject, select_layout  # noqa: E402
 
 PASS, FAIL = "  [OK]", "  [FAIL]"
 _fails = 0
@@ -115,6 +115,33 @@ def stage_engine() -> None:
     empty_grid = Payload(card_id="g2", title="타격 리더 TOP 4")
     lay, why = select_layout(empty_grid, {"layout": "grid", "fallback_layout": "table"})
     check("subjects 없으면 grid → table 강등", lay == "table", f"→ {lay} ({why})")
+
+    # 유형 E — 뉴스카드. 사진이 곧 콘텐츠라 강등이 아니라 '발행 중단'이 정답이다.
+    from src.render.layout_engine import LayoutError
+
+    news_ok = Payload(
+        card_id="n1", title="원태인 FA",
+        news=NewsCard(line1="원태인, FA 나오면 200억인데..", photo="/tmp/x.jpg"),
+    )
+    lay, why = select_layout(news_ok, {"layout": "newscard"})
+    check("사진 있음 + newscard 지정 → newscard", lay == "newscard", f"→ {lay} ({why})")
+
+    news_nophoto = Payload(
+        card_id="n2", title="원태인 FA",
+        news=NewsCard(line1="원태인, FA 나오면 200억인데.."),
+    )
+    try:
+        select_layout(news_nophoto, {"layout": "newscard", "fallback_layout": "table"})
+        check("사진 없으면 newscard 발행 중단", False, "→ 강등돼서 통과해버림")
+    except LayoutError as e:
+        check("사진 없으면 newscard 발행 중단", True, f"→ {str(e)[:40]}")
+
+    news_notext = Payload(card_id="n3", title="x")
+    try:
+        select_layout(news_notext, {"layout": "newscard"})
+        check("문구 없으면 newscard 발행 중단", False, "→ 통과해버림")
+    except LayoutError:
+        check("문구 없으면 newscard 발행 중단", True)
 
     # 행 수 초과 절단
     from src.render.layout_engine import truncate_rows
@@ -306,14 +333,38 @@ def stage_template(cfg: dict) -> None:
             ],
             as_of="2026.07.29",
         ),
+        "newscard": Payload(
+            card_id="news_test", title="원태인 FA",
+            news=NewsCard(
+                hook="ERA 4.14인데..",
+                category="크보순삭",
+                line1="원태인, FA 나오면 <em>200억</em>인데..",
+                line2="MLB도 갈 수 있다는 믈브 스카우터",
+                photo=str(ROOT / "assets" / "sample.jpg"),
+                photo_credit="연합뉴스",
+            ),
+        ),
     }
     for want, payload in samples.items():
         html, lay, why = render_html(payload, {"layout": want}, cfg)
-        ok = lay == want and len(html) > 1500 and "frame-foot" in html
+        ok = lay == want and len(html) > 1500
         check(f"{want} 템플릿 렌더", ok, f"→ {lay}, {len(html)}bytes")
-        # 브랜드 프레임 일관성 — 세 유형 모두 동일 요소를 가져야 한다
-        for el in ("badge", "frame-head", "frame-body", "frame-foot"):
-            check(f"  {want}: .{el} 존재", el in html)
+
+        # 브랜드 프레임 일관성 검사.
+        # 주의: CSS 정의(.frame-head{...})는 base 가 항상 내보내므로 문자열 존재만
+        # 보면 항상 통과한다 — 실제 '엘리먼트'가 렌더됐는지를 body 에서 확인해야 한다.
+        body = html.split("<body>", 1)[1]
+        check(f"  {want}: 브랜드 배지 존재", 'class="badge"' in body)
+        if want == "newscard":
+            # 뉴스카드는 헤드라인이 하단에 오는 포맷이라 상단 타이틀/하단 푸터
+            # 프레임을 의도적으로 비운다. 배지만 공유해서 계정 일관성을 지킨다.
+            check("  newscard: 상단 프레임 비움", "<header" not in body)
+            check("  newscard: 하단 프레임 비움", "<footer" not in body)
+            check("  newscard: 헤드라인 강조 태그 보존", "<em>" in body)
+        else:
+            check(f"  {want}: <header> 렌더", "<header" in body)
+            check(f"  {want}: <footer> 렌더", "<footer" in body)
+        check(f"  {want}: <main> 렌더", "<main" in body)
 
     # 모션(릴스) 렌더
     html, _, _ = render_html(samples["chart"], {"layout": "chart"}, cfg, motion=True)

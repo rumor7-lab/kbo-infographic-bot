@@ -13,7 +13,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Literal
 
-Layout = Literal["table", "chart", "hero", "grid"]
+Layout = Literal["table", "chart", "hero", "grid", "newscard"]
 
 # 차트로 그릴 수 있는 행 수 범위. 너무 적으면 빈약하고 너무 많으면 바가 뭉개진다.
 CHART_MIN_ROWS = 3
@@ -22,6 +22,10 @@ CHART_MAX_ROWS = 12
 TABLE_MAX_ROWS = 14
 
 _NUM_RE = re.compile(r"^-?\d+(\.\d+)?$")
+
+
+class LayoutError(RuntimeError):
+    """레이아웃을 성립시킬 수 없음 — 해당 카드는 발행하지 않는다."""
 
 
 @dataclass
@@ -35,6 +39,29 @@ class Subject:
     headline: str = ""                # 큰 글씨 한 방 ("연패 탈출")
     sub: str = ""                     # 설명 한 줄
     stats: list[dict[str, str]] = field(default_factory=list)  # [{label, value}]
+
+    @property
+    def has_photo(self) -> bool:
+        return bool(self.photo)
+
+
+@dataclass
+class NewsCard:
+    """유형 E(뉴스형) 카드의 문구 묶음.
+
+    사진은 반드시 사람이 직접 고른 것만 쓴다(assets/newsphotos/). 헤드라인의
+    감정선과 사진이 어긋나면 이 포맷은 후킹이 통째로 죽어서, 자동 수집한 사진을
+    끼워넣느니 카드를 스킵하는 쪽이 낫다 — 그래서 photo 없으면 강등이 아니라 스킵.
+    """
+
+    line1: str                        # 헤드라인 1행 (핵심 주장/사실)
+    line2: str = ""                   # 헤드라인 2행 (부연)
+    hook: str = ""                    # 상단 노란 괄호 문구 (괄호는 템플릿이 붙임)
+    category: str = ""                # 하단 카테고리 배지 라벨
+    cat_color: str | None = None      # 배지 배경색 (미지정 시 브랜드 accent_cool)
+    photo: str | None = None          # 로컬 파일 경로
+    photo_pos: str | None = None      # background-position
+    photo_credit: str = ""            # 사진 출처 표기
 
     @property
     def has_photo(self) -> bool:
@@ -56,6 +83,8 @@ class Payload:
     # subject(단수)와 별개다: 히어로는 '주인공 1명', 그리드는 '나열 비교'라
     # 의미가 달라 필드를 분리했다.
     subjects: list[Subject] = field(default_factory=list)
+    # 유형 E(뉴스형)용 문구 묶음
+    news: "NewsCard | None" = None
     as_of: str = ""
     provisional: bool = False
     footnote_extra: str = ""
@@ -101,7 +130,7 @@ def select_layout(payload: Payload, card_cfg: dict[str, Any]) -> tuple[Layout, s
     fallback = (card_cfg.get("fallback_layout") or "table").lower()
 
     # 1) 명시적 지정
-    if declared in ("table", "chart", "hero", "grid"):
+    if declared in ("table", "chart", "hero", "grid", "newscard"):
         if declared == "hero" and not (payload.subject and payload.subject.has_photo):
             return _coerce(fallback, payload), (
                 f"hero 지정이지만 사진 없음 → {fallback} 로 강등"
@@ -110,6 +139,15 @@ def select_layout(payload: Payload, card_cfg: dict[str, Any]) -> tuple[Layout, s
             return _coerce(fallback, payload), (
                 f"grid 지정이지만 나열할 선수(subjects)가 없음 → {fallback} 로 강등"
             )
+        # 뉴스카드는 사진이 곧 콘텐츠라 강등이 성립하지 않는다. 사진 없이 표로
+        # 떨어뜨리면 헤드라인만 남은 이상한 카드가 나가므로 여기서 끊는다.
+        if declared == "newscard":
+            if payload.news is None:
+                raise LayoutError("newscard 지정이지만 news 문구가 없음")
+            if not payload.news.has_photo:
+                raise LayoutError(
+                    "newscard 에 쓸 사진이 없음 — assets/newsphotos/ 에 사진을 넣어주세요"
+                )
         return declared, "카드 정의에서 명시 지정"  # type: ignore[return-value]
 
     # 2) auto — 주인공이 있고 사진까지 확보되면 히어로

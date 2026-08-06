@@ -148,6 +148,7 @@ body{
 
   {% block backdrop %}{% endblock %}
 
+{% block frame_head %}
   <header class="frame-head">
     {% if kicker or as_of %}
     <div class="head-row">
@@ -159,15 +160,18 @@ body{
     <div class="title-rule"></div>
     {% if title_sub %}<div class="title-sub">{{ title_sub }}</div>{% endif %}
   </header>
+{% endblock %}
 
   <main class="frame-body">
 {% block body %}{% endblock %}
   </main>
 
+{% block frame_foot %}
   <footer class="frame-foot">
     {% if provisional %}<span class="tag-provisional">잠정</span>{% endif %}
     <span>{{ footer_text }}</span>
   </footer>
+{% endblock %}
 
 </div>
 </body>
