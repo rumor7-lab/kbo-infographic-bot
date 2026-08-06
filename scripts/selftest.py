@@ -152,6 +152,66 @@ def stage_engine() -> None:
           f"({len(big.rows)}행, note={big.footnote_extra!r})")
 
 
+def stage_news_trend() -> None:
+    """화제 감지 클러스터링 — 네트워크 없이 가짜 기사로 검증."""
+    print("\n[3.5] 뉴스 화제 감지 (클러스터링)")
+    from datetime import datetime, timedelta
+
+    from src.collect.news_trend import KST, Article, _clean_title, cluster
+
+    now = datetime.now(KST)
+
+    def A(title: str, outlet: str, mins: int) -> Article:
+        return Article(title=title, link=f"https://{outlet}/x{mins}",
+                       published=now - timedelta(minutes=mins), outlet=outlet)
+
+    arts = [
+        A("원태인 FA 시장 나오면 200억 예상", "a.co", 10),
+        A("삼성 원태인, FA 대박 예고... 200억설", "b.co", 25),
+        A("원태인 FA 앞두고 MLB 관심", "c.co", 40),
+        A("원태인, 메이저리그 스카우터도 주목", "d.co", 55),
+        A("김서현 제구 난조 심각", "a.co", 15),
+        A("한화 김서현, 35구 중 볼 25개", "b.co", 30),
+        A("김서현 부진에 한화 팬들 한숨", "c.co", 45),
+        A("오늘 프로야구 경기 일정 안내", "e.co", 20),
+        A("류현진 은퇴 시사 발언", "a.co", 5),
+        A("한화 류현진, 은퇴 관련 입 열었다", "b.co", 12),
+        A("류현진 은퇴설에 구단 공식 입장", "c.co", 18),
+        A("류현진 은퇴 언급 파장 확산", "d.co", 22),
+    ]
+    topics = {t.key: t for t in cluster(arts)}
+
+    # 표현이 달라도 같은 인물이면 묶여야 한다
+    ryu = next((t for t in topics.values() if "류현진" in t.keywords), None)
+    check("표현 달라도 같은 인물끼리 묶임", ryu is not None and ryu.article_count == 4,
+          f"({ryu.article_count if ryu else 0}건)")
+
+    # 같은 팀의 다른 사건이 팀명으로 이어지면 안 된다
+    check("팀명만으로는 다른 사건이 안 묶임",
+          ryu is not None and not any("김서현" in a.title for a in ryu.articles))
+
+    # 주제어가 없어 실제로 놓쳤던 케이스 — 교집합으로 좁히면 이 기사를 놓친다
+    won = next((t for t in topics.values() if "원태인" in t.keywords), None)
+    check("주제어 확장으로 파생 기사도 포함",
+          won is not None and won.article_count == 4, f"({won.article_count if won else 0}건)")
+
+    # 대표어는 '희귀어'가 아니라 '반복되는 주인공'이어야 한다
+    check("대표어가 사건 주인공", ryu is not None and "류현진" in ryu.key, f"(key={ryu.key if ryu else ''!r})")
+
+    # 팀은 묶인 기사 전체에서 추정 (제목 하나엔 팀명이 없을 수 있음)
+    check("클러스터 전체로 팀 추정", ryu is not None and ryu.team == "한화",
+          f"(team={ryu.team if ryu else None})")
+
+    # 매체 수는 중복 매체를 1로 센다
+    kim = next((t for t in topics.values() if "김서현" in t.keywords), None)
+    check("매체 수는 중복 제거", kim is not None and kim.outlet_count == 3,
+          f"({kim.outlet_count if kim else 0}곳)")
+
+    check("제목 태그·머리표 제거",
+          _clean_title("<b>원태인</b> FA &quot;200억&quot;") == '원태인 FA "200억"'
+          and _clean_title("[단독] 원태인 FA 임박") == "원태인 FA 임박")
+
+
 def stage_title_sizing(cfg: dict) -> None:
     """타이틀 크기 자동 조절 안전장치 확인.
 
@@ -507,6 +567,7 @@ def main() -> int:
     stage_title_sizing(cfg)
     stage_playoff_odds()
     stage_validate(cfg)
+    stage_news_trend()
     stage_template(cfg)
     if args.render:
         stage_render(cfg)

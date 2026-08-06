@@ -57,7 +57,9 @@ class NewsCard:
     line1: str                        # 헤드라인 1행 (핵심 주장/사실)
     line2: str = ""                   # 헤드라인 2행 (부연)
     hook: str = ""                    # 상단 노란 괄호 문구 (괄호는 템플릿이 붙임)
-    category: str = ""                # 하단 카테고리 배지 라벨
+    # 하단 배지. 경쟁사가 '크보순삭' 하나로 밀어붙이듯 단일 태그를 반복 노출해
+    # 각인시키는 전략이라 기본값을 고정해둔다.
+    category: str = "지금 KBO"
     cat_color: str | None = None      # 배지 배경색 (미지정 시 브랜드 accent_cool)
     photo: str | None = None          # 로컬 파일 경로
     photo_pos: str | None = None      # background-position
