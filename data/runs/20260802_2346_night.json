@@ -1,0 +1,26 @@
+{
+  "slot": "night",
+  "at": "2026-08-02T23:46:17.750673+09:00",
+  "cards": [
+    {
+      "card_id": "today_results",
+      "validation": "검증 통과",
+      "layout": "table",
+      "reason": "다열 데이터(0개 지표) → 표",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260802_2346/night/today_results.png",
+      "status": "렌더 완료"
+    },
+    {
+      "card_id": "today_top_performer",
+      "validation": "검증 통과",
+      "layout": "chart",
+      "reason": "hero 지정이지만 사진 없음 → chart 로 강등",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260802_2346/night/today_top_performer.png",
+      "status": "렌더 완료"
+    }
+  ],
+  "notified": {
+    "batch_id": "20260802_2346_night",
+    "cards": 2
+  }
+}

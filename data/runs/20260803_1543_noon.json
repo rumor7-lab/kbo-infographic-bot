@@ -1,0 +1,19 @@
+{
+  "slot": "noon",
+  "at": "2026-08-03T15:43:15.312977+09:00",
+  "cards": [
+    {
+      "card_id": "playoff_race",
+      "validation": "검증 통과",
+      "layout": "chart",
+      "reason": "카드 정의에서 명시 지정",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260803_1543/noon/playoff_race.png",
+      "mp4": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260803_1543/noon/playoff_race.mp4",
+      "status": "렌더 완료"
+    }
+  ],
+  "notified": {
+    "batch_id": "20260803_1543_noon",
+    "cards": 1
+  }
+}

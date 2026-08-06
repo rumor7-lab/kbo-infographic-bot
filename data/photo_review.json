@@ -28,5 +28,35 @@
     ],
     "fetched_at": "2026-08-01T22:11:53.658269+09:00",
     "reviewed": false
+  },
+  {
+    "player": "박성한",
+    "path": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/assets/photos/박성한.jpg",
+    "source_url": "http://imgnews.naver.net/image/421/2022/11/01/0006431337_001_20221101214404418.jpg",
+    "width": 1400,
+    "height": 1084,
+    "faces": 1,
+    "sharpness": 324.2,
+    "face_center": [
+      0.3507142857142857,
+      0.3607011070110701
+    ],
+    "fetched_at": "2026-08-04T15:11:14.726498+09:00",
+    "reviewed": false
+  },
+  {
+    "player": "최민석",
+    "path": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/assets/photos/최민석.jpg",
+    "source_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F001%2F2026%2F05%2F19%2FAKR20260519175451007_02_i_P4_20260519221022374.jpg",
+    "width": 1200,
+    "height": 936,
+    "faces": 1,
+    "sharpness": 146.1,
+    "face_center": [
+      0.49916666666666665,
+      0.327991452991453
+    ],
+    "fetched_at": "2026-08-05T15:05:59.575879+09:00",
+    "reviewed": false
   }
 ]

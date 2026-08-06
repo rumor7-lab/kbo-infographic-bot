@@ -1,0 +1,23 @@
+{
+  "slot": "night",
+  "at": "2026-08-05T00:43:38.890268+09:00",
+  "cards": [
+    {
+      "card_id": "today_results",
+      "status": "오류: 20260805 파싱된 경기가 0건입니다",
+      "trace": "Traceback (most recent call last):\n  File \"/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/src/pipeline.py\", line 245, in _render_all\n    payload = build_payload(card_id, card_cfg, cfg)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/src/pipeline.py\", line 69, in build_payload\n    s = kbo.games(target)\n        ^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/src/collect/kbo_official.py\", line 410, in games\n    raise CollectError(f\"{ymd} 파싱된 경기가 0건입니다\")\nsrc.collect.kbo_official.CollectError: 20260805 파싱된 경기가 0건입니다\n"
+    },
+    {
+      "card_id": "today_top_performer",
+      "validation": "검증 통과",
+      "layout": "chart",
+      "reason": "hero 지정이지만 사진 없음 → chart 로 강등",
+      "png": "/home/runner/work/kbo-infographic-bot/kbo-infographic-bot/out/20260805_0043/night/today_top_performer.png",
+      "status": "렌더 완료"
+    }
+  ],
+  "notified": {
+    "batch_id": "20260805_0043_night",
+    "cards": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260806_0036_night",
+  "slot": "night",
+  "caption": "오늘의 기록\n\n1. 롯데 0.349\n2. KT 0.348\n3. 삼성 0.343\n\n저장해두고 나중에 다시 보세요\n\n기준 2026.08.06 · 출처 KBO 공식기록 (잠정)\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #기록 #야구기록 #롯데자이언츠 #KT위즈 #삼성라이온즈 #SSG랜더스",
+  "carousel": true,
+  "reels": false,
+  "created_at": "2026-08-06T00:37:17.658918+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "fd608de4",
+      "card_id": "today_top_performer",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260806/003715_today_top_performer.png",
+      "message_id": 32,
+      "status": "pending"
+    }
+  ]
+}
