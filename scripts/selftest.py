@@ -224,6 +224,43 @@ def stage_news_trend() -> None:
     check("조사 달라도 같은 사건으로 묶임(소규모)",
           biggest.article_count == 4, f"({biggest.article_count}/4건, key={biggest.key!r})")
 
+    # 야구 필터 — 구단명이 곧 대기업명이라 기업/정치 뉴스가 대량으로 섞여 들어온다.
+    # 실측에서 '2분기 heat'(삼성전자), '김정관 장관' 이 상위 화제를 먹었다.
+    from src.collect.news_trend import is_baseball
+
+    block = ["삼성전자 2분기 실적 heat", "김정관 장관 여수 상품",
+             "LG 트윈스타워 매각", "롯데케미칼 실적 부진", "한화솔루션 주가"]
+    passes = ["류현진 은퇴 시사", "한화 이글스 연승", "LG 트윈스의 역전승",
+              "KIA 타이거즈 김도영 홈런", "김서현 볼넷 남발"]
+    bad = [s for s in block if is_baseball(s)] + [s for s in passes if not is_baseball(s)]
+    check("야구 기사 필터 (기업·정치 뉴스 차단)", not bad, f"오판: {bad}")
+
+    # 부분 문자열로 보면 '트윈스타워' 가 '트윈스' 로 통과한다
+    check("복합명사 오탐 차단", not is_baseball("LG 트윈스타워 매각"))
+    check("조사 붙은 팀명은 통과", is_baseball("LG 트윈스의 역전승"))
+
+    # 대량 노이즈 속에서도 클러스터가 뭉개지지 않아야 한다.
+    # 희귀도 컷을 전체의 40% 로 잡았을 때 654건에서 205개 매체짜리 괴물이 나왔다.
+    noisy = []
+    for i in range(60):
+        noisy.append(A(f"삼성전자 2분기 실적 heat 전망 {i}", f"n{i % 40}.co", i))
+    for i in range(50):
+        noisy.append(A(f"폭염 행사 취소 잇따라 {i}", f"p{i % 45}.co", i))
+    for i in range(12):
+        noisy.append(A(f"류현진 은퇴 시사 발언 파장 {i}", f"b{i}.co", i * 3))
+    for i in range(9):
+        noisy.append(A(f"원태인 FA 200억 전망 {i}", f"c{i}.co", i * 4))
+
+    kept = [a for a in noisy if is_baseball(a.title)]
+    check("기업 뉴스가 걸러짐", len(kept) == 21, f"({len(kept)}건, 기대 21)")
+
+    ct = sorted(cluster(kept), key=lambda t: t.outlet_count, reverse=True)
+    check("대량 노이즈에도 과병합 없음",
+          ct and ct[0].outlet_count <= 12, f"(최대 {ct[0].outlet_count if ct else 0}개 매체)")
+    check("대표어에 숫자가 앞서지 않음",
+          all(not t.key.split()[0][0].isdigit() for t in ct if t.key),
+          f"({[t.key for t in ct[:3]]})")
+
 
 def stage_title_sizing(cfg: dict) -> None:
     """타이틀 크기 자동 조절 안전장치 확인.

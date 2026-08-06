@@ -42,8 +42,26 @@ TEAMS = {
     "키움": ["키움", "히어로즈"],
 }
 
-# 검색어 — 너무 좁으면 놓치고 너무 넓으면 축구/농구가 섞인다.
-QUERIES = ["KBO", "프로야구"] + list(TEAMS.keys())
+# 검색어 — 구단명만 쓰면 안 된다. 삼성/LG/KIA/한화/롯데/NC 는 전부 대기업
+# 이름이라 "삼성 2분기 실적", "김정관 장관" 같은 게 쏟아진다(실측으로 확인).
+# 반드시 애칭까지 붙여서 야구 문맥으로 좁힌다.
+QUERIES = [
+    "KBO 프로야구", "프로야구",
+    "KIA 타이거즈", "삼성 라이온즈", "LG 트윈스", "두산 베어스", "KT 위즈",
+    "SSG 랜더스", "롯데 자이언츠", "한화 이글스", "NC 다이노스", "키움 히어로즈",
+]
+
+# 검색어로 좁혀도 기업 뉴스가 섞여 들어온다("LG 트윈스타워" 같은 것).
+# 제목에 야구 용어가 하나도 없으면 버린다.
+BASEBALL_TERMS = {
+    "야구", "KBO", "프로야구", "타이거즈", "라이온즈", "트윈스", "베어스", "위즈",
+    "랜더스", "자이언츠", "이글스", "다이노스", "히어로즈",
+    "투수", "타자", "포수", "선발", "불펜", "마무리", "타율", "홈런", "타점",
+    "볼넷", "삼진", "안타", "이닝", "실점", "자책", "승리", "패전", "세이브",
+    "구단", "감독", "코치", "선수", "연승", "연패", "경기", "시즌", "구속",
+    "FA", "트레이드", "방출", "은퇴", "부상", "복귀", "등판", "출전", "주루",
+    "가을야구", "포스트시즌", "플레이오프", "한국시리즈", "올스타",
+}
 
 # 제목에서 걷어낼 것들
 _TAG_RE = re.compile(r"<[^>]+>")            # API 가 검색어에 <b> 태그를 씌워 보낸다
@@ -192,6 +210,31 @@ def _keywords(title: str) -> set[str]:
     return {w for w in words if w not in STOPWORDS}
 
 
+def _is_hangul(w: str) -> bool:
+    return any("가" <= c <= "힣" for c in w)
+
+
+def is_baseball(title: str) -> bool:
+    """야구 기사인지 — 제목에 야구 용어가 하나라도 있어야 한다.
+
+    검색어를 '삼성 라이온즈' 로 좁혀도 기업/정치 기사가 섞여 들어온다.
+    실측에서 '2분기 heat'(삼성전자 실적), '김정관 장관' 이 상위 화제로 올라왔다.
+
+    단순 부분 문자열로 보면 안 된다 — 'LG 트윈스타워 매각' 이 '트윈스' 때문에
+    야구 기사로 통과한다. 단어 단위로 보되 뒤에 붙은 조사 한 글자는 허용한다
+    ('트윈스의' 는 통과, '트윈스타워' 는 차단).
+    """
+    for token in _NOISE.split(title):
+        if not token:
+            continue
+        for term in BASEBALL_TERMS:
+            if token == term:
+                return True
+            if token.startswith(term) and len(token) - len(term) <= 1:
+                return True
+    return False
+
+
 def _overlap(ka: set[str], kb: set[str]) -> set[str]:
     """두 키워드 집합의 교집합 — 한국어 조사/접미사 차이를 흡수한다.
 
@@ -237,10 +280,14 @@ def cluster(articles: list[Article]) -> list[Topic]:
             df[w] += 1
 
     n = max(len(articles), 1)
-    # 전체의 40% 이하에만 등장하면 '희귀' = 사건 식별력이 있다고 본다.
-    # 30% 로 잡았더니 크게 터진 주제는 자기 주제어가 흔해져서 오히려 안 묶이는
-    # 자기모순이 생겼다(원태인이 12건 중 4건에 나오는데 컷이 3이라 탈락).
-    rare_cut = max(2, int(n * 0.4))
+    # '희귀' 기준. 전체의 40% 로 잡았다가 크게 터졌다 — 654건에서 컷이 261이 되어
+    # 사실상 모든 단어가 희귀 판정을 받았고, 단어 하나만 겹쳐도 이어지면서
+    # 205개 매체짜리 괴물 클러스터가 나왔다.
+    # 식별력 있는 단어(선수 이름 등)는 실제로는 전체의 몇 % 안쪽이다. 비율을 5% 로
+    # 낮추되, 기사가 아주 많아도 컷이 무한정 커지지 않게 상한을 둔다.
+    # 하한 5 는 '기사가 적을 땐 비율 통계가 무의미하다'는 뜻이다. 10여 건짜리
+    # 표본에서 5% 는 0이 되어 아무것도 희귀로 안 잡힌다.
+    rare_cut = max(5, min(int(n * 0.05), 40))
 
     def is_rare(w: str) -> bool:
         # 팀명은 df 가 낮아도 단독 연결어가 되면 안 된다. 같은 팀의 서로 다른
@@ -258,21 +305,36 @@ def cluster(articles: list[Article]) -> list[Topic]:
         return len([w for w in overlap if w not in WEAK_KEYWORDS]) >= 2
 
     topics: list[Topic] = []
+    # 주제별 키워드 등장 횟수 — '핵심어'를 가려내는 데 쓴다
+    counts: list[dict[str, int]] = []
+
+    def core_of(idx: int) -> set[str]:
+        """주제의 핵심어 — 그 주제 기사의 절반 이상에 나오는 단어.
+
+        합집합 전체와 비교하면 한 기사에만 있던 곁가지 단어로도 연결이 되어
+        서로 다른 사건이 줄줄이 이어진다(A~B, B~C 인데 A와 C는 무관한 연쇄).
+        핵심어로만 비교하면 이 연쇄가 끊긴다.
+        """
+        c = counts[idx]
+        need = max(1, len(topics[idx].articles) // 2)
+        return {w for w, k in c.items() if k >= need}
+
     for a in sorted(articles, key=lambda x: x.published, reverse=True):
         ka = kw_cache[id(a)]
         if not ka:
             continue
         placed = False
-        for t in topics:
-            if same_topic(ka, set(t.keywords)):
+        for i, t in enumerate(topics):
+            if same_topic(ka, core_of(i)):
                 t.articles.append(a)
-                # 교집합으로 좁히면 주제어가 사라져 이후 기사를 놓친다(원태인 건에서
-                # 'FA' 만 남아 'MLB 스카우터' 기사를 못 붙였음). 합집합으로 넓힌다.
+                for w in ka:
+                    counts[i][w] = counts[i].get(w, 0) + 1
                 t.keywords = sorted(set(t.keywords) | ka)
                 placed = True
                 break
         if not placed:
             topics.append(Topic(key="", keywords=sorted(ka), articles=[a]))
+            counts.append({w: 1 for w in ka})
 
     # 대표어 뽑기 — '희귀한 순'으로 고르면 안 된다. 제일 희귀한 단어는 보통
     # 한 매체만 쓴 특이 표현이라 정작 주인공을 놓친다("류현진 은퇴" 대신 "공식 발언").
@@ -285,7 +347,14 @@ def cluster(articles: list[Article]) -> list[Topic]:
                 in_cluster[w] += 1
         ranked = sorted(
             t.keywords,
-            key=lambda w: (-in_cluster[w], w in WEAK_KEYWORDS, df[w], w),
+            key=lambda w: (
+                -in_cluster[w],
+                any(c.isdigit() for c in w),   # '200억' 보다 '원태인' 이 앞에
+                not _is_hangul(w),             # 'FA' 보다 한글 이름이 앞에
+                w in WEAK_KEYWORDS,
+                df[w],
+                w,
+            ),
         )
         t.keywords = ranked
         t.key = " ".join(ranked[:2])
@@ -310,7 +379,7 @@ def collect(
             arts = fetch(q)
             got = len(arts)
             for a in arts:
-                if a.published >= since and a.link:
+                if a.published >= since and a.link and is_baseball(a.title):
                     fresh += 1
                     seen.setdefault(a.link, a)
         except NewsError:
