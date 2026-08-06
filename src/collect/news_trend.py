@@ -204,10 +204,32 @@ def fetch(query: str, *, display: int = 100) -> list[Article]:
     return out
 
 
+# 조사·어미 — 긴 것부터 떼어내야 '으로'가 '로'로 잘못 잘리지 않는다.
+PARTICLES = (
+    "으로써", "로써", "에서는", "에게서", "이라고", "라고는", "으로는", "에서도",
+    "까지는", "부터는", "에게는", "이라는", "라는", "으로", "에서", "에게", "까지",
+    "부터", "처럼", "보다", "이라", "에는", "에도", "만이", "과의", "와의",
+    "은", "는", "이", "가", "을", "를", "에", "의", "도", "로", "와", "과", "만",
+)
+
+
+def _stem(word: str) -> str:
+    """조사를 떼어 어간만 남긴다.
+
+    '폭염으로' 와 '폭염에' 는 서로의 앞부분이 아니라 접두 일치로도 안 묶인다.
+    같은 사건이 조사 때문에 갈라지는 걸 막으려면 어간을 맞춰야 한다.
+    어간이 1글자만 남으면 오히려 오탐이 커지므로 원형을 유지한다.
+    """
+    for p in PARTICLES:
+        if len(word) - len(p) >= 2 and word.endswith(p):
+            return word[: -len(p)]
+    return word
+
+
 def _keywords(title: str) -> set[str]:
     """제목에서 사건을 식별할 만한 단어만 남긴다."""
-    words = [w for w in _NOISE.split(title) if len(w) >= 2]
-    return {w for w in words if w not in STOPWORDS}
+    words = [_stem(w) for w in _NOISE.split(title) if len(w) >= 2]
+    return {w for w in words if len(w) >= 2 and w not in STOPWORDS}
 
 
 def _is_hangul(w: str) -> bool:
@@ -258,6 +280,53 @@ def _overlap(ka: set[str], kb: set[str]) -> set[str]:
                 elif b.startswith(a):
                     out.add(a)
     return out
+
+
+def _dominant(topic: Topic, count: dict[str, int]) -> set[str]:
+    """그 주제 기사의 과반에 등장하는 단어 = 주제를 지배하는 말."""
+    need = max(1, (len(topic.articles) + 1) // 2)
+    return {w for w, k in count.items() if k >= need and w not in WEAK_KEYWORDS}
+
+
+def _merge_same_event(
+    topics: list[Topic], counts: list[dict[str, int]]
+) -> tuple[list[Topic], list[dict[str, int]]]:
+    """같은 사건이 표현 차이로 쪼개진 것을 합친다.
+
+    실측에서 폭염 경기 취소 한 건이 '취소 폭염'(29곳) / '재개 폭염'(12곳) /
+    '중단 폭염에'(7곳) 등 5조각으로 갈렸다. 매체 62곳짜리 대형 사건이 29곳으로
+    축소돼 보이면 화제 판단이 어긋난다.
+
+    양쪽 주제를 '지배하는 단어'가 겹치면 같은 사건으로 본다. 곁가지 단어가 아니라
+    과반이 공유하는 말이라야 하므로, 앞서 문제였던 연쇄 병합은 일어나지 않는다
+    (류현진 은퇴와 김서현 부진은 지배어가 각각 다르다).
+    """
+    merged = True
+    while merged:
+        merged = False
+        for i in range(len(topics)):
+            if not topics[i].articles:
+                continue
+            di = _dominant(topics[i], counts[i])
+            if not di:
+                continue
+            for j in range(i + 1, len(topics)):
+                if not topics[j].articles:
+                    continue
+                dj = _dominant(topics[j], counts[j])
+                if not dj or not _overlap(di, dj):
+                    continue
+                topics[i].articles.extend(topics[j].articles)
+                topics[i].keywords = sorted(set(topics[i].keywords) | set(topics[j].keywords))
+                for w, k in counts[j].items():
+                    counts[i][w] = counts[i].get(w, 0) + k
+                topics[j].articles = []
+                merged = True
+            if merged:
+                break
+
+    keep = [k for k, t in enumerate(topics) if t.articles]
+    return [topics[k] for k in keep], [counts[k] for k in keep]
 
 
 def cluster(articles: list[Article]) -> list[Topic]:
@@ -335,6 +404,8 @@ def cluster(articles: list[Article]) -> list[Topic]:
         if not placed:
             topics.append(Topic(key="", keywords=sorted(ka), articles=[a]))
             counts.append({w: 1 for w in ka})
+
+    topics, counts = _merge_same_event(topics, counts)
 
     # 대표어 뽑기 — '희귀한 순'으로 고르면 안 된다. 제일 희귀한 단어는 보통
     # 한 매체만 쓴 특이 표현이라 정작 주인공을 놓친다("류현진 은퇴" 대신 "공식 발언").

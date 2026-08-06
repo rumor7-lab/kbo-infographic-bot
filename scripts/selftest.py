@@ -261,6 +261,35 @@ def stage_news_trend() -> None:
           all(not t.key.split()[0][0].isdigit() for t in ct if t.key),
           f"({[t.key for t in ct[:3]]})")
 
+    # 조사 제거 — '폭염으로' 와 '폭염에' 는 서로의 앞부분이 아니라 접두 일치로도
+    # 안 묶인다. 어간을 맞춰야 같은 사건으로 인식된다.
+    from src.collect.news_trend import _stem
+
+    stem_cases = [("폭염으로", "폭염"), ("폭염에", "폭염"), ("주말까지", "주말"),
+                  ("타이거즈의", "타이거즈"), ("선발로", "선발"),
+                  ("류현진", "류현진"), ("김서현", "김서현"), ("200억", "200억")]
+    wrong = [(w, _stem(w)) for w, want in stem_cases if _stem(w) != want]
+    check("조사 제거 (사람 이름은 보존)", not wrong, f"오류: {wrong}")
+
+    # 실측에서 폭염 경기 취소 한 건이 표현 차이로 5조각(29/12/8/7/6곳)으로 갈렸다.
+    # 62곳짜리 대형 사건이 29곳으로 축소돼 보이면 화제 판단이 어긋난다.
+    split = []
+    for i in range(29):
+        split.append(A(f"폭염으로 경기 취소 KBO {i}", f"a{i}.co", i * 2))
+    for i in range(12):
+        split.append(A(f"폭염 속 경기 재개 결정 {i}", f"b{i}.co", i * 3))
+    for i in range(8):
+        split.append(A(f"주말까지 폭염에 경기 차질 {i}", f"c{i}.co", i * 4))
+    for i in range(9):
+        split.append(A(f"류현진 은퇴 시사 발언 {i}", f"e{i}.co", i * 3))
+
+    st = sorted(cluster(split), key=lambda t: t.article_count, reverse=True)
+    check("표현 갈린 같은 사건이 하나로 합쳐짐",
+          st and st[0].article_count == 49, f"({st[0].article_count if st else 0}/49건)")
+    check("합칠 때 무관한 사건은 안 섞임",
+          all(not any("류현진" in a.title for a in t.articles)
+              for t in st if t.article_count == 49))
+
 
 def stage_title_sizing(cfg: dict) -> None:
     """타이틀 크기 자동 조절 안전장치 확인.
