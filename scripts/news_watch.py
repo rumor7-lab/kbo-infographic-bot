@@ -144,6 +144,11 @@ def check_once(*, hours: int, min_outlets: int, top: int, quiet: bool,
             for t in all_topics[:5]:
                 mark = "✓" if t.outlet_count >= min_outlets else " "
                 print(f"      {mark} 매체 {t.outlet_count}곳 · {t.velocity:4.1f}건/h · {t.key}")
+                if debug:
+                    # 대표어만 봐서는 진짜 하나의 사건인지 판단이 안 될 때가 있다
+                    # ("중단 이후" 처럼). 실제 제목을 같이 보여줘 눈으로 검증한다.
+                    for h in t.headline_candidates(2):
+                        print(f"          · {h}")
 
     if not topics:
         return 0
