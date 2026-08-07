@@ -113,7 +113,10 @@ def draft(topic: Topic, *, model: str | None = None) -> dict[str, str]:
             headers={"x-goog-api-key": key, "Content-Type": "application/json"},
             json={
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.4, "maxOutputTokens": 500},
+                # maxOutputTokens 는 최신 모델(gemini-3.x 계열)에서 내부 "thinking"
+                # 토큰까지 같은 예산을 나눠 쓴다 — 500 정도로는 thinking 이 다 먹어버려
+                # 정작 답변(JSON)이 중간에 잘리는 문제가 있었다. 넉넉하게 잡는다.
+                "generationConfig": {"temperature": 0.4, "maxOutputTokens": 2048},
             },
             timeout=30,
         )
@@ -127,7 +130,10 @@ def draft(topic: Topic, *, model: str | None = None) -> dict[str, str]:
     try:
         text = body["candidates"][0]["content"]["parts"][0]["text"]
     except (KeyError, IndexError, TypeError) as e:
-        raise WriterError(f"Gemini 응답 형식이 예상과 다름: {str(body)[:300]}") from e
+        finish = body.get("candidates", [{}])[0].get("finishReason", "?")
+        raise WriterError(
+            f"Gemini 응답 형식이 예상과 다름(finishReason={finish}): {str(body)[:300]}"
+        ) from e
 
     data = _extract_json(text)
     line1 = (data.get("line1") or "").strip()
