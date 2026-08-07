@@ -95,7 +95,9 @@ def draft(topic: Topic, *, model: str | None = None) -> dict[str, str]:
         raise WriterError("소재로 쓸 기사가 없음")
 
     key = _api_key()
-    model = model or os.getenv("GEMINI_MODEL", DEFAULT_MODEL)
+    # os.getenv(key, default) 는 환경변수가 "존재하되 빈 문자열"이면 default 로
+    # 안 넘어간다 (.env 의 GEMINI_MODEL= 처럼) — 그래서 빈 문자열도 명시적으로 걸러낸다.
+    model = model or os.getenv("GEMINI_MODEL") or DEFAULT_MODEL
 
     sources = "\n".join(
         f"- [{m['outlet']}] {m['title']}" + (f" — {m['description']}" if m["description"] else "")
