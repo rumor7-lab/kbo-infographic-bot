@@ -141,39 +141,57 @@ def check_once(*, hours: int, min_outlets: int, min_interest: int, top: int,
 
     articles = nt.collect(hours=hours, on_query=progress)
     all_topics = nt.rank(nt.cluster(articles))
+
     # 두 가지 서로 다른 이유로 '터진 것'이 될 수 있다 — 매체 수(속보성)
     # 아니면 인터뷰·드라마 신호(단독 기사인데 사람들이 많이 읽을 법함).
-    # 어느 쪽으로 통과했는지를 알아야 알림 문구도 다르게 쓸 수 있어 같이 기록한다.
-    qualified = [
-        (t, t.outlet_count >= min_outlets)
-        for t in all_topics
-        if t.outlet_count >= min_outlets or t.interest >= min_interest
-    ]
-    topics = qualified[:top]
+    # all_topics 는 매체 수로만 정렬돼 있어서, 여기서 그냥 상위 N개를 자르면
+    # 인터뷰성 단독 기사(매체 수가 원래 낮음)는 항상 뒤로 밀려 잘려나간다 —
+    # "구자욱 FA 인터뷰"를 놓쳤던 문제를 이 정렬 순서 그대로 재현하게 되는 셈이다.
+    # 그래서 두 채널의 후보 목록을 따로 뽑고 각자의 기준으로 상위 N개씩 뽑는다.
+    outlet_hits = [t for t in all_topics if t.outlet_count >= min_outlets][:top]
+    interest_hits = sorted(
+        (t for t in all_topics
+         if t.outlet_count < min_outlets and t.interest >= min_interest),
+        key=lambda t: t.interest, reverse=True,
+    )[:top]
+    topics = [(t, True) for t in outlet_hits] + [(t, False) for t in interest_hits]
 
     if debug or not topics:
         # 결과가 없을 때 그냥 '없음'만 찍으면 원인을 알 수 없다.
         # 몇 건을 모았고 상위 주제가 몇 매체였는지 보여줘야 임계값을 조정할 수 있다.
         print(f"[{datetime.now():%H:%M}] 기사 {len(articles)}건 수집 → "
-              f"주제 {len(all_topics)}개 (기준 {min_outlets}매체 또는 인터뷰신호 "
-              f"{min_interest}점 이상: {len(topics)}개)")
+              f"주제 {len(all_topics)}개 (매체 {len(outlet_hits)}개 + "
+              f"관심 {len(interest_hits)}개 = {len(topics)}개)")
         if not articles:
             print("    → 기사가 0건입니다. 네이버 앱의 '사용 API' 에 검색이 있는지,"
                   " 키가 맞는지 확인하세요.")
         elif all_topics:
-            print("    상위 주제 (기준 미달 포함):")
+            print("    상위 주제 — 매체 수 기준 (기준 미달 포함):")
             for t in all_topics[:5]:
                 by_outlet = t.outlet_count >= min_outlets
-                by_interest = t.interest >= min_interest
-                mark = "✓" if (by_outlet or by_interest) else " "
-                tag = "[매체]" if by_outlet else ("[관심]" if by_interest else "")
+                mark = "✓" if by_outlet else " "
                 print(f"      {mark} 매체 {t.outlet_count}곳 · {t.velocity:4.1f}건/h · "
-                      f"관심 {t.interest}점 {tag} · {t.key}")
+                      f"관심 {t.interest}점 · {t.key}")
                 if debug:
                     # 대표어만 봐서는 진짜 하나의 사건인지 판단이 안 될 때가 있다
                     # ("중단 이후" 처럼). 실제 제목을 같이 보여줘 눈으로 검증한다.
                     for h in t.headline_candidates(2):
                         print(f"          · {h}")
+
+            # 매체 수 기준 목록엔 인터뷰성 기사가 애초에 안 보인다(매체 수가
+            # 낮으니 저 정렬에선 밑바닥). 그래서 관심점수 기준 상위도 따로 보여준다.
+            by_interest_all = sorted(
+                (t for t in all_topics if t.outlet_count < min_outlets),
+                key=lambda t: t.interest, reverse=True,
+            )[:5]
+            if by_interest_all:
+                print("    상위 주제 — 관심점수 기준 (매체수 기준 미달만, 기준 미달 포함):")
+                for t in by_interest_all:
+                    mark = "✓" if t.interest >= min_interest else " "
+                    print(f"      {mark} 관심 {t.interest}점 · 매체 {t.outlet_count}곳 · {t.key}")
+                    if debug:
+                        for h in t.headline_candidates(2):
+                            print(f"          · {h}")
 
     if not topics:
         return 0
