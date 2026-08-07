@@ -27,6 +27,8 @@ import secrets
 from datetime import datetime, timedelta
 from pathlib import Path
 
+import cv2
+
 from src.collect.news_trend import KST
 from src.publish import captions, hosting
 from src.publish import telegram as tg
@@ -113,6 +115,34 @@ def parse_caption(caption: str) -> dict[str, str]:
     }
 
 
+def _upscale_if_small(path: Path, target_w: int, target_h: int) -> None:
+    """받은 사진이 카드 캔버스보다 작으면 업스케일한다.
+
+    화질 저하는 두 군데서 온다: (1) 기사 원본 사진 자체가 작은 경우, (2) 텔레그램
+    '사진'으로 보내면 자체적으로 재압축한 사본만 오는 경우(문서/파일로 보내면
+    원본이 그대로 옴 — handle_photo_reply 가 document 를 우선 사용하는 이유).
+    여기서는 (1)에 대한 보완이다 — background-size:cover 로 그냥 늘어나며
+    뭉개지는 것보다, Lanczos 보간 + 약한 샤프닝을 한 번 거치는 쪽이 덜 흐리다.
+    실제 디테일을 만들어내는 초해상화는 아니라 한계는 있다.
+    """
+    img = cv2.imread(str(path))
+    if img is None:
+        return
+    h, w = img.shape[:2]
+    if w >= target_w and h >= target_h:
+        return  # 이미 캔버스보다 크면 그대로 둔다 — cover 크롭만 되고 안 뭉개짐
+
+    scale = max(target_w / w, target_h / h)
+    new_w, new_h = round(w * scale), round(h * scale)
+    upscaled = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_LANCZOS4)
+
+    # 업스케일 보간 자체가 살짝 흐릿해서, unsharp mask 로 윤곽을 보정한다.
+    blurred = cv2.GaussianBlur(upscaled, (0, 0), sigmaX=3)
+    sharpened = cv2.addWeighted(upscaled, 1.5, blurred, -0.5, 0)
+
+    cv2.imwrite(str(path), sharpened)
+
+
 def handle_photo_reply(cred: tg.Credentials, msg: dict, *, debug: bool = False) -> bool:
     """사진 답장 메시지 하나를 처리 — 대상 아니면 False, 카드까지 만들었으면 True.
 
@@ -121,7 +151,12 @@ def handle_photo_reply(cred: tg.Credentials, msg: dict, *, debug: bool = False) 
     """
     reply = msg.get("reply_to_message")
     photos = msg.get("photo")
-    if not reply or not photos:
+    # 텔레그램 '사진'으로 보내면 텔레그램이 자체적으로 재압축한 사본만 온다.
+    # '파일(문서)'로 보내면 원본 그대로 오므로 화질 손실이 없다 — mime_type 이
+    # image/* 인 document 는 사진 답장과 동일하게 취급한다.
+    document = msg.get("document")
+    is_image_doc = bool(document) and str(document.get("mime_type", "")).startswith("image/")
+    if not reply or not (photos or is_image_doc):
         return False
 
     topic = load_topic(reply["message_id"])
@@ -164,14 +199,17 @@ def handle_photo_reply(cred: tg.Credentials, msg: dict, *, debug: bool = False) 
 
     print(f"  🖼  카드 제작: {topic.get('key')} — \"{parsed['line1']}\"")
 
-    # 가장 큰 해상도(배열 마지막)를 받는다
-    file_id = photos[-1]["file_id"]
+    # document(파일)로 왔으면 원본 그대로, 아니면 photo 배열 중 가장 큰 해상도.
+    file_id = document["file_id"] if is_image_doc else photos[-1]["file_id"]
     file_path = tg.get_file_path(cred, file_id)
     ext = Path(file_path).suffix or ".jpg"
     local_photo = PHOTO_INBOX / f"{topic['topic_id']}_{reply['message_id']}{ext}"
     tg.download_file(cred, file_path, local_photo)
 
     cfg = load_cfg()
+    canvas = cfg["brand"].get("canvas", {}).get("feed", {})
+    if canvas.get("width") and canvas.get("height"):
+        _upscale_if_small(local_photo, canvas["width"], canvas["height"])
     news = NewsCard(
         line1=parsed["line1"], line2=parsed["line2"], hook=parsed["hook"],
         photo=str(local_photo), photo_credit=parsed["credit"],
