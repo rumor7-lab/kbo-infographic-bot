@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260807_223008_news",
+  "slot": "news",
+  "caption": "삼성, 일본인 투수 미야모리 영입 기존 미야지 방출… 총 7만 3000달러 계약\n\n삼성 라이온즈가 마운드 강화를 위해 새 아시아쿼터 투수 미야모리 사토시를 영입했습니다. 이적료를 포함해 총액 7만 3000달러에 계약을 맺은 미야모리는 일본프로야구 라쿠텐 골든이글스에서 통산 69경기에 등판해 2승 3패 10홀드를 거둔 바 있습니다. 한편 기존 아시아쿼터 선수였던 미야지는 방출되었으며, 삼성은 정규시즌 정상 탈환을 목표로 전력 정비에 나섰습니다.\n\n지금 KBO · 8개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #삼성라이온즈",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-07T22:30:08.578557+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "6084e7ea",
+      "card_id": "news_삼성_미야모리",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260807/223005_news_._.png",
+      "message_id": 77,
+      "status": "pending"
+    }
+  ]
+}
