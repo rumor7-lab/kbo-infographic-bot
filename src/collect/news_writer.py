@@ -33,7 +33,9 @@ from .news_trend import Topic
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 # flash 계열 — 카드 한 장당 비용이 작아야 하는 용도라 pro 계열은 안 씀.
 # 모델명은 자주 갱신되니 .env 의 GEMINI_MODEL 로 언제든 바꿀 수 있게 한다.
-DEFAULT_MODEL = "gemini-2.5-flash"
+# 2026-08: gemini-2.5-flash 가 "신규 사용자에게 더 이상 제공 안 함"으로 막혀
+# gemini-3.6-flash 로 교체 (현재 GA 최신 flash 모델).
+DEFAULT_MODEL = "gemini-3.6-flash"
 
 
 class WriterError(RuntimeError):
