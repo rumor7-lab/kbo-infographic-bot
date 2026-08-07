@@ -1,0 +1,30 @@
+{
+  "message_id": 55,
+  "topic_id": "KIA_입대",
+  "key": "KIA 입대",
+  "keywords": [
+    "KIA",
+    "입대",
+    "트레이드",
+    "급했는데",
+    "상무",
+    "상품",
+    "성공작",
+    "실화"
+  ],
+  "team": "KIA",
+  "outlet_count": 3,
+  "headlines": [
+    "'KIA→한화' 트레이드 주인공, '1.46' 실화? 후반기 히트 상품 예고…김...",
+    "정해영만큼 군 입대 급했는데…KIA 트레이드 은근한 성공작, 이 선수도...",
+    "프로야구 11명 상무 입대 확정…KIA 정해영 포함"
+  ],
+  "links": [
+    "https://www.xportsnews.com/article/2181150",
+    "https://www.mydaily.co.kr/page/view/2026080716204966335",
+    "https://www.joongangenews.com/news/articleView.html?idxno=538602"
+  ],
+  "created_at": "2026-08-07T20:17:12.593894+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

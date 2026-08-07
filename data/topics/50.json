@@ -1,0 +1,32 @@
+{
+  "message_id": 50,
+  "topic_id": "연기_폭염",
+  "key": "연기 폭염",
+  "keywords": [
+    "연기",
+    "폭염",
+    "은퇴식",
+    "황재균",
+    "모든",
+    "인사",
+    "잠정",
+    "제대"
+  ],
+  "team": "삼성",
+  "outlet_count": 9,
+  "headlines": [
+    "여자축구선수권 출전 중학생 선수 무더위에 탈진…킥오프 1시간 연기",
+    "\"경기 시작 늦춰달라 요구 묵살\"...선수 탈진하자 1시간 연기",
+    "MLB 송성문·김하성, 팀 승리에도 출전 기회 잡지 못해"
+  ],
+  "links": [
+    "https://www.news1.kr/sports/soccer/6252902",
+    "https://www.ytn.co.kr/_ln/0103_202608071805566486",
+    "https://www.joongangenews.com/news/articleView.html?idxno=538681",
+    "https://www.tvreport.co.kr/breaking/article/1067117/",
+    "https://www.newsis.com/view/NISX20260807_0003740562"
+  ],
+  "created_at": "2026-08-07T20:17:06.628516+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

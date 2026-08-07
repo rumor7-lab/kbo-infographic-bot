@@ -1,0 +1,26 @@
+{
+  "message_id": 58,
+  "topic_id": "달성_미쳤다",
+  "key": "달성 미쳤다",
+  "keywords": [
+    "달성",
+    "미쳤다",
+    "위즈덤",
+    "이래",
+    "콜업",
+    "홈런",
+    "KIA",
+    "30홈런"
+  ],
+  "team": "KIA",
+  "outlet_count": 1,
+  "headlines": [
+    "'홈런-홈런-홈런' 前 KIA 위즈덤 미쳤다! 30홈런 달성…'이래도 콜업 안..."
+  ],
+  "links": [
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=833409"
+  ],
+  "created_at": "2026-08-07T20:17:16.128576+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
