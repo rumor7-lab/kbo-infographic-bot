@@ -37,6 +37,7 @@
 .hook{
   position:absolute; z-index:4;
   top:38px; right:44px; max-width:78%;
+  font-family:var(--font-news);
   font-size:{{ hook_size | default(38) }}px; font-weight:800;
   color:{{ c.gold }};
   letter-spacing:-.02em; line-height:1.3;
@@ -64,8 +65,9 @@
   background:rgba(255,255,255,.9); flex:0 0 auto;
 }
 .line1{
-  font-size:{{ line1_size }}px; font-weight:900; color:#fff;
-  letter-spacing:-.035em; line-height:1.22; word-break:keep-all;
+  font-family:var(--font-news);
+  font-size:{{ line1_size }}px; font-weight:800; color:#fff;
+  letter-spacing:-.02em; line-height:1.22; word-break:keep-all;
   text-shadow:0 6px 30px rgba(0,0,0,.6);
 }
 .line1 em{font-style:normal; color:{{ c.gold }}}
@@ -74,8 +76,9 @@
   background:rgba(255,255,255,.22);
 }
 .line2{
-  font-size:{{ line2_size }}px; font-weight:800; color:rgba(255,255,255,.94);
-  letter-spacing:-.03em; line-height:1.28; word-break:keep-all;
+  font-family:var(--font-news);
+  font-size:{{ line2_size }}px; font-weight:700; color:rgba(255,255,255,.94);
+  letter-spacing:-.01em; line-height:1.28; word-break:keep-all;
   text-shadow:0 5px 24px rgba(0,0,0,.6);
 }
 .line2 em{font-style:normal; color:{{ c.gold }}}

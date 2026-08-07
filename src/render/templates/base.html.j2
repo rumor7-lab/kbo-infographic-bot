@@ -12,6 +12,8 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap">
+<!-- 뉴스카드(유형 E) 헤드라인 전용 — 나눔고딕 계열 요청으로 추가 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&display=swap">
 <style>
 :root{
   --ink:{{ c.ink }}; --ink-soft:{{ c.ink_soft }}; --paper:{{ c.paper }};
@@ -21,6 +23,8 @@
   --pad:{{ f.padding }}px; --radius:{{ f.radius }}px;
   --team:{{ team_color | default(c.accent, true) }};
   --font-headline:{{ t.family_headline }};
+  /* 나눔고딕 계열 — 뉴스카드(유형 E) 헤드라인 전용, 다른 유형엔 안 씀 */
+  --font-news:'Nanum Gothic', 'NanumGothic', sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
 html,body{width:{{ W }}px;height:{{ H }}px;overflow:hidden}

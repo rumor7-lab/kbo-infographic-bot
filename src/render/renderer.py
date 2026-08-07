@@ -251,18 +251,22 @@ def _headline_size(text: str) -> int:
     return 84
 
 
-def _news_line_size(text: str, *, base: int = 62) -> int:
+def _news_line_size(text: str, *, base: int = 78) -> int:
     """뉴스카드 헤드라인 자동 축소.
 
     가용 폭 968px(1080 - 좌우 56px) 기준. 한글 볼드는 대략 글자당 폰트크기의
     0.95배 폭을 먹으므로 그 선에서 2줄을 넘기지 않게 단계적으로 줄인다.
     <em> 강조 태그는 폭에 영향이 없으니 길이 계산에서 뺀다.
+
+    기존 62px 기준이 실측(카드 실제 발행분)에서 너무 작다는 피드백을 받아
+    전체적으로 한 단계씩 키웠다 — 짧은 헤드라인일수록 여백을 더 적극적으로
+    큰 글씨에 써도 되므로 기준값(base)만 올리고 단계 폭 비율은 유지한다.
     """
     n = len(re.sub(r"</?em>", "", text or ""))
-    for limit, size in ((14, base), (18, 54), (24, 46), (30, 40), (38, 35)):
+    for limit, size in ((10, base), (14, 68), (18, 60), (24, 52), (30, 45)):
         if n <= limit:
             return min(base, size)
-    return min(base, 31)
+    return min(base, 40)
 
 
 def _split_emphasis(title: str) -> tuple[str, str]:
@@ -399,7 +403,7 @@ def build_context(
             "line1_size": line1_size,
             # 2행은 부연이라 1행보다 한 톤 작게 — 다만 1행이 이미 많이 줄었으면
             # 같이 줄지 않도록 자체 길이 기준도 함께 적용한다.
-            "line2_size": min(int(line1_size * 0.92), _news_line_size(news.line2, base=56)),
+            "line2_size": min(int(line1_size * 0.92), _news_line_size(news.line2, base=66)),
         })
     ctx.update(_fit(len(rows), layout, H, header_px))
     return ctx
