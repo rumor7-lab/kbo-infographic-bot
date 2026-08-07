@@ -100,8 +100,13 @@ def send_video_for_approval(
     return res["message_id"]
 
 
-def send_message(cred: Credentials, text: str) -> int:
-    res = _call(cred, "sendMessage", chat_id=cred.chat_id, text=text)
+def send_message(
+    cred: Credentials, text: str, *, reply_to_message_id: int | None = None
+) -> int:
+    params: dict[str, Any] = {"chat_id": cred.chat_id, "text": text}
+    if reply_to_message_id is not None:
+        params["reply_to_message_id"] = reply_to_message_id
+    res = _call(cred, "sendMessage", **params)
     return res["message_id"]
 
 
@@ -122,6 +127,26 @@ def answer_callback(cred: Credentials, callback_query_id: str, text: str) -> Non
         _call(cred, "answerCallbackQuery", callback_query_id=callback_query_id, text=text)
     except TelegramError as e:
         print(f"DEBUG answer_callback 실패(무시됨): {e}")
+
+
+def get_file_path(cred: Credentials, file_id: str) -> str:
+    """파일 메타 조회 — 다운로드용 file_path 를 반환한다(최대 20MB 파일만 가능)."""
+    res = _call(cred, "getFile", file_id=file_id)
+    return res["file_path"]
+
+
+def download_file(cred: Credentials, file_path: str, dest: Path) -> Path:
+    """getFile 로 받은 file_path 를 실제 바이트로 내려받는다.
+
+    봇 API 파일 다운로드는 bot{token}/ 경로가 아니라 별도의 file/bot{token}/
+    엔드포인트를 쓴다 — 다른 메서드들과 URL 형태가 달라 헷갈리기 쉽다.
+    """
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    r = requests.get(f"{API}/file/bot{cred.bot_token}/{file_path}", timeout=60)
+    if r.status_code != 200:
+        raise TelegramError(f"파일 다운로드 실패 {r.status_code}: {r.text[:200]}")
+    dest.write_bytes(r.content)
+    return dest
 
 
 def get_updates(cred: Credentials, offset: int) -> list[dict]:

@@ -90,6 +90,35 @@ def build(
     return "\n".join(parts)
 
 
+def build_news(
+    line1: str, line2: str, *, team: str | None, outlet_count: int,
+    category: str = "지금 KBO",
+) -> str:
+    """뉴스형 카드(유형 E) 전용 캡션.
+
+    table 계열 카드의 build() 는 rows 요약이 핵심이라 뉴스카드엔 안 맞는다.
+    여기선 카드에 이미 쓴 헤드라인을 캡션 첫 줄에 그대로 반복해 피드 미리보기
+    에서도 결론이 보이게 하고, '몇 개 매체가 다뤘는지'로 화제성을 한 번 더
+    증명한다 — 조회수 대신 이걸 신뢰 신호로 쓰기로 한 설계와 같은 맥락이다.
+    """
+    headline = line1.strip()
+    if line2.strip():
+        headline += f" {line2.strip()}"
+
+    parts = [headline, ""]
+    parts.append(f"{category} · {outlet_count}개 매체가 다룬 소식")
+    parts.append("")
+    parts.append("저장해두고 다음 소식도 놓치지 마세요")
+    parts.append("")
+
+    tags = list(BASE_TAGS) + ["#지금KBO", "#야구뉴스", "#속보"]
+    if team and team in TEAM_TAGS:
+        tags.append(TEAM_TAGS[team])
+    parts.append(" ".join(dict.fromkeys(tags)))
+
+    return "\n".join(parts)
+
+
 def _auto_lead(card_id: str, title: str, rows: list[dict]) -> str:
     if not rows:
         return title
