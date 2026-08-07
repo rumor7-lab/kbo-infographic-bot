@@ -76,13 +76,25 @@ def _topic_id(topic: nt.Topic) -> str:
     return "_".join(topic.keywords[:2])
 
 
-def _format_alert(topic: nt.Topic, *, grown: bool = False) -> str:
-    head = "📈 더 커짐" if grown else "🔥 지금 터짐"
-    lines = [
-        f"{head} — {topic.key}",
-        "",
-        f"매체 {topic.outlet_count}곳 · 시간당 {topic.velocity:.1f}건"
-        + (f" · {topic.team}" if topic.team else ""),
+def _format_alert(topic: nt.Topic, *, grown: bool = False, by_interest: bool = False) -> str:
+    if by_interest:
+        head = "✨ 화제될 만한 단독 기사"
+    else:
+        head = "📈 더 커짐" if grown else "🔥 지금 터짐"
+    lines = [f"{head} — {topic.key}", ""]
+    if by_interest:
+        # 단독/인터뷰성 기사는 매체 수가 낮은 게 당연하다 — 조건이 다르다는 걸
+        # 명시해야 '왜 1~2곳인데 왔지' 하는 혼란이 없다.
+        lines.append(
+            f"매체 {topic.outlet_count}곳(단독성) · 인터뷰·드라마 신호 {topic.interest}점"
+            + (f" · {topic.team}" if topic.team else "")
+        )
+    else:
+        lines.append(
+            f"매체 {topic.outlet_count}곳 · 시간당 {topic.velocity:.1f}건"
+            + (f" · {topic.team}" if topic.team else "")
+        )
+    lines += [
         f"최초 {topic.oldest:%H:%M} → 최신 {topic.newest:%H:%M}",
         "",
         "제목 참고 (그대로 쓰지 말 것):",
@@ -121,29 +133,42 @@ def _save_topic(topic: nt.Topic, message_id: int) -> None:
     )
 
 
-def check_once(*, hours: int, min_outlets: int, top: int, quiet: bool,
-               debug: bool = False) -> int:
+def check_once(*, hours: int, min_outlets: int, min_interest: int, top: int,
+               quiet: bool, debug: bool = False) -> int:
     def progress(q: str, got: int, fresh: int) -> None:
         if debug:
             print(f"    검색 '{q}': 수신 {got}건 → 최근 {hours}시간 내 {fresh}건")
 
     articles = nt.collect(hours=hours, on_query=progress)
     all_topics = nt.rank(nt.cluster(articles))
-    topics = [t for t in all_topics if t.outlet_count >= min_outlets][:top]
+    # 두 가지 서로 다른 이유로 '터진 것'이 될 수 있다 — 매체 수(속보성)
+    # 아니면 인터뷰·드라마 신호(단독 기사인데 사람들이 많이 읽을 법함).
+    # 어느 쪽으로 통과했는지를 알아야 알림 문구도 다르게 쓸 수 있어 같이 기록한다.
+    qualified = [
+        (t, t.outlet_count >= min_outlets)
+        for t in all_topics
+        if t.outlet_count >= min_outlets or t.interest >= min_interest
+    ]
+    topics = qualified[:top]
 
     if debug or not topics:
         # 결과가 없을 때 그냥 '없음'만 찍으면 원인을 알 수 없다.
         # 몇 건을 모았고 상위 주제가 몇 매체였는지 보여줘야 임계값을 조정할 수 있다.
         print(f"[{datetime.now():%H:%M}] 기사 {len(articles)}건 수집 → "
-              f"주제 {len(all_topics)}개 (기준 {min_outlets}매체 이상: {len(topics)}개)")
+              f"주제 {len(all_topics)}개 (기준 {min_outlets}매체 또는 인터뷰신호 "
+              f"{min_interest}점 이상: {len(topics)}개)")
         if not articles:
             print("    → 기사가 0건입니다. 네이버 앱의 '사용 API' 에 검색이 있는지,"
                   " 키가 맞는지 확인하세요.")
         elif all_topics:
             print("    상위 주제 (기준 미달 포함):")
             for t in all_topics[:5]:
-                mark = "✓" if t.outlet_count >= min_outlets else " "
-                print(f"      {mark} 매체 {t.outlet_count}곳 · {t.velocity:4.1f}건/h · {t.key}")
+                by_outlet = t.outlet_count >= min_outlets
+                by_interest = t.interest >= min_interest
+                mark = "✓" if (by_outlet or by_interest) else " "
+                tag = "[매체]" if by_outlet else ("[관심]" if by_interest else "")
+                print(f"      {mark} 매체 {t.outlet_count}곳 · {t.velocity:4.1f}건/h · "
+                      f"관심 {t.interest}점 {tag} · {t.key}")
                 if debug:
                     # 대표어만 봐서는 진짜 하나의 사건인지 판단이 안 될 때가 있다
                     # ("중단 이후" 처럼). 실제 제목을 같이 보여줘 눈으로 검증한다.
@@ -156,26 +181,30 @@ def check_once(*, hours: int, min_outlets: int, top: int, quiet: bool,
     seen = _load_seen()
     sent = 0
 
-    for t in topics:
+    for t, by_outlet in topics:
         tid = _topic_id(t)
         prev = seen.get(tid)
         grown = False
 
         if prev:
             # 같은 주제라도 규모가 크게 커졌으면 한 번 더 알린다
-            if t.outlet_count >= prev.get("outlets", 0) * REALERT_GROWTH:
+            # (인터뷰성 단독 기사는 매체 수가 안 느니 이 재알림 자체가 해당 없음)
+            if by_outlet and t.outlet_count >= prev.get("outlets", 0) * REALERT_GROWTH:
                 grown = True
             else:
                 print(f"  · 이미 알림: {t.key} (매체 {t.outlet_count}곳)")
                 continue
 
-        print(f"  🔥 {t.key} — 매체 {t.outlet_count}곳, {t.velocity:.1f}건/h"
-              + (" [더 커짐]" if grown else ""))
+        label = "🔥" if by_outlet else "✨"
+        print(f"  {label} {t.key} — 매체 {t.outlet_count}곳, {t.velocity:.1f}건/h, "
+              f"관심 {t.interest}점" + (" [더 커짐]" if grown else ""))
 
         if not quiet:
             try:
                 cred = tg.Credentials.from_env()
-                mid = tg.send_message(cred, _format_alert(t, grown=grown))
+                mid = tg.send_message(
+                    cred, _format_alert(t, grown=grown, by_interest=not by_outlet)
+                )
                 _save_topic(t, mid)
                 sent += 1
             except Exception as e:  # noqa: BLE001
@@ -196,6 +225,9 @@ def main() -> int:
     ap.add_argument("--hours", type=int, default=6, help="최근 몇 시간을 볼지, 기본 6")
     ap.add_argument("--min-outlets", type=int, default=4,
                     help="이 수 이상 매체가 다뤄야 '터진 것'으로 본다, 기본 4")
+    ap.add_argument("--min-interest", type=int, default=2,
+                    help="매체 수가 낮아도 이 점수 이상 인터뷰·드라마 신호가 있으면 "
+                         "'터진 것'으로 본다(0이면 이 신호 끔), 기본 2")
     ap.add_argument("--top", type=int, default=5, help="한 번에 최대 몇 개, 기본 5")
     ap.add_argument("--quiet", action="store_true",
                     help="텔레그램 전송 없이 화면에만 출력 (테스트용)")
@@ -215,6 +247,7 @@ def main() -> int:
         return 1
 
     kw = dict(hours=args.hours, min_outlets=args.min_outlets,
+              min_interest=args.min_interest,
               top=args.top, quiet=args.quiet, debug=args.debug)
 
     if args.once:
@@ -231,7 +264,8 @@ def main() -> int:
         return 0
 
     print(f"화제 감시 시작 — {args.interval}분 간격, 최근 {args.hours}시간, "
-          f"매체 {args.min_outlets}곳 이상. 중지는 Ctrl+C")
+          f"매체 {args.min_outlets}곳 이상 또는 관심점수 {args.min_interest}점 이상. "
+          f"중지는 Ctrl+C")
     while True:
         try:
             check_once(**kw)

@@ -80,6 +80,39 @@ WEAK_KEYWORDS = {alias for aliases in TEAMS.values() for alias in aliases} | {
     "프로", "구단", "팬들", "인터뷰", "발표", "공식", "입장", "소식",
 }
 
+# 매체 수로는 절대 안 잡히는 기사들이 있다 — 통신사가 받아쓰는 속보가 아니라
+# 기자 한 명이 발로 뛴 단독 인터뷰·피처 기사이기 때문이다. 그런데 이런 기사가
+# 오히려 독자에겐 더 많이 읽힌다(네이버 스포츠 '인기순'으로 실측 확인 — 예:
+# "구자욱 '단장님, 우승부터 하겠습니다'", "눈물 흘리고 2군 갔던 그 선수 맞나…
+# 한화 150km 인간승리 드라마"). 매체 수 신호가 못 잡는 이 부류를 제목 패턴으로
+# 따로 감지해 보완한다. 완벽할 수 없는 휴리스틱이라, 실측하며 계속 다듬는다.
+INTEREST_TERMS = {
+    "눈물", "기적", "인간승리", "감동", "충격", "고백", "폭로", "후회",
+    "다짐", "결심", "환호", "절망", "좌절", "웃음", "드라마",
+    "단독", "파격", "결단", "극찬", "혹평", "이례적", "최초", "역대급", "깜짝", "화제",
+    "은퇴", "방출", "콜업", "상무", "입대", "이적설", "트레이드설", "FA", "다년계약",
+}
+
+# 인터뷰 기사는 제목에 직접인용을 넣는 경우가 많다("단장님, 우승부터
+# 하겠습니다" 처럼). 한글 문서에서 실제로 쓰이는 인용부호를 모두 잡는다.
+_QUOTE_RE = re.compile(r'["\'“”‘’「」]')
+
+
+def human_interest(title: str) -> int:
+    """인터뷰·드라마성 '사람이 클릭할 만한' 신호의 점수.
+
+    직접인용(+1), 감성/화제 키워드(겹치는 개수만큼 최대 +3), 물음표로 이어지는
+    낚시성 제목(+1) 을 더한다. 임계값(news_watch.py 의 --min-interest)을 넘으면
+    매체 수가 낮아도 '터진 것'으로 승격시킨다.
+    """
+    score = 0
+    if _QUOTE_RE.search(title):
+        score += 1
+    score += min(sum(1 for term in INTEREST_TERMS if term in title), 3)
+    if "?" in title:
+        score += 1
+    return score
+
 
 @dataclass
 class Article:
@@ -133,6 +166,11 @@ class Topic:
             if t:
                 counts[t] += 1
         return max(counts, key=lambda k: counts[k]) if counts else None
+
+    @property
+    def interest(self) -> int:
+        """인터뷰·드라마성 점수 — 묶인 기사 중 최댓값(대표 헤드라인 기준)."""
+        return max((human_interest(a.title) for a in self.articles), default=0)
 
     def headline_candidates(self, n: int = 3) -> list[str]:
         """제목 후보 — 그대로 쓰지 말고 새로 쓸 때 참고만 한다."""
@@ -469,12 +507,15 @@ def rank(topics: list[Topic]) -> list[Topic]:
 
 
 def hot_topics(
-    *, hours: int = 6, min_outlets: int = 3, top: int = 5,
+    *, hours: int = 6, min_outlets: int = 3, min_interest: int = 2, top: int = 5,
     queries: list[str] | None = None,
 ) -> list[Topic]:
-    """최근 N시간 화제 주제를 매체 수 기준으로 정렬해 반환."""
+    """최근 N시간 화제 주제 반환 — 매체 수 기준이거나, 인터뷰성 신호가 강하면 포함."""
     articles = collect(hours=hours, queries=queries)
-    topics = [t for t in cluster(articles) if t.outlet_count >= min_outlets]
+    topics = [
+        t for t in cluster(articles)
+        if t.outlet_count >= min_outlets or t.interest >= min_interest
+    ]
     return rank(topics)[:top]
 
 

@@ -290,6 +290,30 @@ def stage_news_trend() -> None:
           all(not any("류현진" in a.title for a in t.articles)
               for t in st if t.article_count == 49))
 
+    # 인터뷰·드라마성 단독 기사 감지 — 매체 수로는 절대 안 잡히는 부류다.
+    # 실제로 네이버 스포츠 '인기순'에 떠 있던 제목 그대로 넣은 회귀 테스트
+    # (2026-08-07 실측). 매체 수 신호와 무관하게 이 기사들이 실제로 많이
+    # 읽힌다는 걸 사용자가 스크린샷으로 직접 확인해줬다.
+    from src.collect.news_trend import human_interest
+
+    real_hits = [
+        "'21세기 최악의 돔이다' 허구연 총재 혹평의 고척돔, '살인 폭염' 시대 최고의 야구장이다",
+        "'파격 결단' KIA 또 일본 보낸다고? 왜?...\"1명만 성과 보여줘도 큰 보람\" 어떻게 확인 얻었나",
+        "눈물 흘리고 2군에 갔던 그 선수 맞나...한화 150km 인간승리 드라마 현실로, 프로 8년차에 찾아온 기적 같은 순간",
+        "FA? 다년계약? 구자욱 \"단장님, 우승부터 하겠습니다\"...구단주 6일 선수단 소집→무슨 이야기 했나",
+    ]
+    misses = [
+        s for s in real_hits if human_interest(s) < 2
+    ]
+    check("인터뷰·드라마성 실제 인기 기사 감지(관심점수 2점 이상)", not misses,
+          f"놓침: {misses}")
+
+    # 평범한 경기결과/일정 제목은 승격되면 안 된다 — 안 그러면 매일 수십 건이
+    # '단독성 화제'로 오탐되어 알림이 스팸이 된다.
+    boring = ["오늘 프로야구 경기 일정 안내", "KBO 리그 9일 경기 결과", "두산 vs KT 스코어 5-3"]
+    false_pos = [s for s in boring if human_interest(s) >= 2]
+    check("평범한 결과·일정 제목은 관심점수 오탐 없음", not false_pos, f"오탐: {false_pos}")
+
 
 def stage_title_sizing(cfg: dict) -> None:
     """타이틀 크기 자동 조절 안전장치 확인.
