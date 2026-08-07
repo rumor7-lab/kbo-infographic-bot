@@ -2,14 +2,25 @@
 """텔레그램 승인 폴링 — 몇 분 간격 크론으로 돌린다 (서버 상시 대기 없음).
 
 흐름
-  1. data/telegram_offset.json 에 저장해둔 offset 부터 getUpdates 로 콜백을 가져온다.
+  1. data/telegram_offset.json 에 저장해둔 offset 부터 getUpdates 로 업데이트를 가져온다.
   2. "approve:<token>" / "reject:<token>" 콜백을 data/pending/*.json 배치에서 찾아
      해당 카드의 상태를 갱신하고, 텔레그램 메시지를 갱신해 버튼을 없앤다.
   3. 배치 안의 모든 카드가 결정됐으면(더 이상 pending 없음) 그제서야 실제 인스타그램
      발행을 수행한다 — 승인된 카드만 묶어서(캐러셀/단일/릴스) 올린다.
+  4. 사진이 첨부된 답장 메시지는 src/news_pipeline.py 에 넘겨 뉴스카드로 렌더하고
+     승인 큐(3)에 새로 등록한다.
 
 GitHub Actions 크론으로 이 스크립트만 반복 실행하면 되고, 상태는 매번 git commit
 으로 저장소에 남겨서 다음 실행에서 이어받는다(러너가 매번 새로 뜨는 걸 전제).
+
+왜 사진 답장 처리까지 이 스크립트가 다 하나
+  텔레그램 getUpdates 의 offset 은 봇 전체 기준 전역이다 — 어떤 클라이언트든
+  offset 을 지정해 부르면 그보다 작은 update_id 는 서버에서 지워져서 다른
+  누구에게도 다시 안 온다. 그래서 이 스크립트(5분 크론)와 로컬 스크립트가
+  각자 자기 offset 으로 따로 폴링하면 아예 경쟁이 생긴다 — 로컬이 미처 보기
+  전에 이 크론이 먼저 업데이트를 '소비'해버려서 로컬엔 0건으로 보이는 사고가
+  실측에서 났다(sha 참고: 로컬 news_card.py 최초 버전). 봇 하나엔 getUpdates
+  소비자가 하나여야 하므로, 사진 답장 처리도 이 스크립트로 합쳤다.
 """
 
 from __future__ import annotations
@@ -21,6 +32,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from src import news_pipeline as ncard  # noqa: E402
 from src.publish import hosting  # noqa: E402  (미사용이지만 재발행 확장 대비 임포트 유지)
 from src.publish import instagram as ig  # noqa: E402
 from src.publish import telegram as tg  # noqa: E402
@@ -103,9 +115,21 @@ def main() -> int:
 
     updates = tg.get_updates(cred_tg, offset)
     processed = 0
+    cards_made = 0
 
     for u in updates:
         offset = max(offset, u["update_id"] + 1)
+
+        # 사진 답장(뉴스카드 소재) — 콜백이 아니라 일반 메시지로 온다.
+        msg = u.get("message")
+        if msg:
+            try:
+                if ncard.handle_photo_reply(cred_tg, msg):
+                    cards_made += 1
+            except Exception as e:  # noqa: BLE001
+                print(f"  뉴스카드 처리 오류(계속 진행): {type(e).__name__}: {e}")
+            continue
+
         cq = u.get("callback_query")
         if not cq:
             continue
@@ -140,6 +164,7 @@ def main() -> int:
             tg.answer_callback(cred_tg, cq["id"], "이미 처리된 카드입니다")
 
     _save_offset(offset)
+    ncard.prune_topics()
 
     # 모든 카드가 결정된 배치는 최종 발행 처리
     finalized = 0
@@ -152,7 +177,8 @@ def main() -> int:
         _finalize_batch(batch_path, batch, cred_tg)
         finalized += 1
 
-    print(f"콜백 처리 {processed}건, 배치 확정 {finalized}건, 다음 offset={offset}")
+    print(f"콜백 처리 {processed}건, 뉴스카드 제작 {cards_made}건, "
+          f"배치 확정 {finalized}건, 다음 offset={offset}")
     return 0
 
 
