@@ -9,8 +9,12 @@
   2. 매체 수가 기준을 넘는 주제를 '터진 것'으로 본다.
   3. 이미 알린 주제는 다시 알리지 않는다(data/news_seen.json).
      단 매체 수가 크게 늘면 '더 커졌다'고 한 번 더 알린다.
-  4. 텔레그램으로 보내고, 사용자가 그 메시지에 사진을 답장하면
-     scripts/news_card.py 가 카드를 만든다.
+  4. (GEMINI_API_KEY 설정 시) AI 로 헤드라인/캡션 초안을 미리 만들어 알림에
+     같이 보여준다 — 실패해도 무방(사람이 사진 답장 캡션에 직접 쓰는 경로로
+     자동 대체됨).
+  5. 텔레그램으로 보내고, 사용자가 그 메시지에 사진을 답장하면
+     poll_telegram_approvals.py(5분 크론, src/news_pipeline.py 로직)가 카드를
+     만들어 승인 큐에 올린다.
 
 왜 GitHub Actions 가 아니라 로컬인가
   - 크론이 몇 시간씩 밀리는 게 실측으로 확인됐다. 속보에는 못 쓴다.
@@ -103,7 +107,10 @@ def _topic_id(topic: nt.Topic) -> str:
     return "_".join(topic.keywords[:2])
 
 
-def _format_alert(topic: nt.Topic, *, grown: bool = False, by_interest: bool = False) -> str:
+def _format_alert(
+    topic: nt.Topic, *, grown: bool = False, by_interest: bool = False,
+    draft: dict[str, str] | None = None,
+) -> str:
     if by_interest:
         head = "✨ 화제될 만한 단독 기사"
     else:
@@ -128,15 +135,29 @@ def _format_alert(topic: nt.Topic, *, grown: bool = False, by_interest: bool = F
     ]
     for h in topic.headline_candidates(3):
         lines.append(f"  · {h}")
-    lines += [
-        "",
-        "이 소식으로 카드를 만들려면",
-        "이 메시지에 답장으로 사진을 보내주세요.",
-    ]
+
+    if draft and draft.get("line1"):
+        lines += ["", "AI 초안 (이대로 쓰려면 캡션 없이 사진만 보내면 됨):"]
+        if draft.get("hook"):
+            lines.append(f"  [{draft['hook']}]")
+        lines.append(f"  {draft['line1']}")
+        if draft.get("line2"):
+            lines.append(f"  {draft['line2']}")
+        lines += [
+            "",
+            "이 소식으로 카드를 만들려면 이 메시지에 답장으로 사진을 보내주세요.",
+            "위 초안 대신 직접 쓰고 싶으면 사진 캡션에 헤드라인을 적어 보내면 그걸로 대체됩니다.",
+        ]
+    else:
+        lines += [
+            "",
+            "이 소식으로 카드를 만들려면",
+            "이 메시지에 답장으로 사진과 함께 헤드라인을 캡션에 적어 보내주세요.",
+        ]
     return "\n".join(lines)
 
 
-def _save_topic(topic: nt.Topic, message_id: int) -> None:
+def _save_topic(topic: nt.Topic, message_id: int, *, draft: dict[str, str] | None = None) -> None:
     """사진 답장이 오면 매칭할 수 있게 주제를 저장해둔다."""
     TOPIC_DIR.mkdir(parents=True, exist_ok=True)
     (TOPIC_DIR / f"{message_id}.json").write_text(
@@ -152,6 +173,9 @@ def _save_topic(topic: nt.Topic, message_id: int) -> None:
                 "links": [a.link for a in topic.articles[:5]],
                 "created_at": datetime.now(nt.KST).isoformat(),
                 "status": "waiting_photo",
+                # AI 초안 — 사람이 캡션 없이 사진만 보내면 이걸 쓴다.
+                # 캡션을 직접 쓰면 news_pipeline.handle_photo_reply() 에서 덮어씀.
+                "draft": draft,
             },
             ensure_ascii=False,
             indent=2,
@@ -245,12 +269,22 @@ def check_once(*, hours: int, min_outlets: int, min_interest: int, top: int,
               f"관심 {t.interest}점" + (" [더 커짐]" if grown else ""))
 
         if not quiet:
+            draft = None
+            try:
+                from src.collect import news_writer
+                draft = news_writer.draft(t)
+                print(f"     AI 초안: {draft['line1']}" + (f" / {draft['line2']}" if draft['line2'] else ""))
+            except Exception as e:  # noqa: BLE001
+                # AI 초안은 있으면 좋고 없어도 되는 부가 기능이다 — 실패해도
+                # 감시 자체는 절대 멈추면 안 된다(사람이 캡션 직접 쓰는 경로로 대체).
+                print(f"     AI 초안 실패(사진 답장 시 캡션 직접 입력 필요): {e}")
+
             try:
                 cred = tg.Credentials.from_env()
                 mid = tg.send_message(
-                    cred, _format_alert(t, grown=grown, by_interest=not by_outlet)
+                    cred, _format_alert(t, grown=grown, by_interest=not by_outlet, draft=draft)
                 )
-                _save_topic(t, mid)
+                _save_topic(t, mid, draft=draft)
                 sent += 1
             except Exception as e:  # noqa: BLE001
                 print(f"     텔레그램 전송 실패: {e}")

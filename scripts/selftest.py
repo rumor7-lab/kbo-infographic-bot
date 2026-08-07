@@ -333,6 +333,55 @@ def stage_news_trend() -> None:
     false_pos = [s for s in boring if human_interest(s) >= 2]
     check("평범한 결과·일정 제목은 관심점수 오탐 없음", not false_pos, f"오탐: {false_pos}")
 
+    # AI 초안 재료(source_material) — 매체별로 1건씩만, title/description 보존
+    src_topics = cluster([
+        Article(title="원태인 FA 시장 나오면 200억 예상", link="https://a.co/1",
+                published=now, outlet="a.co", description="삼성 원태인이 FA 시장에 나오면"),
+        Article(title="삼성 원태인, FA 대박 예고", link="https://b.co/1",
+                published=now, outlet="b.co", description="원태인의 몸값이 치솟고 있다"),
+        Article(title="원태인 FA 앞두고 MLB 관심", link="https://a.co/2",
+                published=now, outlet="a.co", description="같은 매체 두 번째 기사"),
+    ])
+    won_topic = next(t for t in src_topics if "원태인" in t.keywords)
+    material = won_topic.source_material(5)
+    check("AI 초안 재료는 매체당 1건만", len({m['outlet'] for m in material}) == len(material),
+          f"({material})")
+    check("AI 초안 재료에 description 보존",
+          any(m["description"] for m in material), f"({material})")
+
+
+def stage_news_writer() -> None:
+    """AI 헤드라인/캡션 초안 — 네트워크 호출 없이 파싱 로직만 검증."""
+    print("\n[3.6] AI 헤드라인 초안 (JSON 파싱)")
+    from src.collect.news_writer import WriterError, _extract_json
+
+    plain = _extract_json('{"line1": "테스트", "line2": "", "hook": "", "caption_body": ""}')
+    check("순수 JSON 파싱", plain.get("line1") == "테스트", f"({plain})")
+
+    fenced = _extract_json('```json\n{"line1": "테스트2"}\n```')
+    check("코드펜스 감싼 JSON 파싱", fenced.get("line1") == "테스트2", f"({fenced})")
+
+    prefixed = _extract_json('네, 여기 있습니다:\n{"line1": "테스트3", "line2": "부연"}')
+    check("설명 문구 섞인 응답에서 JSON만 추출",
+          prefixed.get("line1") == "테스트3" and prefixed.get("line2") == "부연", f"({prefixed})")
+
+    try:
+        _extract_json("이건 JSON이 아님")
+        failed = False
+    except WriterError:
+        failed = True
+    check("JSON 없는 응답은 WriterError", failed)
+
+    from src.publish.captions import build_news
+
+    with_body = build_news("헤드라인", "", team="한화", outlet_count=4,
+                            body="본문 문단입니다.")
+    check("캡션에 AI 본문 포함", "본문 문단입니다." in with_body, f"({with_body!r})")
+
+    without_body = build_news("헤드라인", "", team="한화", outlet_count=4)
+    check("본문 없으면 캡션에 빈 문단 안 남음",
+          "\n\n\n" not in without_body, f"({without_body!r})")
+
 
 def stage_title_sizing(cfg: dict) -> None:
     """타이틀 크기 자동 조절 안전장치 확인.
@@ -690,6 +739,7 @@ def main() -> int:
     stage_playoff_odds()
     stage_validate(cfg)
     stage_news_trend()
+    stage_news_writer()
     stage_template(cfg)
     if args.render:
         stage_render(cfg)

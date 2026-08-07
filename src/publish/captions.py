@@ -92,7 +92,7 @@ def build(
 
 def build_news(
     line1: str, line2: str, *, team: str | None, outlet_count: int,
-    category: str = "지금 KBO",
+    category: str = "지금 KBO", body: str = "",
 ) -> str:
     """뉴스형 카드(유형 E) 전용 캡션.
 
@@ -100,12 +100,20 @@ def build_news(
     여기선 카드에 이미 쓴 헤드라인을 캡션 첫 줄에 그대로 반복해 피드 미리보기
     에서도 결론이 보이게 하고, '몇 개 매체가 다뤘는지'로 화제성을 한 번 더
     증명한다 — 조회수 대신 이걸 신뢰 신호로 쓰기로 한 설계와 같은 맥락이다.
+
+    body 는 AI 초안(src/collect/news_writer.py)이 여러 매체 표현을 참고해
+    새로 쓴 기사체 문단 — 벤치마크 계정처럼 카드를 누르면(더보기) 관련 기사
+    같은 글이 나오게 하려는 요청으로 추가됐다. 사람이 캡션을 직접 쓴 경우엔
+    이 문단이 없다(원문 재가공 없이 헤드라인만 있는 게 원래 설계).
     """
     headline = line1.strip()
     if line2.strip():
         headline += f" {line2.strip()}"
 
     parts = [headline, ""]
+    if body.strip():
+        parts.append(body.strip())
+        parts.append("")
     parts.append(f"{category} · {outlet_count}개 매체가 다룬 소식")
     parts.append("")
     parts.append("저장해두고 다음 소식도 놓치지 마세요")

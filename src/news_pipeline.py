@@ -135,20 +135,32 @@ def handle_photo_reply(cred: tg.Credentials, msg: dict, *, debug: bool = False) 
         return False
 
     caption = (msg.get("caption") or "").strip()
-    if not caption:
-        tg.send_message(
-            cred,
-            "사진은 받았는데 헤드라인 문구가 없어요. 사진 캡션에 헤드라인을 적어 다시 보내주세요.\n"
-            "예)\n김서현 볼넷 25개 남발\n제구 완전히 무너졌다",
-            reply_to_message_id=msg["message_id"],
-        )
-        return False
+    caption_body = ""  # 인스타 캡션에 들어갈 기사체 본문 — AI 초안에만 있음
 
-    parsed = parse_caption(caption)
-    if not parsed["line1"]:
-        tg.send_message(cred, "헤드라인을 못 읽었어요. 캡션 형식을 확인해주세요.",
-                         reply_to_message_id=msg["message_id"])
-        return False
+    if caption:
+        # 사람이 직접 캡션을 썼다 — 이게 항상 AI 초안보다 우선한다.
+        parsed = parse_caption(caption)
+        if not parsed["line1"]:
+            tg.send_message(cred, "헤드라인을 못 읽었어요. 캡션 형식을 확인해주세요.",
+                             reply_to_message_id=msg["message_id"])
+            return False
+    else:
+        # 캡션 없이 사진만 왔다 — 알림 보낼 때 만들어둔 AI 초안이 있으면 그걸 쓴다.
+        draft = topic.get("draft") or {}
+        if not draft.get("line1"):
+            tg.send_message(
+                cred,
+                "사진은 받았는데 헤드라인 문구가 없어요(AI 초안도 없음). "
+                "사진 캡션에 헤드라인을 적어 다시 보내주세요.\n"
+                "예)\n김서현 볼넷 25개 남발\n제구 완전히 무너졌다",
+                reply_to_message_id=msg["message_id"],
+            )
+            return False
+        parsed = {
+            "hook": draft.get("hook", ""), "line1": draft["line1"],
+            "line2": draft.get("line2", ""), "credit": "",
+        }
+        caption_body = draft.get("caption_body", "")
 
     print(f"  🖼  카드 제작: {topic.get('key')} — \"{parsed['line1']}\"")
 
@@ -178,6 +190,7 @@ def handle_photo_reply(cred: tg.Credentials, msg: dict, *, debug: bool = False) 
     ig_caption = captions.build_news(
         parsed["line1"], parsed["line2"],
         team=topic.get("team"), outlet_count=topic.get("outlet_count", 0),
+        body=caption_body,
     )
     tg_preview = f"[{card_id}]\n" + (ig_caption if len(ig_caption) <= 900 else ig_caption[:900] + "…")
 

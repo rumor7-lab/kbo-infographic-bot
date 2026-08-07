@@ -120,6 +120,9 @@ class Article:
     link: str
     published: datetime
     outlet: str = ""
+    # 네이버가 주는 짧은 요약(2~3문장, 원문 발췌+말줄임). 클러스터링에는 안 쓰고
+    # AI 헤드라인/캡션 초안 작성(src/collect/news_writer.py)의 재료로만 쓴다.
+    description: str = ""
 
 
 @dataclass
@@ -185,6 +188,22 @@ class Topic:
                 break
         return out
 
+    def source_material(self, n: int = 5) -> list[dict[str, str]]:
+        """AI 초안 작성용 재료 — 매체별 제목+요약. 서로 다른 매체 위주로 뽑아야
+        같은 사실을 다른 표현으로 여러 번 보여줘서 AI 가 표현을 베끼지 않고
+        사실만 추려 새로 쓰기 쉬워진다."""
+        seen_outlets: set[str] = set()
+        out: list[dict[str, str]] = []
+        for a in sorted(self.articles, key=lambda x: x.published, reverse=True):
+            if a.outlet in seen_outlets:
+                continue
+            seen_outlets.add(a.outlet)
+            out.append({"title": a.title.strip(), "description": a.description.strip(),
+                        "outlet": a.outlet})
+            if len(out) >= n:
+                break
+        return out
+
 
 class NewsError(RuntimeError):
     pass
@@ -238,6 +257,7 @@ def fetch(query: str, *, display: int = 100) -> list[Article]:
             link=link,
             published=pub,
             outlet=_outlet(link),
+            description=_clean_title(item.get("description", "")),
         ))
     return out
 
