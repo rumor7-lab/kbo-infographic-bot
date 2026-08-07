@@ -327,7 +327,7 @@ def _dominant(topic: Topic, count: dict[str, int]) -> set[str]:
 
 
 def _merge_same_event(
-    topics: list[Topic], counts: list[dict[str, int]]
+    topics: list[Topic], counts: list[dict[str, int]], is_rare,
 ) -> tuple[list[Topic], list[dict[str, int]]]:
     """같은 사건이 표현 차이로 쪼개진 것을 합친다.
 
@@ -338,6 +338,13 @@ def _merge_same_event(
     양쪽 주제를 '지배하는 단어'가 겹치면 같은 사건으로 본다. 곁가지 단어가 아니라
     과반이 공유하는 말이라야 하므로, 앞서 문제였던 연쇄 병합은 일어나지 않는다
     (류현진 은퇴와 김서현 부진은 지배어가 각각 다르다).
+
+    다만 기사가 1~2건뿐인 주제는 '과반'이 그냥 '그 기사의 단어 전부'와 같다.
+    그래서 서로 무관한 단독 기사 두 개가 흔한 단어 하나("홈런" 처럼)만 우연히
+    겹쳐도 합쳐지는 사고가 실측에서 났다(하지원 시구 기사 + 삼진/홈런 칼럼이
+    '홈런' 하나로 묶임). 표본이 큰 클러스터끼리는 과반 일치 자체가 이미 강한
+    증거라 문제없지만, 작은 쪽이 끼면 same_topic() 과 같은 안전장치(희귀어
+    겹침 또는 비핵심어 2개 이상 겹침)를 추가로 요구한다.
     """
     merged = True
     while merged:
@@ -352,7 +359,16 @@ def _merge_same_event(
                 if not topics[j].articles:
                     continue
                 dj = _dominant(topics[j], counts[j])
-                if not dj or not _overlap(di, dj):
+                if not dj:
+                    continue
+                overlap = _overlap(di, dj)
+                if not overlap:
+                    continue
+                small = len(topics[i].articles) <= 2 or len(topics[j].articles) <= 2
+                if small and not (
+                    any(is_rare(w) for w in overlap)
+                    or len([w for w in overlap if w not in WEAK_KEYWORDS]) >= 2
+                ):
                     continue
                 topics[i].articles.extend(topics[j].articles)
                 topics[i].keywords = sorted(set(topics[i].keywords) | set(topics[j].keywords))
@@ -443,7 +459,7 @@ def cluster(articles: list[Article]) -> list[Topic]:
             topics.append(Topic(key="", keywords=sorted(ka), articles=[a]))
             counts.append({w: 1 for w in ka})
 
-    topics, counts = _merge_same_event(topics, counts)
+    topics, counts = _merge_same_event(topics, counts, is_rare)
 
     # 대표어 뽑기 — '희귀한 순'으로 고르면 안 된다. 제일 희귀한 단어는 보통
     # 한 매체만 쓴 특이 표현이라 정작 주인공을 놓친다("류현진 은퇴" 대신 "공식 발언").

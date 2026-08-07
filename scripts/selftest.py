@@ -290,6 +290,25 @@ def stage_news_trend() -> None:
           all(not any("류현진" in a.title for a in t.articles)
               for t in st if t.article_count == 49))
 
+    # 실측에서 무관한 단독 기사 두 개가 흔한 단어 하나("홈런")만 우연히
+    # 겹쳐서 합쳐졌다("하지원 시구" + "삼진과 홈런 사이" 칼럼). 기사 1건짜리
+    # 주제는 '과반 지배어' == '그 기사의 단어 전부'가 되므로, 안전장치 없이는
+    # 흔한 단어 하나로도 합쳐진다 — _merge_same_event() 가 이걸 막아야 한다.
+    hr_bg = [
+        A(f"{name} 시즌 20호 홈런 작성", f"filler{i}.co", i * 5)
+        for i, name in enumerate(["최정", "강백호", "노시환", "박병호", "moon", "구자욱", "김재환", "양의지"])
+    ]
+    hr_targets = [
+        A("[2026 프로야구 삼진과 홈런 사이] 박진만·김원형의 첫 환희냐", "x.co", 60),
+        A("한국배우 최초 하지원, 홈런 역주행 KBO 시구 완벽 성공", "y.co", 65),
+    ]
+    hr_topics = cluster(hr_bg + hr_targets)
+    mixed = any(
+        any("박진만" in a.title for a in t.articles) and any("하지원" in a.title for a in t.articles)
+        for t in hr_topics
+    )
+    check("무관한 단독 기사가 흔한 단어 하나로 안 묶임", not mixed)
+
     # 인터뷰·드라마성 단독 기사 감지 — 매체 수로는 절대 안 잡히는 부류다.
     # 실제로 네이버 스포츠 '인기순'에 떠 있던 제목 그대로 넣은 회귀 테스트
     # (2026-08-07 실측). 매체 수 신호와 무관하게 이 기사들이 실제로 많이
