@@ -1,0 +1,30 @@
+{
+  "message_id": 42,
+  "topic_id": "기상_무더위",
+  "key": "기상 무더위",
+  "keywords": [
+    "기상",
+    "무더위",
+    "멈췄다",
+    "전면",
+    "중단",
+    "극한폭염",
+    "멈춰",
+    "사례"
+  ],
+  "team": null,
+  "outlet_count": 4,
+  "headlines": [
+    "입추 전날 40도 찍은 영등포…프로야구도 멈춰 세운 극한 무더위 [세상...",
+    "살인적인 무더위에 프로야구가 멈췄다…기상 사유로는 첫 사례",
+    "기록적 폭염에 KBO 리그 전면 중단···기상 악화 사유 '최초'"
+  ],
+  "links": [
+    "https://biz.heraldcorp.com/article/10833802?ref=naver",
+    "https://www.mk.co.kr/article/12119679",
+    "https://www.globale.co.kr/news/articleView.html?idxno=39749",
+    "https://www.slist.kr/news/articleView.html?idxno=757156"
+  ],
+  "created_at": "2026-08-07T12:58:07.117215+09:00",
+  "status": "waiting_photo"
+}

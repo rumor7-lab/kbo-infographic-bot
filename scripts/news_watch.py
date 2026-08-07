@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 import time
 from datetime import datetime
@@ -37,6 +38,32 @@ TOPIC_DIR = ROOT / "data" / "topics"
 
 # 다시 알릴 기준 — 매체 수가 이 배수만큼 늘면 '더 커졌다'고 한 번 더 알린다.
 REALERT_GROWTH = 2.0
+
+
+def _git_commit_push_topics() -> None:
+    """새로 만든 data/topics/*.json 을 GitHub 에 올린다.
+
+    이 스크립트는 로컬에서만 돌아가지만, 사진 답장 처리(scripts/news_card.py
+    로직)는 GitHub Actions 체크아웃에서 실행된다 — 완전히 다른 파일 시스템이다.
+    여기서 커밋/푸시를 안 하면 주제 파일이 로컬 디스크에만 있고 GitHub 쪽은
+    존재 자체를 모르므로, 사람이 사진으로 답장해도 '해당 주제 없음'으로
+    조용히 무시된다(실측으로 확인 — 알림은 왔는데 사진 답장에 반응이 없었던
+    사고의 진짜 원인이었다. offset 경쟁 문제와는 별개의 버그였다).
+    """
+    try:
+        subprocess.run(["git", "add", "data/topics"], cwd=ROOT, check=False)
+        diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
+        if diff.returncode == 0:
+            return  # 커밋할 변경 없음
+        subprocess.run(
+            ["git", "commit", "-q", "-m", "news: 새 주제 알림"], cwd=ROOT, check=True
+        )
+        r = subprocess.run(["git", "push"], cwd=ROOT)
+        if r.returncode != 0:
+            print("  ⚠ 주제 파일 push 실패 — 사진 답장이 GitHub 쪽에서 안 잡힐 수 있습니다. "
+                  "수동으로 git pull --no-edit && git push 해주세요")
+    except Exception as e:  # noqa: BLE001
+        print(f"  ⚠ 주제 파일 git 커밋 중 오류(계속 진행): {e}")
 
 
 def _load_env() -> None:
@@ -232,6 +259,8 @@ def check_once(*, hours: int, min_outlets: int, min_interest: int, top: int,
         seen[tid] = {"at": time.time(), "outlets": t.outlet_count, "key": t.key}
 
     _save_seen(seen)
+    if sent:
+        _git_commit_push_topics()
     return sent
 
 
