@@ -1,0 +1,32 @@
+{
+  "message_id": 64,
+  "topic_id": "연기_출전",
+  "key": "연기 출전",
+  "keywords": [
+    "연기",
+    "출전",
+    "탈진",
+    "폭염",
+    "1시간",
+    "결국",
+    "극한",
+    "기회"
+  ],
+  "team": null,
+  "outlet_count": 5,
+  "headlines": [
+    "봉황대기, 극한 폭염에 ‘오전’에 시작했지만…결국 선수는 탈진",
+    "여자축구선수권 출전 중학생 선수 무더위에 탈진…킥오프 1시간 연기",
+    "\"경기 시작 늦춰달라 요구 묵살\"...선수 탈진하자 1시간 연기"
+  ],
+  "links": [
+    "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8631621&ref=A",
+    "https://www.news1.kr/sports/soccer/6252902",
+    "https://www.ytn.co.kr/_ln/0103_202608071805566486",
+    "https://www.joongangenews.com/news/articleView.html?idxno=538681",
+    "https://www.tvreport.co.kr/breaking/article/1067117/"
+  ],
+  "created_at": "2026-08-07T21:41:24.245414+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
