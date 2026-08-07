@@ -1,0 +1,11 @@
+{
+  "slot": "noon",
+  "at": "2026-08-07T14:11:25.332311+09:00",
+  "cards": [
+    {
+      "card_id": "weekend_preview",
+      "status": "스킵: 알 수 없는 소스: kbo.schedule_weekend"
+    }
+  ],
+  "notified": "전송할 카드 없음"
+}
