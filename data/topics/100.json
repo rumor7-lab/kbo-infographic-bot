@@ -1,0 +1,37 @@
+{
+  "message_id": 100,
+  "topic_id": "이정후_안타",
+  "key": "이정후 안타",
+  "keywords": [
+    "이정후",
+    "안타",
+    "연속",
+    "6경기",
+    "적시타",
+    "결승",
+    "만루서",
+    "2타점"
+  ],
+  "team": null,
+  "outlet_count": 9,
+  "headlines": [
+    "이정후, 6경기 연속 안타 행진…만루서 결승 적시타",
+    "이정후, 6경기 연속 안타…만루서 결승 적시타",
+    "이정후, 6경기 연속 안타·2타점…송성문 1안타·김하성 복귀전 무안타"
+  ],
+  "links": [
+    "https://www.slist.kr/news/articleView.html?idxno=757496",
+    "https://news.tvchosun.com/site/data/html_dir/2026/08/08/2026080890074.html",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000055342",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008696094&plink=ORI&cooper=NAVER",
+    "http://www.kjdaily.com/article.php?aid=1786166963684079227"
+  ],
+  "created_at": "2026-08-08T18:10:19.523319+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "이정후, 만루서 결승 적시타",
+    "line2": "6경기 연속 안타·2타점 맹활약",
+    "hook": "빅리그",
+    "caption_body": "샌프란시스코의 이정후가 만루 찬스에서 결승 적시타를 작렬하며 6경기 연속 안타 행진을 펼쳤다. 8일 디트로이트전에 2번 타자 우익수로 선발 출전한 이정후는 3타수 1안타 1볼넷 2타점으로 기량을 발휘했다. 반면 38일 만에 빅리그 복귀전을 치른 애틀랜타의 김하성은 2타수 무안타에 머물렀다."
+  }
+}
