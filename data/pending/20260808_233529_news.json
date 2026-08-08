@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260808_233529_news",
+  "slot": "news",
+  "caption": "돌아온 강백호의 방망이 침묵 김경문 감독 \"적응 시간 필요해\"\n\n한화 이글스 강백호가 복귀 이후 좀처럼 타격감을 올리지 못하며 타율 0.133에 머물렀다. 지난 4일 삼성전에서도 3타수 무안타로 아쉬움을 남겼으나 팀은 4 대 1로 승리하며 연패를 끊었다. 김경문 감독은 복귀 직후 곧바로 활약하기는 어렵다고 바라보며 선수에게 회복 시간을 줄 뜻을 내비쳤다.\n\n지금 KBO · 4개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-08T23:35:29.272974+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "90222b7e",
+      "card_id": "news_강백호_돌아온",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260808/233526_news_._.png",
+      "message_id": 115,
+      "status": "pending"
+    }
+  ]
+}
