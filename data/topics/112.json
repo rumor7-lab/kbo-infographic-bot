@@ -1,0 +1,33 @@
+{
+  "message_id": 112,
+  "topic_id": "네이버존_월렛",
+  "key": "네이버존 월렛",
+  "keywords": [
+    "네이버존",
+    "월렛",
+    "최초",
+    "티켓",
+    "NC",
+    "대체불가토큰",
+    "도입",
+    "엔페"
+  ],
+  "team": "NC",
+  "outlet_count": 2,
+  "headlines": [
+    "NC, 프로야구 최초 ‘Npay 월렛 NFT 티켓’ 도입…네이버존 ...",
+    "NC 다이노스, 프로야구 최초 네이버존에 엔페이 월렛 대체불가토큰 티켓..."
+  ],
+  "links": [
+    "https://www.sportsworldi.com/newsView/20260808511825",
+    "https://www.tokenpost.kr/news/blockchain/386961"
+  ],
+  "created_at": "2026-08-08T22:42:11.775490+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "NC, KBO 최초 ‘NFT 티켓’ 적용",
+    "line2": "창원NC파크 ‘네이버존’서 첫선",
+    "hook": "KBO 최초",
+    "caption_body": "NC 다이노스가 국내 프로야구 최초로 네이버의 'Npay 월렛' 기반 NFT 티켓 서비스를 도입한다. 적용 대상은 창원NC파크 117구역 테이블석에 마련된 196석 규모의 '네이버존'이다. 새로운 예매 시스템이 적용된 좌석은 오는 8월 18일 열리는 두산 베어스와의 홈경기부터 이용할 수 있다."
+  }
+}
