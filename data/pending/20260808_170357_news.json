@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260808_170357_news",
+  "slot": "news",
+  "caption": "이정후 결승 2타점 적시타! 김하성은 복귀전서 무안타 침묵\n\n샌프란시스코의 이정후가 6경기 연속 안타 행진을 이어가며 팀을 승리로 이끌었다. 이정후는 8일 디트로이트전에 2번 타자 우익수로 나서 2 대 2로 맞선 2회말 2사 만루 기회를 놓치지 않고 결승 2타점 적시타를 날리는 등 3타수 1안타 2타점 1볼넷으로 활약했다. 반면 애틀랜타의 김하성은 38일 만에 치른 빅리그 복귀전에서 2타수 무안타에 그쳤다.\n\n지금 KBO · 9개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #롯데자이언츠",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-08T17:03:57.146439+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "8b9d05e7",
+      "card_id": "news_이정후_김하성",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260808/170353_news_._.png",
+      "message_id": 97,
+      "status": "pending"
+    }
+  ]
+}
