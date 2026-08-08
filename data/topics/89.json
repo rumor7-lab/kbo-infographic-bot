@@ -1,0 +1,37 @@
+{
+  "message_id": 89,
+  "topic_id": "이정후_김하성",
+  "key": "이정후 김하성",
+  "keywords": [
+    "이정후",
+    "김하성",
+    "무안타",
+    "안타",
+    "연속",
+    "2타점",
+    "6경기",
+    "적시타"
+  ],
+  "team": "롯데",
+  "outlet_count": 9,
+  "headlines": [
+    "이정후, 6경기 연속 안타·2타점…송성문 1안타·김하성 복귀전 무안타",
+    "38일 만에 돌아온 김하성, 2타수 무안타…타율 0.067",
+    "이정후 6경기 연속 안타…2타점 활약"
+  ],
+  "links": [
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000055342",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008696094&plink=ORI&cooper=NAVER",
+    "http://www.kjdaily.com/article.php?aid=1786166963684079227",
+    "https://www.ytn.co.kr/_ln/0107_202608081431204690",
+    "http://www.hansbiz.co.kr/news/articleView.html?idxno=855406"
+  ],
+  "created_at": "2026-08-08T15:23:20.552082+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "이정후 결승 2타점 적시타!",
+    "line2": "김하성은 복귀전서 무안타 침묵",
+    "hook": "오늘의 MLB",
+    "caption_body": "샌프란시스코의 이정후가 6경기 연속 안타 행진을 이어가며 팀을 승리로 이끌었다. 이정후는 8일 디트로이트전에 2번 타자 우익수로 나서 2 대 2로 맞선 2회말 2사 만루 기회를 놓치지 않고 결승 2타점 적시타를 날리는 등 3타수 1안타 2타점 1볼넷으로 활약했다. 반면 애틀랜타의 김하성은 38일 만에 치른 빅리그 복귀전에서 2타수 무안타에 그쳤다."
+  }
+}

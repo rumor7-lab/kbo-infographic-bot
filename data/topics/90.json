@@ -1,0 +1,37 @@
+{
+  "message_id": 90,
+  "topic_id": "티켓_최초",
+  "key": "티켓 최초",
+  "keywords": [
+    "티켓",
+    "최초",
+    "NFT",
+    "NC",
+    "네이버존",
+    "도입",
+    "네이버",
+    "암표"
+  ],
+  "team": "NC",
+  "outlet_count": 6,
+  "headlines": [
+    "\"암표·위조 다 잡는다\" NC, 프로야구 최초 'NFT 티켓' 도입...엔팍에 '네...",
+    "NC, 프로야구 최초 'Npay 월렛 NFT 티켓' 도입 \"암표 방지 기대→창원NC파...",
+    "NC, 프로야구 최초 'Npay 월렛 NFT 티켓' 도입…창원NC파크에 네이버존 ..."
+  ],
+  "links": [
+    "http://www.spochoo.com/news/articleView.html?idxno=128566",
+    "https://www.starnewskorea.com/sports/2026/08/08/2026080811440479157",
+    "https://mhnse.com/news/articleView.html?idxno=1482820",
+    "https://www.sportsseoul.com/news/read/1627316?ref=naver",
+    "https://www.mydaily.co.kr/page/view/2026080811293053059"
+  ],
+  "created_at": "2026-08-08T15:23:32.097649+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "NC, KBO 최초 NFT 티켓 도입",
+    "line2": "네이버와 손잡고 '네이버존' 전격 운영",
+    "hook": "KBO 최초",
+    "caption_body": "NC 다이노스가 네이버와 협력해 프로야구 구단 가운데 처음으로 'Npay 월렛 NFT 티켓'을 적용한다. 신규 지정된 '네이버존'은 창원NC파크 117구역 테이블석 196석 규모로, 암표 거래 차단과 티켓 위조 방지를 위해 기획됐다. 야구 팬들은 오는 18일 치러지는 두산 베어스와의 홈경기부터 새로운 디지털 예매 및 입장 서비스를 이용할 수 있다."
+  }
+}
