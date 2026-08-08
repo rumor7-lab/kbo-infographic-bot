@@ -349,8 +349,15 @@ def build_context(
         has_title_sub=bool(title_sub_text),
     )
 
+    brand_ctx = dict(b["brand"])
+    if brand_ctx.get("badge_image"):
+        # 배지를 텍스트 대신 로고 이미지로 쓰는 경우 — 다른 이미지 필드와 같은
+        # 방식(base64 인라인)으로 변환해야 브라우저 렌더가 로컬 파일을 못 읽는
+        # 문제(playwright 는 file:// 상대경로를 못 찾을 때가 있음)를 피한다.
+        brand_ctx["badge_image"] = _file_url(brand_ctx["badge_image"])
+
     ctx: dict[str, Any] = {
-        "brand": b["brand"],
+        "brand": brand_ctx,
         "c": b["colors"],
         "t": b["typography"],
         "f": b["frame"],
