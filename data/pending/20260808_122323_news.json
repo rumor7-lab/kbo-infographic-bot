@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260808_122323_news",
+  "slot": "news",
+  "caption": "7월 퓨처스 루키상 전준표·손용준 11이닝 무실점·20안타의 매서운 활약\n\nKBO가 7일 7월 메디힐 퓨처스 루키상 수상자로 키움 전준표와 LG 손용준을 선정했다. 투수 부문 수상자인 전준표는 7월 퓨처스리그 2경기에 선발 출전해 11이닝 무실점으로 2승을 거뒀고, 야수 부문 손용준은 20안타를 쳐내며 WAR 0.73을 기록했다. 퓨처스 무대를 호령한 전준표는 지난달 28일 1군 무대에서도 최고 157km/h의 강속구를 던지며 눈도장을 찍었다.\n\n지금 KBO · 4개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #LG트윈스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-08T12:23:23.393123+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "383a1b2c",
+      "card_id": "news_전준표_손용준",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260808/122320_news_._.png",
+      "message_id": 85,
+      "status": "pending"
+    }
+  ]
+}
