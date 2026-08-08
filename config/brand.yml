@@ -16,7 +16,7 @@ brand:
   badge_sub: "KBO"
   # badge_image 를 채우면 위 badge_main/badge_sub 텍스트 대신 이 이미지를 배지로
   # 쓴다(로고 파일 경로, 저장소 기준 상대경로). 비워두면 기존 텍스트 배지 유지.
-  badge_image: ""
+  badge_image: "assets/logos/badge.png"
   tagline: "순위·기록을 카드 한 장으로"
 
 canvas:
