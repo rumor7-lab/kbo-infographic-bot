@@ -8,7 +8,7 @@ brand:
   # 후보로 같이 검토했던 것: 볼파크리포트 / 스탯야구 / 야구읽기
   name_ko: "오늘의 KBO"
   name_en: "TODAY'S KBO"
-  handle: "@baseball.numbers"       # 아이디는 변경 안 함(표시 이름만 "오늘의 KBO"), 2026-08 확정
+  handle: "@ijinug5944"             # 2026-08: 기존 baseball.numbers 계정 삭제 후 새 계정으로 교체
   badge_style: "circle"             # circle | pill
   # 우측 상단 원형 배지 전용 텍스트 — name_ko를 앞2글자/뒤2글자로 기계적으로 자르면
   # ("오늘"+"의 KBO"처럼) 공백이 끼어 어색해지므로 배지 문구를 별도 필드로 분리했다.
