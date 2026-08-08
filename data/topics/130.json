@@ -1,0 +1,36 @@
+{
+  "message_id": 130,
+  "topic_id": "교체_아시아쿼터",
+  "key": "교체 아시아쿼터",
+  "keywords": [
+    "교체",
+    "아시아쿼터",
+    "투수",
+    "삼성",
+    "구단들",
+    "대만",
+    "던졌다",
+    "리드"
+  ],
+  "team": "삼성",
+  "outlet_count": 3,
+  "headlines": [
+    "\"韓 스카우트 파견했다\" 롯데 외국인 투수 교체? BOS 출신 대만 유망주 ...",
+    "'아시아쿼터 선수 교체에 쏠리는 시선' 삼성 교체 이후 구단들 분주해져...",
+    "삼성 새 아시아쿼터, 두산 선수 향해 작정하고 선전포고 왜? \"절대 지지..."
+  ],
+  "links": [
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=833602",
+    "http://www.thesportstimes.co.kr/news/articleView.html?idxno=374776",
+    "http://www.osen.co.kr/article/G1112854043",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=833601"
+  ],
+  "created_at": "2026-08-09T07:23:54.754651+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "아시아쿼터 교체 바람, 분주한 KBO",
+    "line2": "삼성 새 영입 속 롯데도 스카우트 파견",
+    "hook": "시선 집중",
+    "caption_body": "삼성 라이온즈가 일본 NPB 2군 출신 우완 투수 미야모리와 총 7만 3000달러에 계약하며 아시아쿼터 교체에 나섰다. 이번 교체로 개막 당시 KBO리그에 합류했던 아시아쿼터 선수 중 잔류 인원은 6명으로 줄었다. 한편 롯데 자이언츠도 보스턴 출신 대만 투수 류즈롱의 등판 현장에 스카우트를 파견하는 등 여러 구단이 선수 영입 및 교체 움직임을 이어가고 있다."
+  }
+}
