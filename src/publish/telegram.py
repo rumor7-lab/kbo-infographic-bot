@@ -11,6 +11,7 @@ getUpdates 를 불러서 콜백을 처리한다. 별도 상시 서버가 필요 
 
 from __future__ import annotations
 
+import json
 import os
 from dataclasses import dataclass
 from pathlib import Path
@@ -150,9 +151,23 @@ def download_file(cred: Credentials, file_path: str, dest: Path) -> Path:
 
 
 def get_updates(cred: Credentials, offset: int) -> list[dict]:
+    """대기 중인 업데이트를 가져온다.
+
+    allowed_updates 를 매번 명시적으로 넘긴다 — 텔레그램의 잘 알려진 함정인데,
+    과거에 어떤 호출이든(다른 스크립트/디버그용 curl 포함) allowed_updates 를
+    좁게 지정해서 부른 적이 있으면 그 필터가 봇 전체에 남아 이후 모든 getUpdates
+    호출에 계속 적용된다("이 파라미터는 요청 간에 유지된다" — 공식 문서 명시).
+    사진 답장(message)은 오는데 버튼 콜백(callback_query)만 계속 안 들어오는
+    사고가 바로 이 필터 잔존 때문일 수 있어 매 호출마다 두 타입을 명시적으로
+    다시 열어준다.
+    """
     res = requests.post(
         f"{API}/bot{cred.bot_token}/getUpdates",
-        data={"offset": offset, "timeout": 0},
+        data={
+            "offset": offset,
+            "timeout": 0,
+            "allowed_updates": json.dumps(["message", "callback_query"]),
+        },
         timeout=30,
     ).json()
     if not res.get("ok"):
@@ -161,6 +176,4 @@ def get_updates(cred: Credentials, offset: int) -> list[dict]:
 
 
 def _reply_markup_json(markup: dict) -> str:
-    import json
-
     return json.dumps(markup, ensure_ascii=False)
