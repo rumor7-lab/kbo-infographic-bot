@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260809_203143_news",
+  "slot": "news",
+  "caption": "'광속구' 엄정욱, 배우 지안과 결혼 발표 KBO 최고 속구 던지던 레전드의 깜짝 소식\n\n한국프로야구 역사상 가장 빠른 공을 던진 전 SK 와이번스 투수 엄정욱이 배우 지안과 백년가약을 맺는다. 지안은 개인 SNS를 통해 짧은 연애 기간이었지만 평생을 함께할 확신이 생겼다며 직접 결혼 소식을 알렸다. 2000년 프로 무대에 데뷔해 강속구 투수로 이름을 날린 엄정욱의 기쁜 소식에 팬들의 축하가 이어지고 있다.\n\n지금 KBO · 11개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #KIA타이거즈",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-09T20:31:43.093713+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "c94c175f",
+      "card_id": "news_배우_엄정욱",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260809/203139_news_._.png",
+      "message_id": 176,
+      "status": "pending"
+    }
+  ]
+}
