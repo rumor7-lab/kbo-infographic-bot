@@ -1,0 +1,28 @@
+{
+  "message_id": 183,
+  "topic_id": "타율_눈앞",
+  "key": "타율 눈앞",
+  "keywords": [
+    "타율",
+    "눈앞",
+    "디트로이트전",
+    "마감",
+    "마이너",
+    "무안타",
+    "숨고르기",
+    "안타"
+  ],
+  "team": null,
+  "outlet_count": 2,
+  "headlines": [
+    "'6경기 연속 안타 마감' 이정후, 디트로이트전 3타수 무안타…시즌 타율...",
+    "\"韓人 최초 마이너 20-20 눈앞\" 조원빈, 1볼넷 숨고르기… 8월 타율 0.412..."
+  ],
+  "links": [
+    "http://www.thesportstimes.co.kr/news/articleView.html?idxno=374792",
+    "https://www.sportschosun.com/baseball/2026-08-09/202608090100050660003138"
+  ],
+  "created_at": "2026-08-09T21:41:13.913443+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

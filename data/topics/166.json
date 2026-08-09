@@ -1,0 +1,37 @@
+{
+  "message_id": 166,
+  "topic_id": "폭염_날씨",
+  "key": "폭염 날씨",
+  "keywords": [
+    "폭염",
+    "날씨",
+    "야간",
+    "경마",
+    "꺾인",
+    "눈치",
+    "대처하",
+    "더위"
+  ],
+  "team": "LG",
+  "outlet_count": 6,
+  "headlines": [
+    "“날씨 눈치 챙겨” LG 트윈스 ‘성덕’ 아이딧 장용훈·박원빈, 생애 첫...",
+    "'더위 먹을라' 야간 경기 실시... 지역 상권 때아닌 특수",
+    "폭염에 야구도 쉬는 여름날…오후 1시부터 이름뿐인 ‘야간 경마’"
+  ],
+  "links": [
+    "https://sports.khan.co.kr/article/202608091743003?pt=nv",
+    "https://www.mydaily.co.kr/page/view/2026080916055495488",
+    "https://www.sportsworldi.com/newsView/20260809510638",
+    "http://www.hansbiz.co.kr/news/articleView.html?idxno=855464",
+    "https://www.cjb.co.kr/home/sub.php?menukey=61&mod=view&P_NO=260809507&PRO_CODE=99"
+  ],
+  "created_at": "2026-08-09T18:34:55.961517+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "사상 초유의 폭염 브레이크",
+    "line2": "5일간 KBO 전 리그 경기 취소",
+    "hook": "속보",
+    "caption_body": "한국야구위원회가 계속되는 폭염으로부터 선수단과 관중의 안전을 지키기 위해 지난 5일부터 9일까지 5일간 프로야구 전 경기를 취소했다. 퓨처스리그를 포함해 모든 일정이 일시 중단된 것은 사상 초유의 일이다. 경기 출전이 멈춘 기간 동안 각 구단은 기온 상황에 맞춰 휴식을 취하거나 훈련을 진행하며 전열을 정비했다."
+  }
+}
