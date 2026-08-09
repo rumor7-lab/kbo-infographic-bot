@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260809_130234_news",
+  "slot": "news",
+  "caption": "유니폼 바꾼 이적생들 잇단 2군행 한화 이형범·롯데 정철원 1군 말소\n\n트레이드로 팀을 옮긴 투수들이 연이어 1군 엔트리에서 제외됐다. KIA에서 한화로 이적한 이형범은 3경기에 나와 평균자책점 21.60을 기록한 끝에 2군으로 내려갔다. 올 시즌 34경기에 등판한 롯데 정철원과 삼성 외야수 이진용도 함께 말소 통보를 받았다. 한편 후반기 시작 직후 KT와의 홈 4연전을 전패하며 주춤했던 LG 트윈스는 이번 폭염 브레이크를 반등의 기회로 삼고 있다.\n\n지금 KBO · 4개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #한화이글스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-09T13:02:34.191309+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "6a4399ba",
+      "card_id": "news_트레이드_가을야구",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260809/130230_news_._.png",
+      "message_id": 142,
+      "status": "pending"
+    }
+  ]
+}
