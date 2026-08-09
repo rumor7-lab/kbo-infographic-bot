@@ -1,0 +1,28 @@
+{
+  "message_id": 135,
+  "topic_id": "아시아쿼터_삼성",
+  "key": "아시아쿼터 삼성",
+  "keywords": [
+    "아시아쿼터",
+    "삼성",
+    "구단들",
+    "분주해져",
+    "선전포고",
+    "시선",
+    "쏠리",
+    "이후"
+  ],
+  "team": "삼성",
+  "outlet_count": 2,
+  "headlines": [
+    "'아시아쿼터 선수 교체에 쏠리는 시선' 삼성 교체 이후 구단들 분주해져...",
+    "삼성 새 아시아쿼터, 두산 선수 향해 작정하고 선전포고 왜? \"절대 지지..."
+  ],
+  "links": [
+    "http://www.thesportstimes.co.kr/news/articleView.html?idxno=374776",
+    "http://www.osen.co.kr/article/G1112854043"
+  ],
+  "created_at": "2026-08-09T10:38:39.480137+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

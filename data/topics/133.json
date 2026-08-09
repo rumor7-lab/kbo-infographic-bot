@@ -1,0 +1,37 @@
+{
+  "message_id": 133,
+  "topic_id": "투수_명맥",
+  "key": "투수 명맥",
+  "keywords": [
+    "투수",
+    "명맥",
+    "ML",
+    "곽빈",
+    "구한",
+    "김광현",
+    "끊기나",
+    "끊긴"
+  ],
+  "team": "롯데",
+  "outlet_count": 5,
+  "headlines": [
+    "수많은 투수 생명 구한 토미 존 수술 원조, 투병으로 양키스 OB 행사 불...",
+    "‘10승 투수 단 2명’ 13년 만에 15승 투수 명맥 끊기나",
+    "류현진→김광현→곽빈? 명맥 끊긴 선발 ML 포스팅 이어갈까…\"아직 많이..."
+  ],
+  "links": [
+    "http://www.spochoo.com/news/articleView.html?idxno=128574",
+    "https://www.dailian.co.kr/news/view/1676180/?sc=Naver",
+    "https://www.xportsnews.com/article/2181491",
+    "https://www.mydaily.co.kr/page/view/2026080905431560767",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=833602"
+  ],
+  "created_at": "2026-08-09T10:38:38.070738+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "13년 만에 15승 투수 사라지나",
+    "line2": "KBO리그 극심한 다승 가뭄 비상",
+    "hook": "기근 비상",
+    "caption_body": "올 시즌 KBO리그가 전체 일정을 3분의 2가량 치렀으나 10승을 거둔 투수가 단 2명에 그치고 있습니다. 이에 따라 13년 만에 15승 투수가 단 한 명도 나오지 않을 수 있다는 전망이 제기됩니다. 시즌 막판 순위 구도가 정립되면 팀별 투수 운용 변수까지 더해져 대기록 달성이 더욱 불투명해질 것으로 보입니다."
+  }
+}
