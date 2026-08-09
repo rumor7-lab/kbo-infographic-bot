@@ -1,0 +1,30 @@
+{
+  "message_id": 147,
+  "topic_id": "폭염_가동",
+  "key": "폭염 가동",
+  "keywords": [
+    "폭염",
+    "가동",
+    "고정",
+    "김진욱",
+    "뉴노멀",
+    "마셔야죠",
+    "물러가",
+    "브레이크"
+  ],
+  "team": "롯데",
+  "outlet_count": 3,
+  "headlines": [
+    "\"여름방학 끝\"…KBO, 폭염 속 야간 고정·쿨링 브레이크 가동",
+    "폭염은 물러가도 다시 온다…한국 야구, '뉴노멀'을 준비할 시간",
+    "\"물 많이 자주 마셔야죠\" 선발진 재합류 준비 '이상무' 롯데 김진욱 [MD..."
+  ],
+  "links": [
+    "https://www.topstarnews.net/news/articleView.html?idxno=16158963",
+    "https://www.yna.co.kr/view/AKR20260809017300007?input=1195m",
+    "https://www.mydaily.co.kr/page/view/2026080909452226844"
+  ],
+  "created_at": "2026-08-09T13:49:02.858196+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
