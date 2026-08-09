@@ -1,0 +1,37 @@
+{
+  "message_id": 132,
+  "topic_id": "투수_교체",
+  "key": "투수 교체",
+  "keywords": [
+    "투수",
+    "교체",
+    "아시아쿼터",
+    "삼성",
+    "구단들",
+    "대만",
+    "던졌다",
+    "리드"
+  ],
+  "team": "삼성",
+  "outlet_count": 4,
+  "headlines": [
+    "왕옌청 KBO 1위·5위, 韓 AG 5연패 위협? 언터쳐블 아닌데 쉬운 투수 절...",
+    "\"韓 스카우트 파견했다\" 롯데 외국인 투수 교체? BOS 출신 대만 유망주 ...",
+    "'아시아쿼터 선수 교체에 쏠리는 시선' 삼성 교체 이후 구단들 분주해져..."
+  ],
+  "links": [
+    "https://www.mydaily.co.kr/page/view/2026080905431560767",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=833602",
+    "http://www.thesportstimes.co.kr/news/articleView.html?idxno=374776",
+    "http://www.osen.co.kr/article/G1112854043",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=833601"
+  ],
+  "created_at": "2026-08-09T08:28:29.629234+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "아시아쿼터 교체로 뜨거워진 KBO",
+    "line2": "삼성 영입 이후 타 구단도 움직임 분주",
+    "hook": "시선집중",
+    "caption_body": "삼성 라이온즈가 총액 7만 3천 달러에 우완 투수 미야모리 사토시를 새로 영입하며 아시아쿼터 교체를 단행했다. 시즌 개막 당시 합류했던 아시아쿼터 선수 중 6명만 남은 가운데, 삼성의 행보 이후 다른 구단들도 선수 물색에 바쁘게 움직이는 모양새다. 롯데를 포함한 KBO 구단들은 대만 출신 투수 류즈롱의 현장 등판에 스카우트를 파견하는 등 해외 자원 검토에도 적극적으로 나섰다."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "message_id": 137,
+  "topic_id": "ML_만에",
+  "key": "ML 만에",
+  "keywords": [
+    "ML",
+    "만에",
+    "명맥",
+    "투수",
+    "결장",
+    "곽빈",
+    "기상청",
+    "기회"
+  ],
+  "team": null,
+  "outlet_count": 4,
+  "headlines": [
+    "'이 투수는 KBO 출신입니다!' 레일리의 놀라운 변신, 38세에도 ML 정상급...",
+    "'이럴수가' 김하성 ML 복귀전 하루 만에 다시 결장, 기회는 언제쯤?",
+    "‘10승 투수 단 2명’ 13년 만에 15승 투수 명맥 끊기나"
+  ],
+  "links": [
+    "https://www.xportsnews.com/article/2181526",
+    "https://www.starnewskorea.com/sports/2026/08/09/2026080909104442940",
+    "https://www.dailian.co.kr/news/view/1676180/?sc=Naver",
+    "https://www.xportsnews.com/article/2181491",
+    "https://www.yna.co.kr/view/AKR20260807110400546?input=1195m"
+  ],
+  "created_at": "2026-08-09T12:30:04.528861+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "13년 만에 15승 투수 사라지나",
+    "line2": "10승 고지 밟은 투수 단 2명뿐",
+    "hook": "기록 비상",
+    "caption_body": "KBO리그가 올 시즌 전체 일정의 3분의 2가량을 소화했으나 10승을 달성한 투수가 단 2명에 그치는 기근 현상을 보이고 있다. 시즌 막판 순위 윤곽이 드러남에 따라 선발진 운용에 변화가 생길 수 있어, 13년 만에 15승 투수의 명맥이 끊길 가능성이 커졌다."
+  }
+}
