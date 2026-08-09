@@ -1,0 +1,37 @@
+{
+  "message_id": 144,
+  "topic_id": "이정후_타율",
+  "key": "이정후 타율",
+  "keywords": [
+    "이정후",
+    "타율",
+    "무안타",
+    "안타",
+    "연속",
+    "3타수",
+    "6경기",
+    "디트로이트전"
+  ],
+  "team": "롯데",
+  "outlet_count": 8,
+  "headlines": [
+    "지안, 최고 구속 엄정욱과 결혼 \"내 마음 빠르게 사로잡아\"",
+    "7월 최고의 타자! '4할 타율+7홈런' 불방망이…4번타자 변신? 확 달라진...",
+    "MLB 이정후, 디트로이트전 침묵…시즌 타율 0.301"
+  ],
+  "links": [
+    "https://www.mediafine.co.kr/news/articleView.html?idxno=86147",
+    "https://www.sportschosun.com/baseball/2026-08-09/202608090100048990003059",
+    "https://news.tvchosun.com/site/data/html_dir/2026/08/09/2026080990060.html",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008696741&plink=ORI&cooper=NAVER",
+    "http://www.fnnews.com/news/202608091255024431"
+  ],
+  "created_at": "2026-08-09T13:48:54.003720+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "7월을 지배한 KIA 카스트로",
+    "line2": "4할 타율에 7홈런 맹폭격",
+    "hook": "HOT",
+    "caption_body": "KIA 타이거즈 카스트로가 7월 한 달간 압도적인 타격감을 선보였습니다. 카스트로는 7월 동안 타율 0.405, 7홈런, 17타점, OPS 1.178을 기록하며 팀 타선을 이끌었습니다. 타자 중 월간 WAR 1.53으로 1위에 오른 그는 7월 쉘힐릭스플레이어에 선정됐습니다."
+  }
+}

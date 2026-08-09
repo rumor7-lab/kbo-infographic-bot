@@ -1,0 +1,37 @@
+{
+  "message_id": 145,
+  "topic_id": "투수_ML",
+  "key": "투수 ML",
+  "keywords": [
+    "투수",
+    "ML",
+    "명맥",
+    "만에",
+    "MLB",
+    "결장",
+    "곽빈",
+    "기상청"
+  ],
+  "team": null,
+  "outlet_count": 4,
+  "headlines": [
+    "베테랑 우완 투수 셔저, MLB 통산 탈삼진 10위…3천516개",
+    "'이 투수는 KBO 출신입니다!' 레일리의 놀라운 변신, 38세에도 ML 정상급...",
+    "'이럴수가' 김하성 ML 복귀전 하루 만에 다시 결장, 기회는 언제쯤?"
+  ],
+  "links": [
+    "https://www.yna.co.kr/view/AKR20260809024300007?input=1195m",
+    "https://www.xportsnews.com/article/2181526",
+    "https://www.starnewskorea.com/sports/2026/08/09/2026080909104442940",
+    "https://www.dailian.co.kr/news/view/1676180/?sc=Naver",
+    "https://www.xportsnews.com/article/2181491"
+  ],
+  "created_at": "2026-08-09T13:49:01.773420+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KBO 13년 만에 15승 투수 사라지나",
+    "line2": "시즌 2/3 지났는데 10승 단 2명",
+    "hook": "이슈",
+    "caption_body": "올 시즌 KBO리그가 페넌트레이스 일정의 3분의 2가량을 소화했으나 다승 투수 기근 현상이 이어지고 있다. 현재까지 10승 고지를 밟은 투수가 단 2명에 불과해 13년 만에 15승 투수가 단 한 명도 나오지 않을 가능성이 커졌다. 시즌 막판 팀 순위가 확정되면 투수 관리 모드에 들어갈 수 있어 승수 추가는 더욱 쉽지 않을 전망이다."
+  }
+}
