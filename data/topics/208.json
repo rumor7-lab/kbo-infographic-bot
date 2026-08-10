@@ -1,0 +1,32 @@
+{
+  "message_id": 208,
+  "topic_id": "포항스틸야드_K리그",
+  "key": "포항스틸야드 K리그",
+  "keywords": [
+    "포항스틸야드",
+    "K리그",
+    "경기장",
+    "석재",
+    "점검",
+    "긴급",
+    "안전",
+    "낙하"
+  ],
+  "team": "KIA",
+  "outlet_count": 8,
+  "headlines": [
+    "이번엔 축구장서 돌덩이 ‘쿵’…축구연맹, 전 구단 긴급 안전 점검 지...",
+    "프로야구 11일부터 경기 재개…삼성, 이번 주 KIA, 한화와 각 3연전",
+    "K리그1 포항 관중석 콘크리트 낙하…전 구단 경기장 긴급 점검"
+  ],
+  "links": [
+    "https://www.seoul.co.kr/news/sport/soccer/2026/08/10/20260810500119?wlog_tag3=naver",
+    "https://www.idaegu.com/news/articleView.html?idxno=664918",
+    "https://www.edaily.co.kr/news/newspath.asp?newsid=03138966645546008",
+    "https://sports.khan.co.kr/article/202608101146003?pt=nv",
+    "https://www.nocutnews.co.kr/news/6560494?utm_source=naver&utm_medium=article&utm_campaign=20260810112839"
+  ],
+  "created_at": "2026-08-10T14:54:29.342656+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
