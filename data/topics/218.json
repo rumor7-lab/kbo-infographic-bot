@@ -1,0 +1,37 @@
+{
+  "message_id": 218,
+  "topic_id": "불펜_투수",
+  "key": "불펜 투수",
+  "keywords": [
+    "불펜",
+    "투수",
+    "영입",
+    "삼성",
+    "日까지",
+    "강백호",
+    "건재한",
+    "과부하"
+  ],
+  "team": "삼성",
+  "outlet_count": 5,
+  "headlines": [
+    "KT 우규민, 역대 투수 3번째 통산 900경기 출장까지 -8",
+    "삼성, 아시아 쿼터 투수 미야지 교체 미야모리 영입",
+    "'타선만 보고 마운드를 잊었다' 강백호 영입의 역풍, 한화 불펜 붕괴가..."
+  ],
+  "links": [
+    "https://www.joongboo.com/news/articleView.html?idxno=363733532",
+    "https://www.joongangenews.com/news/articleView.html?idxno=539070",
+    "http://www.maniareport.com/view.php?ud=20260810130735812191b55a0d56_19",
+    "https://www.sportschosun.com/baseball/2026-08-10/202608100100055090003467",
+    "https://www.sportschosun.com/baseball/2026-08-10/202608100100055320003481"
+  ],
+  "created_at": "2026-08-10T17:57:22.437228+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KT 우규민 대기록 눈앞",
+    "line2": "역대 3번째 통산 900경기 출장 -8",
+    "hook": "대기록 도전",
+    "caption_body": "KT 위즈의 베테랑 투수 우규민이 KBO리그 역대 세 번째 통산 900경기 등판이라는 대기록을 눈앞에 뒀다. 현재 통산 892경기에 출전한 우규민은 기록 달성까지 단 8경기만을 남겨두고 있다. 마운드에서 꾸준한 활약을 이어온 그가 조만간 대기록 고지를 밟을 수 있을지 주목된다."
+  }
+}

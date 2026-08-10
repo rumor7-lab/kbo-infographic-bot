@@ -1,0 +1,37 @@
+{
+  "message_id": 219,
+  "topic_id": "승리_시구",
+  "key": "승리 시구",
+  "keywords": [
+    "승리",
+    "시구",
+    "12일",
+    "고척",
+    "기운",
+    "담아",
+    "등판",
+    "잠실"
+  ],
+  "team": "두산",
+  "outlet_count": 4,
+  "headlines": [
+    "SNL 크루 시구=두산 승리? '승률 87.5% 승요' 12일 잠실 등판...이아라·정...",
+    "\"승리 기운 담아 던진다\" 걸그룹 에스투잇, 12일 고척 마운드 오른다",
+    "연예인부터 대통령까지, 프로야구 시구의 모든 것"
+  ],
+  "links": [
+    "http://www.spochoo.com/news/articleView.html?idxno=128634",
+    "http://www.spochoo.com/news/articleView.html?idxno=128633",
+    "http://www.hansbiz.co.kr/news/articleView.html?idxno=855716",
+    "http://www.osen.co.kr/article/G1112854731",
+    "https://www.mk.co.kr/article/12122788"
+  ],
+  "created_at": "2026-08-10T17:57:32.997495+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "시구자 발표와 빅매치 선발 맞대결",
+    "line2": "두산·키움 시구 소식과 LG-키움 선발 대진",
+    "hook": "KBO 이슈",
+    "caption_body": "KBO 리그가 다채로운 시구자 초청과 주요 선발 맞대결로 열기를 더하고 있다. 두산 베어스는 12일 잠실 한화전에 배우 이아라와 정창환을, 키움 히어로즈는 같은 날 LG전에 에스투잇을 시구 및 시타자로 각각 선정했다. 한편 11일 고척에서는 LG 카를로스 카라스코와 키움 안우진이 선발 투수로 마운드에 올라 치열한 승부를 펼친다."
+  }
+}
