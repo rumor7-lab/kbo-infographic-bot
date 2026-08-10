@@ -1,0 +1,32 @@
+{
+  "message_id": 242,
+  "topic_id": "만에_콜업",
+  "key": "만에 콜업",
+  "keywords": [
+    "만에",
+    "콜업",
+    "홈런",
+    "MLB",
+    "KIA",
+    "大반격",
+    "괴력",
+    "기습"
+  ],
+  "team": "KIA",
+  "outlet_count": 4,
+  "headlines": [
+    "슈와버 大반격! 22일 만에 홈런 추가→멀티포로 35홈런→알바레스와 MLB...",
+    "미저로우스키, MLB 두 번째 ‘최소 이닝 200K’",
+    "방출 수모 5일 만에 빅리그 콜업... 밀워키 유니폼 배지환, '기습 번트'..."
+  ],
+  "links": [
+    "https://www.mydaily.co.kr/page/view/2026081019504441517",
+    "https://www.segye.com/newsView/20260810518543?OutUrl=naver",
+    "http://www.fnnews.com/news/202608101910125824",
+    "https://www.mydaily.co.kr/page/view/2026081013105186724",
+    "http://www.gndomin.com/news/articleView.html?idxno=484906"
+  ],
+  "created_at": "2026-08-10T23:54:25.426010+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
