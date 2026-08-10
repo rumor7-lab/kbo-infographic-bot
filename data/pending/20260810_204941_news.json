@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260810_204941_news",
+  "slot": "news",
+  "caption": "구자욱의 우승 꿈과 LG의 반등 기회 부상 아쉬움 속 재정비 나선 KBO\n\n삼성 구자욱이 부상으로 경기에 출전하지 못한 가운데, 팀은 KIA 타이거즈에 밀려 준우승에 머물렀다. 구자욱은 개인 기록보다 오직 팀 우승 하나만을 바라보고 달려왔다며 아쉬운 심경을 내비쳤다.한편, 후반기 첫 KT전 4연전을 모두 내줬던 디펜딩 챔피언 LG 트윈스는 폭염 브레이크 휴식기를 거치며 전열을 정비했다. 이번 휴식의 최대 수혜자로 평가받는 LG가 11일 재개되는 후반기 일정에서 반등할 수 있을지 주목된다.\n\n지금 KBO · 2개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #LG트윈스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-10T20:49:41.804169+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "ad0d39cb",
+      "card_id": "news_구자욱_단장님",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260810/204938_news_._.png",
+      "message_id": 229,
+      "status": "pending"
+    }
+  ]
+}
