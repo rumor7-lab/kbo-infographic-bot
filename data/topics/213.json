@@ -1,0 +1,32 @@
+{
+  "message_id": 213,
+  "topic_id": "투수_불펜",
+  "key": "투수 불펜",
+  "keywords": [
+    "투수",
+    "불펜",
+    "영입",
+    "삼성",
+    "日까지",
+    "강백호",
+    "강속구",
+    "과부하"
+  ],
+  "team": "삼성",
+  "outlet_count": 7,
+  "headlines": [
+    "삼성, 아시아 쿼터 투수 미야지 교체 미야모리 영입",
+    "'타선만 보고 마운드를 잊었다' 강백호 영입의 역풍, 한화 불펜 붕괴가...",
+    "'日까지 다녀왔는데' 1경기 4사구 4개 '극심한 난조'…불펜 과부하 힘들..."
+  ],
+  "links": [
+    "https://www.joongangenews.com/news/articleView.html?idxno=539070",
+    "http://www.maniareport.com/view.php?ud=20260810130735812191b55a0d56_19",
+    "https://www.sportschosun.com/baseball/2026-08-10/202608100100055090003467",
+    "https://www.starnewskorea.com/sports/2026/08/10/2026080914264482598",
+    "https://health.chosun.com/site/data/html_dir/2026/08/10/2026081001519.html"
+  ],
+  "created_at": "2026-08-10T16:24:25.494554+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
