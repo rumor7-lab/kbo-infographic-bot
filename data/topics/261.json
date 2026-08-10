@@ -1,0 +1,25 @@
+{
+  "message_id": 261,
+  "topic_id": "관중_눈앞",
+  "key": "관중 눈앞",
+  "keywords": [
+    "관중",
+    "눈앞",
+    "역대",
+    "인기팀",
+    "최소",
+    "롯데",
+    "900"
+  ],
+  "team": "롯데",
+  "outlet_count": 1,
+  "headlines": [
+    "‘900만 관중’ 눈앞→또 ‘역대 최소 경기’…어? ‘인기팀’ 롯데-한..."
+  ],
+  "links": [
+    "https://www.sportsseoul.com/news/read/1627857?ref=naver"
+  ],
+  "created_at": "2026-08-11T08:31:10.723658+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
