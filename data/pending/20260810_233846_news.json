@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260810_233846_news",
+  "slot": "news",
+  "caption": "곽빈과 왕옌청 선발 마운드 맞대결 배지환 밀워키서 안타·김하성 득점\n\n두산 베어스 곽빈과 한화 이글스 왕옌청이 선발 맞대결을 펼친다. 한화 김경문 감독은 류현진과 오웬 화이트 대신 아시아쿼터 왕옌청을 선발로 낙점했다.한편 뉴욕 메츠 트리플A에서 방출됐던 배지환은 밀워키 브루어스로 이적해 메이저리그 복귀 첫 안타를 기록했고, 김하성은 결승 득점을 올렸다.\n\n지금 KBO · 2개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #두산베어스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-10T23:38:46.942558+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "8d314e20",
+      "card_id": "news_결승_결승전",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260810/233843_news_._.png",
+      "message_id": 239,
+      "status": "pending"
+    }
+  ]
+}
