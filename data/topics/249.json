@@ -1,0 +1,26 @@
+{
+  "message_id": 249,
+  "topic_id": "나올까_대박",
+  "key": "나올까 대박",
+  "keywords": [
+    "나올까",
+    "대박",
+    "동기",
+    "안현민",
+    "조원빈",
+    "한국",
+    "김도영",
+    "소식"
+  ],
+  "team": null,
+  "outlet_count": 1,
+  "headlines": [
+    "'한국 야구 대박 소식' 나올까? '김도영·안현민 동기' 조원빈, 올 시즌..."
+  ],
+  "links": [
+    "https://www.sportalkorea.com/news/articleView.html?idxno=2025052909553446143"
+  ],
+  "created_at": "2026-08-11T00:56:43.370992+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
