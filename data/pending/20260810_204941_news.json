@@ -5,7 +5,7 @@
   "carousel": false,
   "reels": false,
   "created_at": "2026-08-10T20:49:41.804169+09:00",
-  "status": "pending",
+  "status": "published",
   "cards": [
     {
       "token": "ad0d39cb",
@@ -13,7 +13,8 @@
       "kind": "image",
       "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260810/204938_news_._.png",
       "message_id": 229,
-      "status": "pending"
+      "status": "approved"
     }
-  ]
+  ],
+  "media_id": "18401665492090477"
 }
