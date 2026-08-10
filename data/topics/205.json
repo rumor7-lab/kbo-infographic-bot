@@ -1,0 +1,32 @@
+{
+  "message_id": 205,
+  "topic_id": "경기장_포항스틸야드",
+  "key": "경기장 포항스틸야드",
+  "keywords": [
+    "경기장",
+    "포항스틸야드",
+    "K리그",
+    "관중석",
+    "석재",
+    "점검",
+    "긴급",
+    "낙하"
+  ],
+  "team": null,
+  "outlet_count": 5,
+  "headlines": [
+    "K리그1 포항 관중석 콘크리트 낙하…전 구단 경기장 긴급 점검",
+    "포항스틸야드 석재 낙하 ‘아찔’…K리그 경기장 안전 전수점검",
+    "'관중석 천장 석재 쿵' 포항스틸야드 사고…연맹, 전 구단 안전 점검"
+  ],
+  "links": [
+    "https://www.edaily.co.kr/news/newspath.asp?newsid=03138966645546008",
+    "https://sports.khan.co.kr/article/202608101146003?pt=nv",
+    "https://www.nocutnews.co.kr/news/6560494?utm_source=naver&utm_medium=article&utm_campaign=20260810112839",
+    "https://www.dt.co.kr/article/12077390?ref=naver",
+    "https://www.kado.net/news/articleView.html?idxno=2065799"
+  ],
+  "created_at": "2026-08-10T13:12:40.689662+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
