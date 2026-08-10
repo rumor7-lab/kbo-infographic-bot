@@ -120,18 +120,11 @@ def main() -> int:
     for u in updates:
         offset = max(offset, u["update_id"] + 1)
 
-        # DEBUG(임시): 정체불명 업데이트 유형 진단용 — 원인 찾으면 제거 예정.
-        kind = [k for k in u if k != "update_id"]
-        print(f"  DEBUG update_id={u['update_id']} keys={kind}")
-
         # 사진 답장(뉴스카드 소재) — 콜백이 아니라 일반 메시지로 온다.
         msg = u.get("message")
         if msg:
-            print(f"    DEBUG message keys={list(msg.keys())} "
-                  f"text={msg.get('text')!r} has_photo={'photo' in msg} "
-                  f"has_doc={'document' in msg} reply={'reply_to_message' in msg}")
             try:
-                if ncard.handle_photo_reply(cred_tg, msg, debug=True):
+                if ncard.handle_photo_reply(cred_tg, msg):
                     cards_made += 1
             except Exception as e:  # noqa: BLE001
                 print(f"  뉴스카드 처리 오류(계속 진행): {type(e).__name__}: {e}")
@@ -141,10 +134,8 @@ def main() -> int:
         if not cq:
             continue
         data = cq.get("data", "")
-        print(f"    DEBUG callback_query data={data!r}")
         action, _, token = data.partition(":")
         if action not in ("approve", "reject") or not token:
-            print(f"    DEBUG 콜백 형식 불일치 — action={action!r} token={token!r}")
             continue
 
         matched = False
@@ -153,11 +144,7 @@ def main() -> int:
             if batch.get("status") != "pending":
                 continue
             card = _find_card(batch, token)
-            if card is None:
-                continue
-            if card["status"] != "pending":
-                print(f"    DEBUG 토큰 {token} 은 batch={batch_path.name} 에서 찾았지만 "
-                      f"이미 status={card['status']}")
+            if card is None or card["status"] != "pending":
                 continue
 
             card["status"] = "approved" if action == "approve" else "rejected"
@@ -174,7 +161,6 @@ def main() -> int:
             break
 
         if not matched:
-            print(f"    DEBUG 토큰 {token} 을 어떤 pending 배치에서도 못 찾음")
             tg.answer_callback(cred_tg, cq["id"], "이미 처리된 카드입니다")
 
     _save_offset(offset)
