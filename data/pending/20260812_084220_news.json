@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260812_084220_news",
+  "slot": "news",
+  "caption": "8년 전 일 후회한 전 삼성 라이블리 스쿠터 사건 아니었다면 한국 안 왔다\n\n삼성 라이온즈에서 활약했던 투수 벤 라이블리가 과거 자신의 행동에 대해 깊은 아쉬움을 나타냈다. 미국 매체 디애슬레틱은 선수들의 스쿠터 이용 문화를 조명하며 라이블리의 인터뷰 내용을 전했다. 라이블리는 8년 전 일을 바보 같은 행동이었다고 자책하며, 그 사건이 아니었다면 KBO리그로 오지 않았을 것이라 털어놓았다.\n\n지금 KBO · 1개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #삼성라이온즈",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-12T08:42:20.695057+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "01c228be",
+      "card_id": "news_같았다_바보",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260812/084217_news_._.png",
+      "message_id": 364,
+      "status": "pending"
+    }
+  ]
+}
