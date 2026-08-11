@@ -1,0 +1,37 @@
+{
+  "message_id": 304,
+  "topic_id": "왕옌청_선발",
+  "key": "왕옌청 선발",
+  "keywords": [
+    "왕옌청",
+    "선발",
+    "한화",
+    "승리",
+    "곽빈",
+    "역투하",
+    "결승",
+    "웰스"
+  ],
+  "team": "한화",
+  "outlet_count": 9,
+  "headlines": [
+    "한화 선발 왕옌청 '승리를 위해'",
+    "역투하는 한화 선발 왕옌청",
+    "곽빈 ‘시즌 10승을 노린다’ [MK포토]"
+  ],
+  "links": [
+    "https://www.newsis.com/view/NISI20260811_0021395414",
+    "https://www.newsis.com/view/NISI20260811_0021395411",
+    "https://www.newsis.com/view/NISI20260811_0021395416",
+    "https://www.newsis.com/view/NISI20260811_0021395415",
+    "https://www.newsis.com/view/NISI20260811_0021395412"
+  ],
+  "created_at": "2026-08-11T19:27:24.838145+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "폭염 휴식기 마친 KBO 리그",
+    "line2": "에이스 맞대결과 선발 라인업 개편",
+    "hook": "시즌 재개",
+    "caption_body": "폭염 휴식기를 마무리한 KBO리그가 11일 일제히 경기를 재개했습니다. 잠실에서는 10승을 노리는 두산 곽빈과 한화 좌완 왕옌청이 선발 맞대결을 펼쳤습니다. 한편 LG 트윈스 염경엽 감독은 부진이 계속되던 라클란 웰스를 선발진에서 빼는 결단을 내렸습니다."
+  }
+}

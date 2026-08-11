@@ -1,0 +1,33 @@
+{
+  "message_id": 308,
+  "topic_id": "방출_개편",
+  "key": "방출 개편",
+  "keywords": [
+    "방출",
+    "개편",
+    "거취",
+    "다저스",
+    "대대적",
+    "대표",
+    "들어",
+    "불펜진"
+  ],
+  "team": null,
+  "outlet_count": 2,
+  "headlines": [
+    "WBC 한국 대표 위트컴, MLB 방출 대기…거취 주목",
+    "‘8월 들어 단 1승’ 위기의 다저스, 불펜진 대대적 개편…방출 위기였..."
+  ],
+  "links": [
+    "https://www.joongangenews.com/news/articleView.html?idxno=539478",
+    "https://sports.khan.co.kr/article/202608111418003?pt=nv"
+  ],
+  "created_at": "2026-08-11T19:28:01.135456+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "WBC 대표 위트컴 DFA… 반즈는 기회",
+    "line2": "엇갈린 메이저리거들의 향후 거취",
+    "hook": "MLB 소식",
+    "caption_body": "미국프로야구 메이저리그(MLB) 휴스턴 애스트로스가 11일 외야수 넬손 벨라스케스를 웨이버 클레임으로 지명하면서 WBC 한국 대표출신 위트컴이 방출 대기(DFA) 상태에 놓였다. 반면 8월 1승으로 부진해 불펜진을 대대적으로 재편한 LA 다저스에서는 KBO리그 롯데 출신 반즈가 다시 한번 기회를 잡게 됐다."
+  }
+}
