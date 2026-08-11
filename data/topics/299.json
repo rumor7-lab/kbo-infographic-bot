@@ -1,0 +1,37 @@
+{
+  "message_id": 299,
+  "topic_id": "웰스_LG",
+  "key": "웰스 LG",
+  "keywords": [
+    "웰스",
+    "LG",
+    "박시원",
+    "후반기",
+    "롱맨",
+    "선발진",
+    "승부수",
+    "선발"
+  ],
+  "team": "LG",
+  "outlet_count": 6,
+  "headlines": [
+    "'전반기 에이스' LG 웰스, 후반기 부진에 불펜 강등",
+    "\"선발 재편 LG\" 박시원 합류…웰스 롱맨 전환으로 후반기 재정비",
+    "LG 염경엽 감독, 승부수 띄웠다…“웰스, 선발진에서 제외”"
+  ],
+  "links": [
+    "https://www.news1.kr/sports/baseball/6255969",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16160737",
+    "https://sports.donga.com/sports/article/all/20260811/134459824/1",
+    "https://www.yna.co.kr/view/AKR20260811153300007?input=1195m",
+    "https://www.sportsseoul.com/news/read/1628005?ref=naver"
+  ],
+  "created_at": "2026-08-11T18:30:44.303759+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "부진 빠진 LG 웰스, 불펜으로 강등",
+    "line2": "2년 차 박시원 선발 합류하며 마운드 재편",
+    "hook": "보직 변경",
+    "caption_body": "프로야구 LG 트윈스가 후반기 부진을 겪던 아시아쿼터 좌완 투수 라클란 웰스를 선발진에서 제외하고 불펜 롱맨으로 보직을 바꿨다. 염경엽 LG 감독은 11일 키움전을 앞두고 이를 밝혔으며, 웰스의 빈자리에는 2년 차 투수 박시원이 선발 로테이션에 가세한다. 지난 4일 SSG전에서 2.2이닝 투구 후 교체됐던 웰스가 보직을 옮김에 따라, 3위 자리가 위태로워진 LG는 선발진 정비를 통해 분위기 반전을 노린다."
+  }
+}
