@@ -27,6 +27,8 @@
     "https://www.kihoilbo.co.kr/news/articleView.html?idxno=3031313"
   ],
   "created_at": "2026-08-11T12:17:33.206359+09:00",
-  "status": "waiting_photo",
-  "draft": null
+  "status": "card_sent",
+  "draft": null,
+  "card_id": "news_최원준_첫딸",
+  "sent_at": "2026-08-11T12:46:40.247835+09:00"
 }

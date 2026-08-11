@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260811_124639_news",
+  "slot": "news",
+  "caption": "“아빠 됐어요”…kt 위즈 최원준\n\n지금 KBO · 5개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #KT위즈",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-11T12:46:39.767283+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "93228203",
+      "card_id": "news_최원준_첫딸",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260811/124636_news_._.png",
+      "message_id": 276,
+      "status": "pending"
+    }
+  ]
+}
