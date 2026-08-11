@@ -1,0 +1,37 @@
+{
+  "message_id": 273,
+  "topic_id": "11일_진행",
+  "key": "11일 진행",
+  "keywords": [
+    "11일",
+    "진행",
+    "선발",
+    "재개",
+    "강등",
+    "경기서",
+    "더위야",
+    "맞춘"
+  ],
+  "team": "두산",
+  "outlet_count": 5,
+  "headlines": [
+    "KBO 재개 맞춘 스포츠토토, 창원서 무료체험 진행",
+    "\"평균 5.03이닝 시대\" MLB 선발, 구속 올랐지만 완투는 사라졌다",
+    "'더위야 물러가라' 두산, 21~23일 롯데와 홈 경기서 Dooplash 시리즈 진행"
+  ],
+  "links": [
+    "https://news.tf.co.kr/read/toto/2352762.htm",
+    "https://www.mydaily.co.kr/page/view/2026081110303722408",
+    "https://www.jeonmae.co.kr/news/articleView.html?idxno=1282798",
+    "https://www.gokorea.kr/news/articleView.html?idxno=874615",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16160410"
+  ],
+  "created_at": "2026-08-11T12:17:32.628984+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "폭염 딛고 돌아온 KBO 리그 11일 재개",
+    "line2": "전국 5개 구장서 대열전 다시 시작",
+    "hook": "KBO 재개",
+    "caption_body": "폭염 휴식을 마친 KBO 리그가 11일 전국 5개 구장에서 일정을 재개한다. 광주에서는 삼성과 KIA가 맞대결을 펼치며 선발 투수로 각각 페덱과 올러가 출격한다. 한편, 삼성 투수 이재익은 평균자책점 0.00을 기록 중임에도 2군으로 강등되었다."
+  }
+}
