@@ -1,0 +1,37 @@
+{
+  "message_id": 264,
+  "topic_id": "11일_일정",
+  "key": "11일 일정",
+  "keywords": [
+    "11일",
+    "일정",
+    "포스트시즌",
+    "재개",
+    "9월",
+    "KBO리그",
+    "가려질까",
+    "강등"
+  ],
+  "team": "삼성",
+  "outlet_count": 6,
+  "headlines": [
+    "KBO 프로야구, 11일 경기 중계 일정→선발 투수?",
+    "8월 11일 화요일 스포츠 경기",
+    "삼성 이재익, ERA 0.00에도 2군 강등…KBO 11일 재개"
+  ],
+  "links": [
+    "https://www.topstarnews.net/news/articleView.html?idxno=16160343",
+    "https://www.jeonmae.co.kr/news/articleView.html?idxno=1282798",
+    "https://www.gokorea.kr/news/articleView.html?idxno=874615",
+    "https://sports.khan.co.kr/article/202608110859003?pt=nv",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16160228"
+  ],
+  "created_at": "2026-08-11T10:20:28.406497+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "폭염 휴식 마친 KBO리그, 11일 재개",
+    "line2": "역대 두 번째 정규시즌 중단 마치고 다시 출격",
+    "hook": "리그 재개",
+    "caption_body": "극심한 더위로 닷새간 일정을 멈췄던 KBO 정규리그가 11일 오후 7시 전국 5개 구장에서 일제히 다시 열린다. 감염병 사태 이후 역대 두 번째로 단행된 이번 정규시즌 일시 중단 기간 동안 총 25경기가 진행되지 않았다. 11일 광주에서 펼쳐지는 삼성과 KIA의 맞대결에는 삼성 크리스 페덱과 KIA 애덤 올러가 선발 맞대결을 벌인다."
+  }
+}
