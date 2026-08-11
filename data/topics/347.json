@@ -1,0 +1,32 @@
+{
+  "message_id": 347,
+  "topic_id": "재개_첫날",
+  "key": "재개 첫날",
+  "keywords": [
+    "재개",
+    "첫날",
+    "관중",
+    "900",
+    "격파",
+    "그라운드",
+    "그리웠나",
+    "끝낸"
+  ],
+  "team": "SSG",
+  "outlet_count": 4,
+  "headlines": [
+    "프로야구 재개됐지만…'그라운드 복사열' 어쩌나",
+    "'폭염 방학'동안 프로야구 그리웠나… 재개 첫날 시즌 900만 관중 돌파",
+    "'폭염방학' 끝낸 프로야구, 재개 첫날 900만 관중…역대 최소 경기"
+  ],
+  "links": [
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008700884&plink=ORI&cooper=NAVER",
+    "https://www.dkilbo.com/news/articleView.html?idxno=551136",
+    "https://www.slist.kr/news/articleView.html?idxno=758147",
+    "https://www.slist.kr/news/articleView.html?idxno=758146",
+    "https://www.yna.co.kr/view/AKR20260811169700007?input=1195m"
+  ],
+  "created_at": "2026-08-12T04:11:27.124422+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
