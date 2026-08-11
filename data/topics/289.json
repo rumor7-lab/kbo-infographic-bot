@@ -1,0 +1,32 @@
+{
+  "message_id": 289,
+  "topic_id": "포스트시즌_30일",
+  "key": "포스트시즌 30일",
+  "keywords": [
+    "포스트시즌",
+    "30일",
+    "9월",
+    "메이저리그",
+    "시작",
+    "왕옌청",
+    "가을야구",
+    "선발"
+  ],
+  "team": "한화",
+  "outlet_count": 6,
+  "headlines": [
+    "류현진 대신 10승 에이스…한화, 제3의 개막전 '선발 왕옌청'",
+    "11일 잠실 두산-한화전, '곽빈 vs 왕옌청' 미리 보는 AG 선발...",
+    "가을야구 시간표 나왔다…MLB 포스트시즌 9월 30일 팡파르"
+  ],
+  "links": [
+    "https://news.jtbc.co.kr/article/NB12312749?influxDiv=NAVER",
+    "https://www.newspim.com/news/view/20260811000582",
+    "http://www.stoo.com/article.php?aid=108269497299",
+    "https://www.dailian.co.kr/news/view/1677053/?sc=Naver",
+    "https://www.munhwa.com/article/11608774?ref=naver"
+  ],
+  "created_at": "2026-08-11T16:00:05.572918+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
