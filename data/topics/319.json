@@ -1,0 +1,37 @@
+{
+  "message_id": 319,
+  "topic_id": "선발_등판",
+  "key": "선발 등판",
+  "keywords": [
+    "선발",
+    "등판",
+    "LG",
+    "안우진",
+    "카라스코",
+    "키움",
+    "로건",
+    "역투"
+  ],
+  "team": "LG",
+  "outlet_count": 10,
+  "headlines": [
+    "한화, 7회초 경기 리셋!",
+    "김정우 '7회초 등판'[포토]",
+    "한화, 11일 두산전 선발에 왕옌청...리그 재개 첫 경기 등판"
+  ],
+  "links": [
+    "https://www.news1.kr/photos/8051331",
+    "https://www.xportsnews.com/article/2182538",
+    "http://www.maniareport.com/view.php?ud=202608111906295536dad9f33a29_19",
+    "https://www.xportsnews.com/article/2182530",
+    "https://www.xportsnews.com/article/2182526"
+  ],
+  "created_at": "2026-08-11T21:08:03.324971+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "리그 재개 첫날, 채은성 동점포!",
+    "line2": "7회초 무사 1루서 터진 2점 홈런",
+    "hook": "리그 재개",
+    "caption_body": "폭염으로 잠시 중단됐던 프로야구가 11일 일제히 경기를 재개했다. 서울 잠실구장에서는 한화 채은성이 7회초 무사 1루 상황에서 동점 투런 홈런을 터뜨리며 두산과의 승부를 원점으로 돌렸다. 한편 고척에서는 키움 안우진과 LG 카라스코가 선발 대결을 펼쳤으며, 창원에서는 kt 선발 로건 앨런이 마운드에 올라 역투를 선보였다."
+  }
+}
