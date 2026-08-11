@@ -1,0 +1,31 @@
+{
+  "message_id": 358,
+  "topic_id": "KBO리그_최소",
+  "key": "KBO리그 최소",
+  "keywords": [
+    "KBO리그",
+    "최소",
+    "관중",
+    "900",
+    "국제대회",
+    "김태형",
+    "끓는다",
+    "늘어난다"
+  ],
+  "team": "삼성",
+  "outlet_count": 4,
+  "headlines": [
+    "KBO리그 최소 경기 900만 관중 달성…LG·삼성 110만 이상 동원하며 1-2위",
+    "“이상기후·국제대회 늘어난다” 김태형 작심발언…왜 KBO 144G 많다고 발...",
+    "프로야구 1300만 관중의 꿈, 열쇠는 롯데·한화 ‘뒷심’"
+  ],
+  "links": [
+    "https://www.mediapen.com/news/view/1115775",
+    "http://www.osen.co.kr/article/G1112855504",
+    "https://www.seoul.co.kr/news/sport/baseball/2026/08/12/20260812035003?wlog_tag3=naver",
+    "https://www.xportsnews.com/article/2182618"
+  ],
+  "created_at": "2026-08-12T08:11:27.155812+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

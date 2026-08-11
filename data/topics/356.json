@@ -1,0 +1,32 @@
+{
+  "message_id": 356,
+  "topic_id": "MLB_카라스코",
+  "key": "MLB 카라스코",
+  "keywords": [
+    "MLB",
+    "카라스코",
+    "韓서",
+    "가능성",
+    "거물",
+    "겸손",
+    "계약",
+    "나는"
+  ],
+  "team": "LG",
+  "outlet_count": 5,
+  "headlines": [
+    "'퍼펙트 행진은 멈췄지만' … 카라스코, MLB '거물' 증명하며 KBO 첫 승",
+    "'MLB 112승→KBO 첫 승' 카라스코 겸손 보소! \"韓서 나는 신인→계속 공...",
+    "카라스코 호투만큼 반가운 오지환 홈런포, LG 반등 서막일까"
+  ],
+  "links": [
+    "https://www.newdaily.co.kr/site/data/html/2026/08/12/2026081200025.html",
+    "https://www.starnewskorea.com/sports/2026/08/12/2026081200083850064",
+    "https://sports.hankooki.com/news/articleView.html?idxno=6937854",
+    "https://www.seoul.co.kr/news/sport/baseball/baseball-world/2026/08/12/20260812034004?wlog_tag3=naver",
+    "http://www.thesportstimes.co.kr/news/articleView.html?idxno=374834"
+  ],
+  "created_at": "2026-08-12T08:11:14.608689+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

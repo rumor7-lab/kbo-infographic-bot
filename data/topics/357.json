@@ -1,0 +1,31 @@
+{
+  "message_id": 357,
+  "topic_id": "고지_승리",
+  "key": "고지 승리",
+  "keywords": [
+    "고지",
+    "승리",
+    "지난해",
+    "가장",
+    "기원",
+    "대역전극",
+    "돌파",
+    "많은"
+  ],
+  "team": "KIA",
+  "outlet_count": 4,
+  "headlines": [
+    "'10승 고지' KIA 올러 \"지난해보다 더 많은 승리 쌓을 것\"",
+    "kt, 9회 대역전극으로 7연승-가장 먼저 시즌 60승 고지",
+    "플레어 유, 기아 승리 기원 시구"
+  ],
+  "links": [
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000056131",
+    "https://www.mediafine.co.kr/news/articleView.html?idxno=86379",
+    "https://www.bntnews.co.kr/article/view/bnt202608120021",
+    "https://isplus.com/article/view/isp202608120001"
+  ],
+  "created_at": "2026-08-12T08:11:26.362235+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
