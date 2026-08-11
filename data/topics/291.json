@@ -1,0 +1,37 @@
+{
+  "message_id": 291,
+  "topic_id": "이정후_홈런",
+  "key": "이정후 홈런",
+  "keywords": [
+    "이정후",
+    "홈런",
+    "최다",
+    "9호",
+    "MLB",
+    "개인",
+    "이제",
+    "복귀"
+  ],
+  "team": "한화",
+  "outlet_count": 16,
+  "headlines": [
+    "\"장애인 막은 한화, 이제는 '알바 탓'?\"…김승연 구단주, 이게 '세계 최...",
+    "\"韓 성적 美와 큰 차이 없었지만...\" 1위 팀서 방출된 투수, ML 복귀 가능...",
+    "시즌 9호 홈런 터트린 이정후, 생애 첫 ‘스플래시 히트’에는 30cm 모자..."
+  ],
+  "links": [
+    "http://www.spochoo.com/news/articleView.html?idxno=128682",
+    "https://www.munhwa.com/article/11608777?ref=naver",
+    "https://www.etoday.co.kr/news/view/2613243",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008700105&plink=ORI&cooper=NAVER",
+    "https://sports.khan.co.kr/article/202608111400003?pt=nv"
+  ],
+  "created_at": "2026-08-11T17:13:25.705931+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "이정후 9호 홈런 터졌다! MLB 개인 최다",
+    "line2": "35번째 멀티히트로 3할 타율 복귀",
+    "hook": "MLB",
+    "caption_body": "샌프란시스코 자이언츠의 이정후가 휴스턴전에서 시즌 9호 솔로 아치를 그리며 메이저리그 진출 이후 개인 한 시즌 최다 홈런을 경신했다. 이번 타구는 담장을 넘어 생애 첫 '스플래시 히트'에 불과 30cm 모자란 대형 홈런이었다. 이정후는 이날 올 시즌 35번째 멀티히트까지 완성하며 3할 타율에 다시 복귀했다."
+  }
+}
