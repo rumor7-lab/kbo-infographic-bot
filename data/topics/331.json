@@ -1,0 +1,32 @@
+{
+  "message_id": 331,
+  "topic_id": "두산_박준순",
+  "key": "두산 박준순",
+  "keywords": [
+    "두산",
+    "박준순",
+    "4연승",
+    "홈런",
+    "김원형",
+    "승리",
+    "한화",
+    "질주"
+  ],
+  "team": "두산",
+  "outlet_count": 10,
+  "headlines": [
+    "'페덱 역투도 허사' 삼성 라이온즈, KIA 타이거즈에 1대3 고배",
+    "'곽빈 역투에 박준순은 결승 스리런 홈런' 두산, 한화에 6-3 승리로 4연승...",
+    "'4연승' 두산 김원형 감독 \"박준순의 홈런이 결정적이었다\""
+  ],
+  "links": [
+    "https://www.imaeil.com/page/view/2026081121141960403",
+    "http://www.thesportstimes.co.kr/news/articleView.html?idxno=374829",
+    "https://www.news1.kr/sports/baseball/6256088",
+    "https://www.newsis.com/view/NISX20260811_0003745234",
+    "http://www.stoo.com/article.php?aid=108282924049"
+  ],
+  "created_at": "2026-08-11T23:54:06.013440+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
