@@ -1,0 +1,32 @@
+{
+  "message_id": 457,
+  "topic_id": "하주석_홈런",
+  "key": "하주석 홈런",
+  "keywords": [
+    "하주석",
+    "홈런",
+    "KIA",
+    "김도영",
+    "이제",
+    "같다",
+    "끝났다",
+    "박재현"
+  ],
+  "team": "KIA",
+  "outlet_count": 6,
+  "headlines": [
+    "김도영·박재현·하주석 '쾅쾅쾅'…KIA, 4위 복귀",
+    "\"이제 KIA 선수 된 것 같다\" 하주석, 이적 후 첫 홈런 '쾅'",
+    "'KIA→한화' 트레이드 이적생, 2군에서도 실점이라니…하주석은 홈런까..."
+  ],
+  "links": [
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008702801&plink=ORI&cooper=NAVER",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000056458",
+    "http://www.osen.co.kr/article/G1112856036",
+    "https://dgmbc.com/NewsArticle/856349",
+    "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8635790&ref=A"
+  ],
+  "created_at": "2026-08-13T08:36:58.264965+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
