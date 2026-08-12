@@ -1,0 +1,37 @@
+{
+  "message_id": 410,
+  "topic_id": "김도영_KIA",
+  "key": "김도영 KIA",
+  "keywords": [
+    "김도영",
+    "KIA",
+    "34호포",
+    "홈런",
+    "34호",
+    "선두",
+    "오스틴",
+    "폭발"
+  ],
+  "team": "KIA",
+  "outlet_count": 9,
+  "headlines": [
+    "방출 3번 아픔 날렸다…41세 김진성 '최다 홀드' 신기록",
+    "김도영, 시즌 34호포",
+    "'홈런 선두' KIA 김도영, 12일 만에 34호포…LG 오스틴과 3개 차"
+  ],
+  "links": [
+    "https://news.jtbc.co.kr/article/NB12313077?influxDiv=NAVER",
+    "https://www.sportschosun.com/baseball/2026-08-12/202608120100072760004502",
+    "https://www.newsis.com/view/NISX20260812_0003746862",
+    "http://www.osen.co.kr/article/G1112855964",
+    "https://www.xportsnews.com/article/2182907"
+  ],
+  "created_at": "2026-08-12T20:49:12.784855+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "41세 김진성 KBO 최다 홀드 신기록",
+    "line2": "세 번의 방출 딛고 묵묵히 써 내려간 역사",
+    "hook": "대기록",
+    "caption_body": "LG 트윈스 베테랑 투수 김진성이 세 번의 방출이라는 시련을 이겨내고 KBO리그 통산 최다 홀드라는 대기록을 작성했다. 경기 시작 전 이른 아침부터 훈련을 소화해 온 마흔한 살의 김진성은 묵묵한 노력을 통해 리그 새 역사의 주인공이 됐다. 한편 KIA 타이거즈 김도영은 12일 광주 삼성전에서 12일 만에 시즌 34호 역전 홈런포를 가동하며 홈런 부문 단독 선두 자리를 확고히 했다."
+  }
+}

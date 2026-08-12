@@ -1,0 +1,32 @@
+{
+  "message_id": 411,
+  "topic_id": "투수_타자",
+  "key": "투수 타자",
+  "keywords": [
+    "투수",
+    "타자",
+    "김진호",
+    "깔끔하게",
+    "돌아가라니",
+    "땅볼",
+    "라인업서",
+    "박건"
+  ],
+  "team": "NC",
+  "outlet_count": 6,
+  "headlines": [
+    "벤자민 포효, 만루에서 두 타자 삭제",
+    "\"서울까지 왔는데 돌아가라니\" 울산 日 투수, KBO 촌극에 헛걸음…LG 이...",
+    "NC 월간 MVP는 선수단과 프런트가 함께 뽑는다...투수 김진호·타자 박건..."
+  ],
+  "links": [
+    "https://www.starnewskorea.com/sports/2026/08/12/2026081220222623561",
+    "http://www.spochoo.com/news/articleView.html?idxno=128730",
+    "http://www.osen.co.kr/article/G1112855902",
+    "https://isplus.com/article/view/isp202608120150",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16161726"
+  ],
+  "created_at": "2026-08-12T20:49:23.388108+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
