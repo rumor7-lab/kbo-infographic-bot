@@ -1,0 +1,37 @@
+{
+  "message_id": 453,
+  "topic_id": "연속_방출",
+  "key": "연속 방출",
+  "keywords": [
+    "연속",
+    "방출",
+    "이틀",
+    "ML",
+    "KIA서",
+    "검토할까",
+    "결단할까",
+    "다시"
+  ],
+  "team": "KIA",
+  "outlet_count": 5,
+  "headlines": [
+    "'LG·KIA서 연속 방출→은퇴 위기→다시 서교수 모드' 서건창 \"히어로즈...",
+    "ML 2회 올스타도 38세에 한국행 검토할까…방출→'현역 연장 의...",
+    "\"돈 벌러 온 것 NO, 야구가 하고 싶어 왔다\"…'ML 112승' 카라스코, 실력..."
+  ],
+  "links": [
+    "https://www.starnewskorea.com/sports/2026/08/13/2026081223333250922",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001618",
+    "https://www.sportschosun.com/baseball/2026-08-13/202608130100074760004653",
+    "https://isplus.com/article/view/isp202608120183",
+    "https://www.xportsnews.com/article/2183062"
+  ],
+  "created_at": "2026-08-13T07:36:08.547597+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "은퇴 갈림길 섰던 서건창",
+    "line2": "친정팀 키움 손잡고 현역 연장",
+    "hook": "친정 복귀",
+    "caption_body": "LG와 KIA에서 잇달아 방출되며 선수 생활 마감 위기에 놓였던 내야수 서건창이 친정팀 키움 히어로즈에 다시 둥지를 틀었다. 지난 2024시즌 KIA의 통합 우승에 힘을 보탰으나 2025시즌 10경기 출전에 그치며 재차 방출 통보를 받았다. 마지막 순간 친정팀의 손을 잡고 현역 연장 기회를 잡은 그가 다시 부활할 수 있을지 기대를 모은다."
+  }
+}

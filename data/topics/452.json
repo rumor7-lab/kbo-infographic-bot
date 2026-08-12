@@ -1,0 +1,37 @@
+{
+  "message_id": 452,
+  "topic_id": "홈런_KIA",
+  "key": "홈런 KIA",
+  "keywords": [
+    "홈런",
+    "KIA",
+    "트레이드",
+    "하주석",
+    "한화",
+    "김도영",
+    "끝났다",
+    "눈앞"
+  ],
+  "team": "KIA",
+  "outlet_count": 5,
+  "headlines": [
+    "'트레이드 초대박' KIA 3위 눈앞, 80억 대체자 한화에서 찾을 줄이야…\"...",
+    "'KIA→한화' 트레이드 이적생, 2군에서도 실점이라니…하주석은 홈런까...",
+    "홈런 사라진 삼성라이온즈…새 외인 '보스, 사토시' 홈런 허용, 4연패 수..."
+  ],
+  "links": [
+    "https://www.sportschosun.com/baseball/2026-08-13/202608130100074970004666",
+    "http://www.osen.co.kr/article/G1112856036",
+    "https://dgmbc.com/NewsArticle/856349",
+    "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8635790&ref=A",
+    "https://www.xportsnews.com/article/2183117"
+  ],
+  "created_at": "2026-08-13T07:35:59.345283+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "하주석 이적 첫 포·김도영 34호",
+    "line2": "KIA, 삼성 제압하고 3위 눈앞",
+    "hook": "트레이드 대박",
+    "caption_body": "KIA 타이거즈가 12일 광주 삼성전에서 7-2 완승을 거두며 3위 자리를 바짝 추격했다. 한화에서 유니폼을 갈아입은 하주석이 이적 후 첫 아치를 그렸고, 김도영 역시 시즌 34호 홈런포를 재가동하며 팀 승리를 견인했다. 반면 4연패 수렁에 빠진 삼성은 마운드 난조를 드러냈으며, 한화로 떠난 이형범은 2군 첫 등판에서 실점을 기록했다."
+  }
+}
