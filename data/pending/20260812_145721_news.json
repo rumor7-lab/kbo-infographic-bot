@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260812_145721_news",
+  "slot": "news",
+  "caption": "SSG 최정, 미국서 고관절 수술 마쳐 내년 시즌 건강한 복귀 약속\n\nSSG 랜더스 간판 타자 최정이 미국 콜로라도의 전문 의료기관에서 고관절 수술을 성공적으로 마쳤다. KBO리그 통산 최다 홈런을 기록 중인 최정은 현지에서 약 2주 동안 초기 재활 프로그램을 소화할 예정이다. 수술을 마친 그는 내년 시즌 팬들에게 건강한 모습으로 돌아오겠다는 각오를 전했다.\n\n지금 KBO · 9개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #SSG랜더스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-12T14:57:21.838422+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "5d335a17",
+      "card_id": "news_최정_수술",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260812/145718_news_._.png",
+      "message_id": 382,
+      "status": "pending"
+    }
+  ]
+}
