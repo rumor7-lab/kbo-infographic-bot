@@ -1,0 +1,31 @@
+{
+  "message_id": 380,
+  "topic_id": "방출_1위",
+  "key": "방출 1위",
+  "keywords": [
+    "방출",
+    "1위",
+    "괜히",
+    "김진",
+    "넘어",
+    "당했는데",
+    "데려왔는데",
+    "돌아"
+  ],
+  "team": "삼성",
+  "outlet_count": 3,
+  "headlines": [
+    "1위 추격 동력 필요한 삼성에 '힛 포더 팀'이 돌아 왔다...선수 한 명 복...",
+    "'카메론 괜히 방출했나' 2.8억에 멕시코서 데려왔는데, 홈런 0개→라인...",
+    "세 번의 방출 아픔 딛고 쌓은 178홀드…통산 홀드 1위로 올라선 LG 김진..."
+  ],
+  "links": [
+    "https://mhnse.com/news/articleView.html?idxno=1486171",
+    "https://www.newsis.com/view/NISX20260812_0003745442",
+    "https://www.mydaily.co.kr/page/view/2026081202294038410",
+    "https://www.mydaily.co.kr/page/view/2026081122432817419"
+  ],
+  "created_at": "2026-08-12T14:13:52.658439+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
