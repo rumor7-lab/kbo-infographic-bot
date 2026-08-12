@@ -33,7 +33,10 @@ on:
         type: boolean
 
 concurrency:
-  group: publish
+  # 2026-08-12: news-watch.yml / approve-poll.yml 과 같은 그룹으로 통일 — 이
+  # 워크플로도 data/snapshots, data/runs, assets/photos, data/photo_review.json
+  # 을 커밋하므로 다른 워크플로와 겹치면 같은 push 경쟁 위험이 있다.
+  group: kbo-bot-git-state
   cancel-in-progress: false
 
 jobs:

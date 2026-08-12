@@ -16,13 +16,22 @@ name: news-watch
 # 매칭용)로 git 커밋해서 다음 실행이 이어받는다 — 다른 워크플로들과 같은 패턴.
 # data/topics 커밋/푸시는 news_watch.py 내부(_git_commit_push_topics)가 새 알림을
 # 보냈을 때만 직접 처리하므로, git 사용자 설정을 그 실행 전에 미리 해둔다.
+#
+# 2026-08-12: concurrency 그룹을 approve-poll.yml 과 동일하게(kbo-bot-git-state)
+# 맞췄다. 원래는 서로 다른 그룹(news-watch / approve-poll)이라 두 워크플로가
+# 동시에 돌 수 있었는데, 둘 다 data/topics/ 를 커밋하다 보니 approve-poll 쪽
+# 커밋이 push 시점에 non-fast-forward 로 밀려 rebase 까지 실패하면 최종 `|| true`
+# 로 조용히 버려지는 경로가 있었다 — 승인 버튼을 눌러도 카드 상태가 실제로는
+# 저장 안 되고 유실되는 사고의 유력한 원인. 같은 그룹으로 묶어 두 워크플로가
+# 항상 순차 실행되게 하면(둘 다 cancel-in-progress: false 라 대기열에 쌓임) 이
+# 경쟁 자체가 없어진다.
 on:
   schedule:
     - cron: "*/30 * * * *"
   workflow_dispatch:
 
 concurrency:
-  group: news-watch
+  group: kbo-bot-git-state
   cancel-in-progress: false
 
 jobs:

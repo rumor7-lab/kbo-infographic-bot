@@ -135,16 +135,22 @@ def main() -> int:
             continue
         data = cq.get("data", "")
         action, _, token = data.partition(":")
+        print(f"  콜백 수신: update_id={u['update_id']} data={data!r}")
         if action not in ("approve", "reject") or not token:
+            print(f"    → 형식 불일치(action={action!r}, token={token!r}), 무시")
             continue
 
         matched = False
+        seen_token_elsewhere = False  # 토큰은 찾았는데 이미 결정됐거나 배치가 안 pending
         for batch_path in _load_batches():
             batch = json.loads(batch_path.read_text(encoding="utf-8"))
-            if batch.get("status") != "pending":
-                continue
             card = _find_card(batch, token)
-            if card is None or card["status"] != "pending":
+            if card is None:
+                continue
+            if batch.get("status") != "pending" or card["status"] != "pending":
+                seen_token_elsewhere = True
+                print(f"    → 토큰 {token} 은 {batch_path.name} 에 있지만 "
+                      f"batch.status={batch.get('status')!r} card.status={card['status']!r} — 건너뜀")
                 continue
 
             card["status"] = "approved" if action == "approve" else "rejected"
@@ -158,9 +164,13 @@ def main() -> int:
             )
             matched = True
             processed += 1
+            print(f"    → 매칭 성공: {batch_path.name} / {card['card_id']} → {card['status']}")
             break
 
         if not matched:
+            if not seen_token_elsewhere:
+                print(f"    → 토큰 {token} 을 어떤 배치에서도 못 찾음 "
+                      f"(data/pending 에 해당 카드가 없음)")
             tg.answer_callback(cred_tg, cq["id"], "이미 처리된 카드입니다")
 
     _save_offset(offset)

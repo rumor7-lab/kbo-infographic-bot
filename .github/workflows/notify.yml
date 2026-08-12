@@ -23,7 +23,9 @@ on:
         options: [morning, noon, night]
 
 concurrency:
-  group: notify
+  # 2026-08-12: 다른 워크플로들과 같은 그룹으로 통일 (git push 경쟁 방지, 자세한
+  # 이유는 approve-poll.yml 참고)
+  group: kbo-bot-git-state
   cancel-in-progress: false
 
 jobs:

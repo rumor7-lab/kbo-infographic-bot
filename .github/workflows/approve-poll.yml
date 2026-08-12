@@ -29,7 +29,11 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: approve-poll
+  # 2026-08-12: news-watch.yml 과 같은 그룹으로 통일 — 둘 다 data/topics/ 를
+  # 커밋해서 동시에 돌면 push 경쟁이 생기고, rebase 까지 실패하면 최종 `|| true`
+  # 로 조용히 버려진다(승인 상태 유실 유력 원인). 같은 그룹이면 항상 순차
+  # 실행되어 이 경쟁이 원천적으로 사라진다.
+  group: kbo-bot-git-state
   cancel-in-progress: false
 
 jobs:
