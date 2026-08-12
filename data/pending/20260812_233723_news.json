@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260812_233723_news",
+  "slot": "news",
+  "caption": "KBO 실수로 울산 오카다 LG행 무산 규정 해석 번복으로 계약 수포로\n\n프로야구 LG 트윈스가 부상당한 아시아쿼터 투수 라클란 웰스의 대체자로 시민구단 울산 웨일즈의 일본인 투수 오카다 아키타케 영입을 추진했습니다. 하지만 한국야구위원회(KBO)가 규정 해석을 번복하는 행정 착오를 일으키면서 이번 계약은 최종적으로 무산됐습니다. KBO의 확답을 받고 추진했던 구단들은 프로야구 최초의 시민구단 출신 1군 이적생 배출이라는 결실을 눈앞에서 놓치게 됐습니다.\n\n지금 KBO · 8개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #LG트윈스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-12T23:37:23.044559+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "6c6d71a4",
+      "card_id": "news_투수_울산",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260812/233719_news_._.png",
+      "message_id": 427,
+      "status": "pending"
+    }
+  ]
+}
