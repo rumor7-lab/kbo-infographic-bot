@@ -1,0 +1,32 @@
+{
+  "message_id": 385,
+  "topic_id": "900_관중",
+  "key": "900 관중",
+  "keywords": [
+    "900",
+    "관중",
+    "돌파",
+    "역대",
+    "첫날",
+    "최소",
+    "재개",
+    "폭염"
+  ],
+  "team": null,
+  "outlet_count": 10,
+  "headlines": [
+    "닷새 멈췄는데 흥행은 더 빨라졌다…프로야구, 재개 첫날 900만 돌파",
+    "폭염 휴식에도 식지 않는 '프로야구' 505경기 만에 900만 관중 돌파",
+    "프로야구 재개 첫날 900만 관중 돌파…역대 최소 경기 기록 갱신"
+  ],
+  "links": [
+    "https://www.thepowernews.co.kr/view.php?ud=202608121505201861de3f0aa1be_7",
+    "https://www.kgnews.co.kr/news/article.html?no=907465",
+    "https://news.tvchosun.com/site/data/html_dir/2026/08/12/2026081290140.html",
+    "https://www.newsgn.com/news/articleView.html?idxno=567523",
+    "https://www.newscj.com/news/articleView.html?idxno=3424438"
+  ],
+  "created_at": "2026-08-12T15:52:49.799429+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
