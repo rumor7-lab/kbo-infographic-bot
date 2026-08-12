@@ -1,0 +1,32 @@
+{
+  "message_id": 414,
+  "topic_id": "김도영_홈런",
+  "key": "김도영 홈런",
+  "keywords": [
+    "김도영",
+    "홈런",
+    "KIA",
+    "벤자민",
+    "34호",
+    "34호포",
+    "보스",
+    "상대"
+  ],
+  "team": "KIA",
+  "outlet_count": 8,
+  "headlines": [
+    "KIA맨 하주석 드디어 홈런 쳤다…트레이드 후 첫 대포, 한화 시절 이후...",
+    "문현빈 '벤자민 상대로 솔로 홈런",
+    "'아! 뼈아픈 홈런 한 방' 제구 흔들린 벤자민, 꾸역꾸역 막아냈으나 홈..."
+  ],
+  "links": [
+    "https://www.mydaily.co.kr/page/view/2026081221444473957",
+    "https://www.yna.co.kr/view/AKR20260812164100007?input=1195m",
+    "https://www.mydaily.co.kr/page/view/2026081220013973916",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000056449",
+    "http://www.osen.co.kr/article/G1112856073"
+  ],
+  "created_at": "2026-08-12T21:59:03.906464+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

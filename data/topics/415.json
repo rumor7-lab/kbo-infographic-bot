@@ -1,0 +1,37 @@
+{
+  "message_id": 415,
+  "topic_id": "투수_울산",
+  "key": "투수 울산",
+  "keywords": [
+    "투수",
+    "울산",
+    "선발",
+    "LG",
+    "땅볼",
+    "타자",
+    "복귀",
+    "이적"
+  ],
+  "team": "LG",
+  "outlet_count": 8,
+  "headlines": [
+    "땅볼로 타점 올리는 심우준",
+    "\"서울까지 왔는데 돌아가라니\" 울산 日 투수, KBO 촌극에 헛걸음…LG 이...",
+    "NC 월간 MVP는 선수단과 프런트가 함께 뽑는다...투수 김진호·타자 박건..."
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112856061",
+    "http://www.osen.co.kr/article/G1112855902",
+    "https://www.sportschosun.com/baseball/2026-08-12/202608120100072370004469",
+    "https://isplus.com/article/view/isp202608120163",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16161726"
+  ],
+  "created_at": "2026-08-12T21:59:15.666805+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KBO 실수로 울산 오카다 LG행 무산",
+    "line2": "규정 해석 번복으로 계약 수포로",
+    "hook": "황당 해프닝",
+    "caption_body": "프로야구 LG 트윈스가 부상당한 아시아쿼터 투수 라클란 웰스의 대체자로 시민구단 울산 웨일즈의 일본인 투수 오카다 아키타케 영입을 추진했습니다. 하지만 한국야구위원회(KBO)가 규정 해석을 번복하는 행정 착오를 일으키면서 이번 계약은 최종적으로 무산됐습니다. KBO의 확답을 받고 추진했던 구단들은 프로야구 최초의 시민구단 출신 1군 이적생 배출이라는 결실을 눈앞에서 놓치게 됐습니다."
+  }
+}
