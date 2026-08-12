@@ -1,0 +1,37 @@
+{
+  "message_id": 392,
+  "topic_id": "수술_최정",
+  "key": "수술 최정",
+  "keywords": [
+    "수술",
+    "최정",
+    "내년",
+    "고관절",
+    "건강한",
+    "복귀",
+    "SSG",
+    "모습"
+  ],
+  "team": "SSG",
+  "outlet_count": 15,
+  "headlines": [
+    "최정, 고관절 수술 성공적…내년 시즌 문제 없다 “스프링캠프 합류 예...",
+    "'홈런왕' 최정 고관절 수술 성공…내년 시즌 건강한 복귀 다짐",
+    "“내년 시즌 건강한 모습으로 플레이” 고관절 수술 마친 SSG 최정, 동생..."
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112855816",
+    "https://www.kihoilbo.co.kr/news/articleView.html?idxno=3031505",
+    "https://sports.donga.com/sports/article/all/20260812/134465292/1",
+    "https://www.kyeonggi.com/article/20260812580264",
+    "https://mhnse.com/news/articleView.html?idxno=1486499"
+  ],
+  "created_at": "2026-08-12T17:13:50.728492+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "SSG 최정, 미국서 고관절 수술 완료",
+    "line2": "재활 집중 후 내년 시즌 복귀 준비",
+    "hook": "공식",
+    "caption_body": "SSG 랜더스의 간판타자 최정이 미국에서 고관절 수술을 성공적으로 마무리했다. 지난 6월 통증이 발생한 이후 진통제를 맞으며 경기를 소화해 왔으나, 증상이 이어지자 수술을 결정하고 올 시즌을 일찍 마감했다. KBO리그 최초로 21시즌 연속 두 자릿수 홈런과 11시즌 연속 20홈런을 달성한 최정은 재활에 전념해 내년 스프링캠프 합류를 목표로 몸을 만들 예정이다."
+  }
+}
