@@ -1,0 +1,32 @@
+{
+  "message_id": 406,
+  "topic_id": "900_돌파",
+  "key": "900 돌파",
+  "keywords": [
+    "900",
+    "돌파",
+    "관중",
+    "역대",
+    "최소",
+    "재개",
+    "첫날",
+    "흥행"
+  ],
+  "team": "한화",
+  "outlet_count": 9,
+  "headlines": [
+    "프로야구 900만 흥행인데…성적 부진에 거인은 울상",
+    "프로야구, 505경기 만에 900만 관중 돌파",
+    "프로야구 역대 최소 경기 900만 관중 돌파"
+  ],
+  "links": [
+    "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0600&key=20260813.22015003359",
+    "https://www.news1.kr/photos/8053306",
+    "https://www.gnnews.co.kr/news/articleView.html?idxno=643165",
+    "https://www.segye.com/newsView/20260812519924?OutUrl=naver",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001540"
+  ],
+  "created_at": "2026-08-12T19:58:26.250861+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

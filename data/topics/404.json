@@ -1,0 +1,37 @@
+{
+  "message_id": 404,
+  "topic_id": "오카다_LG",
+  "key": "오카다 LG",
+  "keywords": [
+    "오카다",
+    "LG",
+    "울산",
+    "무산",
+    "영입",
+    "이적",
+    "규정",
+    "사과"
+  ],
+  "team": "LG",
+  "outlet_count": 13,
+  "headlines": [
+    "KBO의 ‘실책’ LG, 오카다 이적 무산…제대로 꼬인 플랜에 ‘황당’",
+    "행정 실수로 울산 日 투수 오카다, LG 이적 불발…KBO \"양 구단에 사과\"",
+    "KBO 실수 때문에 LG 큰일났다! 웰스 어깨부상-오카다 영입 무산, 9월까지..."
+  ],
+  "links": [
+    "https://www.sportsworldi.com/newsView/20260812523442",
+    "https://www.newsis.com/view/NISX20260812_0003746837",
+    "http://www.spochoo.com/news/articleView.html?idxno=128729",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16161908",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001580"
+  ],
+  "created_at": "2026-08-12T19:58:02.045651+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KBO 행정 착오… LG, 오카다 영입 무산",
+    "line2": "규정 해석 번복에 LG·울산 모두 황당",
+    "hook": "행정 촌극",
+    "caption_body": "LG 트윈스가 부진과 어깨 부상에 빠진 아시아쿼터 라클란 웰스의 대체자로 울산 웨일즈 투수 오카다 아키타케 영입을 추진했으나 최종 무산됐다. KBO의 규정 해석 오류 및 번복으로 인해 이적이 취소되었으며, 이로 인해 LG의 시즌 막판 투수진 운용 구상에도 큰 차질이 불가피해졌다. KBO는 이번 행정 실수에 대해 LG와 울산 양 구단에 사과의 뜻을 전했다."
+  }
+}
