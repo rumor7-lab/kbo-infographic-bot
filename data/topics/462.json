@@ -1,0 +1,37 @@
+{
+  "message_id": 462,
+  "topic_id": "이정후_무안타",
+  "key": "이정후 무안타",
+  "keywords": [
+    "이정후",
+    "무안타",
+    "타율",
+    "293",
+    "하락",
+    "5타수",
+    "연속",
+    "이틀"
+  ],
+  "team": null,
+  "outlet_count": 11,
+  "headlines": [
+    "이정후, 휴스턴전 5타수 무안타-이틀 연속 침묵에 타율 0.293",
+    "MLB 샌프란시스코 이정후 5타수 무안타…타율 0.293으로 하락(종합)",
+    "이정후 이틀 연속 무안타…시즌 타율 0.293으로 하락"
+  ],
+  "links": [
+    "https://www.mediafine.co.kr/news/articleView.html?idxno=86533",
+    "https://www.yna.co.kr/view/AKR20260813015351007?input=1195m",
+    "https://www.munhwa.com/article/11609236?ref=naver",
+    "https://www.dailian.co.kr/news/view/1677888/?sc=Naver",
+    "https://www.ytn.co.kr/_ln/0107_202608130919258172"
+  ],
+  "created_at": "2026-08-13T10:38:53.440725+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "이정후, 이틀 연속 무안타",
+    "line2": "휴스턴전 침묵… 타율 0.293 하락",
+    "hook": "MLB",
+    "caption_body": "샌프란시스코 자이언츠의 이정후가 13일(한국시간) 열린 휴스턴 애스트로스와의 홈경기에 1번 타자 겸 우익수로 선발 출전했으나 5타수 무안타에 그쳤다. 전날에 이어 이틀 연속 안타를 생산하지 못하면서 시즌 타율은 0.293으로 내려앉았다. 이틀 동안 9타수 무안타로 침묵이 이어지며 타율도 다시 2할대로 떨어졌다."
+  }
+}

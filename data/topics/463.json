@@ -1,0 +1,37 @@
+{
+  "message_id": 463,
+  "topic_id": "홈런_하주석",
+  "key": "홈런 하주석",
+  "keywords": [
+    "홈런",
+    "하주석",
+    "KIA",
+    "마운드",
+    "만의",
+    "방출",
+    "위기",
+    "이제"
+  ],
+  "team": "KIA",
+  "outlet_count": 10,
+  "headlines": [
+    "유니폼 갈아입자 살아났다…KIA 하주석, 333일 만의 홈런",
+    "마운드 흔들리고 홈런 '실종'…'4연패' 삼성의 위기",
+    "마운드 붕괴 NC, 55일 만의 무실점 승리…주역은 역시 구창모 \"틀 깨면서..."
+  ],
+  "links": [
+    "https://news.jtbc.co.kr/article/NB12313141?influxDiv=NAVER",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001639",
+    "https://www.sportschosun.com/baseball/2026-08-13/202608130100075680004727",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008702801&plink=ORI&cooper=NAVER",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000056458"
+  ],
+  "created_at": "2026-08-13T10:39:02.005491+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "홈런포 터진 KIA, 4위 복귀 성공",
+    "line2": "김도영·하주석 연속 아치 활약",
+    "hook": "4위 복귀",
+    "caption_body": "KIA 타이거즈가 삼성 라이온즈를 상대로 2연승을 거두며 리그 4위로 올라섰다. 김도영의 시즌 34호 아치를 비롯해 박재현과 하주석이 각각 홈런을 터뜨리며 팀 승리를 이끌었다. 특히 유니폼을 갈아입은 뒤 8경기 연속 안타를 기록 중이던 하주석은 333일 만에 손맛을 보며 팀의 복덩이 역할을 해냈다. 반면 4연패 늪에 빠진 삼성은 선두 싸움에서 다소 주춤하는 모습을 보였다."
+  }
+}
