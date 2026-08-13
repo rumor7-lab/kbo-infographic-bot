@@ -1,0 +1,30 @@
+{
+  "message_id": 490,
+  "topic_id": "우승_삼성",
+  "key": "우승 삼성",
+  "keywords": [
+    "우승",
+    "삼성",
+    "디아즈",
+    "먹구름",
+    "멤버",
+    "문정빈",
+    "보인다",
+    "살아나야"
+  ],
+  "team": "삼성",
+  "outlet_count": 3,
+  "headlines": [
+    "'장타 실종' 삼성 홈런왕... 우승·재계약 먹구름?",
+    "위닝시리즈 절실한 LG, 천적 알칸타라 상대로 '우승 멤버+문정빈' 선발 ...",
+    "'8월 홈런 0개' 삼성, '영웅·디아즈' 장타력 살아나야 연패 탈출 보인다"
+  ],
+  "links": [
+    "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003258987&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001731",
+    "https://isplus.com/article/view/isp202608130052"
+  ],
+  "created_at": "2026-08-13T19:01:45.199869+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
