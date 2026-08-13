@@ -1,0 +1,36 @@
+{
+  "message_id": 527,
+  "topic_id": "마음_오카다",
+  "key": "마음 오카다",
+  "keywords": [
+    "마음",
+    "오카다",
+    "착오",
+    "강하다",
+    "끝났다",
+    "누가",
+    "들어가야",
+    "사라진"
+  ],
+  "team": "LG",
+  "outlet_count": 4,
+  "headlines": [
+    "KBO 행정 착오에 사라진 꿈… 오카다의 마음은 누가 치유하나",
+    "이럴거면 울산 왜 창단했나…역사적인 첫 이적, KBO 착오로 끝났다 “좋...",
+    "\"이렇게 키운 선수가 들어가야\" 日 오카다 날린 KBO 촌극…LG, 2년 차 신..."
+  ],
+  "links": [
+    "https://sports.hankooki.com/news/articleView.html?idxno=6938011",
+    "http://www.osen.co.kr/article/G1112856695",
+    "https://www.nocutnews.co.kr/news/6562813?utm_source=naver&utm_medium=article&utm_campaign=20260814120523",
+    "http://www.spochoo.com/news/articleView.html?idxno=128794"
+  ],
+  "created_at": "2026-08-14T05:39:50.878008+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KBO 행정 착오로 오카다 이적 무산",
+    "line2": "규정 해석 번복에 LG 영입 불발",
+    "hook": "이적 촌극",
+    "caption_body": "LG 트윈스가 추진했던 일본인 투수 오카다의 영입이 KBO의 행정 착오로 불발되었습니다. 당초 KBO는 영입 절차에 문제가 없다고 답변했으나, 선수 이적 마감 시한 규정을 뒤늦게 번복했습니다. 이번 결정으로 KBO리그 무대에 도전하려던 오카다와 이적 수익을 노리던 울산 구단 모두 기회를 잃게 되었습니다."
+  }
+}
