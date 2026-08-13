@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260813_233821_news",
+  "slot": "news",
+  "caption": "LG 오스틴, 14일 만에 32호포 폭발 선두 김도영을 2개 차로 바짝 추격\n\nLG 트윈스 오스틴 딘이 2주간의 홈런 침묵을 털어내고 시즌 32호 아치를 그렸다. 오스틴은 13일 고척에서 열린 키움 히어로즈와의 경기에서 4-4로 맞선 5회초 무사 1, 2루 상황에 타석에 올라 상대 선발 라울 알칸타라를 상대로 3점 홈런을 쏘아 올렸다. 14일 만에 장타포를 재가동한 오스틴은 홈런 선두 김도영을 2개 차로 바짝 쫓으며 타이틀 경쟁에 다시 불을 붙였다.\n\n지금 KBO · 10개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #LG트윈스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-13T23:38:21.711446+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "af23eb22",
+      "card_id": "news_김도영_오스틴",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260813/233818_news_._.png",
+      "message_id": 509,
+      "status": "pending"
+    }
+  ]
+}
