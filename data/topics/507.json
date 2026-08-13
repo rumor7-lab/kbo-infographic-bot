@@ -1,0 +1,31 @@
+{
+  "message_id": 507,
+  "topic_id": "타자_대니얼",
+  "key": "타자 대니얼",
+  "keywords": [
+    "타자",
+    "대니얼",
+    "두산",
+    "간다",
+    "결단",
+    "맞대결",
+    "사령탑",
+    "아까"
+  ],
+  "team": "두산",
+  "outlet_count": 3,
+  "headlines": [
+    "대니얼, 첫 타자 김주원과 맞대결",
+    "대니얼, 데뷔전 승리 간다.",
+    "'출루하려 애쓰던 타자'에게 두산 사령탑이 건넨 한마디…\"피지컬 아까..."
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112856614",
+    "http://www.osen.co.kr/article/G1112856611",
+    "https://www.xportsnews.com/article/2183403",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001734"
+  ],
+  "created_at": "2026-08-13T22:56:19.548665+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

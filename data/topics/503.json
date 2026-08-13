@@ -1,0 +1,32 @@
+{
+  "message_id": 503,
+  "topic_id": "홈런_역전",
+  "key": "홈런 역전",
+  "keywords": [
+    "홈런",
+    "역전",
+    "안중열",
+    "투런",
+    "롯데",
+    "손성빈",
+    "고승민",
+    "연타석"
+  ],
+  "team": "롯데",
+  "outlet_count": 15,
+  "headlines": [
+    "'통산 홈런 19개의 반전' 안중열 첫 연타석 포로 4타점...NC, kt 6-5 역전 ...",
+    "홈런 3방에 무너진 KT 위즈, NC에 5-6 '역전패'…2연패 수렁에 빠져",
+    "위닝시리즈 뺏긴 롯데, SSG에 '홈런 5방' 무력시위 11-0 승리"
+  ],
+  "links": [
+    "http://www.maniareport.com/view.php?ud=202608132237564566cf2d78c68_19",
+    "https://www.kgnews.co.kr/news/article.html?no=907764",
+    "https://www.yna.co.kr/view/AKR20260813173200007?input=1195m",
+    "https://www.yna.co.kr/view/AKR20260813173100007?input=1195m",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16163021"
+  ],
+  "created_at": "2026-08-13T22:56:16.556831+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
