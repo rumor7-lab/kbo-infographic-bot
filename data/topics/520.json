@@ -1,0 +1,37 @@
+{
+  "message_id": 520,
+  "topic_id": "홈런_오스틴",
+  "key": "홈런 오스틴",
+  "keywords": [
+    "홈런",
+    "오스틴",
+    "NC",
+    "연타석",
+    "이렇게",
+    "포함",
+    "오카다",
+    "안중열"
+  ],
+  "team": "LG",
+  "outlet_count": 8,
+  "headlines": [
+    "\"이렇게 키운 선수가 들어가야\" 日 오카다 날린 KBO 촌극…LG, 2년 차 신...",
+    "삼성 라이온즈, KIA와의 주중 원정 3연전 마지막 경기서 극적 역전승",
+    "'충격 8실점 붕괴' KIA 5위 추락, 이렇게 질 경기 아니었다…'강민호 4타..."
+  ],
+  "links": [
+    "https://www.nocutnews.co.kr/news/6562813?utm_source=naver&utm_medium=article&utm_campaign=20260814120523",
+    "https://www.sportschosun.com/baseball/2026-08-13/202608130100083650005253",
+    "http://www.maniareport.com/view.php?ud=202608132229281942dad9f33a29_19",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001790",
+    "https://www.mydaily.co.kr/page/view/2026081321402737430"
+  ],
+  "created_at": "2026-08-14T03:57:49.421762+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "삼성, KIA 상대 9대8 극적 역전승",
+    "line2": "KIA 2연승 마감하며 5위 추락",
+    "hook": "극적 역전",
+    "caption_body": "삼성 라이온즈가 13일 광주 원정에서 KIA 타이거즈에 9대 8 역전승을 거두었다. 디아즈는 지난달 7일 이후 20경기 만에 홈런포를 가동하며 승리에 힘을 보탰다. 반면 안방에서 아쉬운 역전패를 당한 KIA는 2연승을 마감하고 리그 5위로 내려앉았다."
+  }
+}
