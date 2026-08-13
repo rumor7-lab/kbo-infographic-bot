@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260813_110604_news",
+  "slot": "news",
+  "caption": "이정후, 이틀 연속 무안타 휴스턴전 침묵… 타율 0.293 하락\n\n샌프란시스코 자이언츠의 이정후가 13일(한국시간) 열린 휴스턴 애스트로스와의 홈경기에 1번 타자 겸 우익수로 선발 출전했으나 5타수 무안타에 그쳤다. 전날에 이어 이틀 연속 안타를 생산하지 못하면서 시즌 타율은 0.293으로 내려앉았다. 이틀 동안 9타수 무안타로 침묵이 이어지며 타율도 다시 2할대로 떨어졌다.\n\n지금 KBO · 11개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-13T11:06:04.169581+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "a4f27179",
+      "card_id": "news_이정후_무안타",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260813/110601_news_._.png",
+      "message_id": 467,
+      "status": "pending"
+    }
+  ]
+}
