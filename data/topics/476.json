@@ -1,0 +1,37 @@
+{
+  "message_id": 476,
+  "topic_id": "광복절_이벤트",
+  "key": "광복절 이벤트",
+  "keywords": [
+    "광복절",
+    "이벤트",
+    "컴투스",
+    "게임",
+    "박환희",
+    "특별",
+    "독립운동",
+    "후손"
+  ],
+  "team": "LG",
+  "outlet_count": 6,
+  "headlines": [
+    "컴투스, KBO 리그 야구 게임 2종서 광복절 특별 이벤트 실시",
+    "컴투스, KBO 야구 게임 2종서 광복절 이벤트 개최",
+    "컴투스, 광복절 맞아 KBO 야구게임 2종 특별 이벤트"
+  ],
+  "links": [
+    "https://www.thisisgame.com/articles/428877",
+    "https://www.khgames.co.kr/news/articleView.html?idxno=307318",
+    "https://www.womentimes.co.kr/news/articleView.html?idxno=105262",
+    "https://www.stardailynews.co.kr/news/articleView.html?idxno=545894",
+    "https://www.sportsseoul.com/news/read/1628536?ref=naver"
+  ],
+  "created_at": "2026-08-13T16:21:52.478532+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "광복절 맞이 KBO 시구와 게임 이벤트",
+    "line2": "독립운동가 후손 시구부터 게임 행사까지",
+    "hook": "광복절",
+    "caption_body": "광복절을 맞아 프로야구 경기장과 게임 속에서 다양한 이벤트가 개최된다. LG 트윈스는 15일 SSG 랜더스전에 독립운동가 고(故) 하종진 선생의 외손녀인 배우 박환희를 승리기원 시구자로 초청했다. 한편 컴투스는 자사의 KBO 리그 기반 야구 게임 2종을 통해 광복절 기념 행사를 실시한다."
+  }
+}
