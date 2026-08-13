@@ -1,0 +1,31 @@
+{
+  "message_id": 531,
+  "topic_id": "불펜_우승",
+  "key": "불펜 우승",
+  "keywords": [
+    "불펜",
+    "우승",
+    "콜업",
+    "KIA",
+    "공신",
+    "긴급",
+    "내렸나",
+    "너무"
+  ],
+  "team": "KIA",
+  "outlet_count": 3,
+  "headlines": [
+    "'긴급 콜업' 삼성, 이 선수 없었으면 어쩔 뻔했나…\"우승 하나만 바라보...",
+    "\"불펜 상황 정확히 이해, 영리했다\" 로버츠가 반한 KIA 우승 공신의 112구...",
+    "'0홈런 외인' 1군 빠졌는데, ‘2653안타’ 안타왕 콜업 없었다…확대 엔..."
+  ],
+  "links": [
+    "https://www.sportschosun.com/baseball/2026-08-14/202608140100083830005265",
+    "http://www.osen.co.kr/article/G1112856720",
+    "http://www.osen.co.kr/article/G1112857002",
+    "https://www.xportsnews.com/article/2183567"
+  ],
+  "created_at": "2026-08-14T06:40:46.653964+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
