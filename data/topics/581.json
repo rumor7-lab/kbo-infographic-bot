@@ -1,0 +1,37 @@
+{
+  "message_id": 581,
+  "topic_id": "홈런_백투백",
+  "key": "홈런 백투백",
+  "keywords": [
+    "홈런",
+    "백투백",
+    "강민호",
+    "김주원",
+    "이호준",
+    "데이비슨",
+    "연속",
+    "투런포"
+  ],
+  "team": "SSG",
+  "outlet_count": 9,
+  "headlines": [
+    "박해민,'홈런 타구 잡고 싶었어'",
+    "홈런 타구 잡으려 펜스에 매달린 박해민",
+    "SSG,'김재환 홈런에 뜨겁게 환호'"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112857552",
+    "http://www.osen.co.kr/article/G1112857551",
+    "https://www.xportsnews.com/article/2183791",
+    "https://sports.khan.co.kr/article/202608141703003?pt=nv",
+    "http://www.osen.co.kr/article/G1112857530"
+  ],
+  "created_at": "2026-08-14T21:56:33.527877+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "강민호 이틀 연속 홈런…대기록 -1",
+    "line2": "17시즌 연속 10홈런 달성 눈앞",
+    "hook": "대기록 임박",
+    "caption_body": "삼성 라이온즈 강민호가 14일 대구 한화전에서 5회말 선두타자로 나와 상대 투수 짐머맨의 직구를 받아치며 시즌 9호 솔로포를 터뜨렸다. 이틀 연속 아치를 그린 강민호는 역대 세 번째 17시즌 연속 10홈런 달성까지 단 한 개만을 남겨두게 됐다. 한편 같은 날 키움 데이비슨은 KT전 6회초 2점 홈런을 날렸으며, SSG 김재환 역시 LG전 8회초 중월 투런 아치를 쏘아 올렸다."
+  }
+}
