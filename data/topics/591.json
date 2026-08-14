@@ -1,0 +1,31 @@
+{
+  "message_id": 591,
+  "topic_id": "준비_SSG",
+  "key": "준비 SSG",
+  "keywords": [
+    "준비",
+    "SSG",
+    "걷고",
+    "경기서",
+    "그친",
+    "끝낸",
+    "대형",
+    "뜨겁게"
+  ],
+  "team": "SSG",
+  "outlet_count": 3,
+  "headlines": [
+    "잠실에서 승리 환호하는 SSG",
+    "SSG,'김재환 홈런에 뜨겁게 환호'",
+    "두산 팬 환호성 질렀다! 비 그친 챔필, 대형 방수포 걷고 경기 준비→8시..."
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112857608",
+    "http://www.osen.co.kr/article/G1112857530",
+    "https://www.xportsnews.com/article/2183886",
+    "http://www.hansbiz.co.kr/news/articleView.html?idxno=857116"
+  ],
+  "created_at": "2026-08-14T23:15:29.147594+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
