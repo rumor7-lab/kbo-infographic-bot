@@ -1,0 +1,37 @@
+{
+  "message_id": 553,
+  "topic_id": "선발_14일",
+  "key": "선발 14일",
+  "keywords": [
+    "선발",
+    "14일",
+    "한화",
+    "두산",
+    "고영표",
+    "고전",
+    "끊을까",
+    "내보낼까"
+  ],
+  "team": "두산",
+  "outlet_count": 4,
+  "headlines": [
+    "KBO 프로야구, 14일 경기 중계 일정→선발 투수?",
+    "14일 대구 삼성-한화전, 최원태 복귀 삼성 한화 상대 연승 도...",
+    "14일 잠실 LG-SSG전, 54일 만에 선발 등판하는 SSG 최민준"
+  ],
+  "links": [
+    "https://www.topstarnews.net/news/articleView.html?idxno=16163623",
+    "https://www.newspim.com/news/view/20260814000660",
+    "https://www.newspim.com/news/view/20260814000736",
+    "https://www.newspim.com/news/view/20260814000726",
+    "https://www.xportsnews.com/article/2183587"
+  ],
+  "created_at": "2026-08-14T14:29:02.291664+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "최원태 복귀부터 황동하 선발까지",
+    "line2": "8월 14일 KBO 주요 관전 포인트",
+    "hook": "매치업 총정리",
+    "caption_body": "8월 14일 오후 7시 2026 KBO리그 4개 경기가 펼쳐진다. 순위 상승이 시급한 5위 KIA는 양현종의 등판 간격 조절을 위해 황동하를 4위 두산전 선발로 먼저 투입한다. 2위 삼성은 부상에서 돌아온 최원태를 앞세워 6위 한화전 연승을 노리며, 전날 류현진의 부진으로 무너졌던 한화는 대구에서 반등에 도전한다."
+  }
+}
