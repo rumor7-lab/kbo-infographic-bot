@@ -1,0 +1,37 @@
+{
+  "message_id": 563,
+  "topic_id": "MLB_구장",
+  "key": "MLB 구장",
+  "keywords": [
+    "MLB",
+    "구장",
+    "꿈의",
+    "열린",
+    "등판",
+    "홈런",
+    "경기서",
+    "슈워버"
+  ],
+  "team": "KT",
+  "outlet_count": 8,
+  "headlines": [
+    "'불꽃야구2' 이대호, KT 출신 심재민 등판에 헛스윙⋯울산 웨일즈에 승...",
+    "1군 복귀 시동 건 후라도, 퓨처스 첫 등판 10개 던지고 불펜 피칭 10개 더...",
+    "\"장송곡이 된 등판 나팔\"…MLB 다저스, 마무리 디아스에 골머리"
+  ],
+  "links": [
+    "http://www.joynews24.com/view/1995257",
+    "http://www.osen.co.kr/article/G1112857207",
+    "https://www.yna.co.kr/view/AKR20260814132100007?input=1195m",
+    "https://www.ggilbo.com/news/articleView.html?idxno=1174746",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001884"
+  ],
+  "created_at": "2026-08-14T17:12:34.674141+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "삼성 후라도, 실전 투구 재개",
+    "line2": "1군 무대 복귀 향해 본격 기지개",
+    "hook": "복귀 시동",
+    "caption_body": "오른쪽 어깨 통증으로 이탈했던 삼성 라이온즈 투수 아리엘 후라도가 마운드에 돌아왔다. 후라도는 14일 경산 볼파크에서 펼쳐진 한화 이글스와의 퓨처스리그 경기에 선발 등판해 10구를 던진 후 불펜에서 10개의 공을 더 투구했다. 첫 퓨처스 실전 점검을 마친 그는 조만간 1군 전력 합류를 목표로 몸 상태를 올리고 있다."
+  }
+}

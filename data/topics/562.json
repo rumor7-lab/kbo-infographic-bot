@@ -1,0 +1,37 @@
+{
+  "message_id": 562,
+  "topic_id": "CGV_뷰잉",
+  "key": "CGV 뷰잉",
+  "keywords": [
+    "CGV",
+    "뷰잉",
+    "파티",
+    "LG",
+    "뷰잉파티",
+    "극장",
+    "영상",
+    "관람"
+  ],
+  "team": "LG",
+  "outlet_count": 8,
+  "headlines": [
+    "영화관에서 야구 토크쇼 즐기고 스크린X 관람도…CGV, KBO와 뷰잉파티",
+    "CGV가 '야구의 날' 맞아 국대 바람막이까지 쏜다는 LG vs 한화 '뷰잉파티...",
+    "CGV에서 LG-한화전 단체 관람⋯KBO '야구의 날' 뷰잉 파티"
+  ],
+  "links": [
+    "https://www.seoul.co.kr/news/life/movie/2026/08/14/20260814500229?wlog_tag3=naver",
+    "https://www.insight.co.kr/news/568369",
+    "https://www.etoday.co.kr/news/view/2614809",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16163721",
+    "https://www.news1.kr/sports/baseball/6259595"
+  ],
+  "created_at": "2026-08-14T17:12:28.174547+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "극장에서 즐기는 야구의 날",
+    "line2": "CGV서 LG·한화전 뷰잉 파티",
+    "hook": "특별행사",
+    "caption_body": "한국야구위원회가 23일 야구의 날을 기념해 CGV영등포 타임스퀘어에서 LG 트윈스와 한화 이글스 경기의 단체 관람 행사를 개최한다. 이번 뷰잉 파티에는 허구연 KBO 총재와 류지현 국가대표팀 감독, 김태균·심수창 해설위원이 참석해 관전 포인트 설명과 경품 추첨 등 다양한 이벤트를 함께한다.한편 KBO는 윤석민 해설위원이 첫 번째 강사로 나서는 유소년 대상 레슨 영상 콘텐츠도 새롭게 선보인다."
+  }
+}
