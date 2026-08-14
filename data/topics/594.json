@@ -1,0 +1,37 @@
+{
+  "message_id": 594,
+  "topic_id": "최민준_SSG",
+  "key": "최민준 SSG",
+  "keywords": [
+    "최민준",
+    "SSG",
+    "김재환",
+    "결승",
+    "선발",
+    "승리",
+    "LG",
+    "노히트"
+  ],
+  "team": "LG",
+  "outlet_count": 6,
+  "headlines": [
+    "\"2점 아닌 1점만 인정해야\"…두산 김원형 감독, 판정 항의로 퇴장",
+    "'김재환 결승 2점포+최민준 5.2이닝 2실점' SSG, LG에 5-3 승리",
+    "130m 결승포 김재환 \"20홈런 의식하지 않는다. 최민준 승리 못..."
+  ],
+  "links": [
+    "https://www.news1.kr/sports/baseball/6260052",
+    "https://www.newspim.com/news/view/20260814001246",
+    "https://isplus.com/article/view/isp202608140160",
+    "https://www.newsis.com/view/NISX20260814_0003750325",
+    "https://www.starnewskorea.com/sports/2026/08/14/2026081416161685331"
+  ],
+  "created_at": "2026-08-15T00:21:41.635203+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "김재환 결승포·최민준 쾌투",
+    "line2": "SSG, LG 꺾고 5-3 승리",
+    "hook": "KBO 소식",
+    "caption_body": "SSG 랜더스가 대체 선발 최민준의 호투와 김재환의 8회 결승 2점 홈런에 힘입어 LG 트윈스를 5-3으로 제압했다. 최민준은 6회 1사까지 무안타 피칭을 펼치며 마운드를 지켰고, 김재환은 비거리 130m짜리 결승 아치를 쏘아 올렸다. 한편 광주 경기에서는 두산 김원형 감독이 비디오판독 판정에 항의하다가 퇴장 조치됐다."
+  }
+}

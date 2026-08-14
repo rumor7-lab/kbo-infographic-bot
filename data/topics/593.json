@@ -1,0 +1,37 @@
+{
+  "message_id": 593,
+  "topic_id": "맞아_타구",
+  "key": "맞아 타구",
+  "keywords": [
+    "맞아",
+    "타구",
+    "투수",
+    "NC",
+    "임지민",
+    "구급차",
+    "얼굴",
+    "홈런"
+  ],
+  "team": "NC",
+  "outlet_count": 8,
+  "headlines": [
+    "임지민 헤드샷 쇼크, NC 승리 세리머니도 안했다...\"임지민 부상 걱정된...",
+    "NC 투수 임지민, 강습 타구에 맞아 부상‥펜스 문 열리지 않아 구급차 도...",
+    "NC 투수 임지민, 타구에 얼굴 맞아…구급차는 뒤늦게 투입"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112857667",
+    "https://imnews.imbc.com/news/2026/sports/article/6844903_36946.html",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008706436&plink=ORI&cooper=NAVER",
+    "https://www.yna.co.kr/view/AKR20260814185700007?input=1195m",
+    "https://www.slist.kr/news/articleView.html?idxno=758915"
+  ],
+  "created_at": "2026-08-15T00:21:32.322272+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "강습 타구에 얼굴 맞은 NC 임지민",
+    "line2": "펜스 문 안 열려 구급차 진입 지연",
+    "hook": "아찔한 사고",
+    "caption_body": "14일 부산 사직구장에서 펼쳐진 NC와 롯데의 경기 도중 NC 투수 임지민이 상대 타자의 직선타에 얼굴을 맞아 부상을 입었다. 신속한 이송을 위해 구급차가 투입되려 했으나, 외야 펜스 문이 열리지 않아 진입이 지연되는 상황까지 벌어졌다. 이날 9 대 8로 신승을 거둔 NC는 선수의 부상을 우려해 경기 후 승리 세리머니를 진행하지 않았다."
+  }
+}
