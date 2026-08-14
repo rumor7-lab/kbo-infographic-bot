@@ -1,0 +1,26 @@
+{
+  "message_id": 545,
+  "topic_id": "긴급_바라보",
+  "key": "긴급 바라보",
+  "keywords": [
+    "긴급",
+    "바라보",
+    "뻔했나",
+    "어쩔",
+    "없었으면",
+    "콜업",
+    "하나",
+    "우승"
+  ],
+  "team": "삼성",
+  "outlet_count": 1,
+  "headlines": [
+    "'긴급 콜업' 삼성, 이 선수 없었으면 어쩔 뻔했나…\"우승 하나만 바라보..."
+  ],
+  "links": [
+    "https://www.sportschosun.com/baseball/2026-08-14/202608140100083830005265"
+  ],
+  "created_at": "2026-08-14T10:30:32.639368+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
