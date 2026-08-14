@@ -1,0 +1,32 @@
+{
+  "message_id": 600,
+  "topic_id": "선발_터졌다",
+  "key": "선발 터졌다",
+  "keywords": [
+    "선발",
+    "터졌다",
+    "홈런",
+    "등판",
+    "사령탑",
+    "최원태",
+    "노히트",
+    "호투"
+  ],
+  "team": "삼성",
+  "outlet_count": 7,
+  "headlines": [
+    "'한국 무대 1호 홈런' 드디어 터졌다! '카메론 대체자→충격 2군행' 두산...",
+    "8월 15일 구단별 선발투수와 생중계 채널",
+    "삼성 홈런→홈런→홈런→홈런 터졌다…박진만 \"최원태 앞으로 기대된다..."
+  ],
+  "links": [
+    "https://www.sportalkorea.com/news/articleView.html?idxno=2025052909553459475",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1001986",
+    "https://www.starnewskorea.com/sports/2026/08/14/2026081416552669222",
+    "https://www.starnewskorea.com/sports/2026/08/14/2026081416164744715",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16163938"
+  ],
+  "created_at": "2026-08-15T01:14:52.676609+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
