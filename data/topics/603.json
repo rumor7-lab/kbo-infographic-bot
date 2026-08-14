@@ -1,0 +1,37 @@
+{
+  "message_id": 603,
+  "topic_id": "연패_잡고",
+  "key": "연패 잡고",
+  "keywords": [
+    "연패",
+    "잡고",
+    "탈출",
+    "LG",
+    "KT",
+    "꺾고",
+    "최원준",
+    "김재환"
+  ],
+  "team": "KT",
+  "outlet_count": 6,
+  "headlines": [
+    "4위 두산, KIA 잡고 2연승 질주…LG 반 경기 차 추격",
+    "'홈런 4방' 삼성, 한화 꺾고 4연패 뒤 2연승…'김재환 결승포' SSG, LG 5-3...",
+    "'연패 탈출' 이강철 KT 감독의 키움전 수훈 선수는"
+  ],
+  "links": [
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008706461&plink=ORI&cooper=NAVER",
+    "https://www.newsis.com/view/NISX20260814_0003750371",
+    "https://www.stnsports.co.kr/news/articleView.html?idxno=320983",
+    "https://www.mydaily.co.kr/page/view/2026081422423801537",
+    "http://www.hansbiz.co.kr/news/articleView.html?idxno=857130"
+  ],
+  "created_at": "2026-08-15T02:27:39.246179+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "연패 탈출부터 추격전까지, 뜨거워진 KBO",
+    "line2": "두산·삼성 승리 잇달아… SSG·KT도 연패 끊어",
+    "hook": "KBO 종합",
+    "caption_body": "14일 열린 KBO리그에서 중하위권 팀들의 연패 탈출과 상위권 추격전이 뜨겁게 펼쳐졌다. 삼성은 한화와 홈런 7개를 주고받는 난타전 끝에 승리를 거두었고, 두산은 KIA를 제압하며 3위 LG를 반 경기 차로 바짝 쫓았다. 한편 SSG는 LG를 5-3으로 꺾고 분위기를 바꾸었으며, KT는 키움을 8-3으로 제압하며 연패에서 벗어났다."
+  }
+}
