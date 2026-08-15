@@ -1,0 +1,26 @@
+{
+  "message_id": 650,
+  "topic_id": "날씨_대구",
+  "key": "날씨 대구",
+  "keywords": [
+    "날씨",
+    "대구",
+    "부산",
+    "비상",
+    "우천",
+    "잠실",
+    "취소되나",
+    "소식"
+  ],
+  "team": null,
+  "outlet_count": 1,
+  "headlines": [
+    "\"잠실·대구·부산 날씨 비상\" 비 소식에 야구 우천 취소되나?"
+  ],
+  "links": [
+    "https://www.gukjenews.com/news/articleView.html?idxno=3665661"
+  ],
+  "created_at": "2026-08-15T15:30:36.038428+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
