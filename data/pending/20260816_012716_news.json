@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260816_012716_news",
+  "slot": "news",
+  "caption": "KIA 김도영 35호·LG 박동원 투런 15일 마운드 뒤흔든 홈런포\n\nKIA 타이거즈 김도영이 15일 광주 두산 베어스전에서 비거리 120m의 시즌 35호 홈런을 터뜨려 리그 홈런 부문 단독 1위를 지켰다. 한편 LG 트윈스 박동원도 같은 날 잠실 SSG 랜더스전 8회말 2사 상황에서 SSG 노경은을 상대로 좌측 담장을 넘기는 2런 홈런을 기록하며 활약했다.\n\n지금 KBO · 3개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #LG트윈스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-16T01:27:16.846076+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "60e44949",
+      "card_id": "news_오스틴_박동원",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260816/012709_news_._.png",
+      "message_id": 702,
+      "status": "pending"
+    }
+  ]
+}
