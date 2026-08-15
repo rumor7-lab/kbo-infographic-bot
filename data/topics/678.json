@@ -1,0 +1,37 @@
+{
+  "message_id": 678,
+  "topic_id": "롯데_구급차",
+  "key": "롯데 구급차",
+  "keywords": [
+    "롯데",
+    "구급차",
+    "절차",
+    "진입",
+    "임지민",
+    "개선",
+    "약속",
+    "부상"
+  ],
+  "team": "롯데",
+  "outlet_count": 10,
+  "headlines": [
+    "쓰러진 투수, 안 열리는 출입문…롯데가 내놓은 개선책은?",
+    "'임지민 충격 부상→구급차 투입 지연' 결국 개선 조치 약속…롯데, \"미...",
+    "롯데 구단 \"NC 임지민 쾌유 바란다\" 구급차 구장 진입 절차 개선 약속"
+  ],
+  "links": [
+    "https://www.nocutnews.co.kr/news/6563541?utm_source=naver&utm_medium=article&utm_campaign=20260815084845",
+    "https://www.sportalkorea.com/news/articleView.html?idxno=2025052909553461599",
+    "https://www.mydaily.co.kr/page/view/2026081520180449730",
+    "https://www.newspim.com/news/view/20260815000207",
+    "https://www.sportschosun.com/baseball/2026-08-15/202608150100090550005721"
+  ],
+  "created_at": "2026-08-15T21:29:06.534073+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "응급 대응 지연 비판에 롯데 개선 약속",
+    "line2": "의료진 투입 시 펜스 개방해 구급차 진입",
+    "hook": "공식 발표",
+    "caption_body": "롯데 자이언츠가 경기 중 발생한 응급 상황 처리 지연 논란과 관련해 사직구장 구급차 진입 절차를 개선하겠다고 15일 밝혔다. 롯데 구단은 의료진을 투입하는 즉시 펜스를 개방해 구급차가 미리 들어가 대기할 수 있도록 시스템을 조율하고 NC 임지민의 쾌유를 기원했다. 한편 강습타구 부상으로 1군 엔트리에서 제외된 임지민의 빈자리는 NC 투수 류진욱이 채운다."
+  }
+}
