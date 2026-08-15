@@ -1,0 +1,32 @@
+{
+  "message_id": 671,
+  "topic_id": "포토_선발",
+  "key": "포토 선발",
+  "keywords": [
+    "포토",
+    "선발",
+    "심우준",
+    "승리",
+    "염경엽",
+    "대구",
+    "박시원",
+    "박정현"
+  ],
+  "team": "한화",
+  "outlet_count": 7,
+  "headlines": [
+    "박시원,'승리 이끈다'",
+    "광복절 롯데 승리 기원 시구자는 독립운동가 한형석 선생의 아들...",
+    "독립운동가 한형석 선생의 아들 한종수씨, 롯데 승리 기원 시구"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112857946",
+    "https://www.xportsnews.com/article/2184170",
+    "https://www.xportsnews.com/article/2184176",
+    "https://www.starnewskorea.com/sports/2026/08/15/2026081517010822880",
+    "http://www.osen.co.kr/article/G1112857915"
+  ],
+  "created_at": "2026-08-15T19:47:26.766881+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
