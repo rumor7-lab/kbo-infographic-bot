@@ -1,0 +1,19 @@
+{
+  "batch_id": "20260815_133349_news",
+  "slot": "news",
+  "caption": "NC 투수 임지민, 턱뼈 분쇄골절 사직 롯데전서 타구에 안면 맞고 쓰러져\n\nNC 다이노스 투수 임지민이 14일 부산 사직구장에서 열린 롯데 자이언츠와의 원정 경기 도중 안면 부상을 당했다. 9회말 2사 상황에서 상대 타자 레이예스의 강한 타구에 피할 겨를도 없이 얼굴을 맞고 쓰러졌다. 정밀 검진 결과 임지민은 아래 턱뼈가 분쇄 골절되는 중상을 입은 것으로 확인됐다.\n\n지금 KBO · 4개 매체가 다룬 소식\n\n저장해두고 다음 소식도 놓치지 마세요\n\n#KBO #프로야구 #야구 #KBO리그 #야구스타그램 #지금KBO #야구뉴스 #속보 #NC다이노스",
+  "carousel": false,
+  "reels": false,
+  "created_at": "2026-08-15T13:33:49.474360+09:00",
+  "status": "pending",
+  "cards": [
+    {
+      "token": "7ef32e3e",
+      "card_id": "news_복귀_부상",
+      "kind": "image",
+      "url": "https://github.com/rumor7-lab/kbo-infographic-bot/releases/download/media-20260815/133345_news_._.png",
+      "message_id": 633,
+      "status": "pending"
+    }
+  ]
+}
