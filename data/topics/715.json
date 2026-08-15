@@ -1,0 +1,32 @@
+{
+  "message_id": 715,
+  "topic_id": "중단_롯데",
+  "key": "중단 롯데",
+  "keywords": [
+    "중단",
+    "롯데",
+    "고승민",
+    "승리",
+    "가을야구",
+    "관중",
+    "만원",
+    "사직구장"
+  ],
+  "team": "롯데",
+  "outlet_count": 7,
+  "headlines": [
+    "가을야구 또 물건너 갔는데 만원 관중? '종교 수준' 롯데 팬들의 '불가사...",
+    "'19분간 경기 중단' 흠뻑쇼 연기 이슈도 이겨낸 롯데, NC에 8-5 승리 '박...",
+    "19분 경기 중단→고승민 역전 3점포 롯데, NC에 8-5 재역전승"
+  ],
+  "links": [
+    "http://www.maniareport.com/view.php?ud=20260816022020992591b55a0d56_19",
+    "https://www.dailian.co.kr/news/view/1678910/?sc=Naver",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000057098",
+    "https://www.dailysportshankook.co.kr/news/articleView.html?idxno=432548",
+    "https://www.starnewskorea.com/sports/2026/08/15/2026081522114282069"
+  ],
+  "created_at": "2026-08-16T03:22:16.200565+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
