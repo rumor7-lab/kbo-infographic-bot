@@ -1,0 +1,37 @@
+{
+  "message_id": 631,
+  "topic_id": "복귀_부상",
+  "key": "복귀 부상",
+  "keywords": [
+    "복귀",
+    "부상",
+    "임지민",
+    "NC",
+    "강타",
+    "개인",
+    "검진",
+    "달라졌다"
+  ],
+  "team": "NC",
+  "outlet_count": 4,
+  "headlines": [
+    "'헤드샷 충격' NC 임지민, 큰 부상 못 피했다...아래 턱뼈 분쇄골...",
+    "NC 임지민, 얼굴 강타 맞고 부상 … \"정밀 검진 예정\"",
+    "15일 수원 KT-키움전, 부상 복귀 하영민 키움 연패 탈출 이끌..."
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112857794",
+    "https://www.newscj.com/news/articleView.html?idxno=3425375",
+    "https://www.newspim.com/news/view/20260815000067",
+    "https://www.edaily.co.kr/news/newspath.asp?newsid=02338646645547648",
+    "http://www.osen.co.kr/article/G1112857693"
+  ],
+  "created_at": "2026-08-15T13:04:00.696751+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "NC 투수 임지민, 턱뼈 분쇄골절",
+    "line2": "사직 롯데전서 타구에 안면 맞고 쓰러져",
+    "hook": "부상 악재",
+    "caption_body": "NC 다이노스 투수 임지민이 14일 부산 사직구장에서 열린 롯데 자이언츠와의 원정 경기 도중 안면 부상을 당했다. 9회말 2사 상황에서 상대 타자 레이예스의 강한 타구에 피할 겨를도 없이 얼굴을 맞고 쓰러졌다. 정밀 검진 결과 임지민은 아래 턱뼈가 분쇄 골절되는 중상을 입은 것으로 확인됐다."
+  }
+}
