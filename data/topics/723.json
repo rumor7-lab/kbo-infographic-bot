@@ -1,0 +1,31 @@
+{
+  "message_id": 723,
+  "topic_id": "응원_콘서트",
+  "key": "응원 콘서트",
+  "keywords": [
+    "응원",
+    "콘서트",
+    "LG팬",
+    "SSG전",
+    "극장",
+    "김민석",
+    "논란",
+    "때려"
+  ],
+  "team": "롯데",
+  "outlet_count": 4,
+  "headlines": [
+    "멜로망스 김민석, 16일 롯데 승리 시구...응원가 콘서트도",
+    "LG팬 생축 응원+박해민 조언...문정빈이 SSG전 결승 홈런 때려...",
+    "'싸이 콘서트' 또 민폐 논란?…불꽃 연기 퍼지며 사직구장 경기 중단"
+  ],
+  "links": [
+    "https://www.gukjenews.com/news/articleView.html?idxno=3665791",
+    "https://isplus.com/article/view/isp202608150050",
+    "https://www.mt.co.kr/society/2026/08/15/2026081522371280425",
+    "http://www.metroseoul.co.kr/article/20260815500033"
+  ],
+  "created_at": "2026-08-16T04:19:38.935649+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
