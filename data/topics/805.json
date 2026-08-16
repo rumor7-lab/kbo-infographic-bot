@@ -1,0 +1,32 @@
+{
+  "message_id": 805,
+  "topic_id": "홈런_안현민",
+  "key": "홈런 안현민",
+  "keywords": [
+    "홈런",
+    "안현민",
+    "마드리스",
+    "고별전",
+    "백투백",
+    "LG",
+    "SSG",
+    "아빌라"
+  ],
+  "team": "LG",
+  "outlet_count": 8,
+  "headlines": [
+    "이강철 감독,'KT 멋진 경기였어'",
+    "이강철 감독,'안현민 끝내주는 홈런이었어'",
+    "'아빌라 7이닝 역투+마드리스 고별전 홈런' SSG LG에 6-0 완승"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112858710",
+    "http://www.osen.co.kr/article/G1112858649",
+    "http://www.osen.co.kr/article/G1112858644",
+    "http://www.osen.co.kr/article/G1112858640",
+    "http://www.osen.co.kr/article/G1112858641"
+  ],
+  "created_at": "2026-08-16T22:53:14.377790+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

@@ -1,0 +1,37 @@
+{
+  "message_id": 807,
+  "topic_id": "박영현_승리",
+  "key": "박영현 승리",
+  "keywords": [
+    "박영현",
+    "승리",
+    "KT",
+    "격려",
+    "나누",
+    "던졌어야지",
+    "도전",
+    "세이브"
+  ],
+  "team": "KT",
+  "outlet_count": 2,
+  "headlines": [
+    "박영현-한승택,'승리 지켰다'",
+    "승리의 기쁨 나누는 KT",
+    "KT,'승리의 환호'"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112858712",
+    "http://www.osen.co.kr/article/G1112858716",
+    "http://www.osen.co.kr/article/G1112858713",
+    "http://www.osen.co.kr/article/G1112858707",
+    "http://www.osen.co.kr/article/G1112858701"
+  ],
+  "created_at": "2026-08-16T22:53:29.252276+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KT·KIA, 8월 16일 경기 승리",
+    "line2": "수원과 광주에서 들려온 승전보",
+    "hook": "경기 결과",
+    "caption_body": "16일 펼쳐진 KBO리그 경기에서 KT 위즈와 KIA 타이거즈가 각각 승리를 거두었다. KT는 수원 안방에서 키움 히어로즈를 6-2로 꺾으며 기쁨을 누렸다. 광주에서는 KIA가 박재현의 솔로 홈런과 마운드의 안정적인 피칭을 앞세워 두산 베어스를 2-1로 제압했다."
+  }
+}
