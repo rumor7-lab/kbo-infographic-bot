@@ -1,0 +1,36 @@
+{
+  "message_id": 833,
+  "topic_id": "선두_8월",
+  "key": "선두 8월",
+  "keywords": [
+    "선두",
+    "8월",
+    "다승",
+    "단독",
+    "달도",
+    "미소ㆍ",
+    "방출",
+    "복귀전"
+  ],
+  "team": "KIA",
+  "outlet_count": 4,
+  "headlines": [
+    "올러, 11승으로 다승 단독 선두…KIA는 4위 복귀",
+    "'두산 후회하려나' 방출 두 달도 안 돼 ML 재입성→선발 복귀전부터 1타...",
+    "2026년 8월 16일...'선두 kt' 승리 미소ㆍ'2위 삼성' 우천취소..."
+  ],
+  "links": [
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008707980&plink=ORI&cooper=NAVER",
+    "http://www.osen.co.kr/article/G1112858761",
+    "http://www.thesportstimes.co.kr/news/articleView.html?idxno=374961",
+    "https://www.starnewskorea.com/sports/2026/08/17/2026081622272270082"
+  ],
+  "created_at": "2026-08-17T07:45:54.138830+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "올러 11승 호투·KIA 4위 탈환",
+    "line2": "두산 꺾고 나흘 만에 순위 역전",
+    "hook": "4위 복귀",
+    "caption_body": "KIA 타이거즈가 광주에서 두산 베어스를 2 대 1로 제압하고 나흘 만에 4위 자리를 되찾았습니다. 선발 투수 올러는 호투를 펼치며 시즌 11승을 달성해 다승 단독 선두로 올라섰고, 이의리가 경기를 마무리하며 세이브를 챙겼습니다. 주말 3연전 첫 경기를 내준 뒤 2연승을 달린 KIA는 두산을 반 경기 차로 따돌렸습니다."
+  }
+}
