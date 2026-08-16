@@ -1,0 +1,37 @@
+{
+  "message_id": 816,
+  "topic_id": "백인천_빈소",
+  "key": "백인천 빈소",
+  "keywords": [
+    "백인천",
+    "빈소",
+    "닛폰햄",
+    "조문",
+    "조화",
+    "타자",
+    "보내",
+    "애도"
+  ],
+  "team": null,
+  "outlet_count": 19,
+  "headlines": [
+    "‘영원한 4할 타자’ 백인천 별세에 야구계 추모 물결",
+    "이게 무슨 일! KBO서 '최다 4사구' 굴욕당한 좌완, 美서 펄펄 난다...6⅔...",
+    "당신 기록 누가 깹니까? 별세한 4할 타자 백인천"
+  ],
+  "links": [
+    "https://www.chosun.com/sports/sports_general/2026/08/17/57VYWBNZNRCNFPLA4WANGIML44/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news",
+    "https://www.joongang.co.kr/article/25453758",
+    "https://www.cbci.co.kr/news/articleView.html?idxno=598640",
+    "https://www.dailian.co.kr/news/view/1678992/?sc=Naver",
+    "https://www.newspim.com/news/view/20260816000141"
+  ],
+  "created_at": "2026-08-17T00:45:27.776076+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KBO 유일 '4할 타자' 백인천 별세",
+    "line2": "야구계 추모 물결… KBO장 엄수",
+    "hook": "추모",
+    "caption_body": "한국프로야구 유일의 시즌 4할 타율 기록을 남긴 백인천 전 감독이 향년 84세로 별세했다. 고인의 장례는 KBO장으로 엄수되었으며, 경기에 앞서 전 구장에서 묵념이 진행되는 등 야구계 전반에 애도 물결이 일었다. 이승엽 감독과 허구연 KBO 총재를 비롯한 야구인들은 물론, 고인이 선수로 활약했던 일본 프로야구 닛폰햄 파이터스 구단에서도 조화를 보내며 추모의 뜻을 전했다."
+  }
+}
