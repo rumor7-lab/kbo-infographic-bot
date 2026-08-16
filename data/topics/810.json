@@ -1,0 +1,36 @@
+{
+  "message_id": 810,
+  "topic_id": "박수_떠났다",
+  "key": "박수 떠났다",
+  "keywords": [
+    "박수",
+    "떠났다",
+    "못한",
+    "뭉클한",
+    "박수치",
+    "박진",
+    "받으며",
+    "싫지"
+  ],
+  "team": "한화",
+  "outlet_count": 4,
+  "headlines": [
+    "'뭉클한 고별전' 1할 타자가 팬들 박수 받으며 떠났다… 못한 건 있어도...",
+    "선수들에 박수치는 이숭용 감독",
+    "찬스 때 박수 보내는 이강철 감독"
+  ],
+  "links": [
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1002201",
+    "https://www.mydaily.co.kr/page/view/2026081622175050669",
+    "http://www.osen.co.kr/article/G1112858590",
+    "https://www.xportsnews.com/article/2184422"
+  ],
+  "created_at": "2026-08-16T23:47:43.080172+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "1할 타자의 뭉클한 마지막 인사",
+    "line2": "SSG 마드리스, 팬 응원가 속 작별",
+    "hook": "고별전",
+    "caption_body": "SSG 랜더스 외국인 타자 마드리스가 팬들의 따뜻한 배웅 속에 KBO 무대와 작별했다. 비록 타율 0.175라는 아쉬운 성적을 남겼지만, 그는 마지막까지 팀을 향한 진심을 드러냈다. 경기가 끝난 후 3루 측 SSG 팬들은 마드리스의 응원가를 제창하며 감동적인 석별의 정을 나누었다."
+  }
+}

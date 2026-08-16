@@ -1,0 +1,31 @@
+{
+  "message_id": 811,
+  "topic_id": "부산_대구",
+  "key": "부산 대구",
+  "keywords": [
+    "부산",
+    "대구",
+    "폭우",
+    "취소",
+    "관광객",
+    "남부",
+    "넘어",
+    "등으"
+  ],
+  "team": null,
+  "outlet_count": 4,
+  "headlines": [
+    "남부 폭우에 부산·대구 프로야구 경기 취소…추후 재편성",
+    "‘부산병’ 넘어 ‘부산 야구병’… 응원 문화 취한 외국인 관광객",
+    "프로야구, 부산·대구 경기 우천 등으로 취소"
+  ],
+  "links": [
+    "http://www.yonhapnewstv.co.kr/news/MYH20260816210535db5",
+    "https://www.busan.com/view/busan/view.php?code=2026081618101150999",
+    "http://www.hansbiz.co.kr/news/articleView.html?idxno=857242",
+    "https://www.mt.co.kr/sports/2026/08/16/2026081617481526664"
+  ],
+  "created_at": "2026-08-16T23:47:43.840011+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
