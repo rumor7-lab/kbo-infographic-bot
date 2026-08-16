@@ -1,0 +1,37 @@
+{
+  "message_id": 820,
+  "topic_id": "구심_함지웅",
+  "key": "구심 함지웅",
+  "keywords": [
+    "구심",
+    "함지웅",
+    "부상",
+    "그라운드",
+    "기다리며",
+    "김성철",
+    "나선",
+    "당한"
+  ],
+  "team": null,
+  "outlet_count": 2,
+  "headlines": [
+    "프로야구 ⑱ㅣ '전설' 백인천 추모 물결…그라운드 이슈는?",
+    "부상 함지웅 구심 대신 그라운드 나선 김성철 대기심",
+    "아빌라, 부상 함지웅 구심 교체 묵묵히 기다리며"
+  ],
+  "links": [
+    "https://www.cbci.co.kr/news/articleView.html?idxno=598640",
+    "http://www.osen.co.kr/article/G1112858667",
+    "http://www.osen.co.kr/article/G1112858668",
+    "http://www.osen.co.kr/article/G1112858658",
+    "http://www.osen.co.kr/article/G1112858632"
+  ],
+  "created_at": "2026-08-17T02:43:26.219170+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "한국·일본 야구계 애도 물결",
+    "line2": "백인천 전 감독 빈소 조문 이어져",
+    "hook": "추모",
+    "caption_body": "한국 야구의 전설 백인천 전 감독의 빈소에 조문 행렬이 이어졌습니다. 허구연 KBO 총재 등 야구계 인사들이 애도의 뜻을 전한 가운데, 일본프로야구 닛폰햄 파이터스 측에서도 조화를 보내 추모에 동참했습니다. 한편 16일 잠실 LG 트윈스와 SSG 랜더스의 경기에선 7회말 함지웅 구심이 부상으로 교체되어 김성철 대기심이 그라운드에 섰습니다."
+  }
+}
