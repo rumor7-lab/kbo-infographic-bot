@@ -1,0 +1,32 @@
+{
+  "message_id": 809,
+  "topic_id": "카라스코_백투백",
+  "key": "카라스코 백투백",
+  "keywords": [
+    "카라스코",
+    "백투백",
+    "홈런",
+    "MLB",
+    "112승",
+    "망연자실",
+    "무너졌다",
+    "무리였나"
+  ],
+  "team": "LG",
+  "outlet_count": 5,
+  "headlines": [
+    "'MLB 112승' LG 카라스코마저 무너졌다…KBO 첫 피홈런→백투백포까지 '...",
+    "백투백 홈런 허용한 카라스코",
+    "주 2회 등판 무리였나! 7이닝 퍼펙트했던 MLB 112승 투수, KBO 9위팀에 혼..."
+  ],
+  "links": [
+    "https://www.xportsnews.com/article/2184427",
+    "http://www.osen.co.kr/article/G1112858595",
+    "https://www.starnewskorea.com/sports/2026/08/16/2026081615121993057",
+    "https://www.mydaily.co.kr/page/view/2026081620392562202",
+    "https://www.sportschosun.com/baseball/2026-08-16/202608160100093170005916"
+  ],
+  "created_at": "2026-08-16T23:17:55.460284+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
