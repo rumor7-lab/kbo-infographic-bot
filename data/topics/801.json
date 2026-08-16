@@ -1,0 +1,32 @@
+{
+  "message_id": 801,
+  "topic_id": "부산_취소",
+  "key": "부산 취소",
+  "keywords": [
+    "부산",
+    "취소",
+    "대구",
+    "남부",
+    "지방",
+    "폭우",
+    "우천",
+    "추후"
+  ],
+  "team": "삼성",
+  "outlet_count": 9,
+  "headlines": [
+    "남부 폭우에 부산·대구 프로야구 경기 취소…추후 재편성",
+    "프로야구, 부산·대구 경기 우천 등으로 취소",
+    "프로야구, 폭염 지나니 폭우…부산·대구 '우천취소'"
+  ],
+  "links": [
+    "http://www.yonhapnewstv.co.kr/news/MYH20260816210535db5",
+    "http://www.hansbiz.co.kr/news/articleView.html?idxno=857242",
+    "https://www.mt.co.kr/sports/2026/08/16/2026081617481526664",
+    "https://www.dailian.co.kr/news/view/1678982/?sc=Naver",
+    "http://www.stoo.com/article.php?aid=108357535056"
+  ],
+  "created_at": "2026-08-16T22:27:17.626749+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

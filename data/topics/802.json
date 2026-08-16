@@ -1,0 +1,37 @@
+{
+  "message_id": 802,
+  "topic_id": "복귀_두산",
+  "key": "복귀 두산",
+  "keywords": [
+    "복귀",
+    "두산",
+    "KIA",
+    "4위",
+    "올러",
+    "꺾고",
+    "다승",
+    "신승"
+  ],
+  "team": "KIA",
+  "outlet_count": 9,
+  "headlines": [
+    "'올러 11승' KIA, 두산 잡고 4위 복귀",
+    "'올러 다승 1위+이의리 2세이브' KIA, 두산 2-1 신승 4위 복귀",
+    "'올러 7이닝 1실점+박재현 동점포' KIA, 투수전 끝에 두산 꺾고 4위 도약"
+  ],
+  "links": [
+    "http://www.hansbiz.co.kr/news/articleView.html?idxno=857258",
+    "https://www.newspim.com/news/view/20260816000148",
+    "http://www.stoo.com/article.php?aid=108359015040",
+    "https://www.yna.co.kr/view/AKR20260816047500007?input=1195m",
+    "https://www.newsis.com/view/NISX20260816_0003751111"
+  ],
+  "created_at": "2026-08-16T22:27:26.105337+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KIA, 두산 잡고 나흘 만에 4위 복귀",
+    "line2": "선발 올러 11승 달성… 다승 단독 선두",
+    "hook": "순위 역전",
+    "caption_body": "KIA 타이거즈가 안방에서 두산 베어스를 2-1로 꺾고 나흘 만에 4위 자리를 되찾았다. 선발 올러가 7이닝 1실점 쾌투로 시즌 11승을 수확해 다승 단독 선두로 올라섰으며, 타선에서는 박재현이 동점 홈런을 터뜨려 역전 발판을 마련했다. 이어 마운드에 오른 이의리가 시즌 2세이브째를 거두며 팽팽했던 한 점 차 승리를 지켜냈다."
+  }
+}
