@@ -1,0 +1,35 @@
+{
+  "message_id": 753,
+  "topic_id": "포기_LG",
+  "key": "포기 LG",
+  "keywords": [
+    "포기",
+    "LG",
+    "국제팀",
+    "기적",
+    "다가왔다",
+    "막았지",
+    "선수단",
+    "아시아쿼터"
+  ],
+  "team": "LG",
+  "outlet_count": 3,
+  "headlines": [
+    "\"포기를 포기하자 기적이 다가왔다\" 트윈스 국제팀 정신이 LG 선수단에 ...",
+    "‘150km’ 투수 포기하고 타자 전향…‘오지환 후계자’ 20세 유망주, 만...",
+    "KBO가 앞길 막았지만 LG 포기 안 했다…아시아쿼터 케네디 영입"
+  ],
+  "links": [
+    "https://mhnse.com/news/articleView.html?idxno=1491630",
+    "http://www.osen.co.kr/article/G1112858317",
+    "https://www.seoul.co.kr/news/sport/baseball/2026/08/16/20260816500003?wlog_tag3=naver"
+  ],
+  "created_at": "2026-08-16T12:44:27.104620+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "행정 난항 뚫고 케네디 영입한 LG",
+    "line2": "KBO 유권해석 악재 넘고 계약 성공",
+    "hook": "오피셜",
+    "caption_body": "LG 트윈스가 KBO의 유권해석 오류 등으로 인한 행정적 난관을 극복하고 아시아쿼터 선수 케네디를 영입했다. 선수 교체 작업이 수포로 돌아갈 위기였으나 프런트 국제팀의 집념으로 계약을 완성했다. 케네디는 2015년 메이저리그 애틀랜타 브레이브스에 입단해 마이너리그에서 통산 4시즌 동안 활약한 이력을 지니고 있다."
+  }
+}

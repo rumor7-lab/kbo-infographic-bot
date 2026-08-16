@@ -1,0 +1,28 @@
+{
+  "message_id": 754,
+  "topic_id": "3홈런_넘었다",
+  "key": "3홈런 넘었다",
+  "keywords": [
+    "3홈런",
+    "넘었다",
+    "노리",
+    "레이예스",
+    "사흘간",
+    "생애",
+    "오스틴",
+    "클러"
+  ],
+  "team": "한화",
+  "outlet_count": 2,
+  "headlines": [
+    "한화전 0.800 3홈런 8타점, '레이예스도, 오스틴도 넘었다' FA 시즌 클러...",
+    "사흘간 3홈런 11안타로 타율 0.339→0.357...생애 첫 타격왕 타이틀 노리..."
+  ],
+  "links": [
+    "https://www.sportschosun.com/baseball/2026-08-16/202608160100091810005804",
+    "https://www.segye.com/newsView/20260816500945?OutUrl=naver"
+  ],
+  "created_at": "2026-08-16T12:44:27.674074+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
