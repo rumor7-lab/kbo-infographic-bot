@@ -1,0 +1,32 @@
+{
+  "message_id": 813,
+  "topic_id": "박수_선수들",
+  "key": "박수 선수들",
+  "keywords": [
+    "박수",
+    "선수들",
+    "이강철",
+    "보내",
+    "가슴",
+    "김대호",
+    "떠났다",
+    "멍든다"
+  ],
+  "team": null,
+  "outlet_count": 5,
+  "headlines": [
+    "자제력 잃은 선수들의 ‘욕설’…야구팬 가슴 시퍼렇게 멍든다 [김대호...",
+    "'뭉클한 고별전' 1할 타자가 팬들 박수 받으며 떠났다… 못한 건 있어도...",
+    "선수들에 박수치는 이숭용 감독"
+  ],
+  "links": [
+    "https://news.tf.co.kr/read/baseball/2354686.htm",
+    "https://www.mydaily.co.kr/page/view/2026081622175050669",
+    "http://www.osen.co.kr/article/G1112858625",
+    "http://www.osen.co.kr/article/G1112858590",
+    "http://www.osen.co.kr/article/G1112858513"
+  ],
+  "created_at": "2026-08-17T00:17:22.024475+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
