@@ -1,0 +1,32 @@
+{
+  "message_id": 787,
+  "topic_id": "선발_LG",
+  "key": "선발 LG",
+  "keywords": [
+    "선발",
+    "LG",
+    "문보경",
+    "연속",
+    "카라스코",
+    "제외",
+    "이영빈",
+    "4번"
+  ],
+  "team": "LG",
+  "outlet_count": 8,
+  "headlines": [
+    "LG 선발 카라스코, 오늘도 승리한다",
+    "LG 선발 카라스코, 2승 도전합니다",
+    "역투하는 LG 선발 카라스코"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112858471",
+    "http://www.osen.co.kr/article/G1112858472",
+    "http://www.osen.co.kr/article/G1112858473",
+    "http://www.osen.co.kr/article/G1112858470",
+    "https://www.xportsnews.com/article/2184379"
+  ],
+  "created_at": "2026-08-16T19:18:30.127425+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
