@@ -1,0 +1,32 @@
+{
+  "message_id": 796,
+  "topic_id": "홈런_마드리스",
+  "key": "홈런 마드리스",
+  "keywords": [
+    "홈런",
+    "마드리스",
+    "백투백",
+    "SSG",
+    "에레디아",
+    "외국인",
+    "복귀",
+    "1군"
+  ],
+  "team": "SSG",
+  "outlet_count": 11,
+  "headlines": [
+    "마드리스, '짜릿한 백투백 홈런'",
+    "고별전 백투백 홈런 마드리스 축하해주는 SSG 선수들",
+    "카라스코 강판 시키는 마드리스의 백투백 홈런"
+  ],
+  "links": [
+    "https://www.mydaily.co.kr/page/view/2026081620420645600",
+    "http://www.osen.co.kr/article/G1112858579",
+    "http://www.osen.co.kr/article/G1112858577",
+    "http://www.osen.co.kr/article/G1112858578",
+    "http://www.osen.co.kr/article/G1112858580"
+  ],
+  "created_at": "2026-08-16T20:43:44.612985+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
