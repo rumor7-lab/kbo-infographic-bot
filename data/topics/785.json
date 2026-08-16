@@ -1,0 +1,37 @@
+{
+  "message_id": 785,
+  "topic_id": "문보경_선발",
+  "key": "문보경 선발",
+  "keywords": [
+    "문보경",
+    "선발",
+    "제외",
+    "연속",
+    "LG",
+    "이틀",
+    "홍창기",
+    "이영빈"
+  ],
+  "team": "LG",
+  "outlet_count": 7,
+  "headlines": [
+    "홍창기는 선발 복귀, 왜 문보경은 2G 연속 빠졌을까…염경엽 “밤 12시까...",
+    "문보경 이틀 연속 선발 제외...LG의 밸런스 회복 승부수",
+    "지독한 외국인 잔혹사… SSG 투수 해치 어깨 불편으로 엔트리 제외 예정"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112858446",
+    "http://www.maniareport.com/view.php?ud=2026081617570344196cf2d78c68_19",
+    "https://www.joongang.co.kr/article/25453733",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16164842",
+    "https://www.yna.co.kr/view/AKR20260816035400007?input=1195m"
+  ],
+  "created_at": "2026-08-16T18:51:47.189681+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "부진 겪는 문보경, 2G 연속 선발 제외",
+    "line2": "자정까지 훈련하며 밸런스 회복에 집중",
+    "hook": "KBO 이슈",
+    "caption_body": "LG 트윈스의 문보경이 최근 타격 부진을 겪으며 16일 SSG전에서 이틀 연속 선발 명단에서 제외됐다. 염경엽 감독은 문보경이 경기 대신 자정까지 훈련을 소화하며 타격 밸런스를 정비하는 단기 조정 과정을 거치고 있다고 설명했다. 한편 SSG 랜더스는 외국인 투수 해치가 어깨 불편으로 엔트리 제외를 앞두고 있어 최민준을 대체 선발로 투입한다."
+  }
+}
