@@ -1,0 +1,31 @@
+{
+  "message_id": 893,
+  "topic_id": "수술_연장",
+  "key": "수술 연장",
+  "keywords": [
+    "수술",
+    "연장",
+    "투수",
+    "팔꿈치",
+    "MLB서",
+    "구원투수",
+    "대명사",
+    "두산서"
+  ],
+  "team": "NC",
+  "outlet_count": 4,
+  "headlines": [
+    "‘팔꿈치 수술 대명사’ 토미 존 별세… MLB서 투수로 통산 288승 활약",
+    "‘팔꿈치 부상’ 선수 생명 연장 길 터준 구원투수",
+    "NC 다이노스 투수 임지민, 이번 주 수술"
+  ],
+  "links": [
+    "https://www.segye.com/newsView/20260817513703?OutUrl=naver",
+    "https://www.khan.co.kr/article/202608172011005",
+    "https://www.gnnews.co.kr/news/articleView.html?idxno=643322",
+    "http://www.stoo.com/article.php?aid=108363290130"
+  ],
+  "created_at": "2026-08-17T23:53:43.659405+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
