@@ -1,0 +1,36 @@
+{
+  "message_id": 910,
+  "topic_id": "기적_일정",
+  "key": "기적 일정",
+  "keywords": [
+    "기적",
+    "일정",
+    "투수",
+    "KIA",
+    "18일",
+    "구단별",
+    "대반",
+    "대표팀"
+  ],
+  "team": "KIA",
+  "outlet_count": 4,
+  "headlines": [
+    "'충격' KIA 이 투수가 대표팀 아니라고? 'ERA 9점대→1점대' 기적의 대반...",
+    "KBO 프로야구, 18일 경기 중계 일정→선발 투수?",
+    "'와 158㎞' 이런 좌완 등장할 줄 알았나, 'KIA의 기적' 류지현 감독은 아..."
+  ],
+  "links": [
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081717400323589",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16165534",
+    "https://www.sportschosun.com/baseball/2026-08-17/202608170100098880006261",
+    "https://www.gukjenews.com/news/articleView.html?idxno=3666646"
+  ],
+  "created_at": "2026-08-18T04:24:26.754097+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "최고 158km, KIA 이의리의 변신",
+    "line2": "강속구 앞세워 마운드 핵심 부상",
+    "hook": "급성장",
+    "caption_body": "KIA 타이거즈의 2021년 1차 지명 투수 이의리가 최고 시속 158km의 강력한 투구를 앞세워 확 달라진 기량을 선보이고 있다. 올 시즌 19경기에 등판해 2승 6패 2세이브 1홀드 평균자책점 7.58을 기록 중이며, 압도적인 구위로 팀 마운드의 중심에 섰다. 좌완 파이어볼러로서 대폭 성장한 이의리의 활약상에 팬들과 대표팀의 관심이 집중되고 있다."
+  }
+}
