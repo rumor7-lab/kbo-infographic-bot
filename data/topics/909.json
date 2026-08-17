@@ -1,0 +1,30 @@
+{
+  "message_id": 909,
+  "topic_id": "홈런_KBO서",
+  "key": "홈런 KBO서",
+  "keywords": [
+    "홈런",
+    "KBO서",
+    "계약",
+    "괴력",
+    "날린",
+    "데뷔",
+    "벼랑",
+    "소년"
+  ],
+  "team": null,
+  "outlet_count": 3,
+  "headlines": [
+    "'은퇴 위기' 벼랑 끝→KBO서 인생역전!…이젠 MLB서도 활활 타오른다, 美...",
+    "'초대박' 데뷔 단 1경기서 '홈런→홈런→홈런' 처음 있는 일이라니! 신발...",
+    "평창서 홈런 7방 날린 ‘괴력의 소년’…5년 뒤 MLB 계약 화제"
+  ],
+  "links": [
+    "https://www.xportsnews.com/article/2184527",
+    "https://www.kwnews.co.kr/article/20260817500449",
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081717122795312"
+  ],
+  "created_at": "2026-08-18T03:33:14.060380+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
