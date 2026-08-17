@@ -1,0 +1,32 @@
+{
+  "message_id": 913,
+  "topic_id": "투수_남기고",
+  "key": "투수 남기고",
+  "keywords": [
+    "투수",
+    "남기고",
+    "백인천",
+    "영면",
+    "토미",
+    "KBO장",
+    "대기록",
+    "대반"
+  ],
+  "team": "KIA",
+  "outlet_count": 6,
+  "headlines": [
+    "수많은 투수 살리고 떠났다…‘토미 존 수술’ 남기고 별세한 토미 존",
+    "‘팔꿈치 인대 접합술’ 처음 받은 MLB 288승 투수 토미 존 별세",
+    "'충격' KIA 이 투수가 대표팀 아니라고? 'ERA 9점대→1점대' 기적의 대반..."
+  ],
+  "links": [
+    "https://www.seoul.co.kr/news/international/2026/08/18/20260818023006?wlog_tag3=naver",
+    "https://www.donga.com/news/People/article/all/20260818/134491698/2",
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081717400323589",
+    "http://www.thesportstimes.co.kr/news/articleView.html?idxno=374981",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16165534"
+  ],
+  "created_at": "2026-08-18T05:21:27.718650+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
