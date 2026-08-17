@@ -1,0 +1,36 @@
+{
+  "message_id": 899,
+  "topic_id": "18일_일정",
+  "key": "18일 일정",
+  "keywords": [
+    "18일",
+    "일정",
+    "투수",
+    "8월",
+    "MLB서",
+    "구단별",
+    "대명사",
+    "별세"
+  ],
+  "team": null,
+  "outlet_count": 4,
+  "headlines": [
+    "KBO 프로야구, 18일 경기 중계 일정→선발 투수?",
+    "'2026 프로야구 일정' 8월 18일 구단별 선발투수와 생중계채널",
+    "‘팔꿈치 수술 대명사’ 토미 존 별세… MLB서 투수로 통산 288승 활약"
+  ],
+  "links": [
+    "https://www.topstarnews.net/news/articleView.html?idxno=16165534",
+    "https://www.gukjenews.com/news/articleView.html?idxno=3666646",
+    "https://www.segye.com/newsView/20260817513703?OutUrl=naver",
+    "https://www.idaegu.co.kr/news/articleView.html?idxno=556858"
+  ],
+  "created_at": "2026-08-18T01:54:22.236538+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "'팔꿈치 수술' 토미 존 별세",
+    "line2": "메이저리그 통산 288승 대투수",
+    "hook": "비보",
+    "caption_body": "팔꿈치 인대접합수술에 이름을 남긴 메이저리그 통산 288승 투수 토미 존이 향년 83세로 숨을 거두었다. 외신 보도에 따르면 존은 미국 플로리다주 브레이든턴 자택에서 세상을 떠난 것으로 확인됐다."
+  }
+}
