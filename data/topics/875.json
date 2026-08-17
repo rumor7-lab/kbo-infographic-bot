@@ -1,0 +1,37 @@
+{
+  "message_id": 875,
+  "topic_id": "이번_투수",
+  "key": "이번 투수",
+  "keywords": [
+    "이번",
+    "투수",
+    "NC",
+    "선두",
+    "상대",
+    "삼성",
+    "KT",
+    "가면"
+  ],
+  "team": "NC",
+  "outlet_count": 7,
+  "headlines": [
+    "NC 다이노스 투수 임지민, 이번 주 수술",
+    "오타니 살린 ‘팔꿈치 인대 접합술’ 처음 받은 MLB 투수 토미 존 별세",
+    "\"은퇴 고민했던 투수라니\" NC 출신 최동원상 투수, 샌디에이고 핵심으로..."
+  ],
+  "links": [
+    "https://www.gnnews.co.kr/news/articleView.html?idxno=643322",
+    "https://www.donga.com/news/Inter/article/all/20260817/134489387/1",
+    "http://www.osen.co.kr/article/G1112858829",
+    "https://www.kgnews.co.kr/news/article.html?no=907965",
+    "https://www.starnewskorea.com/sports/2026/08/17/2026081715314282068"
+  ],
+  "created_at": "2026-08-17T19:05:25.814474+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KT, LG 상대 잠실 6전 전승 도전",
+    "line2": "18일 소형준과 임찬규의 선발 맞대결",
+    "hook": "KBO 소식",
+    "caption_body": "KT 위즈가 올 시즌 잠실에서 LG 트윈스를 상대로 6전 전승을 기록 중인 가운데 오는 18일 소형준을 앞세워 다시 원정길에 나선다. 한편, 지난 14일 롯데전에서 타구에 안면을 맞아 아래턱뼈 분쇄골절 진단을 받은 NC 투수 임지민은 이번 주 수술을 진행한다. 또한 NC 출신 최동원상 수상자 카일 하트는 은퇴 고민을 딛고 샌디에이고 파드리스의 주축 투수로 거듭나며 미국 현지 매체의 조명을 받았다."
+  }
+}
