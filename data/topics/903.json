@@ -1,0 +1,28 @@
+{
+  "message_id": 903,
+  "topic_id": "홈런_계약",
+  "key": "홈런 계약",
+  "keywords": [
+    "홈런",
+    "계약",
+    "괴력",
+    "날린",
+    "데뷔",
+    "소년",
+    "신발",
+    "일이라니"
+  ],
+  "team": null,
+  "outlet_count": 2,
+  "headlines": [
+    "'초대박' 데뷔 단 1경기서 '홈런→홈런→홈런' 처음 있는 일이라니! 신발...",
+    "평창서 홈런 7방 날린 ‘괴력의 소년’…5년 뒤 MLB 계약 화제"
+  ],
+  "links": [
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081717122795312",
+    "https://www.kwnews.co.kr/article/20260817500449"
+  ],
+  "created_at": "2026-08-18T02:22:39.014418+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
