@@ -1,0 +1,37 @@
+{
+  "message_id": 844,
+  "topic_id": "선두_경쟁",
+  "key": "선두 경쟁",
+  "keywords": [
+    "선두",
+    "경쟁",
+    "다승",
+    "만에",
+    "올러",
+    "kt",
+    "KIA",
+    "11승"
+  ],
+  "team": "KIA",
+  "outlet_count": 6,
+  "headlines": [
+    "두산 제친 KIA, 나흘 만에 4위 탈환…올러, 시즌 11승 '다승 선두'",
+    "SSG, 1480일 만에 LG전 위닝 시리즈... 중심에는 선발 아빌라",
+    "kt wiz-LG 트윈스, 잠실서 다시 격돌…선두 경쟁·..."
+  ],
+  "links": [
+    "http://www.yonhapnewstv.co.kr/news/MYH202608171112068MJ",
+    "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003259643&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+    "https://www.lecturernews.com/news/articleView.html?idxno=208753",
+    "https://www.sportschosun.com/baseball/2026-08-17/202608170100095830006110",
+    "https://news.sbs.co.kr/news/endPage.do?news_id=N1008707980&plink=ORI&cooper=NAVER"
+  ],
+  "created_at": "2026-08-17T11:22:43.206388+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "올러 11승 호투…KIA 4위 탈환",
+    "line2": "다승 단독 선두 등극",
+    "hook": "KBO",
+    "caption_body": "KIA 타이거즈가 두산 베어스를 상대로 위닝시리즈를 챙기며 나흘 만에 4위 자리를 회복했다. 선발 올러는 눈부신 피칭으로 시즌 11승째를 달성해 다승 부문 단독 선두로 올라섰다. 한편 SSG 랜더스는 7이닝 무실점 투구를 펼친 선발 아빌라의 활약 속에 LG 트윈스를 6 대 0으로 제압하고 1,480일 만에 상대전 위닝시리즈를 완성했다."
+  }
+}

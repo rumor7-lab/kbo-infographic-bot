@@ -1,0 +1,37 @@
+{
+  "message_id": 842,
+  "topic_id": "이정후_연속",
+  "key": "이정후 연속",
+  "keywords": [
+    "이정후",
+    "연속",
+    "안타",
+    "타자",
+    "4번",
+    "2경기",
+    "타율",
+    "292"
+  ],
+  "team": null,
+  "outlet_count": 8,
+  "headlines": [
+    "‘4번 타자’ MLB 이정후, 다시 이어진 연속 안타",
+    "이정후 2경기 연속 안타·타율 0.292...김하성은 벤치",
+    "'이틀 연속 4번 타자' 이정후, 9회 안타로 2G 연속 안타…SF는 역전패"
+  ],
+  "links": [
+    "https://www.munhwa.com/article/11609900?ref=naver",
+    "https://www.ytn.co.kr/_ln/0107_202608170940314336",
+    "https://www.nocutnews.co.kr/news/6563664?utm_source=naver&utm_medium=article&utm_campaign=20260817091404",
+    "https://www.yna.co.kr/view/AKR20260817017951007?input=1195m",
+    "https://www.slist.kr/news/articleView.html?idxno=759201"
+  ],
+  "created_at": "2026-08-17T11:22:33.230871+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "‘4번 타자’ 이정후, 2G 연속 안타",
+    "line2": "9회 안타 터졌으나 SF는 역전패",
+    "hook": "MLB",
+    "caption_body": "샌프란시스코 자이언츠의 이정후가 이틀 연속 4번 타자로 출전해 안타를 만들어냈다. 17일 콜로라도 로키스와의 홈경기에 우익수로 선발 출장한 이정후는 5타수 1안타를 기록했다. 9회 타석에서 안타를 쳐내며 2경기 연속 안타를 완성했고, 시즌 타율은 0.292를 유지했다. 한편 소속팀 샌프란시스코는 콜로라도에 역전패를 당했다."
+  }
+}
