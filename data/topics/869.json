@@ -1,0 +1,36 @@
+{
+  "message_id": 869,
+  "topic_id": "상대_원정",
+  "key": "상대 원정",
+  "keywords": [
+    "상대",
+    "원정",
+    "가면",
+    "경쟁력",
+    "김태형",
+    "더그아웃",
+    "보는",
+    "보다"
+  ],
+  "team": "삼성",
+  "outlet_count": 4,
+  "headlines": [
+    "상대 전적으로 보는 포스트시즌 경쟁력...kt 보다는 삼성",
+    "‘잠실만 가면 펄펄’ KT 위즈, LG 상대 원정에서 6전 6승…이번에도 웃...",
+    "'상대 투수 쓰러지자' 김태형 감독이 보여준 행동, 왜 더그아웃을 비웠..."
+  ],
+  "links": [
+    "https://www.seoul.co.kr/news/sport/2026/08/17/20260817500106?wlog_tag3=naver",
+    "https://www.kgnews.co.kr/news/article.html?no=907965",
+    "https://www.starnewskorea.com/sports/2026/08/17/2026081715314282068",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000057281"
+  ],
+  "created_at": "2026-08-17T18:09:12.728261+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "치열해진 KBO 가을야구 순위 경쟁",
+    "line2": "3위 노리는 KIA부터 잠실 강자 KT까지",
+    "hook": "순위싸움",
+    "caption_body": "포스트시즌 윤곽이 잡혀가는 가운데 4위에 올라선 KIA 타이거즈가 3위 진입을 목표로 한화와 키움을 만나는 원정 6연전에 돌입한다. 올 시즌 잠실에서 LG를 상대로 6전 전승을 달린 KT 위즈는 소형준을 앞세워 원정 우세를 이어가고자 한다. 반면 8위에 머문 롯데 자이언츠는 5위 두산 베어스와 9경기 차를 보이며 가을야구 진출에 고전하고 있다."
+  }
+}
