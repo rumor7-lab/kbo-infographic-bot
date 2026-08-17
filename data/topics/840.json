@@ -1,0 +1,31 @@
+{
+  "message_id": 840,
+  "topic_id": "투수_별세",
+  "key": "투수 별세",
+  "keywords": [
+    "투수",
+    "별세",
+    "토미",
+    "감탄한",
+    "무사사구인데",
+    "무피안타",
+    "바꾼",
+    "사령탑"
+  ],
+  "team": "LG",
+  "outlet_count": 4,
+  "headlines": [
+    "‘투수의 팔을 살린 그 이름’ 토미 존, 83세 일기로 별세",
+    "\"지금은 어떤 투수가 와도...\" 사령탑도 감탄한 타격 1위 구자욱, '첫 우...",
+    "토미 존 수술’로 야구 역사를 바꾼 투수…토미 존 별세"
+  ],
+  "links": [
+    "https://www.edaily.co.kr/news/newspath.asp?newsid=01272646645548304",
+    "https://www.starnewskorea.com/sports/2026/08/17/2026081708435966624",
+    "https://sports.khan.co.kr/article/202608170755003?pt=nv",
+    "http://www.osen.co.kr/article/G1112858749"
+  ],
+  "created_at": "2026-08-17T10:00:57.262249+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

@@ -1,0 +1,32 @@
+{
+  "message_id": 837,
+  "topic_id": "연속_안타",
+  "key": "연속 안타",
+  "keywords": [
+    "연속",
+    "안타",
+    "이정후",
+    "2경기",
+    "타율",
+    "292",
+    "역전패",
+    "타자"
+  ],
+  "team": null,
+  "outlet_count": 6,
+  "headlines": [
+    "이정후 2경기 연속 안타·타율 0.292...김하성은 벤치",
+    "이정후, 9회 마지막 타석서 안타-2경기 연속 안타 행진",
+    "'이틀 연속 4번 타자' 이정후, 9회 안타로 2G 연속 안타…SF는 역전패"
+  ],
+  "links": [
+    "https://www.ytn.co.kr/_ln/0107_202608170940314336",
+    "https://www.mediafine.co.kr/news/articleView.html?idxno=86952",
+    "https://www.nocutnews.co.kr/news/6563664?utm_source=naver&utm_medium=article&utm_campaign=20260817091404",
+    "https://www.yna.co.kr/view/AKR20260817017951007?input=1195m",
+    "https://www.slist.kr/news/articleView.html?idxno=759201"
+  ],
+  "created_at": "2026-08-17T10:00:52.163464+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
