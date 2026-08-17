@@ -1,0 +1,32 @@
+{
+  "message_id": 887,
+  "topic_id": "홈런_거포",
+  "key": "홈런 거포",
+  "keywords": [
+    "홈런",
+    "거포",
+    "교체",
+    "끝낸",
+    "대전",
+    "대형",
+    "던져",
+    "드래프트"
+  ],
+  "team": "한화",
+  "outlet_count": 4,
+  "headlines": [
+    "88경기 만에 홈런 28개…무라카미, 빅리그서도 ‘거포 본능’",
+    "'1라운드 지명설에 조심스러운 최지만' 울산서 첫 홈런...드래프트는 학...",
+    "두 달 2군 생활 끝낸 한유섬, 이틀 연속 홈런...\"팀에 미안했다\""
+  ],
+  "links": [
+    "https://www.khan.co.kr/article/202608172018015",
+    "http://www.maniareport.com/view.php?ud=2026081711043635196cf2d78c68_19",
+    "http://www.maniareport.com/view.php?ud=202608171525049597dad9f33a29_19",
+    "https://www.xportsnews.com/article/2184539",
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1002295"
+  ],
+  "created_at": "2026-08-17T21:35:14.510933+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
