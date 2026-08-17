@@ -1,0 +1,37 @@
+{
+  "message_id": 858,
+  "topic_id": "기회_선두",
+  "key": "기회 선두",
+  "keywords": [
+    "기회",
+    "선두",
+    "이번",
+    "탈환",
+    "홈런",
+    "삼성",
+    "SSG",
+    "거둔"
+  ],
+  "team": "삼성",
+  "outlet_count": 6,
+  "headlines": [
+    "‘첫 홈런’ 신고한 최지만, 드래프트 관심엔 “학생들에게 중요한 기회...",
+    "3연승 거둔 삼성 라이온즈, 이번 주가 선두 탈환 기회",
+    "선두 KT에 한 경기차 2위 삼성,이번 주 하위권 SSG, NC와 각 3연전"
+  ],
+  "links": [
+    "https://www.busan.com/view/busan/view.php?code=2026081714593842526",
+    "https://www.imaeil.com/page/view/2026081712490731573",
+    "https://www.idaegu.com/news/articleView.html?idxno=665053",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16165319",
+    "http://www.yonhapnewstv.co.kr/news/MYH202608171112068MJ"
+  ],
+  "created_at": "2026-08-17T16:09:13.559366+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "치열해진 순위 싸움과 베테랑의 부활",
+    "line2": "선두 추격부터 대기록 달성까지 KBO 소식 모음",
+    "hook": "KBO 종합",
+    "caption_body": "삼성 라이온즈가 3연승을 달리며 선두 KT 위즈를 1경기 차로 바짝 쫓는 가운데, 이번 주 하위권 팀들과의 6연전으로 1위 탈환을 노린다. KIA 타이거즈는 두산전 위닝시리즈와 함께 나흘 만에 4위에 올랐으며, 선발 올러는 11승을 거두며 다승 단독 선두에 등극했다. 한편 SSG 한유섬은 2천루타 달성과 이틀 연속 아치를 그리며 활약했고, 울산 웨일즈 최지만은 마수걸이 홈런을 터뜨리며 2027 신인 드래프트 지명 후보로 눈길을 끌었다."
+  }
+}
