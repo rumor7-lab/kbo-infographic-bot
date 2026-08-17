@@ -1,0 +1,31 @@
+{
+  "message_id": 916,
+  "topic_id": "투수_토미",
+  "key": "투수 토미",
+  "keywords": [
+    "투수",
+    "토미",
+    "고마워요",
+    "다저스",
+    "대반",
+    "대표팀",
+    "떠났다",
+    "받은"
+  ],
+  "team": "KIA",
+  "outlet_count": 4,
+  "headlines": [
+    "\"아버지 고마워요\" 한국서 혹사당했던 외인 투수의 아들이 다저스에 있...",
+    "수많은 투수 살리고 떠났다…‘토미 존 수술’ 남기고 별세한 토미 존",
+    "‘팔꿈치 인대 접합술’ 처음 받은 MLB 288승 투수 토미 존 별세"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112858952",
+    "https://www.seoul.co.kr/news/international/2026/08/18/20260818023006?wlog_tag3=naver",
+    "https://www.donga.com/news/People/article/all/20260818/134491698/2",
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081717400323589"
+  ],
+  "created_at": "2026-08-18T05:53:00.522265+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
