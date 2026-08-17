@@ -1,0 +1,37 @@
+{
+  "message_id": 851,
+  "topic_id": "가을야구_25",
+  "key": "가을야구 25",
+  "keywords": [
+    "가을야구",
+    "25",
+    "랜더스",
+    "한화",
+    "SSG",
+    "27일",
+    "SSG랜더스필드",
+    "김서"
+  ],
+  "team": "한화",
+  "outlet_count": 6,
+  "headlines": [
+    "가을야구 멀어지나…한화, 투타 ‘동반 반등’ 절실",
+    "선선해진 날씨에 잠실 편의점 매출 25.5%↑…유통가는 ‘가을야구 특수...",
+    "폭염으로 늦춰진 프로야구 시계, 25일부터 정상화"
+  ],
+  "links": [
+    "https://www.joongdo.co.kr/web/view.php?key=20260817010004937",
+    "https://www.sedaily.com/article/20079818?ref=naver",
+    "https://www.seoul.co.kr/news/sport/2026/08/17/20260817500054?wlog_tag3=naver",
+    "https://www.kyeonggi.com/article/20260817580066",
+    "https://www.mydaily.co.kr/page/view/2026081710131654163"
+  ],
+  "created_at": "2026-08-17T14:07:35.186725+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "25일부터 프로야구 경기 시간 정상화",
+    "line2": "오후 7시에서 다시 6시 30분으로",
+    "hook": "KBO 소식",
+    "caption_body": "폭염 대책으로 오후 7시로 연기됐던 프로야구 경기 시작 시각이 오는 25일부터 다시 오후 6시 30분으로 복구된다. 사상 최다 관중 기록을 새로 쓰며 흥행을 이어가는 KBO리그는 가을 야구를 앞두고 한층 더 뜨거워질 전망이다. 한편 SSG 랜더스는 25일부터 열리는 한화와의 홈 3연전 동안 인천 구장에 바이킹 등을 설치하고 '랜더스 랜드' 이벤트를 선보인다."
+  }
+}

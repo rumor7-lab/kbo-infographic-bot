@@ -1,0 +1,31 @@
+{
+  "message_id": 852,
+  "topic_id": "홈런_결별",
+  "key": "홈런 결별",
+  "keywords": [
+    "홈런",
+    "결별",
+    "계속",
+    "계약",
+    "고별전서",
+    "낭만",
+    "데뷔전",
+    "떠난"
+  ],
+  "team": "SSG",
+  "outlet_count": 4,
+  "headlines": [
+    "\"미국에서도 계속 SSG 응원하겠다\" 마드리스, KBO 고별전서 '홈런+4출루...",
+    "“계약 오늘까지야” 결별 통보에도 홈런 선물…낭만 선사하고 떠난 마...",
+    "MLB 데뷔전 3연타석 홈런 바에스…스파이크, 배팅 장갑, 벨트 모두 빌리..."
+  ],
+  "links": [
+    "https://www.xportsnews.com/article/2184497",
+    "https://www.seoul.co.kr/news/sport/baseball/2026/08/17/20260817500043?wlog_tag3=naver",
+    "https://sports.khan.co.kr/article/202608170849003?pt=nv",
+    "https://www.mydaily.co.kr/page/view/2026081700421463531"
+  ],
+  "created_at": "2026-08-17T14:07:35.879497+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
