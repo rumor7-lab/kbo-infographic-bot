@@ -1,0 +1,31 @@
+{
+  "message_id": 850,
+  "topic_id": "랜더스_SSG",
+  "key": "랜더스 SSG",
+  "keywords": [
+    "랜더스",
+    "SSG",
+    "27일",
+    "25",
+    "SSG랜더스필드",
+    "놀이공원",
+    "놀이공원이야",
+    "늦춰진"
+  ],
+  "team": "SSG",
+  "outlet_count": 3,
+  "headlines": [
+    "폭염으로 늦춰진 프로야구 시계, 25일부터 정상화",
+    "SSG랜더스필드가 놀이공원으로…SSG, 25~27일 ‘랜더스 랜드’ 행사",
+    "'이게 야구장이야 놀이공원이야?' SSG, 25~27일 홈 한화전서 '랜더스 랜..."
+  ],
+  "links": [
+    "https://www.seoul.co.kr/news/sport/2026/08/17/20260817500054?wlog_tag3=naver",
+    "https://www.kyeonggi.com/article/20260817580066",
+    "https://www.mydaily.co.kr/page/view/2026081710131654163",
+    "https://www.mydaily.co.kr/page/view/2026081622091946422"
+  ],
+  "created_at": "2026-08-17T13:12:25.994017+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
