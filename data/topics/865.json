@@ -1,0 +1,36 @@
+{
+  "message_id": 865,
+  "topic_id": "LG전_연속",
+  "key": "LG전 연속",
+  "keywords": [
+    "LG전",
+    "연속",
+    "한유섬",
+    "홈런",
+    "SSG",
+    "감독님",
+    "관심엔",
+    "드래프트"
+  ],
+  "team": "LG",
+  "outlet_count": 4,
+  "headlines": [
+    "‘첫 홈런’ 신고한 최지만, 드래프트 관심엔 “학생들에게 중요한 기회...",
+    "2천루타·이틀 연속 홈런…SSG 한유섬, LG전 부활 신고",
+    "'4번타자' 이정후, 마지막 타석서 안타…2경기 연속 안타 행진"
+  ],
+  "links": [
+    "https://www.busan.com/view/busan/view.php?code=2026081714593842526",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16165319",
+    "https://www.edaily.co.kr/news/newspath.asp?newsid=01482566645548304",
+    "https://www.xportsnews.com/article/2184467"
+  ],
+  "created_at": "2026-08-17T17:08:23.117623+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "맹타 휘두른 SSG 한유섬",
+    "line2": "이틀 연속 홈런·2천루타 달성",
+    "hook": "부활 신고",
+    "caption_body": "SSG 랜더스 한유섬이 잠실 LG 트윈스전에서 맹타를 휘두르며 팀의 6-0 완승을 이끌었습니다. 한유섬은 이틀 연속 홈런과 함께 개인 통산 2000루타 고지를 밟으며 그간의 부담감을 털어냈습니다. 한편 메이저리그 샌프란시스코의 이정후는 2경기 연속 안타 행진을 이어갔으며, 울산 웨일즈 최지만은 신인 드래프트 지명 후보 거론과 관련해 학생 선수들을 먼저 배려하는 뜻을 전했습니다."
+  }
+}

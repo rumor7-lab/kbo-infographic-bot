@@ -1,0 +1,31 @@
+{
+  "message_id": 864,
+  "topic_id": "원정_잠실",
+  "key": "원정 잠실",
+  "keywords": [
+    "원정",
+    "잠실",
+    "가면",
+    "날씨",
+    "늦춰진",
+    "매출",
+    "선선해진",
+    "시계"
+  ],
+  "team": "LG",
+  "outlet_count": 4,
+  "headlines": [
+    "‘잠실만 가면 펄펄’ KT 위즈, LG 상대 원정에서 6전 6승…이번에도 웃...",
+    "'3위 정조준' KIA 타이거즈, 한화·키움 원정 6연전 출격",
+    "선선해진 날씨에 잠실 편의점 매출 25.5%↑…유통가는 ‘가을야구 특수..."
+  ],
+  "links": [
+    "https://www.kgnews.co.kr/news/article.html?no=907965",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000057281",
+    "https://www.sedaily.com/article/20079818?ref=naver",
+    "https://www.seoul.co.kr/news/sport/2026/08/17/20260817500054?wlog_tag3=naver"
+  ],
+  "created_at": "2026-08-17T17:08:00.100573+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

@@ -1,0 +1,37 @@
+{
+  "message_id": 863,
+  "topic_id": "선두_올러",
+  "key": "선두 올러",
+  "keywords": [
+    "선두",
+    "올러",
+    "탈환",
+    "11승",
+    "이번",
+    "삼성",
+    "KIA",
+    "4위"
+  ],
+  "team": "KIA",
+  "outlet_count": 5,
+  "headlines": [
+    "'시즌 11승' 에이스로 돌아온 올러, KIA 4위 탈환 이끌다[웰컴톱랭킹 주...",
+    "'올러 먼저 치고나갔다' 임찬규-왕옌청, 18일 나란히 시즌 11승 도전…다...",
+    "3연승 거둔 삼성 라이온즈, 이번 주가 선두 탈환 기회"
+  ],
+  "links": [
+    "https://sports.hankooki.com/news/articleView.html?idxno=6938063",
+    "http://www.osen.co.kr/article/G1112858849",
+    "https://www.imaeil.com/page/view/2026081712490731573",
+    "https://www.idaegu.com/news/articleView.html?idxno=665053",
+    "http://www.yonhapnewstv.co.kr/news/MYH202608171112068MJ"
+  ],
+  "created_at": "2026-08-17T17:07:35.011833+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "올러 11승 다승 선두…KIA 4위 복귀",
+    "line2": "삼성의 선두 탈환 기회와 다승왕 경쟁",
+    "hook": "순위 싸움",
+    "caption_body": "KIA 외국인 투수 올러가 시즌 11승을 달성하며 다승 단독 선두로 치고 나갔다. 올러의 호투를 발판 삼은 KIA는 두산을 넘어서며 나흘 만에 리그 4위 자리를 되찾았다. 1위 KT를 1경기 차로 추격 중인 2위 삼성은 이번 주 하위권 팀들과 만나 선두 자리를 노리며, LG 임찬규와 한화 왕옌청은 18일 나란히 11승에 도전한다."
+  }
+}
