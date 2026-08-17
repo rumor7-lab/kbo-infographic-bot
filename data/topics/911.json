@@ -1,0 +1,31 @@
+{
+  "message_id": 911,
+  "topic_id": "투수_KBO서",
+  "key": "투수 KBO서",
+  "keywords": [
+    "투수",
+    "KBO서",
+    "MLB서",
+    "대반",
+    "대표팀",
+    "받은",
+    "벼랑",
+    "별세"
+  ],
+  "team": "KIA",
+  "outlet_count": 4,
+  "headlines": [
+    "‘팔꿈치 인대 접합술’ 처음 받은 MLB 288승 투수 토미 존 별세",
+    "'충격' KIA 이 투수가 대표팀 아니라고? 'ERA 9점대→1점대' 기적의 대반...",
+    "'은퇴 위기' 벼랑 끝→KBO서 인생역전!…이젠 MLB서도 활활 타오른다, 美..."
+  ],
+  "links": [
+    "https://www.donga.com/news/People/article/all/20260818/134491698/2",
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081717400323589",
+    "https://www.xportsnews.com/article/2184527",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16165534"
+  ],
+  "created_at": "2026-08-18T04:50:56.491744+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
