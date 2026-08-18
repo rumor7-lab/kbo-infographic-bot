@@ -1,0 +1,32 @@
+{
+  "message_id": 995,
+  "topic_id": "마무리_배재준",
+  "key": "마무리 배재준",
+  "keywords": [
+    "마무리",
+    "배재준",
+    "투수",
+    "이의리",
+    "승리",
+    "갑자기",
+    "나선",
+    "나야"
+  ],
+  "team": "삼성",
+  "outlet_count": 6,
+  "headlines": [
+    "'팽팽한 투수전'서 갑자기... SSG, '자멸쇼' 펼친 삼성에 승리",
+    "울산웨일즈, 투수 박성웅·야수 박문순 '7월 MVP'",
+    "이의리 'KIA의 확실한 마무리'"
+  ],
+  "links": [
+    "https://www.stnsports.co.kr/news/articleView.html?idxno=321132",
+    "http://www.ujeil.com/news/articleView.html?idxno=390495",
+    "https://www.news1.kr/photos/8061281",
+    "https://www.news1.kr/photos/8061283",
+    "https://www.news1.kr/photos/8061280"
+  ],
+  "created_at": "2026-08-19T00:03:45.861693+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

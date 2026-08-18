@@ -1,0 +1,37 @@
+{
+  "message_id": 993,
+  "topic_id": "최형우_최초",
+  "key": "최형우 최초",
+  "keywords": [
+    "최형우",
+    "최초",
+    "2700안타",
+    "삼성",
+    "홈런",
+    "KBO리그",
+    "금자탑",
+    "대기록"
+  ],
+  "team": "삼성",
+  "outlet_count": 11,
+  "headlines": [
+    "'와' 韓 최초 포수 ML 포수 탄생하나! 22세 유망주 美서 강한 어깨 제대...",
+    "삼성 최형우, 18일 대구 SSG전 KBO 최초 2700안타·4600루타 기...",
+    "또 신기록 장식한 삼성 최형우… KBO 사상 첫 2700안타 금자탑"
+  ],
+  "links": [
+    "https://www.sportalkorea.com/news/articleView.html?idxno=2025052909553467127",
+    "https://www.newspim.com/news/view/20260818001298",
+    "https://www.dkilbo.com/news/articleView.html?idxno=551654",
+    "https://www.m-i.kr/news/articleView.html?idxno=1403431",
+    "https://www.sedaily.com/article/20080637?ref=naver"
+  ],
+  "created_at": "2026-08-19T00:03:30.537397+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "최형우, KBO 최초 2700안타 달성",
+    "line2": "시즌 14호 홈런으로 대기록 완성",
+    "hook": "KBO 최초",
+    "caption_body": "최형우가 한국 프로야구 역사상 처음으로 통산 2,700안타 고지를 밟았습니다. 최형우는 18일 대구에서 열린 SSG와의 경기 8회말, 시즌 14호 솔로 홈런을 터뜨리며 대기록을 자축했습니다. 이로써 그는 KBO리그에서 누구도 도달하지 못했던 새로운 이정표를 세우게 됐습니다."
+  }
+}
