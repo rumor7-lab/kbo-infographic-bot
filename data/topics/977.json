@@ -1,0 +1,37 @@
+{
+  "message_id": 977,
+  "topic_id": "홈런_추재현",
+  "key": "홈런 추재현",
+  "keywords": [
+    "홈런",
+    "추재현",
+    "임찬규",
+    "만루",
+    "안현민",
+    "김도영",
+    "3점",
+    "넘기"
+  ],
+  "team": "KT",
+  "outlet_count": 7,
+  "headlines": [
+    "문정빈의 만루 홈런",
+    "문정빈, 좌측 담장 넘기는 만루 홈런",
+    "임찬규, 실점은 없다"
+  ],
+  "links": [
+    "https://www.news1.kr/photos/8061167",
+    "http://www.osen.co.kr/article/G1112859464",
+    "https://www.xportsnews.com/article/2184981",
+    "https://www.mydaily.co.kr/page/view/2026081820221503901",
+    "https://www.donga.com/news/Sports/article/all/20260818/134496823/1"
+  ],
+  "created_at": "2026-08-18T20:51:11.769855+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "LG 문정빈, 5회말 만루 홈런 폭발",
+    "line2": "잠실 담장 넘어간 결정적 한 방",
+    "hook": "잠실포",
+    "caption_body": "18일 잠실야구장에서 펼쳐진 LG와 KT의 경기에서 LG 문정빈이 5회말 1사 만루 기회를 놓치지 않고 좌측 담장을 넘기는 만루 홈런을 쏘아 올렸다. 이에 앞서 KT 안현민은 4회초 시즌 8호포를 터뜨리며 2경기 연속 홈런을 기록했다. 반면 대전에서 열린 KIA와 한화의 맞대결에서는 KIA 김도영이 4회초 2사 만루 찬스에서 헛스윙 삼진으로 돌아서며 아쉬움을 남겼다."
+  }
+}

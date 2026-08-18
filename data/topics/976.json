@@ -1,0 +1,37 @@
+{
+  "message_id": 976,
+  "topic_id": "25일_다시",
+  "key": "25일 다시",
+  "keywords": [
+    "25일",
+    "다시",
+    "30분",
+    "6시",
+    "오후",
+    "시작",
+    "폭염",
+    "경기시간"
+  ],
+  "team": null,
+  "outlet_count": 10,
+  "headlines": [
+    "프로야구 다시 6시 30분",
+    "폭염 벗어난 프로야구, 25일부터 다시 오후 6시 30분 시작 [뉴스더보기]",
+    "프로야구, 25일부터 다시 오후 6시30분 시작…폭염 기준 재조정"
+  ],
+  "links": [
+    "http://www.kwangju.co.kr/article.php?aid=1787053320802417011",
+    "http://www.yonhapnewstv.co.kr/news/MYH20260818195833VER",
+    "http://www.gndomin.com/news/articleView.html?idxno=485756",
+    "https://www.busan.com/view/busan/view.php?code=2026081817402316905",
+    "https://www.gukjenews.com/news/articleView.html?idxno=3667502"
+  ],
+  "created_at": "2026-08-18T20:50:53.479472+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "프로야구 다시 '6시 30분' 복귀",
+    "line2": "폭염 완화로 25일부터 정상화",
+    "hook": "속보",
+    "caption_body": "기승을 부리던 더위가 누그러지면서 프로야구 경기 개시 시간이 다시 제자리를 찾습니다. KBO는 최근 기상 여건 개선과 온열질환 발생 추이, 현장 목소리를 반영해 경기 운영 기준을 재조정했다고 밝혔습니다. 이에 따라 오는 25일부터 평일 경기는 오후 6시 30분, 토요일과 일요일 경기는 오후 6시에 각각 시작합니다."
+  }
+}
