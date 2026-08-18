@@ -1,0 +1,37 @@
+{
+  "message_id": 931,
+  "topic_id": "매출_폭염",
+  "key": "매출 폭염",
+  "keywords": [
+    "매출",
+    "폭염",
+    "열기",
+    "잠실",
+    "야구장",
+    "7월",
+    "못막",
+    "오른다"
+  ],
+  "team": null,
+  "outlet_count": 7,
+  "headlines": [
+    "프로야구 평일 경기, 25일부터 다시 6시 30분 시작...폭염 관련 경기 운...",
+    "폭염 속 야구장 먹방 열기…잠실 F&B 매출 30% 증가",
+    "공민정, 데뷔 첫 프로야구 시구 도전..19일 잠실 마운드 오른다"
+  ],
+  "links": [
+    "https://isplus.com/article/view/isp202608180060",
+    "https://www.pointdaily.co.kr/news/articleView.html?idxno=315743",
+    "https://www.starnewskorea.com/star/2026/08/18/2026081810485091804",
+    "https://www.ajunews.com/view/20260818091153491",
+    "https://biz.sbs.co.kr/article_hub/20000329140?division=NAVER"
+  ],
+  "created_at": "2026-08-18T11:17:10.666819+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "폭염 누그러지자 평일 경기 6시 반 복귀",
+    "line2": "25일부터 환원… 뜨거웠던 7월 야구장 열기",
+    "hook": "KBO 소식",
+    "caption_body": "폭염 기세가 가라앉으면서 KBO 리그 평일 경기 시작 시간이 오는 25일부터 다시 오후 6시 30분으로 복귀한다. 무더운 날씨에도 지난 7월 잠실과 수원 구장의 식음료 매출이 크게 늘며 팬들의 뜨거운 직관 열기를 증명했다. 한편 리그 선두 KT와 LG가 맞붙는 19일 잠실 경기에는 배우 공민정이 생애 첫 시구에 도전한다."
+  }
+}
