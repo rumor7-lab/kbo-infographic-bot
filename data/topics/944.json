@@ -1,0 +1,37 @@
+{
+  "message_id": 944,
+  "topic_id": "매각_송성문",
+  "key": "매각 송성문",
+  "keywords": [
+    "매각",
+    "송성문",
+    "샌디에이고",
+    "가치",
+    "결장",
+    "메츠",
+    "소속팀",
+    "패배"
+  ],
+  "team": null,
+  "outlet_count": 6,
+  "headlines": [
+    "'구단 매각' 샌디에이고, 메츠에 1-2 패배…송성문 결장(종합)",
+    "구단 매각 확정된 샌디에이고, 메츠에 1-2 석패…송성문은 결장",
+    "'구단 매각' 샌디에이고, 메츠에 1-2 패배…송성문 결장"
+  ],
+  "links": [
+    "https://www.news1.kr/sports/overseas-baseball/6261749",
+    "http://www.stoo.com/article.php?aid=108369333903",
+    "https://www.news1.kr/sports/overseas-baseball/6261595",
+    "https://www.ytn.co.kr/_ln/0107_202608181038392098",
+    "https://www.nocutnews.co.kr/news/6563927?utm_source=naver&utm_medium=article&utm_campaign=20260818093616"
+  ],
+  "created_at": "2026-08-18T13:07:15.949273+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "송성문 소속 SD, 역대 최고가 매각",
+    "line2": "구단 가치 5조 5천억 원… 새 주인 확정",
+    "hook": "속보",
+    "caption_body": "미국프로야구 샌디에이고 파드리스가 메이저리그 구단주 총회의 만장일치 승인을 얻어 새로운 주인을 맞이합니다. 매각 규모는 역대 최고 수준인 39억 달러(약 5조 5천억 원)로, 사모펀드 사업가 호세 엔리케 펠리시아노 부부가 구단을 인수하게 됐습니다. 한편 샌디에이고는 같은 날 뉴욕 메츠에 1-2로 패했으며, 송성문은 경기에 출전하지 않았고 전 NC 다이노스 카일 하트는 구원 등판해 2이닝 무실점을 기록했습니다."
+  }
+}

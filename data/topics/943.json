@@ -1,0 +1,37 @@
+{
+  "message_id": 943,
+  "topic_id": "MVP_박문순",
+  "key": "MVP 박문순",
+  "keywords": [
+    "MVP",
+    "박문순",
+    "박성웅",
+    "선정",
+    "울산",
+    "7월",
+    "카메론",
+    "두산"
+  ],
+  "team": "두산",
+  "outlet_count": 6,
+  "headlines": [
+    "카메론, 두산 방출 후 MLB 복귀 성공적 신고식",
+    "'ERA 1.20' 박성웅-'타율 0.368' 박문순, 7월 울산 웨일즈 MVP 선정",
+    "\"7월 맹활약\" 울산 박성웅·박문순, 구단 월간 MVP 선정"
+  ],
+  "links": [
+    "https://www.joongangenews.com/news/articleView.html?idxno=540670",
+    "http://www.osen.co.kr/article/G1112859088",
+    "https://www.yna.co.kr/view/AKR20260818081300007?input=1195m",
+    "https://www.xportsnews.com/article/2184628",
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081811454953445"
+  ],
+  "created_at": "2026-08-18T13:06:56.217757+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "울산, 7월 MVP에 박성웅·박문순 선정",
+    "line2": "방출 아픔 딛고 퓨처스 폭격한 반전 드라마",
+    "hook": "월간 MVP",
+    "caption_body": "프로야구 시민구단 울산 웨일즈가 7월 팀 최우수선수(MVP)로 투수 박성웅과 야수 박문순을 발표했다. 한화에서 방출됐던 좌완 박성웅은 평균자책점 1.20을 찍으며 마운드를 지켰고, 박문순은 타율 0.368에 결정적인 결승타를 터뜨리며 공격을 이끌었다. 장원진 감독은 두 선수가 시즌 초부터 자신들의 자리에서 꾸준히 땀 흘려 얻은 결과라고 격려했다."
+  }
+}

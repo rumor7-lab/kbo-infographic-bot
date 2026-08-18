@@ -1,0 +1,32 @@
+{
+  "message_id": 942,
+  "topic_id": "매출_야구장",
+  "key": "매출 야구장",
+  "keywords": [
+    "매출",
+    "야구장",
+    "열기",
+    "잠실",
+    "폭염",
+    "2년",
+    "7월",
+    "못막"
+  ],
+  "team": null,
+  "outlet_count": 7,
+  "headlines": [
+    "BC카드, 주요 야구장 식음료 매출 2년 연속 상승",
+    "폭염 속 야구장 먹방 열기…잠실 F&B 매출 30% 증가",
+    "공민정, 데뷔 첫 프로야구 시구 도전..19일 잠실 마운드 오른다"
+  ],
+  "links": [
+    "https://www.cnbnews.com/news/articleView.html?idxno=1011743",
+    "https://www.pointdaily.co.kr/news/articleView.html?idxno=315743",
+    "https://www.starnewskorea.com/star/2026/08/18/2026081810485091804",
+    "https://www.ajunews.com/view/20260818091153491",
+    "https://biz.sbs.co.kr/article_hub/20000329140?division=NAVER"
+  ],
+  "created_at": "2026-08-18T13:06:44.431952+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
