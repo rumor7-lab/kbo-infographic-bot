@@ -1,0 +1,31 @@
+{
+  "message_id": 939,
+  "topic_id": "홈런_KT위즈",
+  "key": "홈런 KT위즈",
+  "keywords": [
+    "홈런",
+    "KT위즈",
+    "LG트윈스",
+    "가도",
+    "개최",
+    "단골",
+    "독주",
+    "마산"
+  ],
+  "team": "LG",
+  "outlet_count": 4,
+  "headlines": [
+    "마산 산호동상점가서 야구와 축제가 만난다…'홈런! 하이볼 축제' 개최",
+    "‘단골’ 빠진 홈런왕… 박터지는 7인",
+    "직관 못 가도 홈런 한 방…컴프야 3종으로 즐기는 ..."
+  ],
+  "links": [
+    "https://www.stnsports.co.kr/news/articleView.html?idxno=321045",
+    "https://www.munhwa.com/article/11610077?ref=naver",
+    "http://www.popcornnews.net/news/articleView.html?idxno=129704",
+    "http://www.newsian.co.kr/news/articleView.html?idxno=93840"
+  ],
+  "created_at": "2026-08-18T12:23:17.628567+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

@@ -1,0 +1,32 @@
+{
+  "message_id": 937,
+  "topic_id": "샌디에이고_매각",
+  "key": "샌디에이고 매각",
+  "keywords": [
+    "샌디에이고",
+    "매각",
+    "송성문",
+    "가치",
+    "MLB",
+    "결장",
+    "메츠",
+    "소속팀"
+  ],
+  "team": "두산",
+  "outlet_count": 9,
+  "headlines": [
+    "샌디에이고 구단, ‘역대 최고’ 5조5000억원에 팔린다",
+    "구단 매각 확정된 샌디에이고, 메츠에 1-2 석패…송성문은 결장",
+    "'구단 매각' 샌디에이고, 메츠에 1-2 패배…송성문 결장"
+  ],
+  "links": [
+    "https://sports.khan.co.kr/article/202608181156003?pt=nv",
+    "https://www.nocutnews.co.kr/news/6563927?utm_source=naver&utm_medium=article&utm_campaign=20260818093616",
+    "https://www.yna.co.kr/view/AKR20260818033100007?input=1195m",
+    "http://www.maniareport.com/view.php?ud=2026081808475496106cf2d78c68_19",
+    "https://www.dailysportshankook.co.kr/news/articleView.html?idxno=432609"
+  ],
+  "created_at": "2026-08-18T12:22:46.227668+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
