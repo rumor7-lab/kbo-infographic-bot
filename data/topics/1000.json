@@ -1,0 +1,32 @@
+{
+  "message_id": 1000,
+  "topic_id": "임찬규_LG",
+  "key": "임찬규 LG",
+  "keywords": [
+    "임찬규",
+    "LG",
+    "다승",
+    "선발",
+    "11승",
+    "공동",
+    "역투하",
+    "선두"
+  ],
+  "team": "LG",
+  "outlet_count": 7,
+  "headlines": [
+    "'와 롯데에서 역수출 신화 나오나' 빅리그서 추격조→첫 선발 등판까지...",
+    "[2026 프로야구 경기일정] 8월 19일 구단별 선발투수와 생중계 채널",
+    "이의리 또 해냈다! '4아웃 SV 대성공'…한화 추격 막았다→KIA, 이글스 4..."
+  ],
+  "links": [
+    "https://www.mydaily.co.kr/page/view/2026081815135512821",
+    "https://www.gukjenews.com/news/articleView.html?idxno=3667770",
+    "https://www.xportsnews.com/article/2185101",
+    "https://www.yna.co.kr/view/PYH20260818179300013?input=1196m",
+    "https://www.yna.co.kr/view/PYH20260818178900013?input=1196m"
+  ],
+  "created_at": "2026-08-19T01:29:18.924788+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

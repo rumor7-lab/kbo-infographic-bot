@@ -1,0 +1,32 @@
+{
+  "message_id": 999,
+  "topic_id": "대폭발_이닝",
+  "key": "대폭발 이닝",
+  "keywords": [
+    "대폭발",
+    "이닝",
+    "롯데",
+    "13점",
+    "최다",
+    "15",
+    "득점",
+    "한동희"
+  ],
+  "team": "롯데",
+  "outlet_count": 7,
+  "headlines": [
+    "롯데 '승리 확률 0.7%'서 대반전! 6회까지 0득점→7회에만 13점 대폭발, ...",
+    "'13점' 역대 한 이닝 최다 득점 2위, 대역전 드라마...김태형은 예상했을...",
+    "‘충격’ 한 이닝 13득점이라니!…타선 대폭발로 ‘0-8→15-10’ 대역전승..."
+  ],
+  "links": [
+    "https://www.xportsnews.com/article/2185086",
+    "http://www.osen.co.kr/article/G1112859604",
+    "https://www.mk.co.kr/article/12130660",
+    "http://www.osen.co.kr/article/G1112859586",
+    "http://www.spochoo.com/news/articleView.html?idxno=128926"
+  ],
+  "created_at": "2026-08-19T01:29:18.232055+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
