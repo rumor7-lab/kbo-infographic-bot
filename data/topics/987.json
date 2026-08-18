@@ -1,0 +1,32 @@
+{
+  "message_id": 987,
+  "topic_id": "최형우_2700안타",
+  "key": "최형우 2700안타",
+  "keywords": [
+    "최형우",
+    "2700안타",
+    "최초",
+    "홈런",
+    "삼성",
+    "결승",
+    "대기록",
+    "14호"
+  ],
+  "team": "삼성",
+  "outlet_count": 8,
+  "headlines": [
+    "‘기록의 사나이’ 최형우, 솔로포로 KBO 최초 2700안타 고지 점령",
+    "최재영, 솔로 홈런",
+    "최형우 2,700안타 대기록 터졌지만…삼성 라이온즈, 9회 SSG 뒷심에 역전..."
+  ],
+  "links": [
+    "https://www.sedaily.com/article/20080637?ref=naver",
+    "http://www.osen.co.kr/article/G1112859585",
+    "https://www.yeongnam.com/web/view.php?key=20260818025312864",
+    "https://www.mk.co.kr/article/12130641",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16166431"
+  ],
+  "created_at": "2026-08-18T22:39:43.023574+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

@@ -1,0 +1,32 @@
+{
+  "message_id": 989,
+  "topic_id": "투수_배재준",
+  "key": "투수 배재준",
+  "keywords": [
+    "투수",
+    "배재준",
+    "마무리",
+    "임지민",
+    "울산웨일즈",
+    "타구",
+    "수술",
+    "복귀"
+  ],
+  "team": "NC",
+  "outlet_count": 7,
+  "headlines": [
+    "지역 연고 야구단 '울산웨일즈' 시민 곁으로 성큼",
+    "울산웨일즈, 투수 박성웅·야수 박문순 '7월 MVP'",
+    "배재준 '마무리 투수는 나야'"
+  ],
+  "links": [
+    "http://www.ujeil.com/news/articleView.html?idxno=390568",
+    "http://www.ujeil.com/news/articleView.html?idxno=390495",
+    "https://www.news1.kr/photos/8061281",
+    "https://www.news1.kr/photos/8061280",
+    "https://www.news1.kr/photos/8061283"
+  ],
+  "created_at": "2026-08-18T22:40:06.045312+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

@@ -1,0 +1,32 @@
+{
+  "message_id": 985,
+  "topic_id": "홈런_만루",
+  "key": "홈런 만루",
+  "keywords": [
+    "홈런",
+    "만루",
+    "문정빈",
+    "안현민",
+    "추재현",
+    "LG",
+    "한동희",
+    "연속"
+  ],
+  "team": "LG",
+  "outlet_count": 11,
+  "headlines": [
+    "'한 이닝 13점 대폭발' 롯데, 0-8 뒤집고 키움 15-10 격파...한동희 만루...",
+    "만루 홈런 친 LG 문정빈",
+    "만루 홈런 치는 LG 문정빈"
+  ],
+  "links": [
+    "http://www.maniareport.com/view.php?ud=2026081822332040726cf2d78c68_19",
+    "https://www.busan.com/view/busan/view.php?code=2026081822034591511",
+    "http://www.osen.co.kr/article/G1112859555",
+    "http://www.osen.co.kr/article/G1112859556",
+    "http://www.osen.co.kr/article/G1112859547"
+  ],
+  "created_at": "2026-08-18T22:39:11.840046+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

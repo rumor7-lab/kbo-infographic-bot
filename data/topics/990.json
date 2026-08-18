@@ -1,0 +1,25 @@
+{
+  "message_id": 990,
+  "topic_id": "경기장_대구서",
+  "key": "경기장 대구서",
+  "keywords": [
+    "경기장",
+    "대구서",
+    "무너졌다",
+    "충격",
+    "팬들",
+    "0이닝",
+    "4실점"
+  ],
+  "team": null,
+  "outlet_count": 1,
+  "headlines": [
+    "'또 대구서 무너졌다' 충격의 0이닝 4실점…팬들도 경기장 떠..."
+  ],
+  "links": [
+    "https://isplus.com/article/view/isp202608180223"
+  ],
+  "created_at": "2026-08-18T22:40:06.638676+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
