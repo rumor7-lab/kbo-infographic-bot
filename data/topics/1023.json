@@ -1,0 +1,37 @@
+{
+  "message_id": 1023,
+  "topic_id": "홈런_괴력",
+  "key": "홈런 괴력",
+  "keywords": [
+    "홈런",
+    "괴력",
+    "문정빈",
+    "안현민",
+    "희망",
+    "LG",
+    "145m",
+    "가을야구"
+  ],
+  "team": "LG",
+  "outlet_count": 6,
+  "headlines": [
+    "괴력의 안현민, 145m 초대형 홈런…승자는 사생결단 LG",
+    "'1이닝 5타점' 괴력...롯데 자이언츠 가을야구 희망 살린 이대호의 후계...",
+    "'손등 골절→옆구리 부상' 6년 연속 두 자릿수 홈런 타자 복귀, 사령탑이..."
+  ],
+  "links": [
+    "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8639980&ref=A",
+    "https://isplus.com/article/view/isp202608190003",
+    "https://www.starnewskorea.com/sports/2026/08/19/2026081816043223985",
+    "https://news.tf.co.kr/read/baseball/2355307.htm",
+    "https://sports.donga.com/sports/article/all/20260818/134496356/1"
+  ],
+  "created_at": "2026-08-19T07:18:17.850043+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "145m 날아간 초대형 홈런",
+    "line2": "최형우 최초 2,700안타 대기록",
+    "hook": "KBO 소식",
+    "caption_body": "kt 안현민이 시속 180km의 타구 속도로 KBO 최장 거리 타이 기록인 145m 초대형 홈런을 터뜨렸다. 하지만 LG는 만루 포를 쏘아 올린 문정빈의 활약에 힘입어 kt에 9 대 1 완승을 거뒀다. 한편 삼성 최형우는 프로야구 최초로 통산 2,700안타 대기록을 작성했으며, KIA 김도영은 시즌 36호 아치를 그렸다."
+  }
+}
