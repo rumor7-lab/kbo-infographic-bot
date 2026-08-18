@@ -1,0 +1,32 @@
+{
+  "message_id": 949,
+  "topic_id": "MLB_종합",
+  "key": "MLB 종합",
+  "keywords": [
+    "MLB",
+    "종합",
+    "카메론",
+    "매각",
+    "송성문",
+    "샌디에이고",
+    "두산",
+    "가치"
+  ],
+  "team": "두산",
+  "outlet_count": 7,
+  "headlines": [
+    "MLB 애리조나 마르테, 무단이탈로 또 '제한 선수' 등재(종합)",
+    "40여일 뒤 '가을야구 전쟁'…MLB 포스트시즌 일정 나왔다",
+    "'밈' 전쟁서 승리한 아이돌이 음원차트 휩쓰는 세상 [엔터그알]"
+  ],
+  "links": [
+    "https://www.yna.co.kr/view/AKR20260818033151007?input=1195m",
+    "https://www.nocutnews.co.kr/news/6564207?utm_source=naver&utm_medium=article&utm_campaign=20260818024119",
+    "https://news.mtn.co.kr/news-detail/2026081414103294347",
+    "https://www.news1.kr/sports/overseas-baseball/6261749",
+    "https://www.joongangenews.com/news/articleView.html?idxno=540670"
+  ],
+  "created_at": "2026-08-18T14:54:33.479528+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

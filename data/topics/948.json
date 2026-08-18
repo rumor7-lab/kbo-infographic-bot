@@ -1,0 +1,32 @@
+{
+  "message_id": 948,
+  "topic_id": "25일_시작",
+  "key": "25일 시작",
+  "keywords": [
+    "25일",
+    "시작",
+    "폭염",
+    "6시",
+    "30분",
+    "오후",
+    "재조정",
+    "다시"
+  ],
+  "team": null,
+  "outlet_count": 30,
+  "headlines": [
+    "프로야구, 25일부터 '평일 오후 6시 30분' 시작",
+    "KBO 프로야구, 25일부터 정상 시간 복귀",
+    "\"더위 한풀 꺾였다\"... KBO리그, 25일부터 경기 개시 시간 원래대로 돌린..."
+  ],
+  "links": [
+    "https://news.tvchosun.com/site/data/html_dir/2026/08/18/2026081890173.html",
+    "https://www.goodkyung.com/news/articleView.html?idxno=290360",
+    "https://www.newscj.com/news/articleView.html?idxno=3426000",
+    "https://sports.donga.com/sports/article/all/20260818/134495080/1",
+    "http://mbn.mk.co.kr/pages/news/newsView.php?category=mbn00009&news_seq_no=5213083"
+  ],
+  "created_at": "2026-08-18T14:54:32.768105+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
