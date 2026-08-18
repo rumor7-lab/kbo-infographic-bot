@@ -1,0 +1,32 @@
+{
+  "message_id": 970,
+  "topic_id": "시간_폭염",
+  "key": "시간 폭염",
+  "keywords": [
+    "시간",
+    "폭염",
+    "25일",
+    "완화",
+    "정상",
+    "정상화",
+    "기존대",
+    "재조정"
+  ],
+  "team": null,
+  "outlet_count": 7,
+  "headlines": [
+    "세종시유소년야구단, 순창강천산배 정상…올 시즌 3관왕",
+    "폭염 완화에 KBO 경기시간 정상화…평일 오후 6시 30분",
+    "내주부터 야구경기 시간 원래대로… KBO \"폭염 완화로 재조정\""
+  ],
+  "links": [
+    "https://www.dailysportshankook.co.kr/news/articleView.html?idxno=432636",
+    "https://www.tbc.co.kr/news/view?pno=20260818140550AE04110&id=209908",
+    "https://www.daejonilbo.com/news/articleView.html?idxno=2295140",
+    "https://www.bntnews.co.kr/article/view/bnt202608180234",
+    "https://www.imaeil.com/page/view/2026081812354790406"
+  ],
+  "created_at": "2026-08-18T19:00:14.603981+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

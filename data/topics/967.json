@@ -1,0 +1,32 @@
+{
+  "message_id": 967,
+  "topic_id": "25일_30분",
+  "key": "25일 30분",
+  "keywords": [
+    "25일",
+    "30분",
+    "6시",
+    "시작",
+    "오후",
+    "폭염",
+    "다시",
+    "재조정"
+  ],
+  "team": "두산",
+  "outlet_count": 21,
+  "headlines": [
+    "프로야구, 25일부터 다시 오후 6시30분 시작…폭염 기준 재조정",
+    "프로야구 25일부터 기존대로 ‘플레이 볼’",
+    "'프로야구 경기시간 변경' 25일부터 평일 6시 30분-주말 6시"
+  ],
+  "links": [
+    "http://www.gndomin.com/news/articleView.html?idxno=485756",
+    "https://www.gukjenews.com/news/articleView.html?idxno=3667502",
+    "http://www.osen.co.kr/article/G1112859286",
+    "https://www.sportsseoul.com/news/read/1629242?ref=naver",
+    "https://www.joongangenews.com/news/articleView.html?idxno=540791"
+  ],
+  "created_at": "2026-08-18T18:59:50.470327+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
