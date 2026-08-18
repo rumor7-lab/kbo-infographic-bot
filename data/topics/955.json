@@ -1,0 +1,37 @@
+{
+  "message_id": 955,
+  "topic_id": "25일_폭염",
+  "key": "25일 폭염",
+  "keywords": [
+    "25일",
+    "폭염",
+    "시작",
+    "6시",
+    "30분",
+    "오후",
+    "시간",
+    "다시"
+  ],
+  "team": null,
+  "outlet_count": 38,
+  "headlines": [
+    "프로야구, 25일부터 경기 시작 시간 원래대로 복귀",
+    "폭염 완화에 KBO 경기시간 정상화…평일 오후 6시 30분",
+    "프로야구, 25일부터 다시 오후 6시 30분 플레이볼"
+  ],
+  "links": [
+    "https://www.joongangenews.com/news/articleView.html?idxno=540791",
+    "https://www.daejonilbo.com/news/articleView.html?idxno=2295140",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000057632",
+    "https://www.mediapen.com/news/view/1117134",
+    "https://news.tvchosun.com/site/data/html_dir/2026/08/18/2026081890173.html"
+  ],
+  "created_at": "2026-08-18T16:34:10.486089+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "25일부터 프로야구 경기 시간 정상화",
+    "line2": "평일 오후 6시 30분, 주말 6시 개시",
+    "hook": "속보",
+    "caption_body": "폭염 기세가 한풀 꺾이면서 프로야구 경기 시작 시각이 오는 25일부터 기존 스케줄로 복귀한다. 한국야구위원회(KBO)는 최근 기상 상황을 고려해 관련 운영 기준을 재정비했다고 18일 발표했다. 이에 따라 평일 경기는 오후 6시 30분, 주말 경기는 오후 6시(다음 달 1~6일 주말은 오후 5시)에 각각 플레이볼을 진행한다."
+  }
+}

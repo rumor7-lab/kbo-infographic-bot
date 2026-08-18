@@ -1,0 +1,37 @@
+{
+  "message_id": 957,
+  "topic_id": "역대_연속",
+  "key": "역대 연속",
+  "keywords": [
+    "역대",
+    "연속",
+    "전상현",
+    "KIA",
+    "9번째",
+    "팔린다",
+    "샌디에이고",
+    "불펜"
+  ],
+  "team": "KIA",
+  "outlet_count": 6,
+  "headlines": [
+    "송성문 몸담은 샌디에이고, MLB 구단 역대 최고액에 팔린다",
+    "KIA 우완 불펜 전상현, 역대 9번째 '5시즌 연속 10홀드'에 단 한 걸음",
+    "KIA 전상현, 5년 연속 두 자릿수 홀드 ‘-1’…KBO 역대 9번째 도전"
+  ],
+  "links": [
+    "https://www.donga.com/news/Inter/article/all/20260818/134496032/1",
+    "https://www.newsis.com/view/NISX20260818_0003752878",
+    "https://www.edaily.co.kr/news/newspath.asp?newsid=04165606645548632",
+    "https://www.news1.kr/sports/baseball/6261947",
+    "https://www.cnbnews.com/news/articleView.html?idxno=1011743"
+  ],
+  "created_at": "2026-08-18T16:34:39.964319+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KIA 전상현, 5년 연속 10홀드 눈앞",
+    "line2": "KBO 역대 9번째 대기록까지 단 1개",
+    "hook": "대기록 임박",
+    "caption_body": "KIA 타이거즈 우완 투수 전상현이 KBO리그 역대 9번째 '5시즌 연속 10홀드' 달성을 단 1개 남겨두고 있다. 18일 기준 올 시즌 23경기에 등판해 2승 1패 9홀드 평균자책점 2.95를 기록하며 팀 불펜의 핵심으로 활약 중이다. 2016년 입단해 그해 6월 첫 홀드를 챙겼던 전상현이 또 하나의 진기록을 작성할지 주목된다."
+  }
+}
