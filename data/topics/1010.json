@@ -1,0 +1,31 @@
+{
+  "message_id": 1010,
+  "topic_id": "순위_최형우",
+  "key": "순위 최형우",
+  "keywords": [
+    "순위",
+    "최형우",
+    "삼성",
+    "18일",
+    "2700안타",
+    "SSG전",
+    "강호",
+    "결과"
+  ],
+  "team": "삼성",
+  "outlet_count": 4,
+  "headlines": [
+    "KBO 인기 구단 순위, 전통의 강호부터 전국구 팬덤까지…KIA가...",
+    "KBO 프로야구, 18일 경기 결과→현재 팀 순위?",
+    "삼성 최형우, 18일 대구 SSG전 KBO 최초 2700안타·4600루타 기..."
+  ],
+  "links": [
+    "https://www.ftimes.kr/news/articleView.html?idxno=39072",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16166568",
+    "https://www.newspim.com/news/view/20260818001298",
+    "https://www.dkilbo.com/news/articleView.html?idxno=551654"
+  ],
+  "created_at": "2026-08-19T04:48:21.251430+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
