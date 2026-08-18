@@ -1,0 +1,36 @@
+{
+  "message_id": 1024,
+  "topic_id": "승리_호투",
+  "key": "승리 호투",
+  "keywords": [
+    "승리",
+    "호투",
+    "KIA",
+    "KT전",
+    "고맙죠",
+    "꺼낸",
+    "너무",
+    "네일"
+  ],
+  "team": "KIA",
+  "outlet_count": 4,
+  "headlines": [
+    "\"문정빈에게 너무 고맙죠\" KT전 6이닝 1실점 호투…마운드서 LG 승리 힘...",
+    "'네일 호투에 이의리 4아웃 세이브' KIA, 한화 4-3 신승",
+    "'KIA 또 이겼다' 이범호 감독 승리 직후 꺼낸 '4명'의 이름 \"쉽지 않은 경..."
+  ],
+  "links": [
+    "https://www.mydaily.co.kr/page/view/2026081908083712394",
+    "http://www.maniareport.com/view.php?ud=2026081822151181426cf2d78c68_19",
+    "https://www.starnewskorea.com/sports/2026/08/19/2026081816010897755",
+    "https://dgmbc.com/NewsArticle/857319"
+  ],
+  "created_at": "2026-08-19T08:18:14.735349+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KIA 3연승, 삼성은 9회 역전패",
+    "line2": "네일 호투 빛난 KIA·SSG에 덜미 잡힌 삼성",
+    "hook": "KBO 브리핑",
+    "caption_body": "KIA 타이거즈가 선발 네일의 6이닝 2실점 호투와 이의리의 4아웃 세이브에 힘입어 한화 이글스를 4-3으로 꺾고 3연승을 달렸다. LG 트윈스도 6이닝 1실점으로 활약한 임찬규를 앞세워 승리를 챙기며 2위 삼성과의 격차를 4.5경기로 좁혔다. 반면 삼성 라이온즈는 9회에만 4실점하며 SSG 랜더스에 역전패를 당해 4연승이 무산됐다."
+  }
+}
