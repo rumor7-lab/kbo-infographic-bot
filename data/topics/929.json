@@ -1,0 +1,32 @@
+{
+  "message_id": 929,
+  "topic_id": "야구장_폭염",
+  "key": "야구장 폭염",
+  "keywords": [
+    "야구장",
+    "폭염",
+    "매출",
+    "못막",
+    "열기",
+    "7월",
+    "BC카드",
+    "늘었다"
+  ],
+  "team": "삼성",
+  "outlet_count": 5,
+  "headlines": [
+    "폭염도 못막은 야구 열기…7월 주요 야구장 F&B 매출 2년째 증가",
+    "유례없는 폭염·열대야도 야구장 찾는 발길 늘었다",
+    "BC카드 야구장 먹방 소비 분석·삼성금융 모니모 MAU 1000만·..."
+  ],
+  "links": [
+    "https://biz.sbs.co.kr/article_hub/20000329140?division=NAVER",
+    "https://www.financialpost.co.kr/news/articleView.html?idxno=270719",
+    "https://www.newsworks.co.kr/news/articleView.html?idxno=850602",
+    "https://www.etnews.com/20260818000040",
+    "https://sports.khan.co.kr/article/202608180836013?pt=nv"
+  ],
+  "created_at": "2026-08-18T09:59:00.607818+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
