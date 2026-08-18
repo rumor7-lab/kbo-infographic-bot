@@ -1,0 +1,37 @@
+{
+  "message_id": 980,
+  "topic_id": "홈런_김도영",
+  "key": "홈런 김도영",
+  "keywords": [
+    "홈런",
+    "김도영",
+    "문정빈",
+    "만루",
+    "안현민",
+    "추재현",
+    "36호",
+    "넘기"
+  ],
+  "team": "KIA",
+  "outlet_count": 12,
+  "headlines": [
+    "'진짜 타이거즈 최초 보인다' 김도영, 한화 이상규 상대 시즌 36호 홈런...",
+    "김도영, 맞는 순간 홈런 직감",
+    "36호 홈런 날린 김도영"
+  ],
+  "links": [
+    "https://www.xportsnews.com/article/2185049",
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081821251657823",
+    "http://www.osen.co.kr/article/G1112859523",
+    "https://www.news1.kr/sports/baseball/6262409",
+    "https://www.starnewskorea.com/sports/2026/08/18/2026081821231866486"
+  ],
+  "created_at": "2026-08-18T21:37:18.582675+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "KIA 김도영, 시즌 36호 홈런 터졌다",
+    "line2": "대전 한화전 7회초 쐐기 솔로포",
+    "hook": "홈런 선두",
+    "caption_body": "KIA 타이거즈 김도영이 대전 원정에서 시즌 36호 아치를 그려냈다. 김도영은 18일 한화 이글스와의 경기에 3번 타자 3루수로 선발 출전해, 팀이 3-2로 앞선 7회초 2사 상황에서 솔로 홈런을 터뜨렸다. 한화 투수 이상규를 상대로 좌측 담장을 넘긴 김도영은 리그 홈런 부문 선두 자리를 더욱 굳건히 지켰다."
+  }
+}
