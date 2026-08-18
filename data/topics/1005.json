@@ -1,0 +1,32 @@
+{
+  "message_id": 1005,
+  "topic_id": "김도영_KIA",
+  "key": "김도영 KIA",
+  "keywords": [
+    "김도영",
+    "KIA",
+    "36호포",
+    "질주",
+    "세이브",
+    "이의리",
+    "한화",
+    "3으"
+  ],
+  "team": "KIA",
+  "outlet_count": 7,
+  "headlines": [
+    "0-3이 12-3으로 뒤집혔다... 세종시유소년야구단, 순창서 '시즌 3관왕'",
+    "김도영 36호포+이의리 1.1이닝 세이브, KIA 한화 4-3으로 꺾고 ...",
+    "KIA 김도영, 한화전서 시즌 36호 솔로포 폭발"
+  ],
+  "links": [
+    "https://www.stnsports.co.kr/news/articleView.html?idxno=321142",
+    "https://www.newspim.com/news/view/20260818001297",
+    "https://www.insight.co.kr/news/568767",
+    "https://www.dailian.co.kr/news/view/1679596/?sc=Naver",
+    "https://www.dailysportshankook.co.kr/news/articleView.html?idxno=432647"
+  ],
+  "created_at": "2026-08-19T03:32:04.619124+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
