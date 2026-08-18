@@ -1,0 +1,32 @@
+{
+  "message_id": 992,
+  "topic_id": "폭염_오후",
+  "key": "폭염 오후",
+  "keywords": [
+    "폭염",
+    "오후",
+    "25일",
+    "30분",
+    "6시",
+    "기준",
+    "다시",
+    "시간"
+  ],
+  "team": null,
+  "outlet_count": 6,
+  "headlines": [
+    "프로야구, 25일부터 오후 6시 30분 시작",
+    "프로야구, 25일부터 다시 오후 6시 30분 시작...폭염 기준 재조정",
+    "폭염 완화…프로야구 경기 시간 '원래대로'"
+  ],
+  "links": [
+    "http://www.yonhapnewstv.co.kr/news/MYH20260818232300yDS",
+    "https://www.ytn.co.kr/_ln/0107_202608182317347213",
+    "https://www.idaegu.co.kr/news/articleView.html?idxno=557027",
+    "http://www.spochoo.com/news/articleView.html?idxno=128924",
+    "http://www.kwangju.co.kr/article.php?aid=1787053320802417011"
+  ],
+  "created_at": "2026-08-18T23:29:08.554648+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
