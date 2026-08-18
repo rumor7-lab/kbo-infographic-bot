@@ -1,0 +1,32 @@
+{
+  "message_id": 952,
+  "topic_id": "열기_대구",
+  "key": "열기 대구",
+  "keywords": [
+    "열기",
+    "대구",
+    "스포츠토토",
+    "현장",
+    "증가",
+    "프로모션",
+    "매출",
+    "야구장"
+  ],
+  "team": "삼성",
+  "outlet_count": 7,
+  "headlines": [
+    "‘라이온즈 vs 랜더스’ 스포츠토토, 18~19일 대구 삼성-SSG전서 현장 프...",
+    "스포츠토토, 대구 삼성라이온즈파크에서 현장 프로모션…야구 열기 속 ...",
+    "무더위에도 계속된 '프로야구 직관 열기'…'1위 파워' KT 홈구장 식음료..."
+  ],
+  "links": [
+    "https://www.sportsseoul.com/news/read/1629178?ref=naver",
+    "https://www.mk.co.kr/article/12130135",
+    "https://www.sportschosun.com/life/2026-08-18/202608180100103140006542",
+    "https://www.newspim.com/news/view/20260818000652",
+    "https://news.tf.co.kr/read/toto/2354962.htm"
+  ],
+  "created_at": "2026-08-18T15:36:36.690560+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

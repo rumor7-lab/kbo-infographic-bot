@@ -1,0 +1,32 @@
+{
+  "message_id": 953,
+  "topic_id": "MLB_등재",
+  "key": "MLB 등재",
+  "keywords": [
+    "MLB",
+    "등재",
+    "마르테",
+    "애리조나",
+    "제한",
+    "카메론",
+    "두산",
+    "공략했다"
+  ],
+  "team": "두산",
+  "outlet_count": 6,
+  "headlines": [
+    "연락 두절된 애리조나 마르테, 1년 만에 또 '제한 선수' 명단 등재",
+    "MLB 애리조나 마르테, 무단이탈로 또 '제한 선수' 등재(종합)",
+    "40여일 뒤 '가을야구 전쟁'…MLB 포스트시즌 일정 나왔다"
+  ],
+  "links": [
+    "https://www.newspim.com/news/view/20260818001008",
+    "https://www.yna.co.kr/view/AKR20260818033151007?input=1195m",
+    "https://www.nocutnews.co.kr/news/6564207?utm_source=naver&utm_medium=article&utm_campaign=20260818024119",
+    "https://news.mtn.co.kr/news-detail/2026081414103294347",
+    "https://www.joongangenews.com/news/articleView.html?idxno=540670"
+  ],
+  "created_at": "2026-08-18T15:36:37.422347+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
