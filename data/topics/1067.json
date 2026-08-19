@@ -1,0 +1,37 @@
+{
+  "message_id": 1067,
+  "topic_id": "ERA_이의리",
+  "key": "ERA 이의리",
+  "keywords": [
+    "ERA",
+    "이의리",
+    "KIA",
+    "LG",
+    "간다",
+    "거듭난",
+    "광속구",
+    "김정수"
+  ],
+  "team": "KIA",
+  "outlet_count": 6,
+  "headlines": [
+    "이의리로 '뒷문단속' 중인 KIA, 일단 올 시즌은 '그대로 간다?'",
+    "ERA 9.42→1.46...'158km 마무리'로 거듭난 KIA 이의리의 반등",
+    "까치 김정수 이후 30년 만! 타이거즈에 '의리의리'한 좌완 광속구 '마무..."
+  ],
+  "links": [
+    "https://www.stnsports.co.kr/news/articleView.html?idxno=321176",
+    "https://www.ikbc.co.kr/article/view/kbc202608190038",
+    "http://www.spochoo.com/news/articleView.html?idxno=128960",
+    "http://www.osen.co.kr/article/G1112859770",
+    "https://www.starnewskorea.com/sports/2026/08/19/2026081911305111653"
+  ],
+  "created_at": "2026-08-19T16:35:46.845516+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "마무리 변신한 KIA 이의리",
+    "line2": "압도적 피칭으로 뒷문 단속",
+    "hook": "대반등",
+    "caption_body": "KIA 타이거즈 이의리가 선발 고전을 딛고 불펜 전환 후 완벽한 반등에 성공했다. 최근 경기 마무리 역할을 맡은 그는 폭염 브레이크 이후 등판한 5경기에서 단 1개의 피안타만 내주며 압도적인 투구를 펼쳤다. 타이거즈 역사상 30년 만에 등장한 좌완 강속구 마무리의 활약에 힘입어 KIA는 3위 LG 트윈스를 1경기 차로 바짝 추격하고 있다."
+  }
+}
