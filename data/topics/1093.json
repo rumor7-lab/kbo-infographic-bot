@@ -1,0 +1,30 @@
+{
+  "message_id": 1093,
+  "topic_id": "야구장_곳이",
+  "key": "야구장 곳이",
+  "keywords": [
+    "야구장",
+    "곳이",
+    "나온",
+    "데이트",
+    "동대문야구장",
+    "부른",
+    "사진기자",
+    "신기해"
+  ],
+  "team": null,
+  "outlet_count": 3,
+  "headlines": [
+    "“찜통더위에도 야구는 못 참지”…2030 3명 중 1명 야구장 ‘직관’",
+    "\"출근한다며 나온 곳이 야구장\"… 1998년 동대문야구장의 추억 [사진기자...",
+    "황인엽, 이혜리와 야구장 데이트? \"케미가 부른 오해, 신기해\""
+  ],
+  "links": [
+    "https://www.nongmin.com/article/20260819500415",
+    "https://www.segye.com/newsView/20260819519672?OutUrl=naver",
+    "https://news.jtbc.co.kr/article/NB12314072?influxDiv=NAVER"
+  ],
+  "created_at": "2026-08-19T20:20:57.827978+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

@@ -1,0 +1,32 @@
+{
+  "message_id": 1095,
+  "topic_id": "선발_투구하",
+  "key": "선발 투구하",
+  "keywords": [
+    "선발",
+    "투구하",
+    "화이트",
+    "KIA",
+    "시리카",
+    "역투하",
+    "시라카",
+    "기아"
+  ],
+  "team": "KIA",
+  "outlet_count": 2,
+  "headlines": [
+    "시라카와 'KIA 승리를 향해'",
+    "역투하는 KIA 선발 시라카와",
+    "역투하는 한화 선발 화이트"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112860078",
+    "http://www.osen.co.kr/article/G1112860075",
+    "http://www.osen.co.kr/article/G1112860041",
+    "https://www.news1.kr/photos/8063276",
+    "https://www.news1.kr/photos/8063274"
+  ],
+  "created_at": "2026-08-19T20:20:59.260578+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
