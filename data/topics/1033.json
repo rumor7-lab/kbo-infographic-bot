@@ -1,0 +1,37 @@
+{
+  "message_id": 1033,
+  "topic_id": "승리_이름",
+  "key": "승리 이름",
+  "keywords": [
+    "승리",
+    "이름",
+    "호투",
+    "롯데",
+    "KIA",
+    "13득점",
+    "KT전",
+    "경신"
+  ],
+  "team": "KIA",
+  "outlet_count": 7,
+  "headlines": [
+    "\"그냥 운동해요\"... 태극마크 달고도 숨겼던 이름, 이젠 '프로야구' 선수...",
+    "승리 확률 1% 뚫은 롯데의 기적… 한이닝 13득점 구단 신기록 경신",
+    "한 이닝 '13득점' 대폭발, 롯데의 대역전극 … 그 중심에 '이대호 후계자..."
+  ],
+  "links": [
+    "https://www.womennews.co.kr/news/articleView.html?idxno=281083",
+    "https://www.starnewskorea.com/sports/2026/08/19/2026081816010897755",
+    "https://dgmbc.com/NewsArticle/857319",
+    "https://www.gukjenews.com/news/articleView.html?idxno=3668040",
+    "https://www.newdaily.co.kr/site/data/html/2026/08/19/2026081900030.html"
+  ],
+  "created_at": "2026-08-19T11:20:45.221327+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "한 이닝 13득점 쏟아낸 롯데",
+    "line2": "구단 신기록 세우며 기적의 역전승",
+    "hook": "대역전극",
+    "caption_body": "프로야구 롯데 자이언츠가 한 이닝에만 13점을 올리며 구단 역대 한 이닝 최다 득점 신기록을 새로 썼다. 종전 구단 기록인 11점을 넘어선 롯데는 1%의 승리 확률을 뒤집고 대역전승을 완성했다. 이날 타선에서는 한동희가 공수 중심에 서며 팀의 기적 같은 승리를 견인했다."
+  }
+}

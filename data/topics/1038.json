@@ -1,0 +1,30 @@
+{
+  "message_id": 1038,
+  "topic_id": "축구_계속",
+  "key": "축구 계속",
+  "keywords": [
+    "축구",
+    "계속",
+    "골프",
+    "금메달",
+    "도전",
+    "세웠다",
+    "썼던",
+    "역사"
+  ],
+  "team": "KIA",
+  "outlet_count": 3,
+  "headlines": [
+    "'요즘 왜이리 잘해?' 윌비플레이, 야구 이어 축구까지 팬 접점 확대",
+    "타이거즈 최초 역사 썼던 이 투수, KBO 9번째 기록 세웠다…\"계속 이어나...",
+    "축구 4연패·야구 5연패 정조준…골프도 금메달 도전[AG D-30③]"
+  ],
+  "links": [
+    "https://www.fashionbiz.co.kr/article/228699",
+    "https://www.xportsnews.com/article/2185166",
+    "https://www.newsis.com/view/NISX20260818_0003752579"
+  ],
+  "created_at": "2026-08-19T11:21:05.618262+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

@@ -1,0 +1,32 @@
+{
+  "message_id": 1035,
+  "topic_id": "1위_실점",
+  "key": "1위 실점",
+  "keywords": [
+    "1위",
+    "실점",
+    "삼성",
+    "QS",
+    "감보아",
+    "강타선",
+    "공동",
+    "구자욱"
+  ],
+  "team": "삼성",
+  "outlet_count": 5,
+  "headlines": [
+    "‘QS 1실점→다승 공동 1위’ LG 임찬규, ‘유일한 실점’ 안현민 145m 괴...",
+    "프로야구 KIA, 폭염 방학 이후 승률 1위…살아난 올러·이의리",
+    "한계 이닝 임박했나...'연속 대량 실점' 비슬리, 감보아 급부진 데자뷰"
+  ],
+  "links": [
+    "http://www.osen.co.kr/article/G1112859676",
+    "https://www.yna.co.kr/view/AKR20260819043800007?input=1195m",
+    "https://isplus.com/article/view/isp202608190038",
+    "https://www.xportsnews.com/article/2185169",
+    "https://www.mydaily.co.kr/page/view/2026081823181269379"
+  ],
+  "created_at": "2026-08-19T11:20:46.494301+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
