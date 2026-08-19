@@ -1,0 +1,32 @@
+{
+  "message_id": 1063,
+  "topic_id": "축구_아시안게임",
+  "key": "축구 아시안게임",
+  "keywords": [
+    "축구",
+    "아시안게임",
+    "윌비플레",
+    "이어",
+    "계속",
+    "공략",
+    "공백",
+    "극복하고"
+  ],
+  "team": "KIA",
+  "outlet_count": 6,
+  "headlines": [
+    "아시안게임 한 달 앞으로…한국, 종합 3위·축구 4연패·야구 5연패 도전",
+    "윌비플레이, FC서울과 매치데이 성료…야구 이어 축구 팬심 공략",
+    "'홈런 선두' KIA 김도영, 아시안게임 공백 극복하고 홈런왕 오를까"
+  ],
+  "links": [
+    "https://www.etoday.co.kr/news/view/2616009",
+    "http://www.metroseoul.co.kr/article/20260819500334",
+    "https://www.jnilbo.com/news/articleView.html?idxno=90000057802",
+    "https://www.kmib.co.kr/article/view.asp?arcid=9000004339&cp=nv",
+    "https://www.fashionbiz.co.kr/article/228699"
+  ],
+  "created_at": "2026-08-19T15:37:19.862591+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

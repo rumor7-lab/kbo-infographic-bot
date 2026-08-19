@@ -1,0 +1,32 @@
+{
+  "message_id": 1061,
+  "topic_id": "투수_삼성",
+  "key": "투수 삼성",
+  "keywords": [
+    "투수",
+    "삼성",
+    "복귀",
+    "마무리",
+    "이승현",
+    "이런",
+    "이의리",
+    "라이온즈"
+  ],
+  "team": "삼성",
+  "outlet_count": 7,
+  "headlines": [
+    "\"무리는 두지 않겠다\" '안방마님' 장성우 복귀 시기 뒤로 미룬 이강철 K...",
+    "'심기일전' 삼성 라이온즈의 이승현, 선발 복귀",
+    "ERA 9.42→1.46...'158km 마무리'로 거듭난 KIA 이의리의 반등"
+  ],
+  "links": [
+    "https://www.mydaily.co.kr/page/view/2026081914172538559",
+    "https://www.imaeil.com/page/view/2026081910393030237",
+    "https://www.joongangenews.com/news/articleView.html?idxno=541017",
+    "https://www.yeongnam.com/web/view.php?key=20260819022062883",
+    "https://www.ikbc.co.kr/article/view/kbc202608190038"
+  ],
+  "created_at": "2026-08-19T15:37:18.663854+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}

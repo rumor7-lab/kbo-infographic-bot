@@ -1,0 +1,37 @@
+{
+  "message_id": 1060,
+  "topic_id": "문정빈_타율",
+  "key": "문정빈 타율",
+  "keywords": [
+    "문정빈",
+    "타율",
+    "LG",
+    "신인왕",
+    "포수",
+    "데뷔",
+    "kt전",
+    "결과야"
+  ],
+  "team": "LG",
+  "outlet_count": 8,
+  "headlines": [
+    "보여줄게, 달라진 나! ‘타율 0.223→0.329’ 국대 포수 조형우, 결과야...",
+    "한화 주전 포수만 중요하냐, LG 4번타자도 대단하다...그런데 \"신인왕 욕...",
+    "드래프트 8라운더의 반란…타율 3할·OPS 1.000 넘은 문정빈, 신인왕 판..."
+  ],
+  "links": [
+    "https://www.sportsseoul.com/news/read/1629436?ref=naver",
+    "https://www.sportschosun.com/baseball/2026-08-19/202608190100111240007071",
+    "http://www.stoo.com/article.php?aid=108396750614",
+    "https://www.joongangenews.com/news/articleView.html?idxno=541021",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16167363"
+  ],
+  "created_at": "2026-08-19T15:37:18.024249+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "LG 8라운더 문정빈 데뷔 첫 만루포",
+    "line2": "KT전 4연패 끊어낸 5타점 맹활약",
+    "hook": "대반전",
+    "caption_body": "LG 트윈스 문정빈이 생애 첫 만루 홈런을 포함해 5타점을 몰아치며 팀의 KT전 4연패 탈출을 이끌었다. 지난 18일 KT전에 4번 타자로 선발 출전한 그는 5타수 2안타 2득점으로 맹활약하며 9-1 완승을 견인했다. 드래프트 8라운드 출신으로 3할 타율과 OPS 1.000을 넘긴 문정빈은 신인왕 욕심보다 팀의 새로운 거포로서 입지를 확실히 다지고 있다."
+  }
+}
