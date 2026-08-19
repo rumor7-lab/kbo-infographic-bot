@@ -1,0 +1,37 @@
+{
+  "message_id": 1077,
+  "topic_id": "라인업_KIA",
+  "key": "라인업 KIA",
+  "keywords": [
+    "라인업",
+    "KIA",
+    "상대",
+    "제외",
+    "함평",
+    "선발",
+    "타이거즈",
+    "한화"
+  ],
+  "team": "KIA",
+  "outlet_count": 6,
+  "headlines": [
+    "순위싸움 한창인데 주전 3명 선발 제외… 이범호 감독 \"함평 타이거즈 ...",
+    "'친정팀에 멀티히트' 하주석 선발 제외 왜?…KIA, 화이트 상대 라인업 대...",
+    "“오늘은 함평 타이거즈 모드로” KIA 박재현과 도나스는 정상출격…하..."
+  ],
+  "links": [
+    "https://sports.hankooki.com/news/articleView.html?idxno=6938204",
+    "http://www.osen.co.kr/article/G1112859985",
+    "https://www.mydaily.co.kr/page/view/2026081918050089017",
+    "https://www.daejonilbo.com/news/articleView.html?idxno=2295459",
+    "https://www.starnewskorea.com/sports/2026/08/19/2026081816002042485"
+  ],
+  "created_at": "2026-08-19T18:30:28.080473+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "주전 3명 뺀 KIA의 파격 라인업",
+    "line2": "4연패 탈출 노리는 한화와 맞대결",
+    "hook": "파격 변화",
+    "caption_body": "KIA 타이거즈가 19일 대전 한화전에서 김선빈, 하주석, 김호령 등 주전 야수들을 선발에서 제외하는 대대적인 변화를 주었다. 이범호 감독은 박재현과 박정우 등을 전면에 내세워 이른바 '함평 타이거즈' 모드로 4연승에 도전한다. 반면 4연패에 빠진 한화 이글스는 전날과 동일한 타선을 유지하며 선발 투수 오웬 화이트를 앞세워 연패 탈출에 나선다."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "message_id": 1075,
+  "topic_id": "시구_승리",
+  "key": "시구 승리",
+  "keywords": [
+    "시구",
+    "승리",
+    "키움",
+    "21일",
+    "시타",
+    "하츠투하츠",
+    "UDTT",
+    "걸그룹"
+  ],
+  "team": "KIA",
+  "outlet_count": 7,
+  "headlines": [
+    "키움, 걸그룹 UDTT 시구-시타 초청…\"승리의 기운 담아 힘차게 던지겠다...",
+    "KIA 출신 라우어, 다저스 ‘승리 요정’ 됐다…선발 등판 시 11승 1패→기...",
+    "키움, 21일 KIA전 걸그룹 UDTT 시구·시타 “야구 좋아하는데 시구 할 수..."
+  ],
+  "links": [
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1002658",
+    "https://mhnse.com/news/articleView.html?idxno=1494259",
+    "http://www.osen.co.kr/article/G1112859875",
+    "https://www.mk.co.kr/article/12131159",
+    "https://www.kukinews.com/article/view/kuk202608190142"
+  ],
+  "created_at": "2026-08-19T18:29:49.785631+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "키움, 21일 고척서 UDTT 시구·시타",
+    "line2": "권예진 시구·구한나 시타 마운드 올라",
+    "hook": "시구 소식",
+    "caption_body": "키움 히어로즈가 오는 21일 서울 고척스카이돔에서 펼쳐지는 KIA 타이거즈와의 홈경기에 걸그룹 UDTT(우당탕탕 소녀단)를 초청한다. 이날 경기 시작에 앞서 승리를 기원하는 시구는 멤버 권예진이 맡고, 시타는 구한나가 진행할 예정이다."
+  }
+}
