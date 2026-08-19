@@ -1,0 +1,24 @@
+{
+  "message_id": 1032,
+  "topic_id": "구세주_돌아온",
+  "key": "구세주 돌아온",
+  "keywords": [
+    "구세주",
+    "돌아온",
+    "될까",
+    "필승조",
+    "가을야구",
+    "한화"
+  ],
+  "team": "한화",
+  "outlet_count": 1,
+  "headlines": [
+    "돌아온 ‘한화 필승조’…가을야구 구세주 될까?"
+  ],
+  "links": [
+    "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8640060&ref=A"
+  ],
+  "created_at": "2026-08-19T09:59:36.545941+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
