@@ -1,0 +1,37 @@
+{
+  "message_id": 1100,
+  "topic_id": "불펜_부상",
+  "key": "불펜 부상",
+  "keywords": [
+    "불펜",
+    "부상",
+    "김진성",
+    "LG",
+    "어깨",
+    "이탈",
+    "홀드",
+    "1위"
+  ],
+  "team": "LG",
+  "outlet_count": 9,
+  "headlines": [
+    "스기모토 '불펜 가동'",
+    "다시 일어서라, NC 불펜 임지민",
+    "설마 부상 재발인가, 허슬 플레이→통증 호소→교체…SSG \"김성욱 병원 ..."
+  ],
+  "links": [
+    "https://www.mydaily.co.kr/page/view/2026081920481858907",
+    "https://www.knnews.co.kr/news/articleView.php?idxno=1548971",
+    "https://www.mdtoday.co.kr/news/articleView.html?idxno=608942",
+    "https://www.news1.kr/sports/baseball/6263621",
+    "https://www.sportschosun.com/baseball/2026-08-19/202608190100113960007219"
+  ],
+  "created_at": "2026-08-19T21:37:50.427149+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "LG 김진성 어깨 부상 이탈",
+    "line2": "홀드 공동 1위… 3~4주 공백 예상",
+    "hook": "부상 비상",
+    "caption_body": "프로야구 LG 트윈스의 핵심 투수 김진성이 오른쪽 어깨 통증으로 3~4주간 자리를 비우게 됐다. 통산 최다 홀드 신기록을 세우며 부문 공동 선두를 달리던 김진성의 이탈로 LG 불펜에 비상이 걸렸다. 한편 SSG 김성욱이 경기 중 수비 도중 통증을 느껴 교체 후 병원으로 옮겨졌고, NC 임지민도 타구에 얼굴을 맞는 등 리그 내 부상 악재가 이어지고 있다."
+  }
+}
