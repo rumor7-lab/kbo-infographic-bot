@@ -1,0 +1,30 @@
+{
+  "message_id": 1048,
+  "topic_id": "아니다_트레이드",
+  "key": "아니다 트레이드",
+  "keywords": [
+    "아니다",
+    "트레이드",
+    "하주석",
+    "한화",
+    "가서",
+    "감동",
+    "기본",
+    "나들"
+  ],
+  "team": "한화",
+  "outlet_count": 3,
+  "headlines": [
+    "하주석 친정 나들이, 감동은 순간이고 한화는 씁쓸… 트레이드는 ‘윈윈...",
+    "하주석이 KIA 가서 잘 쳐서가 아니다...한화가 트레이드의 '기본' 안 지...",
+    "'이런 호들갑이 있나? 이의리의 재발견이라니', 아직 아니다, 불펜이 끌..."
+  ],
+  "links": [
+    "https://www.spotvnews.co.kr/news/articleView.html?idxno=1002547",
+    "https://mhnse.com/news/articleView.html?idxno=1493492",
+    "http://www.maniareport.com/view.php?ud=20260819094006416791b55a0d56_19"
+  ],
+  "created_at": "2026-08-19T13:07:39.905735+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
