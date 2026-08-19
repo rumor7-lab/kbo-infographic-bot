@@ -1,0 +1,37 @@
+{
+  "message_id": 1085,
+  "topic_id": "김진성_LG",
+  "key": "김진성 LG",
+  "keywords": [
+    "김진성",
+    "LG",
+    "부상",
+    "어깨",
+    "이탈",
+    "재활",
+    "홀드",
+    "불펜"
+  ],
+  "team": "LG",
+  "outlet_count": 8,
+  "headlines": [
+    "LG 덮친 부상 악령…이재원 이어 김진성도 어깨 부상 이탈",
+    "홀드 공동 1위 김진성 이탈…LG 불펜 재편 불가피",
+    "'우타 거포 잃은' LG 이틀 연속 부상자 발생, 18홀드 필승조마저 어깨 부..."
+  ],
+  "links": [
+    "https://www.news1.kr/sports/baseball/6263621",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16167705",
+    "https://www.starnewskorea.com/sports/2026/08/19/2026081917083985069",
+    "http://www.osen.co.kr/article/G1112859951",
+    "https://www.mydaily.co.kr/page/view/2026081917140390495"
+  ],
+  "created_at": "2026-08-19T19:45:52.198637+09:00",
+  "status": "waiting_photo",
+  "draft": {
+    "line1": "LG 김진성, 어깨 부상으로 이탈",
+    "line2": "이재원 이어 이틀 연속 부상 악재",
+    "hook": "비상",
+    "caption_body": "LG 트윈스 불펜의 핵심 김진성이 어깨 부상으로 전력에서 이탈했다. 외야수 이재원이 햄스트링을 다친 데 이어 이틀 연속 부상자가 발생하면서 치열한 순위 싸움을 이어가던 LG는 불펜 재편이 불가피해졌다. LG는 김진성의 빈자리를 메우기 위해 새로 준비를 마친 아시아쿼터 투수 존 케네디를 적극 활용할 방침이다."
+  }
+}

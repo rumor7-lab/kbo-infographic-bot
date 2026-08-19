@@ -1,0 +1,32 @@
+{
+  "message_id": 1088,
+  "topic_id": "MLB_맨시니",
+  "key": "MLB 맨시니",
+  "keywords": [
+    "MLB",
+    "맨시니",
+    "은퇴",
+    "마감하고",
+    "대장암",
+    "8시즌",
+    "결과야",
+    "고지"
+  ],
+  "team": null,
+  "outlet_count": 7,
+  "headlines": [
+    "\"KBO 데뷔 설레고 기대...타이트한 상황도 자신있다\"…김진성 공백 메울...",
+    "MLB 맨시니, 대장암 극복 후 8시즌 빅리그 마감하고 은퇴",
+    "22-0 대참사…밀워키, MLB 현대 야구 최다 점수 차 완봉승 타이"
+  ],
+  "links": [
+    "http://www.spochoo.com/news/articleView.html?idxno=128971",
+    "https://www.etoday.co.kr/news/view/2616033",
+    "https://www.mydaily.co.kr/page/view/2026081914483134513",
+    "https://www.sportsseoul.com/news/read/1629436?ref=naver",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16167434"
+  ],
+  "created_at": "2026-08-19T19:46:36.052870+09:00",
+  "status": "waiting_photo",
+  "draft": null
+}
